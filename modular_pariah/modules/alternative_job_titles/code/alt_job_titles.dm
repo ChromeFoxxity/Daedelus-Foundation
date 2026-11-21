@@ -10,15 +10,14 @@
 	var/list/alt_titles = null
 
 // Heads
-/datum/job/security_director
-	alt_titles = list(JOB_GUARD_COMMANDER, "Security Director")
+/datum/job/security_captain
+	alt_titles = list(JOB_SECURITY_CAPTAIN, "Security Director")
 
 /datum/job/goi_rep
 	alt_titles = list(
 		JOB_GOC_REP,
 		JOB_GOLDBAKER_REP,
 		JOB_UIU_REP,
-		JOB_MCD_REP
 	)
 
 // Research
@@ -68,7 +67,7 @@
 	alt_titles = list(JOB_MEDICAL_DOCTOR, "Physician")
 
 /datum/job/paramedic
-	alt_titles = list(JOB_PARAMEDIC, "Emergency Medical Technician")
+	alt_titles = list(JOB_MEDICAL_TECHNICIAN, "Emergency Medical Technician")
 
 /datum/job/chemist
 	alt_titles = list(JOB_CHEMIST, "Pharmacist")
@@ -82,13 +81,13 @@
 // Engineering
 
 /datum/job/senior_engineer
-	alt_titles = list(JOB_SENIOR_ENGINEER, "Senior Maintenance Technician", "Senior Electrician", "Senior Engine Technician")
+	alt_titles = list(JOB_SENIOR_TECHNICIAN, "Senior Maintenance Technician", "Senior Electrician", "Senior Engine Technician")
 
 /datum/job/engineer
-	alt_titles = list(JOB_ENGINEER, "Maintenance Technician", "Electrician", "Engine Technician")
+	alt_titles = list(JOB_TECHNICIAN, "Maintenance Technician", "Electrician", "Engine Technician")
 
 /datum/job/junior_engineer
-	alt_titles = list(JOB_JUNIOR_ENGINEER, "Junior Maintenance Technician", "Junior Electrician", "Junior Engine Technician")
+	alt_titles = list(JOB_JUNIOR_TECHNICIAN, "Junior Maintenance Technician", "Junior Electrician", "Junior Engine Technician")
 
 // Cargo
 /datum/job/logistics_officer
@@ -101,9 +100,6 @@
 
 /datum/job/botanist
 	alt_titles = list(JOB_BOTANIST, "Hydroponicist")
-
-/datum/job/curator
-	alt_titles = list(JOB_IT_TECHNICIAN, "Archivist")
 
 /datum/job/janitor
 	alt_titles = list(JOB_JANITOR, "Custodian", "Sanitation Technician")

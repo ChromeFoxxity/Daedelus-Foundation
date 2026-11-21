@@ -36,19 +36,15 @@
 	data["available_access"] = list()
 
 	var/list/all_access = list(
-		"Security" = list(ACCESS_SECURITY, ACCESS_SECURITY_LVL1, ACCESS_SECURITY_LVL2, ACCESS_SECURITY_LVL3, ACCESS_SECURITY_LVL4, ACCESS_SECURITY_LVL5),
-		"Command" = list(ACCESS_ADMIN, ACCESS_ADMIN_LVL1, ACCESS_ADMIN_LVL2, ACCESS_ADMIN_LVL3, ACCESS_ADMIN_LVL4, ACCESS_ADMIN_LVL5),
-		"Science" = list(ACCESS_SCIENCE, ACCESS_SCIENCE_LVL1, ACCESS_SCIENCE_LVL2, ACCESS_SCIENCE_LVL3, ACCESS_SCIENCE_LVL4, ACCESS_SCIENCE_LVL5),
-		"Medical" = list(ACCESS_MEDICAL, ACCESS_MEDICAL_LVL1, ACCESS_MEDICAL_LVL2, ACCESS_MEDICAL_LVL3, ACCESS_MEDICAL_LVL4, ACCESS_MEDICAL_LVL5),
-		"Engineering" = list(ACCESS_ENGINEERING, ACCESS_ENGINEERING_LVL1, ACCESS_ENGINEERING_LVL2, ACCESS_ENGINEERING_LVL3, ACCESS_ENGINEERING_LVL4, ACCESS_ENGINEERING_LVL5),
-		"Logistics" = list(ACCESS_LOGISTICS, ACCESS_LOGISTICS_LVL1, ACCESS_LOGISTICS_LVL2, ACCESS_LOGISTICS_LVL3, ACCESS_LOGISTICS_LVL4, ACCESS_LOGISTICS_LVL5),
-		"Service" = list(ACCESS_SERVICE),
+		"Security" = list(ACCESS_SECURITY_LVL1, ACCESS_SECURITY_LVL2, ACCESS_SECURITY_LVL3, ACCESS_SECURITY_LVL4, ACCESS_SECURITY_LVL5),
+		"Command" = list(ACCESS_ADMIN_LVL1, ACCESS_ADMIN_LVL2, ACCESS_ADMIN_LVL3, ACCESS_ADMIN_LVL4, ACCESS_ADMIN_LVL5),
+		"Science" = list(ACCESS_SCIENCE_LVL1, ACCESS_SCIENCE_LVL2, ACCESS_SCIENCE_LVL3, ACCESS_SCIENCE_LVL4, ACCESS_SCIENCE_LVL5),
+		"Medical" = list(ACCESS_MEDICAL_LVL1, ACCESS_MEDICAL_LVL2, ACCESS_MEDICAL_LVL3, ACCESS_MEDICAL_LVL4, ACCESS_MEDICAL_LVL5),
+		"Engineering" = list(ACCESS_ENGINEERING_LVL1, ACCESS_ENGINEERING_LVL2, ACCESS_ENGINEERING_LVL3, ACCESS_ENGINEERING_LVL4, ACCESS_ENGINEERING_LVL5),
+		"Logistics" = list(ACCESS_LOGISTICS_LVL1, ACCESS_LOGISTICS_LVL2, ACCESS_LOGISTICS_LVL3, ACCESS_LOGISTICS_LVL4),
+		"Service" = list(ACCESS_SERVICE_LVL1, ACCESS_SERVICE_LVL2, ACCESS_SERVICE_LVL3, ACCESS_SERVICE_LVL4, ACCESS_SERVICE_LVL5),
 		"D-Class" = list(ACCESS_DCLASS, ACCESS_DCLASS_MINING, ACCESS_DCLASS_BOTANY, ACCESS_DCLASS_JANITORIAL, ACCESS_DCLASS_KITCHEN),
-		"SCP-LCZ" = list(ACCESS_LCZ),
-		"SCP-HCZ" = list(ACCESS_HCZ),
-		"SCP-EZ" = list(ACCESS_EZ),
-		"MTF" = list(ACCESS_MTF),
-		"Containment" = list(ACCESS_CONTAINMENT_SCP_173, ACCESS_CONTAINMENT_SCP_049, ACCESS_CONTAINMENT_SCP_106, ACCESS_CONTAINMENT_SCP_096),
+		"Central" = list(ACCESS_MTF, ACCESS_MTF_LEADER, ACCESS_CENTRAL, ACCESS_CENTRAL_HR, ACCESS_ISD, ACCESS_O5),
 	)
 
 	for(var/category in all_access)
@@ -68,80 +64,74 @@
 
 /obj/machinery/id_card_printer/proc/get_access_name(access_num)
 	switch(access_num)
-		if(ACCESS_SECURITY)
-			return "Security"
 		if(ACCESS_SECURITY_LVL1)
-			return "Security L1"
+			return "Security Level 1"
 		if(ACCESS_SECURITY_LVL2)
-			return "Security L2"
+			return "Security Level 2"
 		if(ACCESS_SECURITY_LVL3)
-			return "Security L3"
+			return "Security Level 3"
 		if(ACCESS_SECURITY_LVL4)
-			return "Security L4"
+			return "Security Level 4"
 		if(ACCESS_SECURITY_LVL5)
-			return "Security L5"
-		if(ACCESS_ADMIN)
-			return "O5 Admin"
+			return "Security Level 5"
 		if(ACCESS_ADMIN_LVL1)
-			return "Admin L1"
+			return "Admin Level 1"
 		if(ACCESS_ADMIN_LVL2)
-			return "Admin L2"
+			return "Admin Level 2"
 		if(ACCESS_ADMIN_LVL3)
-			return "Admin L3"
+			return "Admin Level 3"
 		if(ACCESS_ADMIN_LVL4)
-			return "Admin L4"
+			return "Admin Level 4"
 		if(ACCESS_ADMIN_LVL5)
-			return "Admin L5"
-		if(ACCESS_SCIENCE)
-			return "Science"
+			return "Admin Level 5"
 		if(ACCESS_SCIENCE_LVL1)
-			return "Science L1"
+			return "Science Level 1"
 		if(ACCESS_SCIENCE_LVL2)
-			return "Science L2"
+			return "Science Level 2"
 		if(ACCESS_SCIENCE_LVL3)
-			return "Science L3"
+			return "Science Level 3"
 		if(ACCESS_SCIENCE_LVL4)
-			return "Science L4"
+			return "Science Level 4"
 		if(ACCESS_SCIENCE_LVL5)
-			return "Science L5"
-		if(ACCESS_MEDICAL)
-			return "Medical"
+			return "Science Level 5"
 		if(ACCESS_MEDICAL_LVL1)
-			return "Medical L1"
+			return "Medical Level 1"
 		if(ACCESS_MEDICAL_LVL2)
-			return "Medical L2"
+			return "Medical Level 2"
 		if(ACCESS_MEDICAL_LVL3)
-			return "Medical L3"
+			return "Medical Level 3"
 		if(ACCESS_MEDICAL_LVL4)
-			return "Medical L4"
+			return "Medical Level 4"
 		if(ACCESS_MEDICAL_LVL5)
-			return "Medical L5"
-		if(ACCESS_ENGINEERING)
-			return "Engineering"
+			return "Medical Level 5"
 		if(ACCESS_ENGINEERING_LVL1)
-			return "Engineering L1"
+			return "Engineering Level 1"
 		if(ACCESS_ENGINEERING_LVL2)
-			return "Engineering L2"
+			return "Engineering Level 2"
 		if(ACCESS_ENGINEERING_LVL3)
-			return "Engineering L3"
+			return "Engineering Level 3"
 		if(ACCESS_ENGINEERING_LVL4)
-			return "Engineering L4"
+			return "Engineering Level 4"
 		if(ACCESS_ENGINEERING_LVL5)
-			return "Engineering L5"
-		if(ACCESS_LOGISTICS)
-			return "Logistics"
+			return "Engineering Level 5"
 		if(ACCESS_LOGISTICS_LVL1)
-			return "Logistics L1"
+			return "Logistics Level 1"
 		if(ACCESS_LOGISTICS_LVL2)
-			return "Logistics L2"
+			return "Logistics Level 2"
 		if(ACCESS_LOGISTICS_LVL3)
-			return "Logistics L3"
+			return "Logistics Level 3"
 		if(ACCESS_LOGISTICS_LVL4)
-			return "Logistics L4"
-		if(ACCESS_LOGISTICS_LVL5)
-			return "Logistics L5"
-		if(ACCESS_SERVICE)
-			return "Service"
+			return "Logistics Level 4"
+		if(ACCESS_SERVICE_LVL1)
+			return "Service Level 1"
+		if(ACCESS_SERVICE_LVL2)
+			return "Service Level 2"
+		if(ACCESS_SERVICE_LVL3)
+			return "Service Level 3"
+		if(ACCESS_SERVICE_LVL4)
+			return "Service Level 4"
+		if(ACCESS_SERVICE_LVL5)
+			return "Service Level 5"
 		if(ACCESS_DCLASS)
 			return "D-Class"
 		if(ACCESS_DCLASS_MINING)
@@ -152,22 +142,18 @@
 			return "D-Class Janitorial"
 		if(ACCESS_DCLASS_KITCHEN)
 			return "D-Class Kitchen"
-		if(ACCESS_LCZ)
-			return "LCZ"
-		if(ACCESS_HCZ)
-			return "HCZ"
-		if(ACCESS_EZ)
-			return "EZ"
 		if(ACCESS_MTF)
 			return "MTF"
-		if(ACCESS_CONTAINMENT_SCP_173)
-			return "SCP-173"
-		if(ACCESS_CONTAINMENT_SCP_049)
-			return "SCP-049"
-		if(ACCESS_CONTAINMENT_SCP_106)
-			return "SCP-106"
-		if(ACCESS_CONTAINMENT_SCP_096)
-			return "SCP-096"
+		if(ACCESS_MTF_LEADER)
+			return "MTF Leader"
+		if(ACCESS_CENTRAL)
+			return "Central Office"
+		if(ACCESS_CENTRAL_HR)
+			return "Central Admin"
+		if(ACCESS_ISD)
+			return "Internal Security"
+		if(ACCESS_O5)
+			return "REDACTED"
 		else
 			return "Clearance #[access_num]"
 
@@ -182,7 +168,7 @@
 		return
 
 	var/obj/item/card/id/admin_card = H.get_idcard(TRUE)
-	if(!(ACCESS_ADMIN in admin_card.access))
+	if(!(ACCESS_ADMIN_LVL1 in admin_card.access))
 		to_chat(H, span_warning("You need Administrator access to modify cards."))
 		return
 

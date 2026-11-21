@@ -79,7 +79,7 @@
 // Trainee Doctor
 
 /datum/job/trainee_doctor
-	title = JOB_TRAINEE_DOCTOR
+	title = JOB_MEDICAL_STUDENT
 	description = "Save lives, run around the station looking for victims, \
 		scan everyone in sight"
 	department_head = list(JOB_MEDICAL_DIRECTOR)

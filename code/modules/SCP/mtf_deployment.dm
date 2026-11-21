@@ -86,7 +86,7 @@
 			if(!istype(H))
 				return
 			var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-			if(!id_card || !(ACCESS_ADMIN in id_card.access))
+			if(!id_card || !(ACCESS_ADMIN_LVL1 in id_card.access))
 				to_chat(H, span_warning("Requires Command access to authorize MTF deployment."))
 				return
 			if(world.time < deployment_cooldown)
@@ -106,7 +106,7 @@
 			if(!istype(H))
 				return
 			var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-			if(!id_card || !(ACCESS_ADMIN in id_card.access))
+			if(!id_card || !(ACCESS_ADMIN_LVL1 in id_card.access))
 				to_chat(H, span_warning("Requires Command access to authorize MTF reinforcement."))
 				return
 			if(world.time < reinforce_cooldown)
@@ -133,7 +133,7 @@
 	var/mob/living/carbon/human/H = user
 
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_ADMIN in id_card.access))
+	if(!id_card || !(ACCESS_ADMIN_LVL1 in id_card.access))
 		to_chat(H, span_warning("Requires Command access to authorize MTF deployment."))
 		return
 
@@ -340,15 +340,15 @@
 		id_card.registered_name = H.real_name
 		id_card.assignment = is_commander ? "MTF Commander" : "MTF Operative"
 		id_card.access = list(
-			ACCESS_SECURITY, ACCESS_SECURITY_LVL1, ACCESS_SECURITY_LVL2, ACCESS_SECURITY_LVL3, ACCESS_SECURITY_LVL4, ACCESS_SECURITY_LVL5,
-			ACCESS_SCIENCE, ACCESS_MEDICAL, ACCESS_ADMIN, ACCESS_DCLASS,
+			ACCESS_SECURITY_LVL1, ACCESS_SECURITY_LVL1, ACCESS_SECURITY_LVL2, ACCESS_SECURITY_LVL3, ACCESS_SECURITY_LVL4, ACCESS_SECURITY_LVL5,
+			ACCESS_SCIENCE_LVL1, ACCESS_MEDICAL_LVL1, ACCESS_ADMIN_LVL1, ACCESS_DCLASS,
 		)
 	else
 		id_card = new /obj/item/card/id/advanced()
 		id_card.registered_name = H.real_name
 		id_card.assignment = is_commander ? "MTF Commander" : "MTF Operative"
 		id_card.access = list(
-			ACCESS_SECURITY, ACCESS_SECURITY_LVL1, ACCESS_SECURITY_LVL2, ACCESS_SECURITY_LVL3, ACCESS_SECURITY_LVL4, ACCESS_SECURITY_LVL5,
-			ACCESS_SCIENCE, ACCESS_MEDICAL, ACCESS_ADMIN, ACCESS_DCLASS,
+			ACCESS_SECURITY_LVL1, ACCESS_SECURITY_LVL1, ACCESS_SECURITY_LVL2, ACCESS_SECURITY_LVL3, ACCESS_SECURITY_LVL4, ACCESS_SECURITY_LVL5,
+			ACCESS_SCIENCE_LVL1, ACCESS_MEDICAL_LVL1, ACCESS_ADMIN_LVL1, ACCESS_DCLASS,
 		)
 		H.equip_to_slot_or_del(id_card, ITEM_SLOT_ID)

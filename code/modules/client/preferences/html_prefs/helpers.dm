@@ -16,49 +16,80 @@
 				if("administrative")
 					jobs += list(
 						JOB_SITE_DIRECTOR,
-						JOB_HUMAN_RESOURCES_DIRECTOR,
 						JOB_ETHICS_COMMITTEE_LIAISON,
-						JOB_COMMUNICATIONS_DIRECTOR,
+						JOB_INTERNAL_TRIBUNAL_DEPARTMENT_OFFICER,
+						JOB_INTAKE_SPECIALIST,
+						JOB_COMMUNICATIONS_OFFICER,
 					)
 				if("security")
 					jobs += list(
-						JOB_GUARD_COMMANDER,
-						JOB_EZ_ZONE_SUPERVISOR, JOB_SENIOR_EZ_GUARD, JOB_EZ_GUARD, JOB_JUNIOR_EZ_GUARD,
-						JOB_LCZ_ZONE_JUNIOR_LIEUTENANT, JOB_SENIOR_LCZ_GUARD, JOB_LCZ_GUARD, JOB_JUNIOR_LCZ_GUARD,
-						JOB_HCZ_ZONE_SENIOR_LIEUTENANT, JOB_SENIOR_HCZ_GUARD, JOB_HCZ_GUARD, JOB_JUNIOR_HCZ_GUARD,
-						JOB_INVESTIGATIONS_AGENT, JOB_RAISA_AGENT,
+						JOB_SECURITY_CAPTAIN,
+						JOB_SECURITY_LIEUTENANT,
+						JOB_SECURITY_SERGEANT,
+						JOB_SECURITY_MEDIC,
+						JOB_SECURITY_GUARD,
+						JOB_SECURITY_CADET,
+					)
+				if("tactical")
+					jobs += list(
+						JOB_TRT_COMMANDER,
+						JOB_TRT_SERGEANT,
+						JOB_TRT_OPERATOR,
+						JOB_TRT_CADET,
 					)
 				if("research")
 					jobs += list(
-						JOB_RESEARCH_DIRECTOR,
-						JOB_ASSISTANT_RESEARCH_DIRECTOR,
-						JOB_SENIOR_RESEARCHER, JOB_RESEARCHER, JOB_JUNIOR_RESEARCHER,
+						JOB_SCIENCE_DIRECTOR,
+						JOB_ASSISTANT_SCIENCE_DIRECTOR,
+						JOB_SENIOR_ROBOTICIST,
+						JOB_SENIOR_RESEARCHER,
+						JOB_ROBOTICIST,
+						JOB_RESEARCHER,
+						JOB_JUNIOR_RESEARCHER,
 					)
 				if("medical")
 					jobs += list(
 						JOB_MEDICAL_DIRECTOR,
 						JOB_ASSISTANT_MEDICAL_DIRECTOR,
-						JOB_MEDICAL_DOCTOR, JOB_SURGEON, JOB_PARAMEDIC,
-						JOB_CHEMIST, JOB_TRAINEE_DOCTOR, JOB_VIROLOGIST, JOB_PSYCHOLOGIST,
+						JOB_SENIOR_DOCTOR,
+						JOB_MEDICAL_DOCTOR,
+						JOB_MEDICAL_TECHNICIAN,
+						JOB_PSYCHOLOGIST,
+						JOB_MEDICAL_STUDENT,
 					)
 				if("engineering")
 					jobs += list(
 						JOB_ENGINEERING_DIRECTOR,
 						JOB_ASSISTANT_ENGINEERING_DIRECTOR,
-						JOB_CONTAINMENT_ENGINEER, JOB_SENIOR_ENGINEER, JOB_ENGINEER, JOB_JUNIOR_ENGINEER,
-						JOB_ATMOSPHERIC_TECHNICIAN, JOB_IT_TECHNICIAN,
-						JOB_LOGISTICS_OFFICER, JOB_LOGISTICS_TECHNICIAN,
+						JOB_CONTAINMENT_ENGINEER,
+						JOB_SENIOR_TECHNICIAN,
+						JOB_TECHNICIAN,
+						JOB_JUNIOR_TECHNICIAN,
 					)
-				if("intelligence")
+				if("service")
 					jobs += list(
-						JOB_INVESTIGATIONS_AGENT, JOB_RAISA_AGENT,
+						JOB_HUMAN_RESOURCES_OFFICER,
+						JOB_COOK,
+						JOB_BARTENDER,
+						JOB_CHAPLAIN,
+						JOB_BOTANIST,
+						JOB_JANITOR,
 					)
+				if("logistics")
+					jobs += list(
+						JOB_LOGISTICS_OFFICER,
+						JOB_LOGISTICS_TECHNICIAN,
+					)
+				if("general")
+					jobs += list(
+						JOB_ASSISTANT,
+						JOB_DCLASS,
+					)
+
 		if("goc")
 			jobs += list(JOB_GOC_REP)
 		if("uiu")
 			jobs += list(JOB_UIU_REP)
-		if("mcd")
-			jobs += list(JOB_MCD_REP)
 		if("serpents_hand")
 			jobs += list()
 		if("chaos_insurgency")
@@ -78,70 +109,112 @@
 	switch(class_id)
 		if("administrative")
 			switch(job_title)
-				if(JOB_COMMUNICATIONS_DIRECTOR)
+				if(JOB_COMMUNICATIONS_OFFICER)
 					return 0
-				if(JOB_ETHICS_COMMITTEE_LIAISON)
+				if(JOB_INTAKE_SPECIALIST)
 					return 1
-				if(JOB_HUMAN_RESOURCES_DIRECTOR)
+				if(JOB_INTERNAL_TRIBUNAL_DEPARTMENT_OFFICER)
+					return 2
+				if(JOB_ETHICS_COMMITTEE_LIAISON)
 					return 3
 				if(JOB_SITE_DIRECTOR)
-					return 5
+					return 4
 		if("security")
 			switch(job_title)
-				if(JOB_JUNIOR_LCZ_GUARD, JOB_JUNIOR_HCZ_GUARD, JOB_JUNIOR_EZ_GUARD)
+				if(JOB_SECURITY_CADET)
 					return 0
-				if(JOB_LCZ_GUARD, JOB_HCZ_GUARD, JOB_EZ_GUARD)
+				if(JOB_SECURITY_GUARD)
 					return 1
-				if(JOB_SENIOR_LCZ_GUARD, JOB_SENIOR_HCZ_GUARD, JOB_SENIOR_EZ_GUARD)
+				if(JOB_SECURITY_MEDIC)
 					return 2
-				if(JOB_LCZ_ZONE_JUNIOR_LIEUTENANT, JOB_HCZ_ZONE_SENIOR_LIEUTENANT, JOB_EZ_ZONE_SUPERVISOR, JOB_INVESTIGATIONS_AGENT)
+				if(JOB_SECURITY_SERGEANT)
 					return 3
-				if(JOB_GUARD_COMMANDER, JOB_RAISA_AGENT)
+				if(JOB_SECURITY_LIEUTENANT)
 					return 4
+				if(JOB_SECURITY_CAPTAIN)
+					return 5
+		if("tactical")
+			switch(job_title)
+				if(JOB_TRT_CADET)
+					return 0
+				if(JOB_TRT_OPERATOR)
+					return 1
+				if(JOB_TRT_SERGEANT)
+					return 2
+				if(JOB_TRT_COMMANDER)
+					return 3
 		if("research")
 			switch(job_title)
 				if(JOB_JUNIOR_RESEARCHER)
 					return 0
 				if(JOB_RESEARCHER)
 					return 1
-				if(JOB_SENIOR_RESEARCHER)
+				if(JOB_ROBOTICIST)
 					return 2
-				if(JOB_ASSISTANT_RESEARCH_DIRECTOR)
+				if(JOB_SENIOR_RESEARCHER)
 					return 3
-				if(JOB_RESEARCH_DIRECTOR)
+				if(JOB_SENIOR_ROBOTICIST)
+					return 4
+				if(JOB_ASSISTANT_SCIENCE_DIRECTOR)
 					return 5
+				if(JOB_SCIENCE_DIRECTOR)
+					return 6
 		if("medical")
 			switch(job_title)
-				if(JOB_TRAINEE_DOCTOR)
+				if(JOB_MEDICAL_STUDENT)
 					return 0
-				if(JOB_CHEMIST, JOB_PSYCHOLOGIST)
+				if(JOB_PSYCHOLOGIST)
 					return 1
-				if(JOB_MEDICAL_DOCTOR, JOB_PARAMEDIC)
+				if(JOB_MEDICAL_TECHNICIAN)
 					return 2
-				if(JOB_SURGEON, JOB_VIROLOGIST)
+				if(JOB_MEDICAL_DOCTOR)
 					return 3
-				if(JOB_ASSISTANT_MEDICAL_DIRECTOR)
+				if(JOB_SENIOR_DOCTOR)
 					return 4
-				if(JOB_MEDICAL_DIRECTOR)
+				if(JOB_ASSISTANT_MEDICAL_DIRECTOR)
 					return 5
+				if(JOB_MEDICAL_DIRECTOR)
+					return 6
 		if("engineering")
 			switch(job_title)
-				if(JOB_JUNIOR_ENGINEER, JOB_LOGISTICS_TECHNICIAN)
+				if(JOB_JUNIOR_TECHNICIAN)
 					return 0
-				if(JOB_ENGINEER, JOB_ATMOSPHERIC_TECHNICIAN, JOB_IT_TECHNICIAN)
+				if(JOB_TECHNICIAN)
 					return 1
-				if(JOB_SENIOR_ENGINEER, JOB_CONTAINMENT_ENGINEER, JOB_LOGISTICS_OFFICER)
+				if(JOB_SENIOR_TECHNICIAN)
 					return 2
+				if(JOB_CONTAINMENT_ENGINEER)
+					return 3
 				if(JOB_ASSISTANT_ENGINEERING_DIRECTOR)
 					return 4
 				if(JOB_ENGINEERING_DIRECTOR)
 					return 5
-		if("intelligence")
+		if("service")
 			switch(job_title)
-				if(JOB_INVESTIGATIONS_AGENT)
+				if(JOB_JANITOR)
 					return 0
-				if(JOB_RAISA_AGENT)
+				if(JOB_BOTANIST)
+					return 1
+				if(JOB_CLOWN)
+					return 2
+				if(JOB_BARTENDER)
 					return 3
+				if(JOB_COOK)
+					return 4
+				if(JOB_HUMAN_RESOURCES_OFFICER)
+					return 5
+		if("logistics")
+			switch(job_title)
+				if(JOB_LOGISTICS_TECHNICIAN)
+					return 0
+				if(JOB_LOGISTICS_OFFICER)
+					return 1
+		if("general")
+			switch(job_title)
+				if(JOB_ASSISTANT)
+					return 0
+				if(JOB_DCLASS)
+					return 1
 	return 0
 
 /proc/get_job_description(job_title)

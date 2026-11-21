@@ -187,28 +187,30 @@ GLOBAL_LIST_INIT(ai_core_display_screens, sort_list(list(
 	return resolve_ai_icon_sync(input)
 
 GLOBAL_LIST_INIT(security_depts_prefs, sort_list(list(
-	SEC_DEPT_ENGINEERING,
-	SEC_DEPT_MEDICAL,
+	SEC_DEPT_ENTRANCE,
+	SEC_DEPT_LIGHT,
 	SEC_DEPT_NONE,
-	SEC_DEPT_SCIENCE,
-	SEC_DEPT_SUPPLY,
 )))
 
 	//Backpacks
 #define DBACKPACK "Department Backpack"
 #define DDUFFELBAG "Department Duffel Bag"
 #define DSATCHEL "Department Satchel"
+#define DMESSENGER "Department Messenger"
 #define GBACKPACK "Grey Backpack"
 #define GDUFFELBAG "Grey Duffel Bag"
 #define GSATCHEL "Grey Satchel"
+#define GMESSENGER "Grey Messenger"
 #define LSATCHEL "Leather Satchel"
 GLOBAL_LIST_INIT(backpacklist, list(
 	DBACKPACK,
 	DDUFFELBAG,
 	DSATCHEL,
+	DMESSENGER,
 	GBACKPACK,
 	GDUFFELBAG,
 	GSATCHEL,
+	GMESSENGER,
 	LSATCHEL,
 ))
 

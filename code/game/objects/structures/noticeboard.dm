@@ -146,7 +146,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/noticeboard, 32)
 /obj/structure/noticeboard/qm
 	name = "Quartermaster's Notice Board"
 	desc = "Important notices from the Quartermaster."
-	req_access = list(ACCESS_LOGISTICS_LVL5)
+	req_access = list(ACCESS_LOGISTICS_LVL4)
 
 /obj/structure/noticeboard/staff
 	name = "Staff Notice Board"

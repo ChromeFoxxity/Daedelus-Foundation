@@ -998,13 +998,13 @@ DEFINE_INTERACTABLE(/obj/machinery/airalarm)
 	name = "engine air alarm"
 	locked = FALSE
 	req_access = null
-	req_one_access = list(ACCESS_ENGINEERING_LVL3, ACCESS_ENGINEERING)
+	req_one_access = list(ACCESS_ENGINEERING_LVL3, ACCESS_ENGINEERING_LVL2)
 
 /obj/machinery/airalarm/mixingchamber
 	name = "chamber air alarm"
 	locked = FALSE
 	req_access = null
-	req_one_access = list(ACCESS_ENGINEERING_LVL3, ACCESS_SCIENCE)
+	req_one_access = list(ACCESS_ENGINEERING_LVL3, ACCESS_SCIENCE_LVL2)
 
 /obj/machinery/airalarm/all_access
 	name = "all-access air alarm"
@@ -1014,7 +1014,7 @@ DEFINE_INTERACTABLE(/obj/machinery/airalarm)
 	req_one_access = null
 
 /obj/machinery/airalarm/syndicate //general syndicate access
-	req_access = list(ACCESS_SYNDICATE)
+	req_access = list(ACCESS_CHAOS)
 
 /obj/machinery/airalarm/away //general away mission access
 	req_access = list(ACCESS_AWAY_GENERAL)

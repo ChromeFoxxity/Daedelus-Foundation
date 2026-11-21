@@ -20,7 +20,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	// circuit = /obj/item/circuitboard/cryopodcontrol
 	density = FALSE
 	interaction_flags_machine = INTERACT_MACHINE_OFFLINE
-	req_one_access = list(ACCESS_SECURITY) // Security can reclaim objects.
+	req_one_access = list(ACCESS_SECURITY_LVL2) // Security can reclaim objects.
 	var/mode = null
 
 	/// Used for logging people entering cryosleep and important items they are carrying.

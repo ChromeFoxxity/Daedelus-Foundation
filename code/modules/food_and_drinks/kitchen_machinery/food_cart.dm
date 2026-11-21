@@ -7,7 +7,7 @@
 	density = TRUE
 	anchored = FALSE
 	use_power = NO_POWER_USE
-	req_access = list(ACCESS_SERVICE)
+	req_access = list(ACCESS_SERVICE_LVL1)
 	flags_1 = NODECONSTRUCT_1
 	var/unpacked = FALSE
 	var/obj/machinery/appliance/cooker/griddle/cart_griddle

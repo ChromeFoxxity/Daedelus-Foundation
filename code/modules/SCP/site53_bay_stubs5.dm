@@ -575,12 +575,6 @@
 /obj/item/flashlight/upgraded
 	name = "Upgraded"
 
-/obj/item/folder
-	name = "SCP"
-
-/obj/item/folder
-	name = "SCP R&D"
-
 /obj/item/food/condiment/barbecue
 	name = "Condiment Barbecue"
 

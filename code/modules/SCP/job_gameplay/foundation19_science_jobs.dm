@@ -3,7 +3,7 @@
 	description = "Assist researchers with SCP testing, manage specimen collection kits, \
 		and handle sample delivery between containment chambers and the research lab. \
 		Work the SCP Testing Console and deliver research data to senior staff."
-	department_head = list(JOB_RESEARCH_DIRECTOR)
+	department_head = list(JOB_SCIENCE_DIRECTOR)
 	faction = FACTION_STATION
 	total_positions = 2
 	spawn_positions = 2
@@ -66,7 +66,7 @@
 	description = "Maintain laboratory equipment, prepare chemical samples for SCP testing, \
 		and ensure research stations are supplied and operational. Repair broken analyzers, \
 		calibrate SCP-914 for safe operation, and prepare containment sample kits."
-	department_head = list(JOB_RESEARCH_DIRECTOR)
+	department_head = list(JOB_SCIENCE_DIRECTOR)
 	faction = FACTION_STATION
 	total_positions = 2
 	spawn_positions = 2
@@ -129,7 +129,7 @@
 	description = "Study anomalous biological specimens and SCP organisms. Extract tissue samples, \
 		analyze anomalous genetics, and document biological properties of contained SCPs. \
 		Work with the Research Console to contribute xenobiology research points."
-	department_head = list(JOB_RESEARCH_DIRECTOR)
+	department_head = list(JOB_SCIENCE_DIRECTOR)
 	faction = FACTION_STATION
 	total_positions = 1
 	spawn_positions = 1
@@ -195,7 +195,7 @@
 	description = "Build and maintain Foundation robotics and automated containment equipment. \
 		Construct cybernetic implants for injured personnel, repair borgs, and develop \
 		automated containment systems to assist with SCP monitoring."
-	department_head = list(JOB_RESEARCH_DIRECTOR)
+	department_head = list(JOB_SCIENCE_DIRECTOR)
 	faction = FACTION_STATION
 	total_positions = 1
 	spawn_positions = 1
@@ -259,7 +259,7 @@
 	description = "Synthesize anomalous compounds for SCP research. Develop containment \
 		chemicals, analyze SCP-produced substances, and create specialized reagents for \
 		testing protocols. Work with SCP-914 to refine chemical samples."
-	department_head = list(JOB_RESEARCH_DIRECTOR)
+	department_head = list(JOB_SCIENCE_DIRECTOR)
 	faction = FACTION_STATION
 	total_positions = 1
 	spawn_positions = 1
@@ -322,7 +322,7 @@
 	description = "Recover and analyze anomalous artifacts. Document artifact origins, \
 		classify anomalous properties, and submit findings to the Research Console. \
 		Catalogue items recovered from containment operations and SCP-914 refinement."
-	department_head = list(JOB_RESEARCH_DIRECTOR)
+	department_head = list(JOB_SCIENCE_DIRECTOR)
 	faction = FACTION_STATION
 	total_positions = 1
 	spawn_positions = 1
@@ -386,7 +386,7 @@
 	description = "Conduct field research and SCP reconnaissance. Investigate reported anomalies, \
 		collect evidence from uncontained SCP sightings, and report findings back to the research team. \
 		Use the anomaly scanner and field kit to document and recover anomalous materials."
-	department_head = list(JOB_RESEARCH_DIRECTOR)
+	department_head = list(JOB_SCIENCE_DIRECTOR)
 	faction = FACTION_STATION
 	total_positions = 1
 	spawn_positions = 1

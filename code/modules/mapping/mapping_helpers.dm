@@ -203,13 +203,21 @@
 	else
 		airlock.locked = TRUE
 
-
 /obj/effect/mapping_helpers/airlock/unres
 	name = "airlock unresctricted side helper"
 	icon_state = "airlock_unres_helper"
 
 /obj/effect/mapping_helpers/airlock/unres/payload(obj/machinery/door/airlock/airlock)
 	airlock.unres_sides ^= dir
+	airlock.unres_latch = TRUE
+
+/obj/effect/mapping_helpers/airlock/unres/delayed
+	name = "airlock unrestricted side delayed helper"
+	icon_state = "airlock_unres_delayed_helper"
+
+/obj/effect/mapping_helpers/airlock/unres/delayed/payload(obj/machinery/door/airlock/airlock)
+	. = ..()
+	airlock.delayed_unres_open = TRUE
 
 /obj/effect/mapping_helpers/airlock/abandoned
 	name = "airlock abandoned helper"
@@ -240,6 +248,28 @@
 		log_mapping("[src] at [AREACOORD(src)] tried to autoname the [airlock] but it's already autonamed!")
 	else
 		airlock.autoname = TRUE
+
+//Used to turn off lights with lightswitch in areas.
+/obj/effect/mapping_helpers/turn_off_lights_with_lightswitch
+	name = "area turned off lights helper"
+	icon_state = "lights_off"
+
+/obj/effect/mapping_helpers/turn_off_lights_with_lightswitch/Initialize(mapload)
+	. = ..()
+	if(!mapload)
+		log_mapping("[src] spawned outside of mapload!")
+		return INITIALIZE_HINT_QDEL
+	return INITIALIZE_HINT_LATELOAD
+
+/obj/effect/mapping_helpers/turn_off_lights_with_lightswitch/LateInitialize()
+	var/area/needed_area = get_area(src)
+	if(!needed_area.lightswitch)
+		stack_trace("[src] at [AREACOORD(src)] [(needed_area.type)] tried to turn lights off but they are already off!")
+	var/obj/machinery/light_switch/light_switch = locate(/obj/machinery/light_switch) in needed_area
+	if(!light_switch)
+		CRASH("Trying to turn off lights with lightswitch in area without lightswitches. In [(needed_area.type)] to be precise.")
+	light_switch.set_lights(FALSE)
+	qdel(src)
 
 //needs to do its thing before spawn_rivers() is called
 INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
@@ -874,7 +904,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 	var/turf/open/floor/floor = get_turf(src)
 	floor.burn_tile()
 	qdel(src)
-
 
 /obj/effect/mapping_helpers/lightsout
 	name = "lights-out helper"

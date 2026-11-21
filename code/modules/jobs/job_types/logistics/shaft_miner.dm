@@ -1,7 +1,7 @@
 /datum/job/shaft_miner
 	title = JOB_PROSPECTOR
 	description = "Gather valuable resources for the station. Hit rocks with tools. Do trigonometry."
-	department_head = list(JOB_HUMAN_RESOURCES_DIRECTOR)
+	department_head = list(JOB_HUMAN_RESOURCES_OFFICER)
 	faction = FACTION_STATION
 	total_positions = 3
 	spawn_positions = 3

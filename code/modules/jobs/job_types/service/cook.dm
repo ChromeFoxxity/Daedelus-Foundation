@@ -3,7 +3,7 @@
 	description = "Serve food, cook meat, keep the crew fed. Prepare D-Class rations \
 		and load improved rations into the D-Class Ration Dispenser. Better food quality \
 		reduces D-Class unrest and riot risk."
-	department_head = list(JOB_HUMAN_RESOURCES_DIRECTOR)
+	department_head = list(JOB_HUMAN_RESOURCES_OFFICER)
 	faction = FACTION_STATION
 	total_positions = 2
 	spawn_positions = 1

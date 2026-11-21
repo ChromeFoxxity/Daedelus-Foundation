@@ -26,7 +26,7 @@
 	pass_flags = PASSMOB | PASSFLAPS
 	status_flags = (CANPUSH | CANSTUN)
 
-	maints_access_required = list(ACCESS_SCIENCE_LVL2, ACCESS_MEDICAL)
+	maints_access_required = list(ACCESS_SCIENCE_LVL2, ACCESS_MEDICAL_LVL1)
 	radio_key = /obj/item/encryptionkey/headset_med
 	radio_channel = RADIO_CHANNEL_MEDICAL
 	bot_type = MED_BOT

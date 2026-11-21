@@ -496,3 +496,53 @@
 	if(magnification)
 		visible_message(span_warning("[src] falls off of [magnification]'s head as it changes shape!"))
 		magnification.dropItemToGround(src)
+
+/obj/item/clothing/head/helmet/security
+	name = "\improper security helmet"
+	desc = "A reinforced security helmet featuring a distinctive yellow polycarbonate visor. Its heavy composite plating provides \
+		protection against blunt trauma, thrown objects, and close-quarters assaults. Designed for riot suppression, crowd control, and \
+		intervention during violent site disturbances."
+	icon = 'icons/obj/clothing/head/helmet.dmi'
+	icon_state = "guard_helmet"
+	toggle_message = "You pull the visor down"
+	alt_toggle_message = "You push the visor up"
+	can_toggle = 1
+	armor = list(BLUNT = 40, PUNCTURE = 25, SLASH = 40, LASER = 20, ENERGY = 15, BOMB = 10, BIO = 5, FIRE = 50, ACID = 50)
+	flags_inv = HIDEEARS|HIDEFACE|HIDESNOUT
+	strip_delay = 60
+	equip_delay_other = 40
+	actions_types = list(/datum/action/item_action/toggle)
+	visor_flags_inv = HIDEFACE|HIDESNOUT
+	toggle_cooldown = 0
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
+	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
+	dog_fashion = null
+	supports_variations_flags = CLOTHING_TESHARI_VARIATION | CLOTHING_VOX_VARIATION
+
+/obj/item/clothing/head/helmet/security/medic
+	name = "\improper security medic helmet"
+	desc = "A reinforced security helmet featuring a unique white polycarbonate visor. Its heavy composite plating provides \
+		protection against blunt trauma, thrown objects, and close-quarters assaults. Designed for riot suppression, crowd control, and \
+		intervention during violent site disturbances."
+	icon_state = "med_guard_helmet"
+	armor = list(BLUNT = 40, PUNCTURE = 25, SLASH = 40, LASER = 30, ENERGY = 25, BOMB = 10, BIO = 20, FIRE = 55, ACID = 55)
+
+/obj/item/clothing/head/helmet/security/lieutenant
+	name = "\improper medium-plated security helmet"
+	desc = "A reinforced security helmet featuring a distinctive yellow polycarbonate visor. Its heavy composite plating provides \
+		protection against blunt trauma, thrown objects, and close-quarters assaults. Designed for riot suppression, crowd control, and \
+		intervention during violent site disturbances, this one has an added silver stripe down the middle denoting the rank of Lieutenant."
+	icon_state = "lt_guard_helmet"
+	armor = list(BLUNT = 45, PUNCTURE = 30, SLASH = 45, LASER = 30, ENERGY = 35, BOMB = 10, BIO = 20, FIRE = 55, ACID = 55)
+	strip_delay = 70
+	equip_delay_other = 50
+
+/obj/item/clothing/head/helmet/security/captain
+	name = "\improper heavy-plated security helmet"
+	desc = "A reinforced security helmet featuring a distinctive yellow polycarbonate visor. Its heavy composite plating provides \
+		protection against blunt trauma, thrown objects, and close-quarters assaults. Designed for riot suppression, crowd control, and \
+		intervention during violent site disturbances, this one has an added golden emblem on the front denoting the rank of Captain."
+	icon_state = "cpt_guard_helmet"
+	armor = list(BLUNT = 55, PUNCTURE = 35, SLASH = 50, LASER = 40, ENERGY = 40, BOMB = 15, BIO = 30, FIRE = 60, ACID = 60)
+	strip_delay = 80
+	equip_delay_other = 60

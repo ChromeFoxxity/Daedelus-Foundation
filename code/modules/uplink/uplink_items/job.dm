@@ -16,7 +16,6 @@
 			Be warned, that spirits are often capricious or just little assholes. To use, simply speak your question aloud, then begin shaking."
 	item = /obj/item/toy/eightball/haunted
 	cost = 2
-	restricted_roles = list(JOB_IT_TECHNICIAN)
 	limited_stock = 1 //please don't spam deadchat
 
 /datum/uplink_item/role_restricted/bureaucratic_error_remote
@@ -25,7 +24,7 @@
 	cost = 2
 	limited_stock = 1
 	item = /obj/item/devices/bureaucratic_error_remote
-	restricted_roles = list(JOB_HUMAN_RESOURCES_DIRECTOR, JOB_LOGISTICS_OFFICER)
+	restricted_roles = list(JOB_HUMAN_RESOURCES_OFFICER, JOB_LOGISTICS_OFFICER)
 
 /datum/uplink_item/role_restricted/clumsinessinjector //clown ops can buy this too, but it's in the pointless badassery section for them
 	name = "Clumsiness Injector"
@@ -114,7 +113,7 @@
 	progression_minimum = 15 MINUTES
 	item = /obj/item/storage/toolbox/emergency/turret
 	cost = 11
-	restricted_roles = list(JOB_ENGINEER)
+	restricted_roles = list(JOB_TECHNICIAN)
 
 /datum/uplink_item/role_restricted/gorillacubes
 	name = "Box of Gorilla Cubes"

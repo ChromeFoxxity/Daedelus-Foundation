@@ -145,7 +145,7 @@
 
 /mob/living/simple_animal/drone/snowflake/bardrone/Initialize(mapload)
 	. = ..()
-	access_card.add_access(list(ACCESS_CENT_BAR))
+	access_card.add_access(list(ACCESS_CENTRAL))
 	become_area_sensitive(ROUNDSTART_TRAIT)
 	RegisterSignal(src, COMSIG_ENTER_AREA, PROC_REF(check_barstaff_godmode))
 	check_barstaff_godmode()
@@ -166,7 +166,7 @@
 	access_card = new /obj/item/card/id/advanced/simple_bot(src)
 
 	var/datum/id_trim/job/cap_trim = SSid_access.trim_singletons_by_path[/datum/id_trim/job/site_director]
-	access_card.add_access(cap_trim.access + cap_trim.wildcard_access + list(ACCESS_CENT_BAR))
+	access_card.add_access(cap_trim.access + cap_trim.wildcard_access + list(ACCESS_CENTRAL))
 
 	ADD_TRAIT(access_card, TRAIT_NODROP, ABSTRACT_ITEM_TRAIT)
 	become_area_sensitive(ROUNDSTART_TRAIT)
@@ -222,7 +222,7 @@
 			return TRUE
 
 	var/obj/item/card/id/ID = user.get_idcard(FALSE)
-	if(ID && (ACCESS_CENT_BAR in ID.access))
+	if(ID && (ACCESS_CENTRAL in ID.access))
 		return TRUE
 
 /mob/living/simple_animal/hostile/bear/fightpit

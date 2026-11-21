@@ -123,7 +123,7 @@
 		progs_to_store += new /datum/computer_file/program/scp_intercom(src)
 
 	if(disk_flags & DISK_SCP_SECDIR)
-		progs_to_store += new /datum/computer_file/program/scp_security_director(src)
+		progs_to_store += new /datum/computer_file/program/scp_security_captain(src)
 
 	if(disk_flags & DISK_SCP_O5)
 		progs_to_store += new /datum/computer_file/program/scp_o5_terminal(src)

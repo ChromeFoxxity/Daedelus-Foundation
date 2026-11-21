@@ -63,7 +63,7 @@
 /obj/machinery/computer/communications/syndicate
 	icon_screen = "commsyndie"
 	circuit = /obj/item/circuitboard/computer/communications/syndicate
-	req_access = list(ACCESS_SYNDICATE_LEADER)
+	req_access = list(ACCESS_CHAOS_LEADER)
 	light_color = LIGHT_COLOR_BLOOD_MAGIC
 
 	syndicate = TRUE
@@ -236,15 +236,15 @@
 			var/emagged = obj_flags & EMAGGED
 			if (emagged)
 				message_syndicate(message, usr)
-				to_chat(usr, span_danger("SYSERR @l(19833)of(transmit.dm): !@$ MESSAGE TRANSMITTED TO SYNDICATE COMMAND."))
+				to_chat(usr, span_danger("SYSERR @l(19833)of(transmit.dm): !@$ MESSAGE TRANSMITTED TO CHAOS INSURGENCY COMMAND."))
 			else if(syndicate)
 				message_syndicate(message, usr)
-				to_chat(usr, span_danger("Message transmitted to Syndicate Command."))
+				to_chat(usr, span_danger("Message transmitted to Chaos Insurgency Command."))
 			else
 				message_centcom(message, usr)
-				to_chat(usr, span_notice("Message transmitted to Central Command."))
+				to_chat(usr, span_notice("Message transmitted to Central Office."))
 
-			var/associates = (emagged || syndicate) ? "the Syndicate": "CentCom"
+			var/associates = (emagged || syndicate) ? "the Syndicate": "Central Office"
 			usr.log_talk(message, LOG_SAY, tag = "message to [associates]")
 			deadchat_broadcast(" has messaged [associates], \"[message]\" at [span_name("[get_area_name(usr, TRUE)]")].", span_name("[usr.real_name]"), usr, message_type = DEADCHAT_ANNOUNCEMENT)
 			COOLDOWN_START(src, important_action_cooldown, IMPORTANT_ACTION_COOLDOWN)

@@ -482,8 +482,6 @@ SUBSYSTEM_DEF(research_laboratory)
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
 	if(!id_card)
 		return FALSE
-	if(ACCESS_SCIENCE in id_card.access)
-		return TRUE
 	if(ACCESS_SCIENCE_LVL1 in id_card.access)
 		return TRUE
 	if(ACCESS_SCIENCE_LVL2 in id_card.access)
@@ -636,7 +634,7 @@ SUBSYSTEM_DEF(research_laboratory)
 		var/mob/living/carbon/human/H = user
 		if(H.wear_id)
 			var/obj/item/card/id/id_card = H.wear_id.GetID()
-			if(id_card && (ACCESS_SCIENCE in id_card.access))
+			if(id_card && (ACCESS_SCIENCE_LVL1 in id_card.access))
 				data["has_access"] = TRUE
 
 	if(SSscp_research && SSscp_research.manager)
@@ -1083,7 +1081,7 @@ SUBSYSTEM_DEF(research_laboratory)
 	program_icon = "flask"
 	usage_flags = PROGRAM_ALL
 	available_on_ntnet = FALSE
-	required_access = list(ACCESS_SCIENCE)
+	required_access = list(ACCESS_SCIENCE_LVL1)
 
 /datum/computer_file/program/research_laboratory/ui_data(mob/user)
 	var/list/data = get_header_data()

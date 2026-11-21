@@ -3,7 +3,7 @@
 	description = "Conduct psychological evaluations, track SCP exposure effects on personnel, \
 		and manage amnestic recommendations. Use the Psychology Evaluation Console to assess sanity, \
 		record SCP exposure, conduct counseling sessions, and recommend treatment for affected staff."
-	department_head = list(JOB_HUMAN_RESOURCES_DIRECTOR)
+	department_head = list(JOB_HUMAN_RESOURCES_OFFICER)
 	faction = FACTION_STATION
 	total_positions = 1
 	spawn_positions = 1

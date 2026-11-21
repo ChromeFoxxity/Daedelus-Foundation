@@ -30,7 +30,7 @@
 	payment_department = ACCOUNT_SEC
 	light_color = COLOR_MOSTLY_PURE_RED
 
-	discount_access = ACCESS_SECURITY
+	discount_access = ACCESS_SECURITY_LVL1
 
 /obj/item/vending_refill/wardrobe/sec_wardrobe
 	machine_name = "SecDrobe"
@@ -68,7 +68,7 @@
 	refill_canister = /obj/item/vending_refill/wardrobe/medi_wardrobe
 	payment_department = ACCOUNT_MED
 
-	discount_access = ACCESS_MEDICAL
+	discount_access = ACCESS_MEDICAL_LVL1
 
 /obj/item/vending_refill/wardrobe/medi_wardrobe
 	machine_name = "MediDrobe"
@@ -101,7 +101,7 @@
 	payment_department = ACCOUNT_ENG
 	light_color = COLOR_VIVID_YELLOW
 
-	discount_access = ACCESS_ENGINEERING
+	discount_access = ACCESS_ENGINEERING_LVL1
 /obj/item/vending_refill/wardrobe/engi_wardrobe
 	machine_name = "EngiDrobe"
 
@@ -209,7 +209,7 @@
 	refill_canister = /obj/item/vending_refill/wardrobe/science_wardrobe
 	payment_department = ACCOUNT_STATION_MASTER
 
-	discount_access = ACCESS_SCIENCE
+	discount_access = ACCESS_SCIENCE_LVL1
 /obj/item/vending_refill/wardrobe/science_wardrobe
 	machine_name = "SciDrobe"
 
@@ -234,7 +234,7 @@
 	payment_department = ACCOUNT_STATION_MASTER
 	light_color = LIGHT_COLOR_ELECTRIC_GREEN
 
-	discount_access = ACCESS_SERVICE
+	discount_access = ACCESS_SERVICE_LVL1
 
 /obj/item/vending_refill/wardrobe/hydro_wardrobe
 	machine_name = "HyDrobe"
@@ -264,7 +264,7 @@
 	refill_canister = /obj/item/vending_refill/wardrobe/curator_wardrobe
 	payment_department = ACCOUNT_STATION_MASTER
 
-	discount_access = ACCESS_SERVICE
+	discount_access = ACCESS_SERVICE_LVL1
 
 /obj/item/vending_refill/wardrobe/curator_wardrobe
 	machine_name = "CuraDrobe"
@@ -299,7 +299,7 @@
 	payment_department = ACCOUNT_STATION_MASTER
 	extra_price = PAYCHECK_HARD
 
-	discount_access = ACCESS_SERVICE
+	discount_access = ACCESS_SERVICE_LVL1
 
 /obj/item/vending_refill/wardrobe/bar_wardrobe
 	machine_name = "BarDrobe"
@@ -328,7 +328,7 @@
 	refill_canister = /obj/item/vending_refill/wardrobe/chef_wardrobe
 	payment_department = ACCOUNT_STATION_MASTER
 
-	discount_access = ACCESS_SERVICE
+	discount_access = ACCESS_SERVICE_LVL1
 
 /obj/item/vending_refill/wardrobe/chef_wardrobe
 	machine_name = "ChefDrobe"
@@ -363,7 +363,7 @@
 	payment_department = ACCOUNT_STATION_MASTER
 	light_color = COLOR_STRONG_MAGENTA
 
-	discount_access = ACCESS_SERVICE
+	discount_access = ACCESS_SERVICE_LVL1
 
 /obj/item/vending_refill/wardrobe/jani_wardrobe
 	machine_name = "JaniDrobe"
@@ -398,7 +398,7 @@
 	refill_canister = /obj/item/vending_refill/wardrobe/law_wardrobe
 	payment_department = ACCOUNT_STATION_MASTER
 
-	discount_access = ACCESS_SECURITY
+	discount_access = ACCESS_SECURITY_LVL1
 
 /obj/item/vending_refill/wardrobe/law_wardrobe
 	machine_name = "LawDrobe"
@@ -436,7 +436,7 @@
 	refill_canister = /obj/item/vending_refill/wardrobe/chap_wardrobe
 	payment_department = ACCOUNT_STATION_MASTER
 
-	discount_access = ACCESS_SERVICE
+	discount_access = ACCESS_SERVICE_LVL1
 
 /obj/item/vending_refill/wardrobe/chap_wardrobe
 	machine_name = "DeusVend"
@@ -487,7 +487,7 @@
 	refill_canister = /obj/item/vending_refill/wardrobe/gene_wardrobe
 	payment_department = ACCOUNT_STATION_MASTER
 
-	discount_access = ACCESS_SCIENCE
+	discount_access = ACCESS_SCIENCE_LVL1
 
 /obj/item/vending_refill/wardrobe/gene_wardrobe
 	machine_name = "GeneDrobe"

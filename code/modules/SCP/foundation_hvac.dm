@@ -83,7 +83,7 @@
 		return
 	var/mob/living/carbon/human/H = ui.user
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_ENGINEERING in id_card.access))
+	if(!id_card || !(ACCESS_ENGINEERING_LVL1 in id_card.access))
 		to_chat(H, span_warning("Engineering access required."))
 		return
 

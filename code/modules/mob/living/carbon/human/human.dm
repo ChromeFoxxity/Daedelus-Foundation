@@ -210,7 +210,7 @@
 				to_chat(H, span_warning("ERROR: Invalid access"))
 				return
 			var/list/access = H.wear_id.GetAccess()
-			if(!(ACCESS_MEDICAL in access))
+			if(!(ACCESS_MEDICAL_LVL1 in access))
 				to_chat(H, span_warning("ERROR: Invalid access"))
 				return
 			if(href_list["p_stat"])
@@ -256,7 +256,7 @@
 			else //Implant and standard glasses check access
 				if(H.wear_id)
 					var/list/access = H.wear_id.GetAccess()
-					if(ACCESS_SECURITY in access)
+					if(ACCESS_SECURITY_LVL1 in access)
 						allowed_access = H.get_authentification_name()
 
 			if(!allowed_access)
@@ -467,7 +467,7 @@
 
 	//Check for weapons
 	if( (judgement_criteria & JUDGE_WEAPONCHECK) && weaponcheck)
-		if(!idcard || !(ACCESS_SECURITY in idcard.access))
+		if(!idcard || !(ACCESS_SECURITY_LVL1 in idcard.access))
 			for(var/obj/item/I in held_items) //if they're holding a gun
 				if(weaponcheck.Invoke(I))
 					threatcount += 4

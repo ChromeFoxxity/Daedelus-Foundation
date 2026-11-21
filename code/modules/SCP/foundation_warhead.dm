@@ -53,7 +53,7 @@
 			if(!id_card)
 				to_chat(H, span_warning("ID card required."))
 				return
-			if(!(ACCESS_ADMIN in id_card.access))
+			if(!(ACCESS_ADMIN_LVL1 in id_card.access))
 				to_chat(H, span_warning("O5 authorization required."))
 				return
 			foundation_authorized = !foundation_authorized
@@ -90,7 +90,7 @@
 		if("cancel")
 			if(!foundation_authorized)
 				return
-			if(!id_card || !(ACCESS_ADMIN in id_card.access))
+			if(!id_card || !(ACCESS_ADMIN_LVL1 in id_card.access))
 				return
 			timing = FALSE
 			safety = TRUE

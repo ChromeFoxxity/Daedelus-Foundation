@@ -214,7 +214,7 @@
 				continue
 			if(H.stat == DEAD || !H.client)
 				continue
-			if(H.job && (H.job == JOB_RESEARCH_DIRECTOR || H.job == JOB_SENIOR_RESEARCHER || H.job == JOB_RESEARCHER || H.job == JOB_JUNIOR_RESEARCHER))
+			if(H.job && (H.job == JOB_SCIENCE_DIRECTOR || H.job == JOB_SENIOR_RESEARCHER || H.job == JOB_RESEARCHER || H.job == JOB_JUNIOR_RESEARCHER))
 				to_chat(H, span_notice("Research breakthrough detected! +[bonus_points] research points allocated to your department."))
 				researchers_notified += H
 				if(SSpersistent_progression && H.ckey)
@@ -247,7 +247,7 @@
 		if(H.stat == DEAD || !H.client)
 			continue
 		var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-		if(id_card && (ACCESS_SECURITY in id_card.access))
+		if(id_card && (ACCESS_SECURITY_LVL1 in id_card.access))
 			to_chat(H, span_danger("Your security headset crackles: Priority alert in effect. Report to containment wing."))
 			if(H.sanity)
 				H.sanity.adjust_sanity(-5, "security_alert_stress")
@@ -374,7 +374,7 @@
 		for(var/mob/living/carbon/human/H in GLOB.player_list)
 			if(QDELETED(H))
 				continue
-			if(H.stat != DEAD && H.client && (ACCESS_SECURITY in H.get_idcard(TRUE)?.access))
+			if(H.stat != DEAD && H.client && (ACCESS_SECURITY_LVL1 in H.get_idcard(TRUE)?.access))
 				to_chat(H, span_userdanger("Mission failed. Chaos Insurgency won."))
 		if(SSfoundation_politics && SSfoundation_politics.manager)
 			SSfoundation_politics.manager.spend_budget("security", 10000, "CI Raid Damages")
@@ -489,7 +489,7 @@
 			continue
 		if(H.stat == DEAD || !H.client)
 			continue
-		if(H.job && (H.job == JOB_MEDICAL_DOCTOR || H.job == JOB_VIROLOGIST || H.job == JOB_SURGEON || H.job == JOB_PARAMEDIC || H.job == JOB_JUNIOR_RESEARCHER || H.job == JOB_RESEARCHER))
+		if(H.job && (H.job == JOB_MEDICAL_DOCTOR || H.job == JOB_MEDICAL_TECHNICIAN || H.job == JOB_JUNIOR_RESEARCHER || H.job == JOB_RESEARCHER))
 			targets += H
 	if(!length(targets))
 		for(var/mob/living/carbon/human/H in GLOB.player_list)
@@ -556,7 +556,7 @@
 			continue
 		if(H.stat == DEAD || !H.client)
 			continue
-		if(H.job && (H.job == JOB_MEDICAL_DOCTOR || H.job == JOB_VIROLOGIST || H.job == JOB_MEDICAL_DIRECTOR))
+		if(H.job && (H.job == JOB_MEDICAL_DOCTOR || H.job == JOB_SENIOR_DOCTOR || H.job == JOB_ASSISTANT_MEDICAL_DIRECTOR || H.job == JOB_MEDICAL_DIRECTOR))
 			to_chat(H, span_notice("Biosafety drill in progress. Check your decontamination stations and BSL compliance."))
 			if(SSpersistent_progression && H.ckey)
 				SSpersistent_progression.award_experience(H.ckey, "medical_training", 25, "Biosafety Drill")

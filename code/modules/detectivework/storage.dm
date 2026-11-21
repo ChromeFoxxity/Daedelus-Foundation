@@ -1,9 +1,8 @@
 /obj/item/storage/box/swabs
 	name = "box of swab kits"
 	desc = "Sterilized equipment within. Do not contaminate."
-	icon = 'icons/obj/forensics.dmi'
-	icon_state = "dnakit"
-	illustration = null
+	icon_state = "secbox"
+	illustration = "swab"
 
 /obj/item/storage/box/swabs/Initialize(mapload)
 	. = ..()
@@ -18,9 +17,8 @@
 /obj/item/storage/box/evidence
 	name = "evidence bag box"
 	desc = "Sterilized equipment within. Do not contaminate."
-	icon = 'icons/obj/forensics.dmi'
-	icon_state = "dnakit"
-	illustration = null
+	icon_state = "secbox"
+	illustration = "evidence_box"
 
 /obj/item/storage/box/evidence/Initialize(mapload)
 	. = ..()
@@ -35,9 +33,8 @@
 /obj/item/storage/box/fingerprints
 	name = "box of fingerprint cards"
 	desc = "Sterilized equipment within. Do not contaminate."
-	icon = 'icons/obj/forensics.dmi'
-	icon_state = "dnakit"
-	illustration = null
+	icon_state = "secbox"
+	illustration = "latex"
 
 /obj/item/storage/box/fingerprints/Initialize(mapload)
 	. = ..()

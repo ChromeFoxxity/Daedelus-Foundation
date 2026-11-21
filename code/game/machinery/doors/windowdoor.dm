@@ -413,7 +413,7 @@
 /obj/machinery/door/window/brigdoor/security/cell
 	name = "cell door"
 	desc = "For keeping in criminal scum."
-	req_access = list(ACCESS_SECURITY)
+	req_access = list(ACCESS_SECURITY_LVL2)
 
 /obj/machinery/door/window/brigdoor/security/holding
 	name = "holding cell door"

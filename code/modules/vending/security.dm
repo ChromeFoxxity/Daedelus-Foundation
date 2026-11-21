@@ -6,7 +6,7 @@
 	icon_deny = "sec-deny"
 	panel_type = "panel6"
 	light_mask = "sec-light-mask"
-	req_access = list(ACCESS_SECURITY)
+	req_access = list(ACCESS_SECURITY_LVL1)
 	products = list(
 		/obj/item/restraints/handcuffs = 8,
 		/obj/item/restraints/handcuffs/cable/zipties = 10,
@@ -35,7 +35,7 @@
 	extra_price = PAYCHECK_HARD * 1.5
 	payment_department = ACCOUNT_SEC
 
-	discount_access = ACCESS_SECURITY
+	discount_access = ACCESS_SECURITY_LVL1
 
 /obj/machinery/vending/security/pre_throw(obj/item/I)
 	if(istype(I, /obj/item/grenade))

@@ -68,7 +68,7 @@
 
 /obj/item/storage/lockbox/loyalty
 	name = "lockbox of mindshield implants"
-	req_access = list(ACCESS_SECURITY)
+	req_access = list(ACCESS_SECURITY_LVL4)
 
 /obj/item/storage/lockbox/loyalty/PopulateContents()
 	for(var/i in 1 to 3)
@@ -78,7 +78,7 @@
 /obj/item/storage/lockbox/clusterbang
 	name = "lockbox of clusterbangs"
 	desc = "You have a bad feeling about opening this."
-	req_access = list(ACCESS_SECURITY)
+	req_access = list(ACCESS_SECURITY_LVL3)
 
 /obj/item/storage/lockbox/clusterbang/PopulateContents()
 	new /obj/item/grenade/clusterbuster(src)
@@ -186,7 +186,7 @@
 /obj/item/storage/lockbox/medal/cargo
 	name = "cargo award box"
 	desc = "A locked box used to store awards to be given to members of the cargo department."
-	req_access = list(ACCESS_LOGISTICS_LVL5)
+	req_access = list(ACCESS_LOGISTICS_LVL4)
 
 /obj/item/storage/lockbox/medal/cargo/PopulateContents()
 		new /obj/item/clothing/accessory/medal/ribbon/cargo(src)

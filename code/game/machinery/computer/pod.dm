@@ -168,7 +168,7 @@
 /obj/machinery/computer/pod/old/syndicate
 	name = "\improper ProComp Executive IIc"
 	desc = "The Syndicate operate on a tight budget. Operates external airlocks."
-	req_access = list(ACCESS_SYNDICATE)
+	req_access = list(ACCESS_CHAOS)
 
 /obj/machinery/computer/pod/old/swf
 	name = "\improper Magix System IV"

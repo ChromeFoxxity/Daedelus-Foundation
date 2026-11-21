@@ -66,7 +66,7 @@
 	icon = 'icons/obj/computer.dmi'
 	icon_state = "syndicam"
 	circuit = /obj/item/circuitboard/computer/scp682_acid_bath_console
-	req_access = list(ACCESS_SECURITY)
+	req_access = list(ACCESS_SECURITY_LVL1)
 	density = TRUE
 	anchored = TRUE
 	use_power = IDLE_POWER_USE

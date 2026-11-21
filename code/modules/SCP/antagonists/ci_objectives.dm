@@ -203,7 +203,7 @@
 	var/obj/item/card/id/id_card = new /obj/item/card/id/advanced()
 	id_card.registered_name = H.real_name
 	id_card.assignment = "Facility Staff"
-	id_card.access = list(ACCESS_DCLASS, ACCESS_SECURITY_LVL1)
+	id_card.access = list(ACCESS_SECURITY_LVL1)
 	H.equip_to_slot_or_del(id_card, ITEM_SLOT_ID)
 
 	var/obj/item/uplink_device = new /obj/item/radio/headset()

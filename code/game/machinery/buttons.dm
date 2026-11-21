@@ -398,7 +398,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/button/door, 24)
 /obj/machinery/button/door/incinerator_vent_ordmix
 	name = "combustion chamber vent control"
 	id = INCINERATOR_ORDMIX_VENT
-	req_access = list(ACCESS_SCIENCE)
+	req_access = list(ACCESS_SCIENCE_LVL1)
 
 /obj/machinery/button/door/incinerator_vent_atmos_main
 	name = "turbine vent control"

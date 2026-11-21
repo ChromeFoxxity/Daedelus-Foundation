@@ -1,5 +1,5 @@
 /datum/job/research_director
-	title = JOB_RESEARCH_DIRECTOR
+	title = JOB_SCIENCE_DIRECTOR
 	description = "Oversee the research department and make sure everything is done according to Research Procedure."
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD
 	head_announce = list(RADIO_CHANNEL_MEDICAL)

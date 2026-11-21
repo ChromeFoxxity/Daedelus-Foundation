@@ -1,5 +1,5 @@
 /datum/job/human_resources_director
-	title = JOB_HUMAN_RESOURCES_DIRECTOR
+	title = JOB_HUMAN_RESOURCES_OFFICER
 	description = "In charge of the site's human resources by modifying IDs and terminating them."
 	department_head = list(JOB_SITE_DIRECTOR)
 	faction = FACTION_STATION
@@ -49,7 +49,7 @@
 
 
 /datum/outfit/job/human_resources_director
-	name = JOB_HUMAN_RESOURCES_DIRECTOR
+	name = JOB_HUMAN_RESOURCES_OFFICER
 	jobtype = /datum/job/human_resources_director
 
 	id = /obj/item/card/id/advanced/black_blank

@@ -141,7 +141,7 @@ SUBSYSTEM_DEF(site53_generator)
 
 /obj/machinery/door/airlock/scp/Initialize()
 	. = ..()
-	req_access = list(ACCESS_SCIENCE)
+	req_access = list(ACCESS_SCIENCE_LVL1)
 
 /obj/structure/dclass_bunk
 	name = "D-Class Bunk"

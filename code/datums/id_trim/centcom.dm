@@ -1,6 +1,6 @@
 /// Trim for basic Centcom cards.
 /datum/id_trim/centcom
-	access = list(ACCESS_CENT_GENERAL)
+	access = list(ACCESS_CENTRAL)
 	assignment = JOB_CENTCOM
 	trim_state = "trim_centcom"
 	sechud_icon_state = SECHUD_CENTCOM

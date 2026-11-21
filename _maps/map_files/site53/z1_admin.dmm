@@ -3374,7 +3374,7 @@
 /area/centcom/chaos)
 "jQ" = (
 /obj/machinery/door/airlock/maintenance{
-	req_access = list("ACCESS_SYNDICATE");
+	req_access = list("ACCESS_CHAOS");
 	name = "Abandoned Warehouse Maintenance"
 	},
 /turf/open/floor/iron/dark,
@@ -3506,7 +3506,7 @@
 "kk" = (
 /obj/machinery/door/window/brigdoor/southright{
 	name = "Cockpit";
-	req_access = list("ACCESS_SYNDICATE")
+	req_access = list("ACCESS_CHAOS")
 	},
 /obj/effect/turf_decal/borderfloorblack,
 /obj/effect/turf_decal/spline/fancy/black,
@@ -3595,7 +3595,7 @@
 /area/centcom/chaos)
 "kA" = (
 /obj/machinery/door/airlock/highsecurity{
-	req_access = list("ACCESS_ADMIN_LEVEL1","ACCESS_SYNDICATE");
+	req_access = list("ACCESS_ADMIN_LEVEL1","ACCESS_CHAOS");
 	name = "Abandoned Warehouse Supervisor's Office"
 	},
 /turf/open/floor/iron/dark,
@@ -5129,7 +5129,7 @@
 "ow" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Abandoned Warehouse Clinic";
-	req_access = list("ACCESS_SYNDICATE")
+	req_access = list("ACCESS_CHAOS")
 	},
 /turf/open/floor/iron/dark,
 /area/centcom/chaos)
@@ -9211,7 +9211,7 @@
 /obj/machinery/computer/shuttle_control{
 	shuttle_tag = "Chaos Insurgency Helicopter";
 	name = "Military Helicopter Control Console";
-	req_access = list("ACCESS_SYNDICATE")
+	req_access = list("ACCESS_CHAOS")
 	},
 /turf/open/floor/shuttle,
 /area/site53/tram/ci)
@@ -9982,7 +9982,7 @@
 "za" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Abandoned Warehouse Technician Locker Room";
-	req_access = list("ACCESS_SYNDICATE")
+	req_access = list("ACCESS_CHAOS")
 	},
 /turf/open/floor/iron/dark,
 /area/centcom/chaos)
@@ -10332,7 +10332,7 @@
 	name = "Military Helicopter Side Doors";
 	dir = 1;
 	pixel_y = 8;
-	req_access = list("ACCESS_SYNDICATE")
+	req_access = list("ACCESS_CHAOS")
 	},
 /obj/effect/paint/green,
 /turf/closed/wall/r_wall,
@@ -10642,7 +10642,7 @@
 	id_tag = "cistorage";
 	name = "Abandoned Warehouse Storage Control";
 	pixel_y = 25;
-	req_access = list("ACCESS_SYNDICATE")
+	req_access = list("ACCESS_CHAOS")
 	},
 /turf/open/floor/iron,
 /area/centcom/chaos)
@@ -14283,7 +14283,7 @@
 "Kt" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Abandoned Warehouse Access";
-	req_access = list("ACCESS_SYNDICATE")
+	req_access = list("ACCESS_CHAOS")
 	},
 /turf/open/floor/iron/dark,
 /area/centcom/chaos)
@@ -15827,7 +15827,7 @@
 /obj/item/storage/backpack/rucksack/ci,
 /obj/item/clothing/glasses/night,
 /obj/structure/closet/secure{
-	req_access = list("ACCESS_SYNDICATE");
+	req_access = list("ACCESS_CHAOS");
 	name = "Armory Locker";
 	icon = 'icons/obj/structure/barricade/security-lockers_new.dmi';
 	icon_locked = "armor1";
@@ -17248,7 +17248,7 @@
 /obj/item/storage/backpack/rucksack/ci,
 /obj/item/clothing/glasses/night,
 /obj/structure/closet/secure{
-	req_access = list("ACCESS_SYNDICATE");
+	req_access = list("ACCESS_CHAOS");
 	name = "Armory Locker";
 	icon = 'icons/obj/structure/barricade/security-lockers_new.dmi';
 	icon_locked = "armor1";
@@ -17385,7 +17385,7 @@
 	name = "Military Helicopter Side Doors";
 	dir = 1;
 	pixel_y = 8;
-	req_access = list("ACCESS_SYNDICATE")
+	req_access = list("ACCESS_CHAOS")
 	},
 /obj/effect/paint/green,
 /turf/closed/wall/r_wall,
@@ -17397,7 +17397,7 @@
 	name = "Abandoned Warehouse Storage Control";
 	pixel_y = -25;
 	dir = 1;
-	req_access = list("ACCESS_SYNDICATE")
+	req_access = list("ACCESS_CHAOS")
 	},
 /turf/open/floor/iron,
 /area/centcom/chaos)

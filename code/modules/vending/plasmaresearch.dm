@@ -17,4 +17,4 @@
 	extra_price = PAYCHECK_ASSISTANT
 	payment_department = ACCOUNT_STATION_MASTER
 
-	discount_access = ACCESS_SCIENCE
+	discount_access = ACCESS_SCIENCE_LVL1

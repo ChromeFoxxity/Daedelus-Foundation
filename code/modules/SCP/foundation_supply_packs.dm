@@ -13,7 +13,7 @@
 					/obj/item/stack/sheet/iron,
 					/obj/item/stack/sheet/plasteel)
 	crate_name = "breach response crate"
-	access = ACCESS_SECURITY
+	access = ACCESS_SECURITY_LVL1
 
 /datum/supply_pack/foundation_emergency/amnestic
 	name = "Amnestic Supply Kit"
@@ -25,7 +25,7 @@
 					/obj/item/reagent_containers/syringe,
 					/obj/item/reagent_containers/syringe)
 	crate_name = "amnestic supply crate"
-	access = ACCESS_MEDICAL
+	access = ACCESS_MEDICAL_LVL1
 
 /datum/supply_pack/foundation_emergency/fire_fighting
 	name = "Fire Suppression Kit"
@@ -37,7 +37,7 @@
 					/obj/item/extinguisher/advanced,
 					/obj/item/extinguisher/advanced)
 	crate_name = "fire suppression crate"
-	access = ACCESS_SECURITY
+	access = ACCESS_SECURITY_LVL1
 
 /datum/supply_pack/foundation_security
 	group = "Foundation Security"
@@ -53,7 +53,7 @@
 					/obj/item/clothing/head/helmet/scp/security/riot,
 					/obj/item/clothing/head/helmet/scp/security/riot)
 	crate_name = "riot equipment crate"
-	access = ACCESS_SECURITY
+	access = ACCESS_SECURITY_LVL1
 
 /datum/supply_pack/foundation_security/restraints
 	name = "Restraint Supply Kit"
@@ -66,7 +66,7 @@
 					/obj/item/restraints/legcuffs,
 					/obj/item/restraints/legcuffs)
 	crate_name = "restraint supply crate"
-	access = ACCESS_SECURITY
+	access = ACCESS_SECURITY_LVL1
 
 /datum/supply_pack/foundation_security/mtf_loadout
 	name = "MTF Equipment Crate"
@@ -78,7 +78,7 @@
 					/obj/item/radio/headset/scp_mtf,
 					/obj/item/storage/belt/security/full)
 	crate_name = "MTF equipment crate"
-	access = ACCESS_SECURITY
+	access = ACCESS_MTF
 
 /datum/supply_pack/foundation_containment
 	group = "Foundation Containment"
@@ -93,7 +93,7 @@
 					/obj/item/stock_parts/manipulator,
 					/obj/item/circuitboard/machine/scranton_reality_anchor)
 	crate_name = "scranton anchor components"
-	access = ACCESS_SCIENCE
+	access = ACCESS_SCIENCE_LVL1
 
 /datum/supply_pack/foundation_containment/containment_materials
 	name = "Containment Construction Materials"
@@ -103,7 +103,7 @@
 					/obj/item/stack/sheet/iron,
 					/obj/item/stack/sheet/glass)
 	crate_name = "containment materials crate"
-	access = ACCESS_ENGINEERING
+	access = ACCESS_ENGINEERING_LVL1
 
 /datum/supply_pack/foundation_medical
 	group = "Foundation Medical"
@@ -120,7 +120,7 @@
 					/obj/item/reagent_containers/syringe,
 					/obj/item/reagent_containers/syringe)
 	crate_name = "quarantine medical crate"
-	access = ACCESS_MEDICAL
+	access = ACCESS_MEDICAL_LVL1
 
 /datum/supply_pack/foundation_research
 	group = "Foundation Research"
@@ -136,7 +136,7 @@
 					/obj/item/clothing/suit/bio_suit,
 					/obj/item/clothing/head/bio_hood)
 	crate_name = "testing equipment crate"
-	access = ACCESS_SCIENCE
+	access = ACCESS_SCIENCE_LVL1
 
 /datum/supply_pack/foundation_research/reagent_analysis
 	name = "Reagent Analysis Kit"
@@ -147,7 +147,7 @@
 					/obj/item/reagent_containers/glass/beaker/large,
 					/obj/item/storage/bag/chemistry)
 	crate_name = "reagent analysis crate"
-	access = ACCESS_SCIENCE
+	access = ACCESS_SCIENCE_LVL1
 
 /datum/supply_pack/foundation_engineering
 	group = "Foundation Engineering"
@@ -160,7 +160,7 @@
 					/obj/item/stock_parts/cell/high,
 					/obj/item/stock_parts/cell/high)
 	crate_name = "backup power crate"
-	access = ACCESS_ENGINEERING
+	access = ACCESS_ENGINEERING_LVL1
 
 /datum/supply_pack/foundation_engineering/hvac_repair
 	name = "HVAC Repair Kit"
@@ -172,7 +172,7 @@
 					/obj/item/weldingtool,
 					/obj/item/analyzer)
 	crate_name = "HVAC repair crate"
-	access = ACCESS_ENGINEERING
+	access = ACCESS_ENGINEERING_LVL1
 
 /datum/supply_pack/foundation_service
 	group = "Foundation Service"
@@ -185,4 +185,3 @@
 					/obj/item/soap,
 					/obj/item/pushbroom)
 	crate_name = "D-Class supplies crate"
-	access = ACCESS_DCLASS

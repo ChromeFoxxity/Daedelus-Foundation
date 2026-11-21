@@ -40,7 +40,7 @@
 
 	var/list/dream_pool
 	var/datum/dream/dream
-	if(mind?.assigned_role?.title == JOB_INVESTIGATIONS_AGENT)
+	if(mind?.assigned_role?.title == JOB_INTAKE_SPECIALIST)
 		dream_pool = GLOB.dream_controller.get_dreams(DREAM_CLASS_DETECTIVE).Copy()
 
 

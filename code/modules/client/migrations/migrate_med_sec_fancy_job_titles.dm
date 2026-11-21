@@ -1,9 +1,8 @@
 /datum/preferences/proc/migrate_med_sec_fancy_job_titles()
 	var/list/migrate_jobs = list(
-		"Head of Security" = JOB_GUARD_COMMANDER,
-		"Detective" = JOB_INVESTIGATIONS_AGENT,
-		"Medical Doctor" = JOB_MEDICAL_DOCTOR,
-		"Cargo Technician" = JOB_LOGISTICS_TECHNICIAN,
+		"Security Captain" = JOB_SECURITY_CAPTAIN,
+		"Doctor" = JOB_MEDICAL_DOCTOR,
+		"Logistics Technician" = JOB_LOGISTICS_TECHNICIAN,
 	)
 
 	var/list/job_prefs = read_preference(/datum/preference/blob/job_priority)

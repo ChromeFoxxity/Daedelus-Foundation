@@ -17,90 +17,6 @@
 	Wildcard Level has.
 */
 
-#define ACCESS_SECURITY 1
-#define ACCESS_SECURITY_LVL1 2 //Levels 1-3, Common Wildcards.
-#define ACCESS_SECURITY_LVL2 3
-#define ACCESS_SECURITY_LVL3 4
-#define ACCESS_SECURITY_LVL4 5 //Level 4, Command Wildcard.
-#define ACCESS_SECURITY_LVL5 6 //Level 5, Private Command Wildcard.
-
-#define ACCESS_ADMIN 7
-#define ACCESS_ADMIN_LVL1 8  //Levels 1-3, Common Wildcards.
-#define ACCESS_ADMIN_LVL2 9
-#define ACCESS_ADMIN_LVL3 10
-#define ACCESS_ADMIN_LVL4 11 //Level 4, Command Wildcard.
-#define ACCESS_ADMIN_LVL5 12 //Level 5, Site Director/Captain Wildcard.
-
-#define ACCESS_SCIENCE 13
-#define ACCESS_SCIENCE_LVL1 14 //Levels 1-3, Common Wildcards.
-#define ACCESS_SCIENCE_LVL2 15
-#define ACCESS_SCIENCE_LVL3 16
-#define ACCESS_SCIENCE_LVL4 17 //Level 4, Command Wildcard.
-#define ACCESS_SCIENCE_LVL5 18 //Level 5, Private Command Wildcard.
-
-#define ACCESS_MEDICAL 19
-#define ACCESS_MEDICAL_LVL1 20 //Levels 1-3, Common Wildcards.
-#define ACCESS_MEDICAL_LVL2 21
-#define ACCESS_MEDICAL_LVL3 22
-#define ACCESS_MEDICAL_LVL4 23 //Level 4, Command Wildcard.
-#define ACCESS_MEDICAL_LVL5 24 //Level 5, Private Command Wildcard.
-
-#define ACCESS_ENGINEERING 25
-#define ACCESS_ENGINEERING_LVL1 26 //Levels 1-3, Common Wildcards.
-#define ACCESS_ENGINEERING_LVL2 27
-#define ACCESS_ENGINEERING_LVL3 28
-#define ACCESS_ENGINEERING_LVL4 29 //Level 4, Command Wildcard.
-#define ACCESS_ENGINEERING_LVL5 30 //Level 5, Private Command Wildcard.
-
-#define ACCESS_LOGISTICS 31
-#define ACCESS_LOGISTICS_LVL1 32 //Levels 1-3, Common Wildcards.
-#define ACCESS_LOGISTICS_LVL2 33
-#define ACCESS_LOGISTICS_LVL3 34
-#define ACCESS_LOGISTICS_LVL4 35 //Level 4, Command Wildcard.
-#define ACCESS_LOGISTICS_LVL5 36 //Level 5, Private Command Wildcard.
-
-#define ACCESS_SERVICE 37
-#define ACCESS_SERVICE_LVL1 38 //Levels 1-3, Common Wildcards.
-#define ACCESS_SERVICE_LVL2 39
-#define ACCESS_SERVICE_LVL3 40
-#define ACCESS_SERVICE_LVL4 41 //Level 4, Command Wildcard.
-#define ACCESS_SERVICE_LVL5 42 //Level 5, Private Command Wildcard.
-
-#define ACCESS_DCLASS 43
-#define ACCESS_DCLASS_MINING 44
-#define ACCESS_DCLASS_BOTANY 45
-#define ACCESS_DCLASS_JANITORIAL 46
-#define ACCESS_DCLASS_LUXURY 47
-#define ACCESS_DCLASS_KITCHEN 48
-
-	//BEGIN CENTCOM ACCESS
-	/*Should leave plenty of room if we need to add more access levels.
-	Mostly for admin fun times.*/
-/// General facilities. CentCom ferry.
-#define ACCESS_CENT_GENERAL 101
-/// Thunderdome.
-#define ACCESS_CENT_THUNDER 102
-/// Special Ops. Captain's display case, Marauder and Seraph mechs.
-#define ACCESS_CENT_SPECOPS 103
-/// Medical/Research
-#define ACCESS_CENT_MEDICAL 104
-/// Living quarters.
-#define ACCESS_CENT_LIVING 105
-/// Generic storage areas.
-#define ACCESS_CENT_STORAGE 106
-/// Teleporter.
-#define ACCESS_CENT_TELEPORTER 107
-/// Captain's office/ID comp/AI.
-#define ACCESS_CENT_CAPTAIN 109
-/// The non-existent CentCom Bar
-#define ACCESS_CENT_BAR 110
-
-	//The Syndicate
-/// General Syndicate Access. Includes Syndicate mechs and ruins.
-#define ACCESS_SYNDICATE 150
-/// Nuke Op Leader Access
-#define ACCESS_SYNDICATE_LEADER 151
-
 	//Away Missions or Ruins
 	/*For generic away-mission/ruin access. Why would normal crew have access to a long-abandoned derelict
 	or a 2000 year-old temple? */
@@ -150,11 +66,11 @@
 /// Bitflag for Common ID card accesses. See COMMON_ACCESS.
 #define ACCESS_FLAG_COMMON (1 << 0)
 /// Displayed name for Command ID card accesses.
-#define ACCESS_FLAG_COMMAND_NAME "Command"
+#define ACCESS_FLAG_COMMAND_NAME "Administrative"
 /// Bitflag for Command ID card accesses. See COMMAND_ACCESS.
 #define ACCESS_FLAG_COMMAND (1 << 1)
 /// Displayed name for Private Command ID card accesses.
-#define ACCESS_FLAG_PRV_COMMAND_NAME "Private Command"
+#define ACCESS_FLAG_PRV_COMMAND_NAME "Directorate"
 /// Bitflag for Private Command ID card accesses. See PRIVATE_COMMAND_ACCESS.
 #define ACCESS_FLAG_PRV_COMMAND (1 << 2)
 /// Displayed name for Captain ID card accesses.
@@ -162,11 +78,11 @@
 /// Bitflag for Captain ID card accesses. See CAPTAIN_ACCESS.
 #define ACCESS_FLAG_CAPTAIN (1 << 3)
 /// Displayed name for Centcom ID card accesses.
-#define ACCESS_FLAG_CENTCOM_NAME "Centcom"
+#define ACCESS_FLAG_CENTCOM_NAME "Central Office"
 /// Bitflag for Centcom ID card accesses. See CENTCOM_ACCESS.
 #define ACCESS_FLAG_CENTCOM (1 << 4)
 /// Displayed name for Syndicate ID card accesses.
-#define ACCESS_FLAG_SYNDICATE_NAME "Syndicate"
+#define ACCESS_FLAG_SYNDICATE_NAME "Chaos Insurgency"
 /// Bitflag for Syndicate ID card accesses. See SYNDICATE_ACCESS.
 #define ACCESS_FLAG_SYNDICATE (1 << 5)
 /// Displayed name for Offstation/Ruin/Away Mission ID card accesses.
@@ -221,46 +137,46 @@
 
 /// Departmental/general/common area accesses. Do not use direct, access via SSid_access.get_flag_access_list(ACCESS_FLAG_COMMON)
 #define COMMON_ACCESS list( \
-	ACCESS_ADMIN, \
 	ACCESS_ADMIN_LVL1, \
 	ACCESS_ADMIN_LVL2, \
 	ACCESS_ADMIN_LVL3, \
-	ACCESS_SECURITY, \
 	ACCESS_SECURITY_LVL1, \
 	ACCESS_SECURITY_LVL2, \
 	ACCESS_SECURITY_LVL3, \
-	ACCESS_MEDICAL, \
 	ACCESS_MEDICAL_LVL1, \
 	ACCESS_MEDICAL_LVL2, \
 	ACCESS_MEDICAL_LVL3, \
-	ACCESS_SCIENCE, \
 	ACCESS_SCIENCE_LVL1, \
 	ACCESS_SCIENCE_LVL2, \
 	ACCESS_SCIENCE_LVL3, \
-	ACCESS_ENGINEERING, \
 	ACCESS_ENGINEERING_LVL1, \
 	ACCESS_ENGINEERING_LVL2, \
 	ACCESS_ENGINEERING_LVL3, \
-	ACCESS_LOGISTICS, \
 	ACCESS_LOGISTICS_LVL1, \
 	ACCESS_LOGISTICS_LVL2, \
 	ACCESS_LOGISTICS_LVL3, \
-	ACCESS_SERVICE, \
+	ACCESS_SERVICE_LVL1, \
+	ACCESS_SERVICE_LVL2, \
+	ACCESS_SERVICE_LVL3, \
+	ACCESS_SERVICE_LVL4, \
+	ACCESS_SERVICE_LVL5, \
 	ACCESS_DCLASS, \
 	ACCESS_DCLASS_MINING, \
 	ACCESS_DCLASS_BOTANY, \
 	ACCESS_DCLASS_JANITORIAL, \
 	ACCESS_DCLASS_LUXURY, \
 	ACCESS_DCLASS_KITCHEN, \
+	ACCESS_ROBOTICS, \
 )
 
-/// Command staff/secure accesses, think bridge/armoury, AI upload, notably access to modify ID cards themselves. Do not use direct, access via SSid_access.get_flag_access_list(ACCESS_FLAG_COMMAND)
+/// Assistant Directorate offices/secure equipment, usually only granted by card trims. Do not use direct, access via SSid_access.get_flag_access_list(ACCESS_FLAG_COMMAND)
 #define COMMAND_ACCESS list( \
 	ACCESS_SECURITY_LVL4, \
 	ACCESS_MEDICAL_LVL4, \
 	ACCESS_SCIENCE_LVL4, \
 	ACCESS_ENGINEERING_LVL4, \
 	ACCESS_LOGISTICS_LVL4, \
+	ACCESS_KEYAUTH, \
 	)
 /// Private head of staff offices, usually only granted to most cards by trimming. Do not use direct, access via SSid_access.get_flag_access_list(ACCESS_FLAG_PRV_COMMAND)
 #define PRIVATE_COMMAND_ACCESS list( \
@@ -269,28 +185,24 @@
 	ACCESS_MEDICAL_LVL5, \
 	ACCESS_SCIENCE_LVL5, \
 	ACCESS_ENGINEERING_LVL5, \
-	ACCESS_LOGISTICS_LVL5, \
 	)
 
 /// Captains private rooms. Do not use direct, access via SSid_access.get_flag_access_list(ACCESS_FLAG_CAPTAIN)
 #define CAPTAIN_ACCESS list(ACCESS_ADMIN_LVL5)
 /// Centcom area stuff. Do not use direct, access via SSid_access.get_flag_access_list(ACCESS_FLAG_CENTCOM)
 #define CENTCOM_ACCESS list( \
-	ACCESS_CENT_BAR, \
-	ACCESS_CENT_CAPTAIN, \
-	ACCESS_CENT_TELEPORTER, \
-	ACCESS_CENT_STORAGE, \
-	ACCESS_CENT_LIVING, \
-	ACCESS_CENT_MEDICAL, \
-	ACCESS_CENT_SPECOPS, \
-	ACCESS_CENT_THUNDER, \
-	ACCESS_CENT_GENERAL, \
+	ACCESS_MTF, \
+	ACCESS_MTF_LEADER, \
+	ACCESS_CENTRAL, \
+	ACCESS_CENTRAL_HR, \
+	ACCESS_ISD, \
+	ACCESS_O5, \
 )
 
 /// Syndicate areas off station. Do not use direct, access via SSid_access.get_flag_access_list(ACCESS_FLAG_SYNDICATE)
 #define SYNDICATE_ACCESS list( \
-	ACCESS_SYNDICATE_LEADER, \
-	ACCESS_SYNDICATE, \
+	ACCESS_CHAOS_LEADER, \
+	ACCESS_CHAOS, \
 )
 
 /// Away missions/gateway/space ruins.  Do not use direct, access via SSid_access.get_flag_access_list(ACCESS_FLAG_AWAY)
@@ -322,12 +234,17 @@
 /// Name for the General region.
 #define REGION_GENERAL "General"
 /// Used to seed the accesses_by_region list in SSid_access. A list of general service accesses that are overseen by the HoP.
-#define REGION_ACCESS_GENERAL list(ACCESS_SERVICE)
+#define REGION_ACCESS_GENERAL list( \
+	ACCESS_SERVICE_LVL1, \
+	ACCESS_SERVICE_LVL2, \
+	ACCESS_SERVICE_LVL3, \
+	ACCESS_SERVICE_LVL4, \
+	ACCESS_SERVICE_LVL5, \
+	)
 /// Name for the Security region.
 #define REGION_SECURITY "Security"
 /// Used to seed the accesses_by_region list in SSid_access. A list of all security regional accesses that are overseen by the HoS.
 #define REGION_ACCESS_SECURITY list( \
-	ACCESS_SECURITY, \
 	ACCESS_SECURITY_LVL1, \
 	ACCESS_SECURITY_LVL2, \
 	ACCESS_SECURITY_LVL3, \
@@ -338,7 +255,6 @@
 #define REGION_CLASSD "Class-D"
 /// Used to seed the accesses_by_region list in SSid_access. A list of all CDCZ regional accesses that are overseen by the Zone Security.
 #define REGION_ACCESS_CLASSD list( \
-	ACCESS_DCLASS, \
 	ACCESS_DCLASS_MINING, \
 	ACCESS_DCLASS_BOTANY, \
 	ACCESS_DCLASS_JANITORIAL, \
@@ -349,7 +265,6 @@
 #define REGION_MEDBAY "Medbay"
 /// Used to seed the accesses_by_region list in SSid_access. A list of all medbay regional accesses that are overseen by the CMO.
 #define REGION_ACCESS_MEDBAY list( \
-	ACCESS_MEDICAL, \
 	ACCESS_MEDICAL_LVL1, \
 	ACCESS_MEDICAL_LVL2, \
 	ACCESS_MEDICAL_LVL3, \
@@ -360,18 +275,17 @@
 #define REGION_SCIENCE "Science"
 /// Used to seed the accesses_by_region list in SSid_access. A list of all research regional accesses that are overseen by the RD.
 #define REGION_ACCESS_SCIENCE list( \
-	ACCESS_SCIENCE, \
 	ACCESS_SCIENCE_LVL1, \
 	ACCESS_SCIENCE_LVL2, \
 	ACCESS_SCIENCE_LVL3, \
 	ACCESS_SCIENCE_LVL4, \
 	ACCESS_SCIENCE_LVL5, \
+	ACCESS_ROBOTICS, \
 	)
 /// Name for the Engineering region.
 #define REGION_ENGINEERING "Engineering"
 /// Used to seed the accesses_by_region list in SSid_access. A list of all engineering regional accesses that are overseen by the CE.
 #define REGION_ACCESS_ENGINEERING list( \
-	ACCESS_ENGINEERING, \
 	ACCESS_ENGINEERING_LVL1, \
 	ACCESS_ENGINEERING_LVL2, \
 	ACCESS_ENGINEERING_LVL3, \
@@ -382,18 +296,15 @@
 #define REGION_SUPPLY "Logistics"
 /// Used to seed the accesses_by_region list in SSid_access. A list of all cargo regional accesses that are overseen by the HoP.
 #define REGION_ACCESS_SUPPLY list( \
-	ACCESS_LOGISTICS, \
 	ACCESS_LOGISTICS_LVL1, \
 	ACCESS_LOGISTICS_LVL2, \
 	ACCESS_LOGISTICS_LVL3, \
 	ACCESS_LOGISTICS_LVL4, \
-	ACCESS_LOGISTICS_LVL5, \
 	)
 /// Name for the Command region.
 #define REGION_COMMAND "Command"
 /// Used to seed the accesses_by_region list in SSid_access. A list of all command regional accesses that are overseen by the Captain.
 #define REGION_ACCESS_COMMAND list( \
-	ACCESS_ADMIN, \
 	ACCESS_ADMIN_LVL1, \
 	ACCESS_ADMIN_LVL2, \
 	ACCESS_ADMIN_LVL3, \
@@ -402,7 +313,8 @@
 	ACCESS_SCIENCE_LVL5, \
 	ACCESS_MEDICAL_LVL5, \
 	ACCESS_ENGINEERING_LVL5, \
-	ACCESS_LOGISTICS_LVL5, \
+	ACCESS_LOGISTICS_LVL4, \
+	ACCESS_KEYAUTH, \
 	)
 /// Name for the Centcom region.
 #define REGION_CENTCOM "Central Command"

@@ -77,18 +77,10 @@
 		"AI" = JOB_AI,
 		"Chef" = JOB_COOK,
 		"Class D" = JOB_DCLASS,
-		"Communications Officer" = JOB_COMMUNICATIONS_DIRECTOR,
-		"Emergency Medical Technician" = JOB_PARAMEDIC,
 		"Logistics Specialist" = JOB_LOGISTICS_TECHNICIAN,
-		"Medical Intern" = JOB_TRAINEE_DOCTOR,
 		"Office Worker" = JOB_ASSISTANT,
 		"Robot" = JOB_CYBORG,
-		"Site Manager" = JOB_HUMAN_RESOURCES_DIRECTOR,
-		"Senior Psychotronics Researcher" = JOB_SENIOR_RESEARCHER,
-		"Robotics Technician" = JOB_JUNIOR_ENGINEER,
-		"Junior Robotics Technician" = JOB_JUNIOR_ENGINEER,
-		"Senior Robotics Technician" = JOB_ENGINEER,
-		"Communications Technician" = JOB_IT_TECHNICIAN,
+		"Site Manager" = JOB_HUMAN_RESOURCES_OFFICER,
 	)
 	var/fixed = 0
 	for(var/obj/effect/landmark/start/S in GLOB.start_landmarks_list)

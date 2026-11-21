@@ -30,7 +30,7 @@
 
 /datum/id_trim/vr/operative/New()
 	. = ..()
-	access |= list(ACCESS_SYNDICATE, ACCESS_ENGINEERING_LVL1)
+	access |= list(ACCESS_CHAOS, ACCESS_ENGINEERING_LVL1)
 
 /// Trim for the Tunnel Clown! outfit. Has all access.
 /datum/id_trim/tunnel_clown

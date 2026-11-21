@@ -319,7 +319,7 @@ GLOBAL_LIST_EMPTY(mtf_squads)
 		return
 	var/mob/living/carbon/human/H = ui.user
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_SECURITY in id_card.access))
+	if(!id_card || !(ACCESS_SECURITY_LVL1 in id_card.access))
 		to_chat(H, span_warning("Requires Security access."))
 		return
 	switch(action)

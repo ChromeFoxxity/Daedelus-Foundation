@@ -160,7 +160,7 @@
 	theme = /datum/mod_theme/syndicate
 	starting_frequency = MODLINK_FREQ_SYNDICATE
 	applied_cell = /obj/item/stock_parts/cell/hyper
-	req_access = list(ACCESS_SYNDICATE)
+	req_access = list(ACCESS_CHAOS)
 	initial_modules = list(
 		/obj/item/mod/module/storage/syndicate,
 		/obj/item/mod/module/magnetic_harness,
@@ -172,7 +172,7 @@
 	theme = /datum/mod_theme/elite
 	starting_frequency = MODLINK_FREQ_SYNDICATE
 	applied_cell = /obj/item/stock_parts/cell/bluespace
-	req_access = list(ACCESS_SYNDICATE)
+	req_access = list(ACCESS_CHAOS)
 	initial_modules = list(
 		/obj/item/mod/module/storage/syndicate,
 		/obj/item/mod/module/emp_shield,
@@ -217,7 +217,7 @@
 	theme = /datum/mod_theme/responsory
 	starting_frequency = MODLINK_FREQ_CENTCOM
 	applied_cell = /obj/item/stock_parts/cell/hyper
-	req_access = list(ACCESS_CENT_GENERAL)
+	req_access = list(ACCESS_MTF)
 	initial_modules = list(
 		/obj/item/mod/module/storage/large_capacity,
 		/obj/item/mod/module/welding,
@@ -294,7 +294,7 @@
 	theme = /datum/mod_theme/apocryphal
 	starting_frequency = MODLINK_FREQ_CENTCOM
 	applied_cell = /obj/item/stock_parts/cell/bluespace
-	req_access = list(ACCESS_CENT_SPECOPS)
+	req_access = list(ACCESS_MTF)
 	initial_modules = list(
 		/obj/item/mod/module/storage/bluespace,
 		/obj/item/mod/module/welding,
@@ -307,7 +307,7 @@
 	theme = /datum/mod_theme/corporate
 	starting_frequency = MODLINK_FREQ_CENTCOM
 	applied_core = /obj/item/mod/core/infinite
-	req_access = list(ACCESS_CENT_SPECOPS)
+	req_access = list(ACCESS_CENTRAL_HR)
 	initial_modules = list(
 		/obj/item/mod/module/storage/bluespace,
 		/obj/item/mod/module/hat_stabilizer,

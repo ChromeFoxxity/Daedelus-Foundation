@@ -18,13 +18,13 @@ SUBSYSTEM_DEF(foundation_pathogens)
 	bsl_zones = list(
 		BSL_1 = list(
 			"name" = "Low Containment",
-			"required_access" = ACCESS_MEDICAL,
+			"required_access" = ACCESS_MEDICAL_LVL1,
 			"suit_required" = FALSE,
 			"decon_required" = FALSE,
 		),
 		BSL_2 = list(
 			"name" = "Standard Containment",
-			"required_access" = ACCESS_SCIENCE,
+			"required_access" = ACCESS_SCIENCE_LVL1,
 			"suit_required" = FALSE,
 			"decon_required" = TRUE,
 		),
@@ -110,9 +110,9 @@ SUBSYSTEM_DEF(foundation_pathogens)
 		return FALSE
 	switch(bsl)
 		if(BSL_1)
-			return (ACCESS_MEDICAL in id_card.access)
+			return (ACCESS_MEDICAL_LVL1 in id_card.access)
 		if(BSL_2)
-			return (ACCESS_SCIENCE in id_card.access)
+			return (ACCESS_SCIENCE_LVL1 in id_card.access)
 		if(BSL_3)
 			return (ACCESS_SECURITY_LVL3 in id_card.access)
 		if(BSL_4)

@@ -202,7 +202,7 @@
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
 	if(!id_card)
 		return
-	id_card.access = list(ACCESS_DCLASS, ACCESS_SECURITY_LVL1)
+	id_card.access = list(ACCESS_SECURITY_LVL1)
 
 /datum/tribunal_case/proc/apply_demotion(mob/M)
 	if(!istype(M, /mob/living/carbon/human))
@@ -214,7 +214,7 @@
 	id_card.access -= ACCESS_ADMIN_LVL5
 	id_card.access -= ACCESS_ADMIN_LVL4
 	id_card.access -= ACCESS_ADMIN_LVL3
-	id_card.access -= ACCESS_SECURITY
+	id_card.access -= ACCESS_SECURITY_LVL1
 	id_card.access -= ACCESS_SECURITY_LVL3
 	id_card.assignment = "Demoted Staff"
 	if(SSraisa)
@@ -226,7 +226,7 @@
 	var/mob/living/carbon/human/H = M
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
 	if(id_card)
-		id_card.access = list(ACCESS_DCLASS)
+		id_card.access = list()
 		id_card.assignment = "Terminated Staff"
 	if(SSfoundation_comms)
 		SSfoundation_comms.create_dispatch(null, 1, "Employment terminated for [H.real_name]. Security personnel escort subject off-site.", 2)

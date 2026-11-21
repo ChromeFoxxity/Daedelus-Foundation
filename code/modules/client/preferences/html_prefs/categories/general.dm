@@ -79,7 +79,7 @@
 	"}
 
 	var/current_class = prefs.read_preference(/datum/preference/choiced/class)
-	var/classes = list("administrative" = "Administrative", "security" = "Security", "research" = "Research", "medical" = "Medical", "engineering" = "Engineering", "intelligence" = "Intelligence")
+	var/classes = list("administrative" = "Administrative", "security" = "Security", "tactical" = "TRT", "research" = "Research", "medical" = "Medical", "engineering" = "Engineering", "logistics" = "Logistics", "general" = "General")
 
 	for(var/class_id in classes)
 		var/class_name = classes[class_id]

@@ -130,7 +130,7 @@
 		return
 	var/mob/living/carbon/human/H = user
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_ADMIN in id_card.access))
+	if(!id_card || !(ACCESS_ADMIN_LVL1 in id_card.access))
 		to_chat(H, span_warning("You cannot silence the breach siren without command authorization."))
 		return
 	deactivate()
@@ -163,7 +163,7 @@
 		if(QDELETED(D) || !istype(D))
 			continue
 		if(prob(30) && (zone_type == "hcz" || zone_type == "lcz"))
-			D.req_access = list(ACCESS_SECURITY)
+			D.req_access = list(ACCESS_SECURITY_LVL1)
 
 /obj/machinery/breach_siren/lcz
 	zone_type = "lcz"

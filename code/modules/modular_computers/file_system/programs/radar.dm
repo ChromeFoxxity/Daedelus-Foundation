@@ -211,7 +211,7 @@
 	filedesc = "Lifeline"
 	extended_desc = "This program allows for tracking of crew members via their suit sensors."
 	requires_ntnet = TRUE
-	transfer_access = list(ACCESS_MEDICAL)
+	transfer_access = list(ACCESS_MEDICAL_LVL1)
 	available_on_ntnet = TRUE
 	program_icon = "heartbeat"
 
@@ -254,7 +254,7 @@
 	filedesc = "Custodial Locator"
 	extended_desc = "This program allows for tracking of custodial equipment."
 	requires_ntnet = TRUE
-	transfer_access = list(ACCESS_SERVICE)
+	transfer_access = list(ACCESS_SERVICE_LVL1)
 	available_on_ntnet = TRUE
 	program_icon = "broom"
 	size = 2

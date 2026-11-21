@@ -21,11 +21,11 @@
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
 	reader_clearance = 1
 	if(id_card)
-		if(ACCESS_ADMIN in id_card.access)
+		if(ACCESS_ADMIN_LVL1 in id_card.access)
 			reader_clearance = 5
-		else if(ACCESS_SCIENCE in id_card.access)
+		else if(ACCESS_SCIENCE_LVL1 in id_card.access)
 			reader_clearance = 3
-		else if(ACCESS_SECURITY in id_card.access)
+		else if(ACCESS_SECURITY_LVL1 in id_card.access)
 			reader_clearance = 2
 
 	sync_unlocked_documents(H)

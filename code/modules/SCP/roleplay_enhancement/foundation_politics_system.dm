@@ -75,35 +75,62 @@ SUBSYSTEM_DEF(foundation_politics)
 
 /datum/foundation_politics_manager/proc/build_job_department_map()
 	department_job_map = list(
+		"administrative" = list(
+			JOB_SITE_DIRECTOR,
+			JOB_INTERNAL_TRIBUNAL_DEPARTMENT_OFFICER,
+			JOB_ETHICS_COMMITTEE_LIAISON,
+			JOB_INTAKE_SPECIALIST,
+			JOB_COMMUNICATIONS_OFFICER,
+		),
 		"research" = list(
-			JOB_RESEARCH_DIRECTOR, JOB_ASSISTANT_RESEARCH_DIRECTOR, JOB_SENIOR_RESEARCHER, JOB_RESEARCHER,
-			JOB_JUNIOR_RESEARCHER, "Lab Technician", "Xenobiologist",
-			"Roboticist", "Chemist (Science)", "Archaeologist", "Field Agent"
+			JOB_SCIENCE_DIRECTOR,
+			JOB_ASSISTANT_SCIENCE_DIRECTOR,
+			JOB_SENIOR_ROBOTICIST,
+			JOB_SENIOR_RESEARCHER,
+			JOB_ROBOTICIST,
+			JOB_RESEARCHER,
+			JOB_JUNIOR_RESEARCHER,
 		),
 		"security" = list(
-			JOB_GUARD_COMMANDER, JOB_LCZ_ZONE_JUNIOR_LIEUTENANT, JOB_HCZ_ZONE_SENIOR_LIEUTENANT,
-			JOB_EZ_ZONE_SUPERVISOR, JOB_LCZ_GUARD, JOB_HCZ_GUARD, JOB_EZ_GUARD,
-			JOB_SENIOR_LCZ_GUARD, JOB_SENIOR_HCZ_GUARD, JOB_SENIOR_EZ_GUARD,
-			JOB_JUNIOR_LCZ_GUARD, JOB_JUNIOR_HCZ_GUARD, JOB_JUNIOR_EZ_GUARD,
-			"MTF Commander", "MTF Operative",
-			JOB_RAISA_AGENT, JOB_INVESTIGATIONS_AGENT
+			JOB_SECURITY_CAPTAIN,
+			JOB_SECURITY_LIEUTENANT,
+			JOB_SECURITY_SERGEANT,
+			JOB_SECURITY_MEDIC,
+			JOB_SECURITY_GUARD,
+			JOB_SECURITY_CADET,
+		),
+		"tactical" = list(
+			JOB_TRT_COMMANDER,
+			JOB_TRT_SERGEANT,
+			JOB_TRT_OPERATOR,
+			JOB_TRT_CADET,
 		),
 		"medical" = list(
-			JOB_MEDICAL_DIRECTOR, JOB_ASSISTANT_MEDICAL_DIRECTOR, JOB_MEDICAL_DOCTOR, JOB_SURGEON,
-			JOB_PARAMEDIC, JOB_CHEMIST, JOB_VIROLOGIST, JOB_PSYCHOLOGIST,
-			JOB_TRAINEE_DOCTOR, "Coroner"
+			JOB_MEDICAL_DIRECTOR,
+			JOB_ASSISTANT_MEDICAL_DIRECTOR,
+			JOB_SENIOR_DOCTOR,
+			JOB_MEDICAL_DOCTOR,
+			JOB_MEDICAL_TECHNICIAN,
+			JOB_PSYCHOLOGIST,
+			JOB_MEDICAL_STUDENT,
 		),
 		"engineering" = list(
-			JOB_ENGINEERING_DIRECTOR, JOB_ASSISTANT_ENGINEERING_DIRECTOR, JOB_SENIOR_ENGINEER, JOB_ENGINEER,
-			JOB_JUNIOR_ENGINEER, JOB_ATMOSPHERIC_TECHNICIAN, JOB_CONTAINMENT_ENGINEER,
-			"Electrical Engineer", JOB_IT_TECHNICIAN, "Maintenance Technician"
+			JOB_ENGINEERING_DIRECTOR,
+			JOB_ASSISTANT_ENGINEERING_DIRECTOR,
+			JOB_CONTAINMENT_ENGINEER,
+			JOB_SENIOR_TECHNICIAN,
+			JOB_TECHNICIAN,
+			JOB_JUNIOR_TECHNICIAN,
 		),
-		"administrative" = list(
-			JOB_SITE_DIRECTOR, JOB_HUMAN_RESOURCES_DIRECTOR, JOB_INTERNAL_TRIBUNAL_DEPARTMENT_OFFICER,
-			JOB_ETHICS_COMMITTEE_LIAISON, JOB_COMMUNICATIONS_DIRECTOR,
-			JOB_LOGISTICS_OFFICER, JOB_LOGISTICS_TECHNICIAN,
-			"Lawyer"
-		)
+		"service" = list(
+			JOB_HUMAN_RESOURCES_OFFICER,
+			JOB_COOK,
+			JOB_BARTENDER,
+			JOB_CHAPLAIN,
+			JOB_CLOWN,
+			JOB_BOTANIST,
+			JOB_JANITOR,
+		),
 	)
 
 /datum/foundation_politics_manager/proc/build_faction_department_map()
@@ -260,7 +287,7 @@ SUBSYSTEM_DEF(foundation_politics)
 				if(!id_card)
 					continue
 				if(applying)
-					var/list/grant = list(ACCESS_SCIENCE, ACCESS_MEDICAL) - id_card.access
+					var/list/grant = list(ACCESS_SCIENCE_LVL1, ACCESS_MEDICAL_LVL1) - id_card.access
 					if(length(grant))
 						id_card.add_access(grant)
 						LAZYSET(dept._granted_access, ckey, grant)
@@ -340,7 +367,7 @@ SUBSYSTEM_DEF(foundation_politics)
 				var/mob/living/carbon/human/H = dept.get_mob_by_ckey(ckey)
 				if(!H || QDELETED(H) || H.stat == DEAD)
 					continue
-				if(H.job && (H.job == JOB_LCZ_GUARD || H.job == JOB_HCZ_GUARD || H.job == JOB_EZ_GUARD))
+				if(H.job && (H.job == JOB_TRT_OPERATOR || H.job == JOB_HCZ_GUARD || H.job == JOB_SECURITY_GUARD))
 					var/obj/item/storage/box/box = new(get_turf(H))
 					new /obj/item/restraints/handcuffs(box)
 					new /obj/item/assembly/flash(box)
@@ -351,7 +378,7 @@ SUBSYSTEM_DEF(foundation_politics)
 				var/mob/living/carbon/human/H = dept.get_mob_by_ckey(ckey)
 				if(!H || QDELETED(H) || H.stat == DEAD)
 					continue
-				if(H.job && (H.job == JOB_MEDICAL_DOCTOR || H.job == JOB_SURGEON || H.job == JOB_PARAMEDIC))
+				if(H.job && (H.job == JOB_MEDICAL_DOCTOR || H.job == JOB_SURGEON || H.job == JOB_MEDICAL_TECHNICIAN))
 					new /obj/item/storage/medkit/advanced(get_turf(H))
 					new /obj/item/reagent_containers/hypospray/medipen(get_turf(H))
 					to_chat(H, span_notice("Medical supplies delivered. Budget spent: [actual_cost]"))
@@ -728,9 +755,9 @@ SUBSYSTEM_DEF(foundation_politics)
 	var/head_job
 	switch(department_id)
 		if("research")
-			head_job = JOB_RESEARCH_DIRECTOR
+			head_job = JOB_SCIENCE_DIRECTOR
 		if("security")
-			head_job = JOB_GUARD_COMMANDER
+			head_job = JOB_SECURITY_CAPTAIN
 		if("medical")
 			head_job = JOB_MEDICAL_DIRECTOR
 		if("engineering")
@@ -1150,6 +1177,12 @@ SUBSYSTEM_DEF(foundation_politics)
 	security_dept.department_goals = list("maintain_containment", "train_security_personnel")
 	departments["security"] = security_dept
 
+	var/datum/department/tactical_team = new /datum/department("tactical", "Tactical Response Team", "tactical", "")
+	tactical_team.department_budget = 45000
+	tactical_team.department_influence = 40
+	tactical_team.department_goals = list("maintain_containment", "train_security_personnel")
+	departments["tactical"] = tactical_team
+
 	var/datum/department/medical_dept = new /datum/department("medical", "Medical Department", "medical", "")
 	medical_dept.department_budget = 35000
 	medical_dept.department_influence = 40
@@ -1167,6 +1200,24 @@ SUBSYSTEM_DEF(foundation_politics)
 	admin_dept.department_influence = 45
 	admin_dept.department_goals = list("manage_resources", "coordinate_departments")
 	departments["administrative"] = admin_dept
+
+	var/datum/department/service_dept = new /datum/department("service", "Service Staff", "service", "")
+	service_dept.department_budget = 30000
+	service_dept.department_influence = 40
+	service_dept.department_goals = list("manage_resources", "coordinate_departments")
+	departments["service"] = service_dept
+
+	var/datum/department/logistics_dept = new /datum/department("logistics", "Logistics Department", "logistics", "")
+	logistics_dept.department_budget = 35000
+	logistics_dept.department_influence = 40
+	logistics_dept.department_goals = list("maintain_facility", "improve_infrastructure")
+	departments["logistics"] = logistics_dept
+
+	var/datum/department/general = new /datum/department("general", "General Staff", "general", "")
+	general.department_budget = 25000
+	general.department_influence = 35
+	general.department_goals = list("maintain_facility", "improve_infrastructure")
+	departments["general"] = general
 
 	total_departments = length(departments)
 

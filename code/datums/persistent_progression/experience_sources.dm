@@ -261,7 +261,7 @@
     base_experience = 200
     cooldown_time = 0
     max_per_round = 1
-    compatible_classes = list("security", "research", "medical", "engineering", "administrative", "containment")
+    compatible_classes = list("general", "logistics", "security", "tactical", "research", "medical", "engineering", "administrative")
 
 /datum/experience_source/admin_award
     source_id = "admin_award"
@@ -269,4 +269,4 @@
     base_experience = 0 // Set by admin
     cooldown_time = 0
     max_per_round = 999
-    compatible_classes = list("security", "research", "medical", "engineering", "administrative", "containment")
+    compatible_classes = list("general", "logistics", "security", "tactical", "research", "medical", "engineering", "administrative")

@@ -259,7 +259,7 @@ SUBSYSTEM_DEF(persistent_progression)
 		"job_containment_breaches" = data.job_containment_breaches,
 		"job_scp_interactions" = data.job_scp_interactions,
 		"job_medical_procedures" = data.job_medical_procedures,
-		"job_engineering_projects" = data.job_engineering_projects,
+		"JOB_TECHNICIANing_projects" = data.JOB_TECHNICIANing_projects,
 		"job_security_operations" = data.job_security_operations,
 		"job_supply_management" = data.job_supply_management,
 		"job_service_contributions" = data.job_service_contributions,
@@ -345,7 +345,7 @@ SUBSYSTEM_DEF(persistent_progression)
 	data.job_containment_breaches = load_data["job_containment_breaches"] || list()
 	data.job_scp_interactions = load_data["job_scp_interactions"] || list()
 	data.job_medical_procedures = load_data["job_medical_procedures"] || list()
-	data.job_engineering_projects = load_data["job_engineering_projects"] || list()
+	data.JOB_TECHNICIANing_projects = load_data["JOB_TECHNICIANing_projects"] || list()
 	data.job_security_operations = load_data["job_security_operations"] || list()
 	data.job_supply_management = load_data["job_supply_management"] || list()
 	data.job_service_contributions = load_data["job_service_contributions"] || list()

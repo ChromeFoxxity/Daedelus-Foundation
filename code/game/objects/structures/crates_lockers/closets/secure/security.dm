@@ -90,7 +90,7 @@
 
 /obj/structure/closet/secure_closet/security
 	name = "security officer's locker"
-	req_access = list(ACCESS_SECURITY)
+	req_access = list(ACCESS_SECURITY_LVL2)
 	icon_state = "sec"
 
 /obj/structure/closet/secure_closet/security/PopulateContents()
@@ -134,7 +134,7 @@
 
 /obj/structure/closet/secure_closet/detective
 	name = "\improper investigator's cabinet"
-	req_access = list(ACCESS_SECURITY, ACCESS_MEDICAL)
+	req_access = list(ACCESS_SECURITY_LVL2)
 	icon_state = "cabinet"
 	resistance_flags = FLAMMABLE
 	max_integrity = 70
@@ -166,7 +166,7 @@
 
 /obj/structure/closet/secure_closet/brig
 	name = "brig locker"
-	req_access = list(ACCESS_SECURITY)
+	req_access = list(ACCESS_SECURITY_LVL2)
 	anchored = TRUE
 	var/id = null
 
@@ -207,7 +207,7 @@
 	. = ..()
 
 	var/list/id_access = used_id.GetAccess()
-	if(assigned_id_ref && (ACCESS_SECURITY in id_access))
+	if(assigned_id_ref && (ACCESS_SECURITY_LVL2 in id_access))
 		say("Authorized ID detected. Unlocking locker and resetting ID.")
 		locked = FALSE
 		assigned_id_ref = null
@@ -228,7 +228,7 @@
 
 /obj/structure/closet/secure_closet/courtroom
 	name = "courtroom locker"
-	req_access = list(ACCESS_SECURITY)
+	req_access = list(ACCESS_SECURITY_LVL1)
 
 /obj/structure/closet/secure_closet/courtroom/PopulateContents()
 	..()
@@ -318,7 +318,7 @@
 
 /obj/structure/closet/secure_closet/labor_camp_security
 	name = "labor camp security locker"
-	req_access = list(ACCESS_SECURITY)
+	req_access = list(ACCESS_SECURITY_LVL2)
 	icon_state = "sec"
 
 /obj/structure/closet/secure_closet/labor_camp_security/PopulateContents()

@@ -36,9 +36,9 @@
 				clearance_level = 5
 			else if(ACCESS_ADMIN_LVL4 in id_card.access)
 				clearance_level = 4
-			else if(ACCESS_ADMIN in id_card.access)
+			else if(ACCESS_ADMIN_LVL1 in id_card.access)
 				clearance_level = 3
-			else if(ACCESS_SCIENCE in id_card.access)
+			else if(ACCESS_SCIENCE_LVL1 in id_card.access)
 				clearance_level = 2
 			else
 				clearance_level = 1

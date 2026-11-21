@@ -51,7 +51,7 @@
 	var/mob/living/carbon/human/H = user
 
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_MEDICAL in id_card.access))
+	if(!id_card || !(ACCESS_MEDICAL_LVL1 in id_card.access))
 		to_chat(H, span_warning("Requires Medical access to operate quarantine systems."))
 		return
 

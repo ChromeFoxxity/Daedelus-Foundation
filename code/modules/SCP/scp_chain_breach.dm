@@ -130,7 +130,7 @@ SUBSYSTEM_DEF(scp_chain_breach)
 					continue
 				if(!H.job)
 					continue
-				if(H.job == JOB_LCZ_GUARD || H.job == JOB_HCZ_GUARD || H.job == JOB_EZ_GUARD || H.job == JOB_GUARD_COMMANDER || H.job == JOB_LCZ_ZONE_JUNIOR_LIEUTENANT || H.job == JOB_HCZ_ZONE_SENIOR_LIEUTENANT || H.job == JOB_EZ_ZONE_SUPERVISOR)
+				if(H.job == JOB_TRT_CADET || H.job == JOB_TRT_OPERATOR || H.job == JOB_TRT_SERGEANT || H.job == JOB_TRT_COMMANDER || H.job == JOB_SECURITY_CADET || H.job == JOB_SECURITY_GUARD || H.job == JOB_SECURITY_MEDIC || H.job == JOB_SECURITY_SERGEANT || H.job == JOB_SECURITY_LIEUTENANT|| H.job == JOB_SECURITY_CAPTAIN)
 					to_chat(H, span_warning("Chain breach protocol activated. All security personnel report to containment zones immediately."))
 		if("scp_079_awakening")
 			for(var/mob/living/scp079/S in GLOB.mob_list)

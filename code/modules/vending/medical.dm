@@ -5,7 +5,7 @@
 	icon_deny = "med-deny"
 	panel_type = "panel11"
 	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?;Ping!"
-	req_access = list(ACCESS_MEDICAL)
+	req_access = list(ACCESS_MEDICAL_LVL1)
 	products = list(
 		/obj/item/stack/gauze = 8,
 		/obj/item/reagent_containers/syringe = 12,
@@ -41,7 +41,7 @@
 
 /obj/machinery/vending/medical/syndicate_access
 	name = "\improper SyndiMed Plus"
-	req_access = list(ACCESS_SYNDICATE)
+	req_access = list(ACCESS_CHAOS)
 
 //Created out of a necessity to get these dumb chems out of the medical tools vendor.
 /obj/machinery/vending/drugs
@@ -51,7 +51,7 @@
 	icon_deny = "drug-deny"
 	panel_type = "panel11"
 	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?;Ping!"
-	req_access = list(ACCESS_MEDICAL)
+	req_access = list(ACCESS_MEDICAL_LVL2)
 	products = list(/obj/item/reagent_containers/pill/bicaridine = 7,
 					/obj/item/reagent_containers/pill/kelotane = 7,
 					/obj/item/reagent_containers/syringe/dexalin = 2,
@@ -74,7 +74,7 @@
 	payment_department = ACCOUNT_MED
 	refill_canister = /obj/item/vending_refill/drugs
 
-	discount_access = ACCESS_MEDICAL
+	discount_access = ACCESS_MEDICAL_LVL3
 
 /obj/item/vending_refill/drugs
 	machine_name = "NanoDrug Plus"

@@ -26,7 +26,7 @@
 		to_chat(H, span_warning("ID card required."))
 		return
 
-	var/has_access = (ACCESS_ADMIN in id_card.access) || (ACCESS_SECURITY in id_card.access)
+	var/has_access = (ACCESS_ADMIN_LVL1 in id_card.access) || (ACCESS_SECURITY_LVL1 in id_card.access)
 	if(!has_access)
 		to_chat(H, span_warning("Requires Command or Security access to use the PA system."))
 		return

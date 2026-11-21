@@ -58,7 +58,7 @@
 		return FALSE
 	var/mob/living/carbon/human/H = user
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_SCIENCE in id_card.access))
+	if(!id_card || !(ACCESS_SCIENCE_LVL1 in id_card.access))
 		to_chat(user, span_warning("You need Science access to modify SCP-914's parameters."))
 		return FALSE
 	return TRUE

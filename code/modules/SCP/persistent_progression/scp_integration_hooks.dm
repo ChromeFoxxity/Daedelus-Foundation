@@ -84,7 +84,7 @@ var/list/scp_breach_cooldown = list()
 			if(H.stat == DEAD || !H.ckey)
 				continue
 			var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-			if(id_card && (ACCESS_SECURITY in id_card.access))
+			if(id_card && (ACCESS_SECURITY_LVL1 in id_card.access))
 				report_first_responder(H, scp_id)
 				break
 

@@ -173,7 +173,7 @@ SUBSYSTEM_DEF(director_oversight)
 	program_icon = "clipboard-check"
 	usage_flags = PROGRAM_ALL
 	available_on_ntnet = FALSE
-	required_access = list(ACCESS_ADMIN)
+	required_access = list(ACCESS_ADMIN_LVL1)
 
 /datum/computer_file/program/scp_director_oversight/ui_data(mob/user)
 	var/list/data = get_header_data()
@@ -182,7 +182,7 @@ SUBSYSTEM_DEF(director_oversight)
 		data["access_denied"] = TRUE
 		return data
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_ADMIN in id_card.access))
+	if(!id_card || !(ACCESS_ADMIN_LVL1 in id_card.access))
 		data["access_denied"] = TRUE
 		return data
 	data["access_denied"] = FALSE
@@ -211,7 +211,7 @@ SUBSYSTEM_DEF(director_oversight)
 	if(!istype(H))
 		return
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_ADMIN in id_card.access))
+	if(!id_card || !(ACCESS_ADMIN_LVL1 in id_card.access))
 		return
 	if(!SSdirector_oversight)
 		return

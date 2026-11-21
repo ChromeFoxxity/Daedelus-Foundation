@@ -1,3 +1,4 @@
+/*
 /datum/job/it_technician
 	title = JOB_IT_TECHNICIAN
 	description = "Maintain the facility network infrastructure. Monitor network nodes and server racks \
@@ -107,3 +108,4 @@
 		return
 
 	H.grant_all_languages(TRUE, TRUE, TRUE, LANGUAGE_ARCHIVIST)
+*/

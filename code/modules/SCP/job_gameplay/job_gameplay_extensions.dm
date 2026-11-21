@@ -262,7 +262,7 @@
 	tgui_id = "ScpEngineeringWork"
 	program_icon = "wrench"
 	available_on_ntnet = TRUE
-	required_access = ACCESS_ENGINEERING
+	required_access = ACCESS_ENGINEERING_LVL1
 
 /datum/computer_file/program/scp_engineering_work/ui_data(mob/user)
 	var/list/data = get_header_data()
@@ -342,7 +342,7 @@
 	tgui_id = "ScpMedicalWork"
 	program_icon = "heartbeat"
 	available_on_ntnet = TRUE
-	required_access = ACCESS_MEDICAL
+	required_access = ACCESS_MEDICAL_LVL1
 
 /datum/computer_file/program/scp_medical_work/ui_data(mob/user)
 	var/list/data = get_header_data()

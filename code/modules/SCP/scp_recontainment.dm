@@ -256,7 +256,7 @@
 		return
 	var/mob/living/carbon/human/H = user
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_SCIENCE in id_card.access))
+	if(!id_card || !(ACCESS_SCIENCE_LVL1 in id_card.access))
 		to_chat(user, span_warning("Requires Science access."))
 		return
 
@@ -369,7 +369,7 @@
 		return
 	var/mob/living/carbon/human/H = user
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_SCIENCE in id_card.access))
+	if(!id_card || !(ACCESS_SCIENCE_LVL1 in id_card.access))
 		to_chat(user, span_warning("Requires Science access."))
 		return
 	if(active)
@@ -464,7 +464,7 @@
 		return
 	var/mob/living/carbon/human/H = user
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_SECURITY in id_card.access))
+	if(!id_card || !(ACCESS_SECURITY_LVL1 in id_card.access))
 		to_chat(user, span_warning("Requires Security access."))
 		return
 	if(world.time < acid_cooldown)
@@ -605,7 +605,7 @@
 		return
 	var/mob/living/carbon/human/H = user
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_MEDICAL in id_card.access))
+	if(!id_card || !(ACCESS_MEDICAL_LVL1 in id_card.access))
 		to_chat(user, span_warning("Requires Medical access."))
 		return
 	var/list/candidates = list()

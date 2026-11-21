@@ -975,9 +975,9 @@
 		if("Security Clearance")
 			var/obj/item/card/id/id_card = H.get_idcard(TRUE)
 			if(id_card)
-				id_card.add_access(list(ACCESS_SECURITY, ACCESS_SECURITY_LVL1, ACCESS_SECURITY_LVL2, ACCESS_SECURITY_LVL3), mode = TRY_ADD_ALL_NO_WILDCARD)
+				id_card.add_access(list(ACCESS_SECURITY_LVL1, ACCESS_SECURITY_LVL2, ACCESS_SECURITY_LVL3), mode = TRY_ADD_ALL_NO_WILDCARD)
 				to_chat(usr, span_notice("You grant yourself temporary security access using stolen credentials."))
-				addtimer(CALLBACK(id_card, /obj/item/card/id/proc/remove_access, list(ACCESS_SECURITY, ACCESS_SECURITY_LVL1, ACCESS_SECURITY_LVL2, ACCESS_SECURITY_LVL3)), 60 SECONDS)
+				addtimer(CALLBACK(id_card, /obj/item/card/id/proc/remove_access, list(ACCESS_SECURITY_LVL1, ACCESS_SECURITY_LVL2, ACCESS_SECURITY_LVL3)), 60 SECONDS)
 				H.visible_message(span_warning("[H]'s ID card flashes with unauthorized security access!"))
 			else
 				to_chat(usr, span_warning("You need an ID card to grant security access."))
@@ -1052,9 +1052,9 @@
 		if("Administrative Access")
 			var/obj/item/card/id/id_card = H.get_idcard(TRUE)
 			if(id_card)
-				id_card.add_access(list(ACCESS_ADMIN, ACCESS_ADMIN_LVL1, ACCESS_ADMIN_LVL2, ACCESS_ADMIN_LVL3, ACCESS_ADMIN_LVL4), mode = TRY_ADD_ALL_NO_WILDCARD)
+				id_card.add_access(list(ACCESS_ADMIN_LVL1, ACCESS_ADMIN_LVL2, ACCESS_ADMIN_LVL3, ACCESS_ADMIN_LVL4), mode = TRY_ADD_ALL_NO_WILDCARD)
 				to_chat(usr, span_notice("You grant yourself temporary administrative access using stolen authority."))
-				addtimer(CALLBACK(id_card, /obj/item/card/id/proc/remove_access, list(ACCESS_ADMIN, ACCESS_ADMIN_LVL1, ACCESS_ADMIN_LVL2, ACCESS_ADMIN_LVL3, ACCESS_ADMIN_LVL4)), 45 SECONDS)
+				addtimer(CALLBACK(id_card, /obj/item/card/id/proc/remove_access, list(ACCESS_ADMIN_LVL1, ACCESS_ADMIN_LVL2, ACCESS_ADMIN_LVL3, ACCESS_ADMIN_LVL4)), 45 SECONDS)
 				H.visible_message(span_warning("[H]'s ID card flashes with unauthorized administrative access!"))
 			else
 				to_chat(usr, span_warning("You need an ID card to grant administrative access."))

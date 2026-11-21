@@ -1,5 +1,5 @@
 /datum/job/assistant_research_director
-	title = JOB_ASSISTANT_RESEARCH_DIRECTOR
+	title = JOB_ASSISTANT_SCIENCE_DIRECTOR
 	description = "Research new technology, create explosives, experiment with strange objects, or synthesize dangerous chemicals."
 	department_head = list(JOB_MEDICAL_DIRECTOR)
 	faction = FACTION_STATION

@@ -28,6 +28,9 @@
 
 /turf/closed/wall/scp_containment/lcz
 	containment_zone = "lcz"
+	color = "#FFFFFF"
+	wall_paint = "#FFFFFF"
+	stripe_paint = "#E0C276"
 
 /turf/closed/wall/scp_containment/hcz
 	name = "heavy containment wall"

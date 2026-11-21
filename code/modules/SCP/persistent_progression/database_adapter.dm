@@ -84,7 +84,7 @@
 	data.job_containment_breaches = db_row["job_containment_breaches"] || list()
 	data.job_scp_interactions = db_row["job_scp_interactions"] || list()
 	data.job_medical_procedures = db_row["job_medical_procedures"] || list()
-	data.job_engineering_projects = db_row["job_engineering_projects"] || list()
+	data.JOB_TECHNICIANing_projects = db_row["JOB_TECHNICIANing_projects"] || list()
 	data.job_security_operations = db_row["job_security_operations"] || list()
 	data.job_supply_management = db_row["job_supply_management"] || list()
 	data.job_service_contributions = db_row["job_service_contributions"] || list()
@@ -194,7 +194,7 @@
 	db_data["job_containment_breaches"] = data.job_containment_breaches
 	db_data["job_scp_interactions"] = data.job_scp_interactions
 	db_data["job_medical_procedures"] = data.job_medical_procedures
-	db_data["job_engineering_projects"] = data.job_engineering_projects
+	db_data["JOB_TECHNICIANing_projects"] = data.JOB_TECHNICIANing_projects
 	db_data["job_security_operations"] = data.job_security_operations
 	db_data["job_supply_management"] = data.job_supply_management
 	db_data["job_service_contributions"] = data.job_service_contributions

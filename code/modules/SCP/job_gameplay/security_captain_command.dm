@@ -1,4 +1,4 @@
-SUBSYSTEM_DEF(security_director)
+SUBSYSTEM_DEF(security_captain)
 	name = "Security Director"
 	flags = SS_NO_FIRE
 
@@ -10,7 +10,7 @@ SUBSYSTEM_DEF(security_director)
 	var/total_responses_coordinated = 0
 	var/average_response_time = 0
 
-/datum/controller/subsystem/security_director/proc/issue_directive(mob/living/carbon/human/director, directive_type, target, description, priority)
+/datum/controller/subsystem/security_captain/proc/issue_directive(mob/living/carbon/human/director, directive_type, target, description, priority)
 	if(!director || !directive_type)
 		return
 	var/directive_id = "secdir_[world.time]_[rand(100,999)]"
@@ -34,7 +34,7 @@ SUBSYSTEM_DEF(security_director)
 		SSdirector_oversight.issue_directive(director, "Security", directive_type, target, description, 10)
 	return directive_id
 
-/datum/controller/subsystem/security_director/proc/acknowledge_directive(directive_id, mob/living/carbon/human/responder)
+/datum/controller/subsystem/security_captain/proc/acknowledge_directive(directive_id, mob/living/carbon/human/responder)
 	for(var/list/D in security_directives)
 		if(D["directive_id"] == directive_id && D["status"] == "active")
 			D["responders"] += list(list(
@@ -46,7 +46,7 @@ SUBSYSTEM_DEF(security_director)
 			return TRUE
 	return FALSE
 
-/datum/controller/subsystem/security_director/proc/complete_directive(directive_id)
+/datum/controller/subsystem/security_captain/proc/complete_directive(directive_id)
 	for(var/list/D in security_directives)
 		if(D["directive_id"] == directive_id && D["status"] == "active")
 			D["status"] = "completed"
@@ -56,7 +56,7 @@ SUBSYSTEM_DEF(security_director)
 			return TRUE
 	return FALSE
 
-/datum/controller/subsystem/security_director/proc/activate_alert_code(code_type, scope, reason, mob/living/carbon/human/activator)
+/datum/controller/subsystem/security_captain/proc/activate_alert_code(code_type, scope, reason, mob/living/carbon/human/activator)
 	if(!code_type)
 		return
 	var/code_id = "code_[world.time]_[rand(10,99)]"
@@ -90,7 +90,7 @@ SUBSYSTEM_DEF(security_director)
 	priority_announce(announcement, "Security Director", null, code_type == "lockdown" ? ANNOUNCER_ALERT : ANNOUNCER_DEFAULT)
 	return code_id
 
-/datum/controller/subsystem/security_director/proc/coordinate_breach_response(scp_id, response_type, mob/living/carbon/human/director)
+/datum/controller/subsystem/security_captain/proc/coordinate_breach_response(scp_id, response_type, mob/living/carbon/human/director)
 	if(!scp_id)
 		return
 	var/plan_id = "plan_[world.time]_[rand(100,999)]"
@@ -118,7 +118,7 @@ SUBSYSTEM_DEF(security_director)
 		SSscp_patrol.respond_to_breach(director ? director.ckey : "system", scp_id)
 	return plan_id
 
-/datum/controller/subsystem/security_director/proc/get_security_status()
+/datum/controller/subsystem/security_captain/proc/get_security_status()
 	var/list/status = list()
 	status["active_codes"] = 0
 	status["active_directives"] = 0
@@ -138,7 +138,7 @@ SUBSYSTEM_DEF(security_director)
 			status["guards_on_duty"]++
 	return status
 
-/datum/computer_file/program/scp_security_director
+/datum/computer_file/program/scp_security_captain
 	filename = "scp_secdir"
 	filedesc = "Security Director Console"
 	category = PROGRAM_CATEGORY_MISC
@@ -151,9 +151,9 @@ SUBSYSTEM_DEF(security_director)
 	available_on_ntnet = FALSE
 	required_access = list(ACCESS_ADMIN_LVL3)
 
-/datum/computer_file/program/scp_security_director/ui_data(mob/user)
+/datum/computer_file/program/scp_security_captain/ui_data(mob/user)
 	var/list/data = get_header_data()
-	if(!SSsecurity_director)
+	if(!SSsecurity_captain)
 		return data
 	var/mob/living/carbon/human/H = user
 	if(!istype(H))
@@ -164,13 +164,13 @@ SUBSYSTEM_DEF(security_director)
 		data["access_denied"] = TRUE
 		return data
 	data["access_denied"] = FALSE
-	data["directives"] = SSsecurity_director.security_directives
-	data["alert_codes"] = SSsecurity_director.alert_codes
-	data["response_plans"] = SSsecurity_director.breach_response_plans
-	data["total_directives_issued"] = SSsecurity_director.total_directives_issued
-	data["total_codes_activated"] = SSsecurity_director.total_codes_activated
-	data["total_responses_coordinated"] = SSsecurity_director.total_responses_coordinated
-	var/list/sec_status = SSsecurity_director.get_security_status()
+	data["directives"] = SSsecurity_captain.security_directives
+	data["alert_codes"] = SSsecurity_captain.alert_codes
+	data["response_plans"] = SSsecurity_captain.breach_response_plans
+	data["total_directives_issued"] = SSsecurity_captain.total_directives_issued
+	data["total_codes_activated"] = SSsecurity_captain.total_codes_activated
+	data["total_responses_coordinated"] = SSsecurity_captain.total_responses_coordinated
+	var/list/sec_status = SSsecurity_captain.get_security_status()
 	data["active_codes"] = sec_status["active_codes"]
 	data["active_directives"] = sec_status["active_directives"]
 	data["active_plans"] = sec_status["active_plans"]
@@ -198,11 +198,11 @@ SUBSYSTEM_DEF(security_director)
 		)
 	return data
 
-/datum/computer_file/program/scp_security_director/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+/datum/computer_file/program/scp_security_captain/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
 	if(.)
 		return
-	if(!SSsecurity_director)
+	if(!SSsecurity_captain)
 		return
 	var/mob/living/carbon/human/H = ui.user
 	if(!istype(H))
@@ -212,26 +212,26 @@ SUBSYSTEM_DEF(security_director)
 		return
 	switch(action)
 		if("issue_directive")
-			SSsecurity_director.issue_directive(H, params["directive_type"], params["target"], params["description"], text2num(params["priority"]) || 0)
+			SSsecurity_captain.issue_directive(H, params["directive_type"], params["target"], params["description"], text2num(params["priority"]) || 0)
 			. = TRUE
 		if("acknowledge_directive")
-			SSsecurity_director.acknowledge_directive(params["directive_id"], H)
+			SSsecurity_captain.acknowledge_directive(params["directive_id"], H)
 			. = TRUE
 		if("complete_directive")
-			SSsecurity_director.complete_directive(params["directive_id"])
+			SSsecurity_captain.complete_directive(params["directive_id"])
 			. = TRUE
 		if("activate_code")
-			SSsecurity_director.activate_alert_code(params["code_type"], params["scope"] || "facility", params["reason"] || "", H)
+			SSsecurity_captain.activate_alert_code(params["code_type"], params["scope"] || "facility", params["reason"] || "", H)
 			. = TRUE
 		if("coordinate_response")
-			SSsecurity_director.coordinate_breach_response(params["scp_id"], params["response_type"], H)
+			SSsecurity_captain.coordinate_breach_response(params["scp_id"], params["response_type"], H)
 			. = TRUE
 		if("print_directive")
 			var/directive_id = params["directive_id"]
 			if(!directive_id)
 				return
 			var/list/directive
-			for(var/list/D in SSsecurity_director.security_directives)
+			for(var/list/D in SSsecurity_captain.security_directives)
 				if(D["directive_id"] == directive_id)
 					directive = D
 					break

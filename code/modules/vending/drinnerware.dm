@@ -38,7 +38,7 @@
 	payment_department = ACCOUNT_STATION_MASTER
 	light_mask = "dinnerware-light-mask"
 
-	discount_access = ACCESS_SERVICE
+	discount_access = ACCESS_SERVICE_LVL3
 
 /obj/item/vending_refill/dinnerware
 	machine_name = "Plasteel Chef's Dinnerware Vendor"

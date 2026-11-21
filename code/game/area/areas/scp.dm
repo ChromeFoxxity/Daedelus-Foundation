@@ -16,19 +16,27 @@
 	power_equip = FALSE
 	power_light = FALSE
 	requires_power = TRUE
+	ambience_index = AMBIENCE_HOLY
 
 /area/outdoors/underground
 	name = "Facility Caves"
+	icon_state = "explored"
 	outdoors = TRUE
 	always_unpowered = TRUE
-	requires_power = TRUE
 	power_environ = FALSE
 	power_equip = FALSE
 	power_light = FALSE
+	requires_power = TRUE
 
 // ENTRANCE ZONE
 
-/area/station/hallway/ez/hub
+/area/station/ez
+	name = "Entrance Zone"
+	icon_state = "ez"
+	airlock_wires = /datum/wires/airlock/lcz
+	holomap_color = "#ce8245"
+
+/area/station/ez/hub
 	name = "EZ Hub"
 	icon_state = "centralhall"
 

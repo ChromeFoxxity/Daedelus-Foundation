@@ -50,7 +50,7 @@
 		if(H.stat == DEAD || !H.client)
 			continue
 		var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-		if(id_card && (ACCESS_SECURITY in id_card.access))
+		if(id_card && (ACCESS_SECURITY_LVL1 in id_card.access))
 			to_chat(H, span_danger("The D-Class are refusing to follow orders!"))
 			if(H.sanity)
 				H.sanity.adjust_sanity(-10, "dclass_unrest")
@@ -161,7 +161,7 @@
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
 	if(!id_card)
 		return FALSE
-	if(!(ACCESS_SECURITY in id_card.access))
+	if(!(ACCESS_SECURITY_LVL1 in id_card.access))
 		to_chat(H, span_warning("You lack the required access to negotiate with the D-Class."))
 		return FALSE
 	if(negotiator)
@@ -230,7 +230,7 @@
 			if(H.stat == DEAD || !H.client)
 				continue
 			var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-			if(id_card && (ACCESS_SECURITY in id_card.access) && prob(30))
+			if(id_card && (ACCESS_SECURITY_LVL1 in id_card.access) && prob(30))
 				H.adjustBruteLoss(rand(10, 30))
 				log_combat(null, H, "riotsuppressed", addition="D-Class riot collateral damage")
 	else
@@ -365,7 +365,7 @@ SUBSYSTEM_DEF(dclass_riot)
 	anchored = TRUE
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 200
-	req_access = list(ACCESS_SECURITY)
+	req_access = list(ACCESS_SECURITY_LVL1)
 
 /obj/machinery/computer/dclass_riot_console/ui_interact(mob/user, datum/tgui/ui)
 	. = ..()
@@ -414,7 +414,7 @@ SUBSYSTEM_DEF(dclass_riot)
 		return
 	var/mob/living/carbon/human/H = user
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_SECURITY in id_card.access))
+	if(!id_card || !(ACCESS_SECURITY_LVL1 in id_card.access))
 		to_chat(H, span_warning("Access denied."))
 		return
 

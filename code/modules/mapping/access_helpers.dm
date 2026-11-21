@@ -230,20 +230,15 @@
 	access_list += ACCESS_LOGISTICS_LVL3
 	return access_list
 
-/obj/effect/mapping_helpers/airlock/access/any/logistics/level4/get_access()
-	var/list/access_list = ..()
-	access_list += ACCESS_LOGISTICS_LVL4
-	return access_list
-
-/obj/effect/mapping_helpers/airlock/access/any/logistics/level5/get_access()
-	var/list/access_list = ..()
-	access_list += ACCESS_LOGISTICS_LVL5
-	return access_list
-
 // -------------------- Dclass Access Helpers
 
 /obj/effect/mapping_helpers/airlock/access/any/dclass
 	icon_state = "access_helper_eng"
+
+/obj/effect/mapping_helpers/airlock/access/any/dclass/general/get_access()
+	var/list/access_list = ..()
+	access_list += ACCESS_DCLASS
+	return access_list
 
 /obj/effect/mapping_helpers/airlock/access/any/dclass/botany/get_access()
 	var/list/access_list = ..()
@@ -277,12 +272,12 @@
 
 /obj/effect/mapping_helpers/airlock/access/any/syndicate/general/get_access()
 	var/list/access_list = ..()
-	access_list += list(ACCESS_SYNDICATE)
+	access_list += list(ACCESS_CHAOS)
 	return access_list
 
 /obj/effect/mapping_helpers/airlock/access/any/syndicate/leader/get_access()
 	var/list/access_list = ..()
-	access_list += list(ACCESS_SYNDICATE_LEADER)
+	access_list += list(ACCESS_CHAOS_LEADER)
 	return access_list
 
 // -------------------- Away access helpers
@@ -355,42 +350,32 @@
 
 /obj/effect/mapping_helpers/airlock/access/any/admin/general/get_access()
 	var/list/access_list = ..()
-	access_list += ACCESS_CENT_GENERAL
+	access_list += ACCESS_CENTRAL
 	return access_list
 
-/obj/effect/mapping_helpers/airlock/access/any/admin/thunderdome/get_access()
+/obj/effect/mapping_helpers/airlock/access/any/admin/high_rank/get_access()
 	var/list/access_list = ..()
-	access_list += ACCESS_CENT_THUNDER
+	access_list += ACCESS_CENTRAL_HR
 	return access_list
 
-/obj/effect/mapping_helpers/airlock/access/any/admin/medical/get_access()
+/obj/effect/mapping_helpers/airlock/access/any/admin/isd/get_access()
 	var/list/access_list = ..()
-	access_list += ACCESS_CENT_MEDICAL
+	access_list += ACCESS_ISD
 	return access_list
 
-/obj/effect/mapping_helpers/airlock/access/any/admin/living/get_access()
+/obj/effect/mapping_helpers/airlock/access/any/admin/o5/get_access()
 	var/list/access_list = ..()
-	access_list += ACCESS_CENT_LIVING
+	access_list += ACCESS_O5
 	return access_list
 
-/obj/effect/mapping_helpers/airlock/access/any/admin/storage/get_access()
+/obj/effect/mapping_helpers/airlock/access/any/admin/mtf/get_access()
 	var/list/access_list = ..()
-	access_list += ACCESS_CENT_STORAGE
+	access_list += ACCESS_MTF
 	return access_list
 
-/obj/effect/mapping_helpers/airlock/access/any/admin/teleporter/get_access()
+/obj/effect/mapping_helpers/airlock/access/any/admin/mtf_leader/get_access()
 	var/list/access_list = ..()
-	access_list += ACCESS_CENT_TELEPORTER
-	return access_list
-
-/obj/effect/mapping_helpers/airlock/access/any/admin/captain/get_access()
-	var/list/access_list = ..()
-	access_list += ACCESS_CENT_CAPTAIN
-	return access_list
-
-/obj/effect/mapping_helpers/airlock/access/any/admin/bar/get_access()
-	var/list/access_list = ..()
-	access_list += ACCESS_CENT_CAPTAIN
+	access_list += ACCESS_MTF_LEADER
 	return access_list
 
 // -------------------- Req All (Requires ALL of the given accesses to open)
@@ -595,20 +580,15 @@
 	access_list += ACCESS_LOGISTICS_LVL3
 	return access_list
 
-/obj/effect/mapping_helpers/airlock/access/all/logistics/level4/get_access()
-	var/list/access_list = ..()
-	access_list += ACCESS_LOGISTICS_LVL4
-	return access_list
-
-/obj/effect/mapping_helpers/airlock/access/all/logistics/level5/get_access()
-	var/list/access_list = ..()
-	access_list += ACCESS_LOGISTICS_LVL5
-	return access_list
-
 // -------------------- Dclass Access Helpers
 
 /obj/effect/mapping_helpers/airlock/access/all/dclass
 	icon_state = "access_helper_eng"
+
+/obj/effect/mapping_helpers/airlock/access/all/dclass/general/get_access()
+	var/list/access_list = ..()
+	access_list += ACCESS_DCLASS
+	return access_list
 
 /obj/effect/mapping_helpers/airlock/access/all/dclass/botany/get_access()
 	var/list/access_list = ..()
@@ -641,12 +621,12 @@
 
 /obj/effect/mapping_helpers/airlock/access/all/syndicate/general/get_access()
 	var/list/access_list = ..()
-	access_list += ACCESS_SYNDICATE
+	access_list += ACCESS_CHAOS
 	return access_list
 
 /obj/effect/mapping_helpers/airlock/access/all/syndicate/leader/get_access()
 	var/list/access_list = ..()
-	access_list += ACCESS_SYNDICATE_LEADER
+	access_list += ACCESS_CHAOS_LEADER
 	return access_list
 
 // -------------------- Away access helpers
@@ -719,40 +699,30 @@
 
 /obj/effect/mapping_helpers/airlock/access/all/admin/general/get_access()
 	var/list/access_list = ..()
-	access_list += ACCESS_CENT_GENERAL
+	access_list += ACCESS_CENTRAL
 	return access_list
 
-/obj/effect/mapping_helpers/airlock/access/all/admin/thunderdome/get_access()
+/obj/effect/mapping_helpers/airlock/access/all/admin/high_rank/get_access()
 	var/list/access_list = ..()
-	access_list += ACCESS_CENT_THUNDER
+	access_list += ACCESS_CENTRAL_HR
 	return access_list
 
-/obj/effect/mapping_helpers/airlock/access/all/admin/medical/get_access()
+/obj/effect/mapping_helpers/airlock/access/all/admin/isd/get_access()
 	var/list/access_list = ..()
-	access_list += ACCESS_CENT_MEDICAL
+	access_list += ACCESS_ISD
 	return access_list
 
-/obj/effect/mapping_helpers/airlock/access/all/admin/living/get_access()
+/obj/effect/mapping_helpers/airlock/access/all/admin/o5/get_access()
 	var/list/access_list = ..()
-	access_list += ACCESS_CENT_LIVING
+	access_list += ACCESS_O5
 	return access_list
 
-/obj/effect/mapping_helpers/airlock/access/all/admin/storage/get_access()
+/obj/effect/mapping_helpers/airlock/access/all/admin/mtf/get_access()
 	var/list/access_list = ..()
-	access_list += ACCESS_CENT_STORAGE
+	access_list += ACCESS_MTF
 	return access_list
 
-/obj/effect/mapping_helpers/airlock/access/all/admin/teleporter/get_access()
+/obj/effect/mapping_helpers/airlock/access/all/admin/mtf_leader/get_access()
 	var/list/access_list = ..()
-	access_list += ACCESS_CENT_TELEPORTER
-	return access_list
-
-/obj/effect/mapping_helpers/airlock/access/all/admin/captain/get_access()
-	var/list/access_list = ..()
-	access_list += ACCESS_CENT_CAPTAIN
-	return access_list
-
-/obj/effect/mapping_helpers/airlock/access/all/admin/bar/get_access()
-	var/list/access_list = ..()
-	access_list += ACCESS_CENT_BAR
+	access_list += ACCESS_MTF_LEADER
 	return access_list

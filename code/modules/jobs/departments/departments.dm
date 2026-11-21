@@ -44,13 +44,13 @@
 /datum/job_department/captain
 	department_name = DEPARTMENT_CAPTAIN
 	department_bitflags = DEPARTMENT_BITFLAG_CAPTAIN
-	department_head = /datum/job/captain
+	department_head = /datum/job/site_director
 	is_not_real_department = TRUE
 
 /datum/job_department/command
 	department_name = DEPARTMENT_MANAGEMENT
 	department_bitflags = DEPARTMENT_BITFLAG_MANAGEMENT
-	department_head = /datum/job/captain
+	department_head = /datum/job/site_director
 	department_experience_type = EXP_TYPE_COMMAND
 	display_order = 1
 	label_class = "command"
@@ -59,11 +59,11 @@
 /datum/job_department/security
 	department_name = DEPARTMENT_SECURITY
 	department_bitflags = DEPARTMENT_BITFLAG_SECURITY
-	department_head = /datum/job/security_director
+	department_head = /datum/job/security_captain
 	department_experience_type = EXP_TYPE_SECURITY
 	display_order = 2
 	label_class = "security"
-	latejoin_color = "#cc4444"
+	latejoin_color = "#7e7e7e"
 	manifest_key = DATACORE_RECORDS_MARS
 	nation_prefixes = list("Securi", "Beepski", "Shitcuri", "Red", "Stunba", "Flashbango", "Flasha", "Stanfordi")
 	budget_id = ACCOUNT_SEC

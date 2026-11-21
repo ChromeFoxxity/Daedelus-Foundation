@@ -44,7 +44,7 @@
 	var/mob/living/carbon/human/H = user
 
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_SECURITY in id_card.access))
+	if(!id_card || !(ACCESS_SECURITY_LVL1 in id_card.access))
 		to_chat(H, span_warning("Requires Security access to operate checkpoint scanner."))
 		return
 
@@ -63,7 +63,7 @@
 		return
 
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(id_card && (ACCESS_SECURITY in id_card.access))
+	if(id_card && (ACCESS_SECURITY_LVL1 in id_card.access))
 		return
 
 	var/list/found_contraband = list()
@@ -108,7 +108,7 @@
 			if(sec.stat == DEAD || !sec.client)
 				continue
 			var/obj/item/card/id/sec_id = sec.get_idcard(TRUE)
-			if(sec_id && (ACCESS_SECURITY in sec_id.access))
+			if(sec_id && (ACCESS_SECURITY_LVL1 in sec_id.access))
 				var/area/A = get_area(src)
 				var/contraband_location = A ? A.name : "unknown location"
 				to_chat(sec, span_danger("CHECKPOINT ALERT: Contraband detected on [H.name] at [contraband_location]. Items: [english_list(found_contraband)]"))
@@ -137,7 +137,7 @@
 	var/mob/living/carbon/human/H = user
 
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_SECURITY in id_card.access))
+	if(!id_card || !(ACCESS_SECURITY_LVL1 in id_card.access))
 		to_chat(H, span_warning("Requires Security access to operate the checkpoint gate."))
 		return
 
@@ -195,7 +195,7 @@
 	var/mob/living/carbon/human/H = user
 
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_SECURITY in id_card.access))
+	if(!id_card || !(ACCESS_SECURITY_LVL1 in id_card.access))
 		to_chat(H, span_warning("Requires Security access to perform searches."))
 		return
 

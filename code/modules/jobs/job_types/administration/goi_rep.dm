@@ -136,27 +136,3 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag
 
 	implants = list(/obj/item/implant/mindshield)
-
-// MCD Rep Outfit
-
-/datum/outfit/job/mcd_rep
-	name = JOB_MCD_REP
-	jobtype = /datum/job/goi_rep
-	allow_jumpskirt = FALSE
-
-	id = /obj/item/card/id/advanced/black_blank
-	id_trim = /datum/id_trim/job/mcd_rep
-	uniform = /obj/item/clothing/under/suit/tuxedo
-	backpack_contents = list(
-		/obj/item/gun/ballistic/revolver/golden = 1,
-		/obj/item/ammo_box/a357 = 1,
-		/obj/item/storage/fancy/cigarettes/cigars/havana = 1
-	)
-	belt = /obj/item/modular_computer/tablet/pda/foundation_command
-	ears = /obj/item/radio/headset/headset_com
-	head = /obj/item/clothing/head/that
-	shoes = /obj/item/clothing/shoes/laceup
-
-	backpack = /obj/item/storage/backpack
-	satchel = /obj/item/storage/backpack/satchel
-	duffelbag = /obj/item/storage/backpack/duffelbag

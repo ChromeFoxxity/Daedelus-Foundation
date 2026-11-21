@@ -50,7 +50,7 @@
 /datum/job/captain
 	banned_quirks = list(HEAD_RESTRICTED_QUIRKS)
 
-/datum/job/security_director
+/datum/job/security_captain
 	banned_quirks = list(SEC_RESTRICTED_QUIRKS, HEAD_RESTRICTED_QUIRKS)
 
 /datum/job/medical_director

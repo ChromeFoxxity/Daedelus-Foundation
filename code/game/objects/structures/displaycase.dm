@@ -276,7 +276,7 @@
 //The lab cage and captain's display case do not spawn with electronics, which is why req_access is needed.
 /obj/structure/displaycase/captain
 	start_showpiece_type = /obj/item/gun/energy/laser/captain
-	req_access = list(ACCESS_CENT_SPECOPS) //this was intentional, presumably to make it slightly harder for caps to grab their gun roundstart
+	req_access = list(ACCESS_CENTRAL_HR) //this was intentional, presumably to make it slightly harder for caps to grab their gun roundstart
 
 /obj/structure/displaycase/labcage
 	name = "lab cage"
@@ -592,7 +592,7 @@
 
 /obj/structure/displaycase/forsale/kitchen
 	desc = "A display case with an ID-card swiper. Use your ID to purchase the contents. Meant for the bartender and chef."
-	req_one_access = list(ACCESS_SERVICE, ACCESS_SERVICE)
+	req_one_access = list(ACCESS_SERVICE_LVL3)
 
 /obj/structure/displaycase/scp_513
 	start_showpiece_type = /obj/item/scp513

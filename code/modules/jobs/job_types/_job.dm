@@ -1,61 +1,58 @@
 GLOBAL_LIST_INIT(job_display_order, list(
 	// Management
 	/datum/job/site_director,
-	/datum/job/human_resources_director,
 	/datum/job/ethics_committee_liaison,
 	/datum/job/internal_tribunal_department_officer,
+	/datum/job/intake_specialist,
 	/datum/job/communications_director,
-	/datum/job/goi_rep,
+	/datum/job/goc_rep,
 	// Security
-	/datum/job/security_director,
-	/datum/job/raisa_agent,
-	/datum/job/ez_commander,
-	/datum/job/senior_ez_guard,
-	/datum/job/ez_guard,
-	/datum/job/junior_ez_guard,
-	/datum/job/lcz_commander,
-	/datum/job/senior_lcz_guard,
-	/datum/job/lcz_guard,
-	/datum/job/junior_lcz_guard,
-	/datum/job/hcz_commander,
-	/datum/job/senior_hcz_guard,
-	/datum/job/hcz_guard,
-	/datum/job/junior_hcz_guard,
+	/datum/job/security_captain,
+	/datum/job/security_lieutenant,
+	/datum/job/security_sergeant,
+	/datum/job/security_medic,
+	/datum/job/security_guard,
+	/datum/job/security_cadet,
 	/datum/job/dclass,
+	// TRT
+	/datum/job/trt_commander,
+	/datum/job/trt_sergeant,
+	/datum/job/trt_operator,
+	/datum/job/trt_cadet,
 	// Science
-	/datum/job/research_director,
-	/datum/job/assistant_research_director,
+	/datum/job/science_director,
+	/datum/job/assistant_science_director,
+	/datum/job/senior_roboticist,
 	/datum/job/senior_researcher,
+	/datum/job/roboticist,
 	/datum/job/researcher,
 	/datum/job/junior_researcher,
 	// Medical
 	/datum/job/medical_director,
 	/datum/job/assistant_medical_director,
-	/datum/job/surgeon,
-	/datum/job/chemist,
-	/datum/job/virologist,
+	/datum/job/senior_doctor,
 	/datum/job/medical_doctor,
-	/datum/job/paramedic,
-	/datum/job/trainee_doctor,
+	/datum/job/medical_technician,
 	/datum/job/psychologist,
+	/datum/job/medical_student,
 	// Engineering
 	/datum/job/engineering_director,
 	/datum/job/assistant_engineering_director,
 	/datum/job/containment_engineer,
-	/datum/job/it_technician,
-	/datum/job/senior_engineer,
-	/datum/job/engineer,
-	/datum/job/junior_engineer,
-	/datum/job/atmospheric_technician,
+	/datum/job/senior_technician,
+	/datum/job/technician,
+	/datum/job/junior_technician,
 	// Supply
 	/datum/job/logistics_officer,
 	/datum/job/logistics_technician,
 	// Service
+	/datum/job/human_resources_officer,
+	/datum/job/cook,
+	/datum/job/bartender,
 	/datum/job/botanist,
 	/datum/job/chaplain,
 	/datum/job/janitor,
 	/datum/job/clown,
-	/datum/job/mime,
 	/datum/job/assistant,
 	// Silicon
 	/datum/job/ai,
@@ -355,6 +352,7 @@ GLOBAL_LIST_INIT(job_display_order, list(
 	var/backpack = /obj/item/storage/backpack
 	var/satchel = /obj/item/storage/backpack/satchel
 	var/duffelbag = /obj/item/storage/backpack/duffelbag
+	var/messenger = /obj/item/storage/backpack/messenger
 
 	var/pda_slot = ITEM_SLOT_BELT
 
@@ -365,6 +363,8 @@ GLOBAL_LIST_INIT(job_display_order, list(
 				back = /obj/item/storage/backpack //Grey backpack
 			if(GSATCHEL)
 				back = /obj/item/storage/backpack/satchel //Grey satchel
+			if(GMESSENGER)
+				back = /obj/item/storage/backpack/messenger //Grey messenger
 			if(GDUFFELBAG)
 				back = /obj/item/storage/backpack/duffelbag //Grey Duffel bag
 			if(LSATCHEL)
@@ -373,6 +373,8 @@ GLOBAL_LIST_INIT(job_display_order, list(
 				back = satchel //Department satchel
 			if(DDUFFELBAG)
 				back = duffelbag //Department duffel bag
+			if(DMESSENGER)
+				back = messenger //Department messenger
 			else
 				back = backpack //Department backpack
 
@@ -434,6 +436,7 @@ GLOBAL_LIST_INIT(job_display_order, list(
 	types += backpack
 	types += satchel
 	types += duffelbag
+	preload += messenger
 	return types
 
 /datum/outfit/job/get_types_to_preload()
@@ -441,6 +444,7 @@ GLOBAL_LIST_INIT(job_display_order, list(
 	preload += backpack
 	preload += satchel
 	preload += duffelbag
+	preload += messenger
 	preload += /obj/item/storage/backpack/satchel/leather
 	var/skirtpath = "[uniform]/skirt"
 	preload += text2path(skirtpath)

@@ -344,7 +344,7 @@ SUBSYSTEM_DEF(storytelling)
 			var/turf/scp_turf = found_scp ? get_turf(found_scp) : null
 			if(!found_scp || (scp_turf && get_dist(get_turf(H), scp_turf) < 30))
 				return TRUE
-		if(H.job == JOB_LCZ_GUARD || H.job == JOB_HCZ_GUARD || H.job == JOB_EZ_GUARD || H.job == JOB_LCZ_ZONE_JUNIOR_LIEUTENANT || H.job == JOB_HCZ_ZONE_SENIOR_LIEUTENANT || H.job == JOB_EZ_ZONE_SUPERVISOR || H.job == JOB_GUARD_COMMANDER)
+		if(H.job == JOB_TRT_OPERATOR || H.job == JOB_HCZ_GUARD || H.job == JOB_SECURITY_GUARD || H.job == JOB_TRT_COMMANDER || H.job == JOB_SECURITY_MEDIC || H.job == JOB_SECURITY_LIEUTENANT || H.job == JOB_SECURITY_CAPTAIN)
 			var/turf/scp_turf2 = found_scp ? get_turf(found_scp) : null
 			if(!found_scp || (scp_turf2 && get_dist(get_turf(H), scp_turf2) < 30))
 				return TRUE
@@ -358,7 +358,7 @@ SUBSYSTEM_DEF(storytelling)
 			continue
 		if(!H.job)
 			continue
-		if(H.job == "MTF Commander" || H.job == "MTF Operative" || H.job == JOB_LCZ_GUARD || H.job == JOB_HCZ_GUARD || H.job == JOB_EZ_GUARD)
+		if(H.job == "MTF Commander" || H.job == "MTF Operative" || H.job == JOB_TRT_OPERATOR || H.job == JOB_HCZ_GUARD || H.job == JOB_SECURITY_GUARD)
 			if(H.combat_mode)
 				return TRUE
 	return FALSE
@@ -532,7 +532,7 @@ SUBSYSTEM_DEF(storytelling)
 			continue
 		if(H.stat == DEAD)
 			continue
-		if(H.job == JOB_ENGINEERING_DIRECTOR || H.job == JOB_CONTAINMENT_ENGINEER || H.job == JOB_IT_TECHNICIAN)
+		if(H.job == JOB_ENGINEERING_DIRECTOR || H.job == JOB_CONTAINMENT_ENGINEER)
 			var/area/A = get_area(H)
 			if(A && (istype(A, /area/scp/hcz) || istype(A, /area/scp/lcz)))
 				return TRUE

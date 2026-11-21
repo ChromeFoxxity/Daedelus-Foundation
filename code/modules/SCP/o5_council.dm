@@ -18,7 +18,7 @@
 		return
 	var/mob/living/carbon/human/H = user
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_ADMIN in id_card.access))
+	if(!id_card || !(ACCESS_ADMIN_LVL1 in id_card.access))
 		to_chat(H, span_warning("O5 clearance required."))
 		return
 	ui_interact(H)
@@ -53,7 +53,7 @@
 
 	var/mob/living/carbon/human/H = ui.user
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_ADMIN in id_card.access))
+	if(!id_card || !(ACCESS_ADMIN_LVL1 in id_card.access))
 		return
 
 	switch(action)
@@ -87,7 +87,7 @@
 					check_vote_completion(vote)
 					break
 		if("authorize_warhead")
-			if(!(ACCESS_ADMIN in id_card.access))
+			if(!(ACCESS_ADMIN_LVL1 in id_card.access))
 				return
 			priority_announce("O5 COUNCIL HAS AUTHORIZED THE ON-SITE WARHEAD. SITE DIRECTOR: CONFIRM DETONATION CODE.", null, null, 'sound/misc/airraid.ogg')
 			log_game("[key_name(H)] O5 authorized the on-site warhead via Council vote.")

@@ -3,7 +3,7 @@
 	description = "Manage the Foundation budget. Approve or deny department funding requests, \
 	reallocate resources between departments, and ensure financial stability. Use the Budget \
 	Management Console to track spending and authorize expenditures."
-	department_head = list(JOB_CAPTAIN)
+	department_head = list(JOB_SITE_DIRECTOR)
 	faction = FACTION_STATION
 	total_positions = 1
 	spawn_positions = 1

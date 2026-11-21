@@ -271,7 +271,7 @@
 	player_data.complete_engineering_project(player_data.current_job, project_type, complexity, outcome)
 
 	// Update achievement progress
-	player_data.update_achievement_progress("job_engineering_master", 1)
+	player_data.update_achievement_progress("JOB_TECHNICIANing_master", 1)
 
 /datum/job_integration/proc/on_security_operation(mob/living/carbon/human/H, operation_type, target, outcome)
 	if(!H.mind || !H.ckey)

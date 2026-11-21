@@ -243,20 +243,6 @@
 					if(H.is_wearing_item_of_type(/obj/item/clothing/suit/space/nasavoid/old))
 						chance += 250
 					episode_names += new /datum/episode_name/rare("[pick("YOU KNOW THE DRILL", "CAN YOU DIG IT?", "JOURNEY TO THE CENTER OF THE ASTEROI", "CAVE STORY", "QUARRY ON")]", "The Miner was the only survivor in the shuttle.", chance)
-				if(JOB_IT_TECHNICIAN)
-					var/chance = 750
-					if(H.is_wearing_item_of_type(/obj/item/book))
-						chance += 1000
-					/*if(H.is_wearing_item_of_type(/obj/item/clothing/under/suit_jacket/red))
-						chance += 500*/
-					episode_names += new /datum/episode_name/rare("COOKING THE BOOKS", "The Librarian was the only survivor in the shuttle.", chance)
-				if(JOB_CHEMIST)
-					var/chance = 1000
-					if(H.is_wearing_item_of_type(/obj/item/clothing/suit/toggle/labcoat/chemist))
-						chance += 500
-					if(H.is_wearing_item_of_type(/obj/item/clothing/under/rank/medical/chemist))
-						chance += 250
-					episode_names += new /datum/episode_name/rare("A BITTER PILL TO SWALLOW", "The Chemist was the only survivor in the shuttle.", chance)
 				if(JOB_CHAPLAIN) //We don't check for uniform here because the chaplain's thing kind of is to improvise their garment gimmick
 					episode_names += new /datum/episode_name/rare("BLESS THIS MESS", "The Chaplain was the only survivor in the shuttle.", 1250)
 

@@ -79,7 +79,7 @@
 	desc = "A heavy Foundation airlock with keycard access."
 	overlays_file = 'icons/obj/doors/airlocks/station2/overlays.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_sc
-	req_access = list(ACCESS_SCIENCE)
+	req_access = list(ACCESS_SCIENCE_LVL1)
 	normal_integrity = 500
 	var/zone_name = "UNKNOWN"
 	var/clearance_message = "Insufficient clearance for this zone."
@@ -95,14 +95,14 @@
 /obj/machinery/door/airlock/scp/containment
 	name = "Containment Door"
 	desc = "A reinforced containment cell door requiring appropriate clearance."
-	req_access = list(ACCESS_CONTAINMENT_SCP_173)
+	req_access = list(ACCESS_SCIENCE_LVL2)
 	normal_integrity = 800
 	explosion_block = 2
 
 /obj/machinery/door/airlock/scp/decon
 	name = "Decontamination Airlock"
 	desc = "An airlock with built-in decontamination systems."
-	req_access = list(ACCESS_SCIENCE)
+	req_access = list(ACCESS_SCIENCE_LVL1)
 	normal_integrity = 600
 
 /obj/structure/door_assembly/door_assembly_sc

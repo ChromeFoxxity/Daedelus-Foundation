@@ -4,7 +4,7 @@
 	icon_screen = "medcomp"
 	icon_keyboard = "med_key"
 	circuit = /obj/item/circuitboard/computer/pathogen_research_console
-	req_access = list(ACCESS_SCIENCE)
+	req_access = list(ACCESS_SCIENCE_LVL1)
 
 	light_color = LIGHT_COLOR_CYAN
 

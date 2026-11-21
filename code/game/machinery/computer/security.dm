@@ -3,7 +3,7 @@
 	desc = "Used to view and edit personnel's security records."
 	icon_screen = "security"
 	icon_keyboard = "security_key"
-	req_one_access = list(ACCESS_SECURITY, ACCESS_ADMIN_LVL5)
+	req_one_access = list(ACCESS_SECURITY_LVL1, ACCESS_ADMIN_LVL3)
 	circuit = /obj/item/circuitboard/computer/secure_data
 	light_color = COLOR_SOFT_RED
 	var/rank = null
@@ -179,7 +179,7 @@
 
 /obj/machinery/computer/secure_data/syndie
 	icon_keyboard = "syndie_key"
-	req_one_access = list(ACCESS_SYNDICATE)
+	req_one_access = list(ACCESS_CHAOS)
 
 /obj/machinery/computer/secure_data/laptop
 	name = "security laptop"
@@ -191,7 +191,7 @@
 
 /obj/machinery/computer/secure_data/laptop/syndie
 	desc = "A cheap, jailbroken security laptop. It functions as a security records console. It's bolted to the table."
-	req_one_access = list(ACCESS_SYNDICATE)
+	req_one_access = list(ACCESS_CHAOS)
 
 //Someone needs to break down the dat += into chunks instead of long ass lines.
 /obj/machinery/computer/secure_data/ui_interact(mob/user)
@@ -1003,9 +1003,9 @@ Age: [active1.fields[DATACORE_AGE]]<BR>"}
 					if("rank")
 						var/list/L = list(
 							JOB_SITE_DIRECTOR,
-							JOB_HUMAN_RESOURCES_DIRECTOR,
+							JOB_HUMAN_RESOURCES_OFFICER,
 							JOB_AI,
-							JOB_CENTCOM,
+							JOB_CENTRAL,
 						)
 						//This was so silly before the change. Now it actually works without beating your head against the keyboard. /N
 						if((istype(active1, /datum/data/record) && L.Find(rank)))

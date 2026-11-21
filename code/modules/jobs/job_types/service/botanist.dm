@@ -3,7 +3,7 @@
 	description = "Grow plants for the cook, for medicine, and for recreation. Use the \
 		Anomalous Botany Sample Kit to collect and catalog anomalous plant specimens, \
 		contributing research points to the Foundation."
-	department_head = list(JOB_HUMAN_RESOURCES_DIRECTOR)
+	department_head = list(JOB_HUMAN_RESOURCES_OFFICER)
 	faction = FACTION_STATION
 	total_positions = 3
 	spawn_positions = 2

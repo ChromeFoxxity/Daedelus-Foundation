@@ -20,7 +20,7 @@
 	priority = PREFERENCE_PRIORITY_DEFAULT
 
 /datum/preference/choiced/class/init_possible_values()
-	return list("administrative", "security", "research", "medical", "engineering", "intelligence")
+	return list("general", "logistics", "security", "tactical", "research", "medical", "engineering", "administrative")
 
 /datum/preference/choiced/class/create_default_value()
 	return "security"

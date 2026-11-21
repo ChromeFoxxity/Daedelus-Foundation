@@ -22,7 +22,7 @@
 	var/list/applicable_heads = list(
 		JOB_MEDICAL_DIRECTOR = /area/station/command/heads_quarters/cmo,
 		JOB_ENGINEERING_DIRECTOR = /area/station/command/heads_quarters/ce,
-		JOB_HUMAN_RESOURCES_DIRECTOR = /area/station/command/heads_quarters/hop,
+		JOB_HUMAN_RESOURCES_OFFICER = /area/station/command/heads_quarters/hop,
 		JOB_SITE_DIRECTOR = /area/station/command/heads_quarters/captain, // For head roles so that they can still get this objective.
 	)
 	var/datum/job/target_office
@@ -44,7 +44,7 @@
 	progression_minimum = 20 MINUTES
 	progression_maximum = 60 MINUTES
 	applicable_heads = list(
-		JOB_GUARD_COMMANDER = /area/station/command/heads_quarters/hos,
+		JOB_SECURITY_CAPTAIN = /area/station/command/heads_quarters/hos,
 	)
 	progression_reward = list(10 MINUTES, 15 MINUTES)
 	telecrystal_reward = list(2, 3)

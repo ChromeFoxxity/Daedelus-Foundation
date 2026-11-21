@@ -405,14 +405,70 @@
 	. = ..()
 	AddComponent(/datum/component/toggle_icon)
 
-/obj/item/clothing/suit/armor/security
+/obj/item/clothing/suit/armor/vest/security
 	name = "\improper security armored vest"
 	desc = "A heavy Foundation-issued security vest fitted with reinforced trauma plating and thick ballistic padding, designed primarily to \
-	absorb blunt-force impacts during containment breaches. A bold \"SECURITY DEPARTMENT\" identifier is stitched across the front carrier, \
-	marking the wearer as on-site security personnel."
+		absorb blunt-force impacts during containment breaches. A bold \"SECURITY DEPARTMENT\" identifier is stitched across the front carrier, \
+		marking the wearer as on-site security personnel."
 	icon = 'icons/mob/clothing/suits/armor.dmi'
 	icon_state = "guard_vest"
 	slowdown = 0.15
 	body_parts_covered = CHEST|GROIN
-	armor = list(BLUNT = 55, PUNCTURE = 35, SLASH = 40, LASER = 20, ENERGY = 15, BOMB = 45, BIO = 10, FIRE = 15, ACID = 20)
+	cold_protection = CHEST|GROIN
+	heat_protection = CHEST|GROIN
+	armor = list(BLUNT = 55, PUNCTURE = 35, SLASH = 40, LASER = 20, ENERGY = 15, BOMB = 45, BIO = 10, FIRE = 50, ACID = 50)
+	strip_delay = 60
+	equip_delay_other = 40
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION | CLOTHING_TESHARI_VARIATION | CLOTHING_VOX_VARIATION
+
+/obj/item/clothing/suit/armor/vest/security/medical
+	name = "\improper security medic armored vest"
+	desc = "A heavy Foundation-issued medic's security vest fitted with reinforced trauma plating and thick ballistic padding with added energy resistance, \
+		designed primarily to absorb blunt-force impacts during containment breaches. A bold \"SECURITY DEPARTMENT MEDICAL\" identifier is stitched \
+		across the front carrier, marking the wearer as on-site security personnel, this one has added shoulder pads with one displaying the medical cross."
+	icon_state = "med_guard_vest"
+	slowdown = 0.2
+	body_parts_covered = CHEST|GROIN|ARMS
+	cold_protection = CHEST|GROIN|ARMS
+	heat_protection = CHEST|GROIN|ARMS
+	armor = list(BLUNT = 55, PUNCTURE = 35, SLASH = 40, LASER = 30, ENERGY = 25, BOMB = 45, BIO = 25, FIRE = 55, ACID = 55)
+
+/obj/item/clothing/suit/armor/vest/security/sergeant
+	name = "\improper security NCO armored vest"
+	desc = "A heavy Foundation-issued sergeant's security vest fitted with reinforced trauma plating and thick ballistic padding, designed \
+		primarily to absorb blunt-force impacts during containment breaches. A bold \"SECURITY DEPARTMENT NCO\" identifier is stitched across \
+		the front carrier, marking the wearer as on-site security personnel, this one has added shoulder pads with white security department insignia."
+	icon_state = "sgt_guard_vest"
+	slowdown = 0.2
+	body_parts_covered = CHEST|GROIN|ARMS
+	cold_protection = CHEST|GROIN|ARMS
+	heat_protection = CHEST|GROIN|ARMS
+	armor = list(BLUNT = 55, PUNCTURE = 35, SLASH = 40, LASER = 20, ENERGY = 15, BOMB = 45, BIO = 10, FIRE = 50, ACID = 50)
+
+/obj/item/clothing/suit/armor/vest/security/lieutenant
+	name = "\improper medium-plated security armored vest"
+	desc = "A heavy Foundation-issued lieutenant's security vest fitted with reinforced trauma plating and thick ballistic padding, designed primarily \
+		to absorb blunt-force impacts during containment breaches. A bold \"SECURITY DEPARTMENT OFFICER\" identifier is stitched across the front carrier, \
+		marking the wearer as on-site security personnel, this one has added shoulder pads and leg protection with silver security department insignia."
+	icon_state = "lt_guard_vest"
+	slowdown = 0.25
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	cold_protection = CHEST|GROIN|ARMS|LEGS
+	heat_protection = CHEST|GROIN|ARMS|LEGS
+	armor = list(BLUNT = 60, PUNCTURE = 40, SLASH = 45, LASER = 20, ENERGY = 25, BOMB = 45, BIO = 15, FIRE = 55, ACID = 55)
+	strip_delay = 70
+	equip_delay_other = 50
+
+/obj/item/clothing/suit/armor/vest/security/captain
+	name = "\improper heavy-plated security armored vest"
+	desc = "A heavy Foundation-issued captain's security vest fitted with superior trauma plating and heavy ballistic padding, designed primarily \
+		to absorb blunt-force impacts during containment breaches. A bold \"SECURITY DEPARTMENT CAPTAIN\" identifier is stitched across the front carrier, \
+		marking the wearer as on-site security personnel, this one has added arm protection and leg protection with golden security department insignia."
+	icon_state = "cpt_guard_vest"
+	slowdown = 0.3
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS|HANDS
+	cold_protection = CHEST|GROIN|ARMS|LEGS|HANDS
+	heat_protection = CHEST|GROIN|ARMS|LEGS|HANDS
+	armor = list(BLUNT = 70, PUNCTURE = 45, SLASH = 50, LASER = 30, ENERGY = 30, BOMB = 50, BIO = 25, FIRE = 60, ACID = 60)
+	strip_delay = 80
+	equip_delay_other = 60

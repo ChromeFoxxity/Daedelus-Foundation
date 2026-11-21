@@ -277,7 +277,7 @@
 	program_icon = "brain"
 	usage_flags = PROGRAM_ALL
 	available_on_ntnet = FALSE
-	required_access = list(ACCESS_MEDICAL)
+	required_access = list(ACCESS_MEDICAL_LVL1)
 
 /datum/computer_file/program/scp_psychology_console/ui_data(mob/user)
 	var/list/data = get_header_data()
@@ -286,7 +286,7 @@
 		data["access_denied"] = TRUE
 		return data
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_MEDICAL in id_card.access))
+	if(!id_card || !(ACCESS_MEDICAL_LVL1 in id_card.access))
 		data["access_denied"] = TRUE
 		return data
 	data["access_denied"] = FALSE
@@ -336,7 +336,7 @@
 	if(!istype(H))
 		return
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_MEDICAL in id_card.access))
+	if(!id_card || !(ACCESS_MEDICAL_LVL1 in id_card.access))
 		return
 	switch(action)
 		if("start_evaluation")
@@ -413,7 +413,7 @@
 	program_icon = "search"
 	usage_flags = PROGRAM_ALL
 	available_on_ntnet = FALSE
-	required_access = list(ACCESS_SECURITY)
+	required_access = list(ACCESS_SECURITY_LVL1)
 
 /datum/computer_file/program/scp_investigations/ui_data(mob/user)
 	var/list/data = get_header_data()
@@ -422,7 +422,7 @@
 		data["access_denied"] = TRUE
 		return data
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_SECURITY in id_card.access))
+	if(!id_card || !(ACCESS_SECURITY_LVL1 in id_card.access))
 		data["access_denied"] = TRUE
 		return data
 	data["access_denied"] = FALSE
@@ -463,7 +463,7 @@
 	if(!istype(H))
 		return
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_SECURITY in id_card.access))
+	if(!id_card || !(ACCESS_SECURITY_LVL1 in id_card.access))
 		return
 	switch(action)
 		if("analyze_evidence")
@@ -495,7 +495,7 @@
 	program_icon = "eye"
 	usage_flags = PROGRAM_ALL
 	available_on_ntnet = FALSE
-	required_access = list(ACCESS_SECURITY)
+	required_access = list(ACCESS_SECURITY_LVL1)
 
 /datum/computer_file/program/scp_raisa/ui_data(mob/user)
 	var/list/data = get_header_data()
@@ -504,7 +504,7 @@
 		data["access_denied"] = TRUE
 		return data
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_SECURITY in id_card.access))
+	if(!id_card || !(ACCESS_SECURITY_LVL1 in id_card.access))
 		data["access_denied"] = TRUE
 		return data
 	data["access_denied"] = FALSE
@@ -561,7 +561,7 @@
 	if(!istype(H))
 		return
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_SECURITY in id_card.access))
+	if(!id_card || !(ACCESS_SECURITY_LVL1 in id_card.access))
 		return
 	switch(action)
 		if("file_report")
@@ -1195,7 +1195,7 @@
 	program_icon = "shield-alt"
 	usage_flags = PROGRAM_ALL
 	available_on_ntnet = FALSE
-	required_access = list(ACCESS_SECURITY)
+	required_access = list(ACCESS_SECURITY_LVL1)
 
 /datum/computer_file/program/scp_vip_protection/ui_data(mob/user)
 	var/list/data = get_header_data()
@@ -1225,7 +1225,7 @@
 	if(!istype(H))
 		return
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_SECURITY in id_card.access))
+	if(!id_card || !(ACCESS_SECURITY_LVL1 in id_card.access))
 		return
 	switch(action)
 		if("assign_detail")
@@ -1262,7 +1262,7 @@
 	program_icon = "network-wired"
 	usage_flags = PROGRAM_ALL
 	available_on_ntnet = FALSE
-	required_access = list(ACCESS_ENGINEERING)
+	required_access = list(ACCESS_ENGINEERING_LVL1)
 
 /datum/computer_file/program/scp_it_network/ui_data(mob/user)
 	var/list/data = get_header_data()
@@ -1310,7 +1310,7 @@
 	if(!istype(H))
 		return
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_ENGINEERING in id_card.access))
+	if(!id_card || !(ACCESS_ENGINEERING_LVL1 in id_card.access))
 		return
 	switch(action)
 		if("repair_node")
@@ -1344,7 +1344,7 @@
 	program_icon = "walking"
 	usage_flags = PROGRAM_ALL
 	available_on_ntnet = FALSE
-	required_access = list(ACCESS_SECURITY)
+	required_access = list(ACCESS_SECURITY_LVL1)
 
 /datum/computer_file/program/scp_guard_patrol/ui_data(mob/user)
 	var/list/data = get_header_data()
@@ -1410,7 +1410,7 @@
 	if(!istype(H))
 		return
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_SECURITY in id_card.access))
+	if(!id_card || !(ACCESS_SECURITY_LVL1 in id_card.access))
 		return
 	if(!SSguard_patrols)
 		return
@@ -1477,7 +1477,7 @@
 	program_icon = "door-open"
 	usage_flags = PROGRAM_ALL
 	available_on_ntnet = FALSE
-	required_access = list(ACCESS_SECURITY)
+	required_access = list(ACCESS_SECURITY_LVL1)
 
 /datum/computer_file/program/scp_door_control/ui_data(mob/user)
 	var/list/data = get_header_data()
@@ -1509,7 +1509,7 @@
 	if(!istype(H))
 		return
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_SECURITY in id_card.access))
+	if(!id_card || !(ACCESS_SECURITY_LVL1 in id_card.access))
 		return
 	switch(action)
 		if("set_zone_state")
@@ -1618,7 +1618,7 @@
 	program_icon = "bullhorn"
 	usage_flags = PROGRAM_ALL
 	available_on_ntnet = FALSE
-	required_access = list(ACCESS_SECURITY)
+	required_access = list(ACCESS_SECURITY_LVL1)
 
 /datum/computer_file/program/scp_intercom/ui_data(mob/user)
 	var/list/data = get_header_data()
@@ -1640,7 +1640,7 @@
 	if(!istype(H))
 		return
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_SECURITY in id_card.access))
+	if(!id_card || !(ACCESS_SECURITY_LVL1 in id_card.access))
 		return
 	switch(action)
 		if("broadcast")
@@ -1729,7 +1729,7 @@
 	program_icon = "video"
 	usage_flags = PROGRAM_ALL
 	available_on_ntnet = FALSE
-	required_access = list(ACCESS_SECURITY)
+	required_access = list(ACCESS_SECURITY_LVL1)
 
 /datum/computer_file/program/scp_camera_monitor/ui_data(mob/user)
 	var/list/data = get_header_data()
@@ -1831,7 +1831,7 @@
 	program_icon = "notes-medical"
 	usage_flags = PROGRAM_ALL
 	available_on_ntnet = FALSE
-	required_access = list(ACCESS_MEDICAL)
+	required_access = list(ACCESS_MEDICAL_LVL1)
 
 /datum/computer_file/program/scp_morgue/ui_data(mob/user)
 	var/list/data = get_header_data()
@@ -1884,7 +1884,7 @@
 	data["availableCodes"] = codes
 	var/mob/living/carbon/human/H = user
 	var/obj/item/card/id/id_card = istype(H) ? H.get_idcard(TRUE) : null
-	data["hasAccess"] = id_card && (ACCESS_ADMIN in id_card.access)
+	data["hasAccess"] = id_card && (ACCESS_ADMIN_LVL1 in id_card.access)
 	return data
 
 /datum/computer_file/program/scp_security_codes/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
@@ -1895,7 +1895,7 @@
 	if(!istype(H))
 		return
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_ADMIN in id_card.access))
+	if(!id_card || !(ACCESS_ADMIN_LVL1 in id_card.access))
 		return
 	if(action == "setCode")
 		var/new_level = text2num(params["level"])
@@ -1918,7 +1918,7 @@
 	program_icon = "brain"
 	usage_flags = PROGRAM_ALL
 	available_on_ntnet = FALSE
-	required_access = list(ACCESS_MEDICAL)
+	required_access = list(ACCESS_MEDICAL_LVL1)
 
 /datum/computer_file/program/scp_sanity_monitor/ui_data(mob/user)
 	var/list/data = get_header_data()
@@ -2132,7 +2132,7 @@
 	program_icon = "user-check"
 	usage_flags = PROGRAM_ALL
 	available_on_ntnet = FALSE
-	required_access = list(ACCESS_SECURITY)
+	required_access = list(ACCESS_SECURITY_LVL1)
 
 /datum/computer_file/program/scp_rehabilitation/ui_data(mob/user)
 	var/list/data = get_header_data()
@@ -2191,7 +2191,7 @@
 	program_icon = "biohazard"
 	usage_flags = PROGRAM_ALL
 	available_on_ntnet = FALSE
-	required_access = list(ACCESS_MEDICAL)
+	required_access = list(ACCESS_MEDICAL_LVL1)
 
 /datum/computer_file/program/scp_contagion_monitor/ui_data(mob/user)
 	var/list/data = get_header_data()
@@ -2291,7 +2291,7 @@
 	program_icon = "id-card"
 	usage_flags = PROGRAM_ALL
 	available_on_ntnet = FALSE
-	required_access = list(ACCESS_ADMIN)
+	required_access = list(ACCESS_ADMIN_LVL1)
 
 /datum/computer_file/program/scp_human_resources/ui_data(mob/user)
 	var/list/data = get_header_data()
@@ -2300,7 +2300,7 @@
 		data["access_denied"] = TRUE
 		return data
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_ADMIN in id_card.access))
+	if(!id_card || !(ACCESS_ADMIN_LVL1 in id_card.access))
 		data["access_denied"] = TRUE
 		return data
 	data["access_denied"] = FALSE
@@ -2325,7 +2325,7 @@
 	if(!istype(H))
 		return
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_ADMIN in id_card.access))
+	if(!id_card || !(ACCESS_ADMIN_LVL1 in id_card.access))
 		return
 	if(!SShuman_resources)
 		return
@@ -2369,7 +2369,7 @@
 	program_icon = "door-closed"
 	usage_flags = PROGRAM_ALL
 	available_on_ntnet = FALSE
-	required_access = list(ACCESS_SECURITY)
+	required_access = list(ACCESS_SECURITY_LVL1)
 
 /datum/computer_file/program/scp_cell_management/ui_data(mob/user)
 	var/list/data = get_header_data()
@@ -2390,7 +2390,7 @@
 	if(!istype(H))
 		return
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_SECURITY in id_card.access))
+	if(!id_card || !(ACCESS_SECURITY_LVL1 in id_card.access))
 		return
 	if(!SScell_management)
 		return
@@ -2422,7 +2422,7 @@
 	program_icon = "shield-alt"
 	usage_flags = PROGRAM_ALL
 	available_on_ntnet = FALSE
-	required_access = list(ACCESS_ENGINEERING)
+	required_access = list(ACCESS_ENGINEERING_LVL1)
 
 /datum/computer_file/program/scp_containment_integrity/ui_data(mob/user)
 	var/list/data = get_header_data()
@@ -2448,7 +2448,7 @@
 	if(!istype(H))
 		return
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_ENGINEERING in id_card.access))
+	if(!id_card || !(ACCESS_ENGINEERING_LVL1 in id_card.access))
 		return
 	if(!SScontainment_integrity)
 		return
@@ -2479,7 +2479,7 @@
 	program_icon = "ambulance"
 	usage_flags = PROGRAM_ALL
 	available_on_ntnet = FALSE
-	required_access = list(ACCESS_MEDICAL)
+	required_access = list(ACCESS_MEDICAL_LVL1)
 
 /datum/computer_file/program/scp_medical_response/ui_data(mob/user)
 	var/list/data = get_header_data()
@@ -2500,7 +2500,7 @@
 	if(!istype(H))
 		return
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_MEDICAL in id_card.access))
+	if(!id_card || !(ACCESS_MEDICAL_LVL1 in id_card.access))
 		return
 	if(!SSscp_medical_response)
 		return
@@ -2535,7 +2535,7 @@
 	program_icon = "microscope"
 	usage_flags = PROGRAM_ALL
 	available_on_ntnet = FALSE
-	required_access = list(ACCESS_MEDICAL)
+	required_access = list(ACCESS_MEDICAL_LVL1)
 
 /datum/computer_file/program/scp_pathogen_research/ui_data(mob/user)
 	var/list/data = get_header_data()
@@ -2591,7 +2591,7 @@
 	if(!istype(H))
 		return
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_MEDICAL in id_card.access))
+	if(!id_card || !(ACCESS_MEDICAL_LVL1 in id_card.access))
 		return
 	if(!SSfoundation_pathogens)
 		return
@@ -2616,7 +2616,7 @@
 	program_icon = "robot"
 	usage_flags = PROGRAM_ALL
 	available_on_ntnet = FALSE
-	required_access = list(ACCESS_SCIENCE)
+	required_access = list(ACCESS_SCIENCE_LVL1)
 
 /datum/computer_file/program/scp_containment_robotics/ui_data(mob/user)
 	var/list/data = get_header_data()
@@ -2636,7 +2636,7 @@
 	if(!istype(H))
 		return
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_SCIENCE in id_card.access))
+	if(!id_card || !(ACCESS_SCIENCE_LVL1 in id_card.access))
 		return
 	if(!SScontainment_robotics)
 		return
@@ -2662,7 +2662,7 @@
 	program_icon = "wind"
 	usage_flags = PROGRAM_ALL
 	available_on_ntnet = FALSE
-	required_access = list(ACCESS_ENGINEERING)
+	required_access = list(ACCESS_ENGINEERING_LVL1)
 
 /datum/computer_file/program/scp_ventilation/ui_data(mob/user)
 	var/list/data = get_header_data()
@@ -2682,7 +2682,7 @@
 	if(!istype(H))
 		return
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_ENGINEERING in id_card.access))
+	if(!id_card || !(ACCESS_ENGINEERING_LVL1 in id_card.access))
 		return
 	if(!SSzone_ventilation)
 		return
@@ -2711,7 +2711,7 @@
 	program_icon = "flask"
 	usage_flags = PROGRAM_ALL
 	available_on_ntnet = FALSE
-	required_access = list(ACCESS_MEDICAL)
+	required_access = list(ACCESS_MEDICAL_LVL1)
 
 /datum/computer_file/program/scp_anomalous_chemistry/ui_data(mob/user)
 	var/list/data = get_header_data()
@@ -2732,7 +2732,7 @@
 	if(!istype(H))
 		return
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_MEDICAL in id_card.access))
+	if(!id_card || !(ACCESS_MEDICAL_LVL1 in id_card.access))
 		return
 	if(!SSanomalous_chemistry)
 		return
@@ -2761,7 +2761,7 @@
 	program_icon = "flask"
 	usage_flags = PROGRAM_ALL
 	available_on_ntnet = FALSE
-	required_access = list(ACCESS_SCIENCE)
+	required_access = list(ACCESS_SCIENCE_LVL1)
 
 /datum/computer_file/program/scp_research_laboratory/ui_data(mob/user)
 	if(!SSresearch_laboratory || !SSresearch_laboratory.manager)

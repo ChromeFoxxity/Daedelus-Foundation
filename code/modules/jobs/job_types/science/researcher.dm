@@ -1,7 +1,7 @@
 /datum/job/junior_researcher
 	title = JOB_JUNIOR_RESEARCHER
 	description = "Research new technology, create explosives, experiment with strange objects, or synthesize dangerous chemicals."
-	department_head = list(JOB_RESEARCH_DIRECTOR)
+	department_head = list(JOB_SCIENCE_DIRECTOR)
 	faction = FACTION_STATION
 	total_positions = 1
 	spawn_positions = 1
@@ -64,7 +64,7 @@
 /datum/job/researcher
 	title = JOB_RESEARCHER
 	description = "Research new technology, create explosives, experiment with strange objects, or synthesize dangerous chemicals."
-	department_head = list(JOB_RESEARCH_DIRECTOR)
+	department_head = list(JOB_SCIENCE_DIRECTOR)
 	faction = FACTION_STATION
 	total_positions = 1
 	spawn_positions = 1
@@ -127,7 +127,7 @@
 /datum/job/senior_researcher
 	title = JOB_SENIOR_RESEARCHER
 	description = "Research new technology, create explosives, experiment with strange objects, or synthesize dangerous chemicals."
-	department_head = list(JOB_RESEARCH_DIRECTOR)
+	department_head = list(JOB_SCIENCE_DIRECTOR)
 	faction = FACTION_STATION
 	total_positions = 1
 	spawn_positions = 1

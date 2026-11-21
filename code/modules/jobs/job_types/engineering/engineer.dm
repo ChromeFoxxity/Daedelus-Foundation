@@ -1,5 +1,5 @@
 /datum/job/junior_engineer
-	title = JOB_JUNIOR_ENGINEER
+	title = JOB_JUNIOR_TECHNICIAN
 	description = "Start the Supermatter, wire the solars, repair station hull \
 		and wiring damage."
 	department_head = list(JOB_ENGINEERING_DIRECTOR)
@@ -100,7 +100,7 @@
 // Engineer
 
 /datum/job/engineer
-	title = JOB_ENGINEER
+	title = JOB_TECHNICIAN
 	description = "Start the Supermatter, wire the solars, repair station hull \
 		and wiring damage."
 	department_head = list(JOB_ENGINEERING_DIRECTOR)
@@ -201,7 +201,7 @@
 // Senior Engineer
 
 /datum/job/senior_engineer
-	title = JOB_SENIOR_ENGINEER
+	title = JOB_SENIOR_TECHNICIAN
 	description = "Start the Supermatter, wire the solars, repair station hull \
 		and wiring damage."
 	department_head = list(JOB_ENGINEERING_DIRECTOR)

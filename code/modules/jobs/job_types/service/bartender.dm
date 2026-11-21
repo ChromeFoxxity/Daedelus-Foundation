@@ -4,7 +4,7 @@
 		As a Foundation bartender, you have access to a unique menu of Foundation-themed cocktails — \
 		the Foundation Spring clears the mind, the Telekill Old Fashioned shields it, \
 		and the Amnestic's Kiss helps forget. Mix responsibly."
-	department_head = list(JOB_HUMAN_RESOURCES_DIRECTOR)
+	department_head = list(JOB_HUMAN_RESOURCES_OFFICER)
 	faction = FACTION_STATION
 	total_positions = 1
 	spawn_positions = 1

@@ -220,7 +220,7 @@
 			if(!name)
 				return
 			var/dept_type = params["dept_type"]
-			if(!dept_type || !(dept_type in list("research", "security", "medical", "engineering", "administrative")))
+			if(!dept_type || !(dept_type in list("general", "logistics", "research", "security", "tactical", "medical", "engineering", "administrative")))
 				return
 			var/head = params["head"]
 			if(!head)

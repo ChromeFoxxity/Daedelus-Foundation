@@ -1,5 +1,5 @@
 /datum/job/communications_director
-	title = JOB_COMMUNICATIONS_DIRECTOR
+	title = JOB_COMMUNICATIONS_OFFICER
 	description = "Keep communications systems online. Inform the site of on-going threats. Dispatch security, \
 	medical, and engineering personnel via the Communications Console. Monitor facility threat levels and \
 	coordinate emergency responses. Make site-wide announcements to keep personnel informed."
@@ -46,7 +46,7 @@
 	voice_of_god_power = 1.4 //Command staff has authority
 
 /datum/outfit/job/communications_director
-	name = JOB_COMMUNICATIONS_DIRECTOR
+	name = JOB_COMMUNICATIONS_OFFICER
 	jobtype = /datum/job/communications_director
 	allow_jumpskirt = FALSE
 

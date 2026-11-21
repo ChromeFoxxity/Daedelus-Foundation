@@ -2,7 +2,7 @@
 	name = "medicine closet"
 	desc = "Filled to the brim with medical junk."
 	icon_state = "med"
-	req_access = list(ACCESS_MEDICAL)
+	req_access = list(ACCESS_MEDICAL_LVL1)
 
 /obj/structure/closet/secure_closet/medical1/PopulateContents()
 	..()

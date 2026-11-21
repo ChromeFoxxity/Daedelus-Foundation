@@ -60,10 +60,8 @@
 #define PARALLAX_DELAY_LOW 2
 
 #define SEC_DEPT_NONE "None"
-#define SEC_DEPT_ENGINEERING "Engineering"
-#define SEC_DEPT_MEDICAL "Medical"
-#define SEC_DEPT_SCIENCE "Science"
-#define SEC_DEPT_SUPPLY "Supply"
+#define SEC_DEPT_ENTRANCE "Entrance"
+#define SEC_DEPT_LIGHT "Light"
 
 // Playtime tracking system, see jobs_exp.dm
 #define EXP_TYPE_LIVING "Living"

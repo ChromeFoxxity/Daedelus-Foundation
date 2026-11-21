@@ -1,5 +1,5 @@
 /datum/job/paramedic
-	title = JOB_PARAMEDIC
+	title = JOB_MEDICAL_TECHNICIAN
 	description = "Run around the station looking for patients, respond to \
 		emergencies, give patients a roller bed ride to medbay. \
 		As a Foundation paramedic, you may be called to respond to medical emergencies \

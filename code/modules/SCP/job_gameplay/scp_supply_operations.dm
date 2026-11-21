@@ -246,7 +246,7 @@ SUBSYSTEM_DEF(scp_supply)
 	program_icon = "truck"
 	usage_flags = PROGRAM_ALL
 	available_on_ntnet = FALSE
-	required_access = list(ACCESS_SECURITY)
+	required_access = list(ACCESS_SECURITY_LVL1)
 
 /datum/computer_file/program/scp_supply/ui_data(mob/user)
 	var/list/data = get_header_data()
@@ -255,7 +255,7 @@ SUBSYSTEM_DEF(scp_supply)
 		data["access_denied"] = TRUE
 		return data
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_SECURITY in id_card.access))
+	if(!id_card || !(ACCESS_SECURITY_LVL1 in id_card.access))
 		data["access_denied"] = TRUE
 		return data
 	data["access_denied"] = FALSE
@@ -296,7 +296,7 @@ SUBSYSTEM_DEF(scp_supply)
 	if(!istype(H))
 		return
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_SECURITY in id_card.access))
+	if(!id_card || !(ACCESS_SECURITY_LVL1 in id_card.access))
 		return
 	if(!SSscp_supply)
 		return

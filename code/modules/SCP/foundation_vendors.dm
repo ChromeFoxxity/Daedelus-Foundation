@@ -107,7 +107,7 @@
 	desc = "A Foundation-branded security equipment vendor. Requires Security access."
 	icon_state = "sec"
 	icon_deny = "sec-deny"
-	req_access = list(ACCESS_SECURITY)
+	req_access = list(ACCESS_SECURITY_LVL1)
 	products = list(
 		/obj/item/restraints/handcuffs = 8,
 		/obj/item/restraints/legcuffs = 4,
@@ -136,7 +136,7 @@
 	desc = "A Foundation-branded research supply vendor. Requires Science access."
 	icon_state = "robotics"
 	icon_deny = "robotics-deny"
-	req_access = list(ACCESS_SCIENCE)
+	req_access = list(ACCESS_SCIENCE_LVL1)
 	products = list(
 		/obj/item/reagent_containers/glass/beaker = 5,
 		/obj/item/reagent_containers/glass/beaker/large = 3,

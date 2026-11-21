@@ -29,18 +29,6 @@
 /datum/id_trim/away/old/apc
 	access = list(ACCESS_ENGINEERING_LVL1)
 
-/// Trim for the cat surgeon ruin.
-/datum/id_trim/away/cat_surgeon
-	assignment = "Cat Surgeon"
-	trim_state = "trim_medicaldoctor"
-	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT)
-
-/// Trim for Hilber in Hilbert's Hotel.
-/datum/id_trim/away/hilbert
-	assignment = "Head Researcher"
-	trim_state = "trim_researchdirector"
-	access = list(ACCESS_AWAY_GENERIC3, ACCESS_SCIENCE)
-
 /// Trim for beach bum lifeguards.
 /datum/id_trim/lifeguard
 	assignment = "Lifeguard"
@@ -49,48 +37,13 @@
 /datum/id_trim/space_bartender
 	assignment = "Space Bartender"
 	trim_state = "trim_bartender"
-	access = list(ACCESS_SERVICE)
-
-/// Trim for various Centcom corpses.
-/datum/id_trim/centcom/corpse/bridge_officer
-	assignment = "Bridge Officer"
-	access = list(ACCESS_CENT_CAPTAIN)
-
-/// Trim for various Centcom corpses.
-/datum/id_trim/centcom/corpse/commander
-	assignment = "Commander"
-	access = list(ACCESS_CENT_CAPTAIN, ACCESS_CENT_GENERAL, ACCESS_CENT_SPECOPS, ACCESS_CENT_MEDICAL, ACCESS_CENT_STORAGE)
-
-/// Trim for various Centcom corpses.
-/datum/id_trim/centcom/corpse/private_security
-	assignment = JOB_CENTCOM_PRIVATE_SECURITY
-	access = list(ACCESS_CENT_CAPTAIN, ACCESS_CENT_GENERAL, ACCESS_CENT_SPECOPS, ACCESS_CENT_MEDICAL, ACCESS_CENT_STORAGE, ACCESS_SECURITY, ACCESS_MECH_SECURITY)
-
-/// Trim for various Centcom corpses.
-/datum/id_trim/centcom/corpse/private_security/tradepost_officer
-	assignment = "Tradepost Officer"
-
-/// Trim for various Centcom corpses.
-/datum/id_trim/centcom/corpse/assault
-	assignment = "Nanotrasen Assault Force"
-	access = list(ACCESS_CENT_CAPTAIN, ACCESS_CENT_GENERAL, ACCESS_CENT_SPECOPS, ACCESS_CENT_MEDICAL, ACCESS_CENT_STORAGE, ACCESS_SECURITY, ACCESS_MECH_SECURITY)
-
-/// Trim for various various ruins.
-/datum/id_trim/engioutpost
-	assignment = "Senior Station Engineer"
-	trim_state = "trim_stationengineer"
-	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_ENGINE, ACCESS_ENGINEERING, ACCESS_ENGINEERING_LVL1, ACCESS_ENGINEERING_LVL1)
-
-/// Trim for various various ruins.
-/datum/id_trim/job/station_engineer/gunner
-	assignment = "Gunner"
-	template_access = null
+	access = list(ACCESS_SERVICE_LVL1)
 
 /// Trim for pirates.
 /datum/id_trim/pirate
 	assignment = "Pirate"
 	trim_state = "trim_unknown"
-	access = list(ACCESS_SYNDICATE)
+	access = list(ACCESS_CHAOS)
 
 /// Trim for pirates.
 /datum/id_trim/pirate/silverscale

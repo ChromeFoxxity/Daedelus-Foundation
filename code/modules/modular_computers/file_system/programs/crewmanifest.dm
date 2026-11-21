@@ -100,16 +100,16 @@
 	if(ACCESS_ADMIN_LVL3 in access)
 		manifest_key = DATACORE_RECORDS_STATION
 
-	else if(ACCESS_MEDICAL in access)
+	else if(ACCESS_MEDICAL_LVL1 in access)
 		manifest_key = DATACORE_RECORDS_AETHER
 
-	else if(ACCESS_ENGINEERING in access)
+	else if(ACCESS_ENGINEERING_LVL1 in access)
 		manifest_key = DATACORE_RECORDS_DAEDALUS
 
 	else if(ACCESS_LOGISTICS_LVL2 in access)
 		manifest_key = DATACORE_RECORDS_HERMES
 
-	else if(ACCESS_SECURITY in access)
+	else if(ACCESS_SECURITY_LVL1 in access)
 		manifest_key = DATACORE_RECORDS_MARS
 
 	else

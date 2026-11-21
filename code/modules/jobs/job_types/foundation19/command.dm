@@ -37,24 +37,6 @@
 	paycheck = PAYCHECK_COMMAND
 	paycheck_department = ACCOUNT_GOV
 
-/datum/job/guard_commander
-	title = "Guard Commander"
-	description = "Manage all three Security branches. Keep track of potential and on-going threats (such as containment breaches). Work with other departments to respond to said threats."
-	department_head = list()
-	head_announce = list("Security")
-	faction = FACTION_STATION
-	total_positions = 1
-	spawn_positions = 1
-	supervisors = "the Site Director"
-	selection_color = "#8e2929"
-	req_admin_notify = 1
-	minimal_player_age = 15
-	exp_requirements = 0
-	exp_required_type = ""
-	exp_granted_type = EXP_TYPE_SECURITY
-	paycheck = PAYCHECK_COMMAND
-	paycheck_department = ACCOUNT_SEC
-
 /datum/job/research_director
 	title = "Research Director"
 	description = "Oversee all research operations. Ensure proper containment protocols for SCPs. Coordinate with other departments for research projects. Manage research staff and resources."

@@ -338,7 +338,7 @@
 		return
 
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(id_card && (ACCESS_SECURITY in id_card.access))
+	if(id_card && (ACCESS_SECURITY_LVL1 in id_card.access))
 		to_chat(H, "<span class='notice'>You open the maintenance hatch.</span>")
 		H.forceMove(get_turf(connected))
 		return

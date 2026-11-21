@@ -52,7 +52,7 @@
 		return
 	var/mob/living/carbon/human/H = user
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_MEDICAL in id_card.access))
+	if(!id_card || !(ACCESS_MEDICAL_LVL1 in id_card.access))
 		to_chat(H, span_warning("Requires Medical access to operate amnestic dispenser."))
 		return
 
@@ -225,7 +225,7 @@
 		return
 	var/mob/living/carbon/human/H = user
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_MEDICAL in id_card.access))
+	if(!id_card || !(ACCESS_MEDICAL_LVL1 in id_card.access))
 		to_chat(H, span_warning("Requires Medical access."))
 		return
 
@@ -254,7 +254,7 @@
 		if(H.stat == DEAD)
 			continue
 		var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-		if(id_card && (ACCESS_MEDICAL in id_card.access))
+		if(id_card && (ACCESS_MEDICAL_LVL1 in id_card.access))
 			continue
 		apply_amnestic_effects(H, AMNESTIC_CLASS_A)
 

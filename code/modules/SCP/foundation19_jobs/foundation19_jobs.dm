@@ -77,8 +77,8 @@
 #ifndef JOB_SITE_DIRECTOR
 #define JOB_SITE_DIRECTOR "Site Director"
 #endif
-#ifndef JOB_RESEARCH_DIRECTOR
-#define JOB_RESEARCH_DIRECTOR "Research Director"
+#ifndef JOB_SCIENCE_DIRECTOR
+#define JOB_SCIENCE_DIRECTOR "Research Director"
 #endif
 #ifndef JOB_MEDICAL_DIRECTOR
 #define JOB_MEDICAL_DIRECTOR "Medical Director"
@@ -101,8 +101,8 @@
 #ifndef JOB_SURGEON
 #define JOB_SURGEON "Surgeon"
 #endif
-#ifndef JOB_PARAMEDIC
-#define JOB_PARAMEDIC "Paramedic"
+#ifndef JOB_MEDICAL_TECHNICIAN
+#define JOB_MEDICAL_TECHNICIAN "Paramedic"
 #endif
 #ifndef JOB_CHEMIST
 #define JOB_CHEMIST "Chemist"
@@ -113,14 +113,14 @@
 #ifndef JOB_CONTAINMENT_ENGINEER
 #define JOB_CONTAINMENT_ENGINEER "Containment Engineer"
 #endif
-#ifndef JOB_SENIOR_ENGINEER
-#define JOB_SENIOR_ENGINEER "Senior Engineer"
+#ifndef JOB_SENIOR_TECHNICIAN
+#define JOB_SENIOR_TECHNICIAN "Senior Engineer"
 #endif
-#ifndef JOB_ENGINEER
-#define JOB_ENGINEER "Engineer"
+#ifndef JOB_TECHNICIAN
+#define JOB_TECHNICIAN "Engineer"
 #endif
-#ifndef JOB_JUNIOR_ENGINEER
-#define JOB_JUNIOR_ENGINEER "Junior Engineer"
+#ifndef JOB_JUNIOR_TECHNICIAN
+#define JOB_JUNIOR_TECHNICIAN "Junior Engineer"
 #endif
 #ifndef JOB_ATMOSPHERIC_TECHNICIAN
 #define JOB_ATMOSPHERIC_TECHNICIAN "Atmospheric Technician"
@@ -143,20 +143,20 @@
 #ifndef JOB_CHAPLAIN
 #define JOB_CHAPLAIN "Chaplain"
 #endif
-#ifndef JOB_LCZ_GUARD
-#define JOB_LCZ_GUARD "LCZ Guard"
+#ifndef JOB_TRT_OPERATOR
+#define JOB_TRT_OPERATOR "LCZ Guard"
 #endif
 #ifndef JOB_HCZ_GUARD
 #define JOB_HCZ_GUARD "HCZ Guard"
 #endif
-#ifndef JOB_EZ_GUARD
-#define JOB_EZ_GUARD "EZ Guard"
+#ifndef JOB_SECURITY_GUARD
+#define JOB_SECURITY_GUARD "EZ Guard"
 #endif
 
 // SCP-specific job defines (not in __DEFINES/jobs.dm)
 #define JOB_O5_REPRESENTATIVE "O5 Representative"
-#ifndef JOB_GUARD_COMMANDER
-#define JOB_GUARD_COMMANDER "Guard Commander"
+#ifndef JOB_SECURITY_CAPTAIN
+#define JOB_SECURITY_CAPTAIN "Guard Commander"
 #endif
 #define JOB_LCZ_ZONE_COMMANDER "LCZ Zone Junior Lieutenant"
 #define JOB_HCZ_ZONE_COMMANDER "HCZ Zone Senior Lieutenant"

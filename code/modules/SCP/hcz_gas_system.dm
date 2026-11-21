@@ -48,7 +48,7 @@
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		id_card = H.get_idcard(TRUE)
-	data["hasAccess"] = id_card && (ACCESS_ADMIN in id_card.access)
+	data["hasAccess"] = id_card && (ACCESS_ADMIN_LVL1 in id_card.access)
 
 	return data
 
@@ -62,7 +62,7 @@
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_ADMIN in id_card.access))
+	if(!id_card || !(ACCESS_ADMIN_LVL1 in id_card.access))
 		to_chat(user, span_warning("Access denied."))
 		return
 

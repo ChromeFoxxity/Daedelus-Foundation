@@ -297,9 +297,9 @@
 	register_achievement(new /datum/achievement("job_research_papers_5", "Published Author", "Publish 5 research papers", "job", "bronze"))
 	register_achievement(new /datum/achievement("job_research_papers_25", "Prolific Researcher", "Publish 25 research papers", "job", "silver"))
 	register_achievement(new /datum/achievement("job_research_papers_50", "Scientific Pioneer", "Publish 50 research papers", "job", "gold"))
-	register_achievement(new /datum/achievement("job_engineering_builds_50", "Builder", "Build 50 structures or machines", "job", "bronze"))
-	register_achievement(new /datum/achievement("job_engineering_builds_200", "Architect", "Build 200 structures or machines", "job", "silver"))
-	register_achievement(new /datum/achievement("job_engineering_builds_500", "Master Builder", "Build 500 structures or machines", "job", "gold"))
+	register_achievement(new /datum/achievement("JOB_TECHNICIANing_builds_50", "Builder", "Build 50 structures or machines", "job", "bronze"))
+	register_achievement(new /datum/achievement("JOB_TECHNICIANing_builds_200", "Architect", "Build 200 structures or machines", "job", "silver"))
+	register_achievement(new /datum/achievement("JOB_TECHNICIANing_builds_500", "Master Builder", "Build 500 structures or machines", "job", "gold"))
 
 /datum/achievement_manager/proc/register_scp_achievements()
 	register_achievement(new /datum/achievement("scp_interactions_10", "SCP Encounters", "Have 10 SCP interactions", "scp", "bronze"))
@@ -310,59 +310,59 @@
 	register_achievement(new /datum/achievement("scp_containment_100", "Containment Master", "Participate in 100 re-containments", "scp", "platinum"))
 	register_achievement(new /datum/achievement("scp_research_25", "SCP Researcher", "Conduct 25 SCP experiments", "scp", "silver"))
 	register_achievement(new /datum/achievement("scp_research_100", "SCP Scholar", "Conduct 100 SCP experiments", "scp", "gold"))
-	
+
 	register_achievement(new /datum/achievement("scp_first_contact_5", "First Contact Novice", "Make first contact with 5 SCPs", "scp", "bronze"))
 	register_achievement(new /datum/achievement("scp_first_contact_15", "First Contact Explorer", "Make first contact with 15 SCPs", "scp", "silver"))
 	register_achievement(new /datum/achievement("scp_first_contact_30", "First Contact Veteran", "Make first contact with 30 SCPs", "scp", "gold"))
 	register_achievement(new /datum/achievement("scp_first_contact_all", "Complete Catalog", "Make first contact with all SCPs", "scp", "diamond"))
-	
+
 	register_achievement(new /datum/achievement("scp173_survive_10", "Don't Blink", "Survive 10 encounters with SCP-173", "scp", "bronze"))
 	register_achievement(new /datum/achievement("scp173_observe_100", "Observation Duty", "Observe SCP-173 for 100 total minutes", "scp", "silver"))
 	register_achievement(new /datum/achievement("scp173_contain_5", "Sculpture Wrangler", "Participate in 5 SCP-173 re-containments", "scp", "gold"))
-	
+
 	register_achievement(new /datum/achievement("scp096_avoid_10", "You Didn't See Anything", "Avoid triggering SCP-096's rage 10 times", "scp", "silver"))
 	register_achievement(new /datum/achievement("scp096_survive_5", "Shy Guy Survivor", "Survive 5 SCP-096 rage states", "scp", "gold"))
 	register_achievement(new /datum/achievement("scp096_contain_3", "Shy Guy Handler", "Participate in 3 SCP-096 re-containments", "scp", "platinum"))
-	
+
 	register_achievement(new /datum/achievement("scp106_escape_5", "Pocket Escape", "Escape SCP-106's pocket dimension 5 times", "scp", "gold"))
 	register_achievement(new /datum/achievement("scp106_recall_3", "Recall Specialist", "Successfully use recall protocol 3 times", "scp", "platinum"))
 	register_achievement(new /datum/achievement("scp106_survive_10", "Old Man Dodger", "Survive 10 encounters with SCP-106", "scp", "silver"))
-	
+
 	register_achievement(new /datum/achievement("scp049_cured_5", "Cured by the Doctor", "Be successfully cured by SCP-049", "scp", "bronze"))
 	register_achievement(new /datum/achievement("scp049_survive_10", "Pestilence Survivor", "Survive 10 encounters with SCP-049", "scp", "silver"))
 	register_achievement(new /datum/achievement("scp049_research_10", "Plague Researcher", "Conduct 10 experiments on SCP-049", "scp", "gold"))
-	
+
 	register_achievement(new /datum/achievement("scp914_refine_50", "Clockwork Operator", "Use SCP-914 to refine 50 items", "scp", "silver"))
 	register_achievement(new /datum/achievement("scp914_breakthrough_5", "Breakthrough!", "Achieve 5 refinement breakthroughs with SCP-914", "scp", "gold"))
 	register_achievement(new /datum/achievement("scp914_perfect", "Perfect Refinement", "Achieve a perfect refinement result", "scp", "platinum"))
-	
+
 	register_achievement(new /datum/achievement("scp939_survive_5", "Mimic Survivor", "Survive 5 encounters with SCP-939", "scp", "silver"))
 	register_achievement(new /datum/achievement("scp939_deceive_3", "Not Fooled", "Detect SCP-939's mimicry 3 times", "scp", "gold"))
-	
+
 	register_achievement(new /datum/achievement("scp682_encounter_1", "Hard to Destroy", "Survive an encounter with SCP-682", "scp", "gold"))
 	register_achievement(new /datum/achievement("scp682_contain_1", "Taming the Beast", "Participate in re-containing SCP-682", "scp", "diamond"))
-	
+
 	register_achievement(new /datum/achievement("scp999_play_10", "Best Friend", "Play with SCP-999 10 times", "scp", "bronze"))
 	register_achievement(new /datum/achievement("scp999_healed_20", "Tickle Therapy", "Be healed by SCP-999 20 times", "scp", "silver"))
 	register_achievement(new /datum/achievement("scp999_friend", "SCP-999's Favorite", "Become SCP-999's best friend", "scp", "gold"))
-	
+
 	register_achievement(new /datum/achievement("scp500_use_5", "Miracle Cure", "Use SCP-500 to cure 5 critical conditions", "scp", "gold"))
 	register_achievement(new /datum/achievement("scp294_coffee_50", "Coffee Connoisseur", "Dispense 50 drinks from SCP-294", "scp", "bronze"))
 	register_achievement(new /datum/achievement("scp294_rare_10", "Rare Brew", "Dispense 10 rare liquids from SCP-294", "scp", "silver"))
-	
+
 	register_achievement(new /datum/achievement("scp087_explore_1", "Stairway Explorer", "Explore SCP-087", "scp", "silver"))
 	register_achievement(new /datum/achievement("scp087_deep_1", "How Deep?", "Reach the bottom of SCP-087", "scp", "platinum"))
 	register_achievement(new /datum/achievement("scp3008_survive_1", "IKEA Employee", "Survive inside SCP-3008 for 30 minutes", "scp", "gold"))
 	register_achievement(new /datum/achievement("scp3008_escape_1", "IKEA Escapee", "Escape from SCP-3008", "scp", "diamond"))
-	
+
 	register_achievement(new /datum/achievement("containment_rating_s_10", "S-Rated Specialist", "Achieve 10 S-rated containments", "scp", "gold"))
 	register_achievement(new /datum/achievement("containment_rating_s_50", "S-Rated Master", "Achieve 50 S-rated containments", "scp", "platinum"))
 	register_achievement(new /datum/achievement("containment_perfect_streak", "Perfect Streak", "Achieve 5 S-rated containments in a row", "scp", "diamond"))
-	
+
 	register_achievement(new /datum/achievement("scp_experiment_success_50", "Successful Experimenter", "Complete 50 successful experiments", "scp", "silver"))
 	register_achievement(new /datum/achievement("scp_experiment_breakthrough_10", "Research Breakthrough", "Achieve 10 major experiment breakthroughs", "scp", "gold"))
 	register_achievement(new /datum/achievement("scp_experiment_catastrophe_1", "Catastrophe Survivor", "Survive a catastrophic experiment failure", "scp", "platinum"))
-	
+
 	register_achievement(new /datum/achievement("scp_specialization_research", "Research Specialist", "Reach Specialist tier in Research track", "scp", "platinum"))
 	register_achievement(new /datum/achievement("scp_specialization_containment", "Containment Specialist", "Reach Specialist tier in Containment track", "scp", "platinum"))
 	register_achievement(new /datum/achievement("scp_specialization_field", "Field Specialist", "Reach Specialist tier in Field Operations track", "scp", "platinum"))

@@ -160,22 +160,14 @@ SUBSYSTEM_DEF(id_access)
 			"pdas" = list(),
 		),
 		"[ACCESS_ADMIN_LVL4]" = list(
-			"regions" = list(
-				REGION_GENERAL,
-				REGION_COMMAND,
-				REGION_SUPPLY,
-				REGION_SECURITY,
-				REGION_MEDBAY,
-				REGION_SCIENCE,
-				REGION_ENGINEERING
-				),
-			"head" = JOB_HUMAN_RESOURCES_DIRECTOR,
+			"regions" = list(REGION_GENERAL),
+			"head" = JOB_HUMAN_RESOURCES_OFFICER,
 			"templates" = list(),
 			"pdas" = list(),
 		),
 		"[ACCESS_SECURITY_LVL5]" = list(
 			"regions" = list(REGION_SECURITY),
-			"head" = JOB_GUARD_COMMANDER,
+			"head" = JOB_SECURITY_CAPTAIN,
 			"templates" = list(),
 			"pdas" = list(),
 		),
@@ -187,7 +179,7 @@ SUBSYSTEM_DEF(id_access)
 		),
 		"[ACCESS_SCIENCE_LVL5]" = list(
 			"regions" = list(REGION_SCIENCE),
-			"head" = JOB_RESEARCH_DIRECTOR,
+			"head" = JOB_SCIENCE_DIRECTOR,
 			"templates" = list(),
 			"pdas" = list(),
 		),
@@ -197,7 +189,7 @@ SUBSYSTEM_DEF(id_access)
 			"templates" = list(),
 			"pdas" = list(),
 		),
-		"[ACCESS_LOGISTICS_LVL5]" = list(
+		"[ACCESS_LOGISTICS_LVL4]" = list(
 			"regions" = list(REGION_SUPPLY),
 			"head" = JOB_LOGISTICS_OFFICER,
 			"templates" = list(),
@@ -259,56 +251,47 @@ SUBSYSTEM_DEF(id_access)
 
 /// Setup dictionary that converts access levels to text descriptions.
 /datum/controller/subsystem/id_access/proc/setup_access_descriptions()
-	desc_by_access["[ACCESS_SECURITY]"] = "Security Department Affiliation"
 	desc_by_access["[ACCESS_SECURITY_LVL1]"] = "Level 1 Security Clearance"
 	desc_by_access["[ACCESS_SECURITY_LVL2]"] = "Level 2 Security Clearance"
 	desc_by_access["[ACCESS_SECURITY_LVL3]"] = "Level 3 Security Clearance"
 	desc_by_access["[ACCESS_SECURITY_LVL4]"] = "Level 4 Security Clearance"
 	desc_by_access["[ACCESS_SECURITY_LVL5]"] = "Level 5 Security Clearance"
 
-	desc_by_access["[ACCESS_ADMIN]"] = "Administration Department Affiliation"
 	desc_by_access["[ACCESS_ADMIN_LVL1]"] = "Level 1 Administrative Clearance"
 	desc_by_access["[ACCESS_ADMIN_LVL2]"] = "Level 2 Administrative Clearance"
 	desc_by_access["[ACCESS_ADMIN_LVL3]"] = "Level 3 Administrative Clearance"
 	desc_by_access["[ACCESS_ADMIN_LVL4]"] = "Level 4 Administrative Clearance"
 	desc_by_access["[ACCESS_ADMIN_LVL5]"] = "Level 5 Administrative Clearance"
 
-	desc_by_access["[ACCESS_SCIENCE]"] = "Research Department Affiliation"
 	desc_by_access["[ACCESS_SCIENCE_LVL1]"] = "Level 1 Research Clearance"
 	desc_by_access["[ACCESS_SCIENCE_LVL2]"] = "Level 2 Research Clearance"
 	desc_by_access["[ACCESS_SCIENCE_LVL3]"] = "Level 3 Research Clearance"
 	desc_by_access["[ACCESS_SCIENCE_LVL4]"] = "Level 4 Research Clearance"
 	desc_by_access["[ACCESS_SCIENCE_LVL5]"] = "Level 5 Research Clearance"
 
-	desc_by_access["[ACCESS_MEDICAL]"] = "Medical Department Affiliation"
 	desc_by_access["[ACCESS_MEDICAL_LVL1]"] = "Level 1 Medical Clearance"
 	desc_by_access["[ACCESS_MEDICAL_LVL2]"] = "Level 2 Medical Clearance"
 	desc_by_access["[ACCESS_MEDICAL_LVL3]"] = "Level 3 Medical Clearance"
 	desc_by_access["[ACCESS_MEDICAL_LVL4]"] = "Level 4 Medical Clearance"
 	desc_by_access["[ACCESS_MEDICAL_LVL5]"] = "Level 5 Medical Clearance"
 
-	desc_by_access["[ACCESS_ENGINEERING]"] = "Engineering Department Affiliation"
 	desc_by_access["[ACCESS_ENGINEERING_LVL1]"] = "Level 1 Engineering Clearance"
 	desc_by_access["[ACCESS_ENGINEERING_LVL2]"] = "Level 2 Engineering Clearance"
 	desc_by_access["[ACCESS_ENGINEERING_LVL3]"] = "Level 3 Engineering Clearance"
 	desc_by_access["[ACCESS_ENGINEERING_LVL4]"] = "Level 4 Engineering Clearance"
 	desc_by_access["[ACCESS_ENGINEERING_LVL5]"] = "Level 5 Engineering Clearance"
 
-	desc_by_access["[ACCESS_LOGISTICS]"] = "Logistics Department Affiliation"
 	desc_by_access["[ACCESS_LOGISTICS_LVL1]"] = "Level 1 Logistics Clearance"
 	desc_by_access["[ACCESS_LOGISTICS_LVL2]"] = "Level 2 Logistics Clearance"
 	desc_by_access["[ACCESS_LOGISTICS_LVL3]"] = "Level 3 Logistics Clearance"
 	desc_by_access["[ACCESS_LOGISTICS_LVL4]"] = "Level 4 Logistics Clearance"
-	desc_by_access["[ACCESS_LOGISTICS_LVL5]"] = "Level 5 Logistics Clearance"
 
-	desc_by_access["[ACCESS_SERVICE]"] = "Service Department Affiliation"
 	desc_by_access["[ACCESS_SERVICE_LVL1]"] = "Level 1 Service Clearance"
 	desc_by_access["[ACCESS_SERVICE_LVL2]"] = "Level 2 Service Clearance"
 	desc_by_access["[ACCESS_SERVICE_LVL3]"] = "Level 3 Service Clearance"
 	desc_by_access["[ACCESS_SERVICE_LVL4]"] = "Level 4 Service Clearance"
 	desc_by_access["[ACCESS_SERVICE_LVL5]"] = "Level 5 Service Clearance"
 
-	desc_by_access["[ACCESS_DCLASS]"] = "Class-D Residential Clearance" // We won't be using this to be honest.
 	desc_by_access["[ACCESS_DCLASS_MINING]"] = "Class-D Mining Clearance"
 	desc_by_access["[ACCESS_DCLASS_BOTANY]"] = "Class-D Hydroponics Clearance"
 	desc_by_access["[ACCESS_DCLASS_JANITORIAL]"] = "Class-D Janitorial Clearance"

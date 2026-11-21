@@ -79,6 +79,6 @@
 	auto_build_products = TRUE
 
 /obj/machinery/vending/access/debug/build_access_list(list/access_lists)
-	access_lists["[ACCESS_ENGINEERING]"] = TRUE
+	access_lists["[ACCESS_ENGINEERING_LVL1]"] = TRUE
 	access_lists["[ACCESS_LOGISTICS_LVL1]"] = list(/obj/item/crowbar)
-	access_lists["[ACCESS_SECURITY]"] = list(/obj/item/wrench, /obj/item/gun/ballistic/revolver/mateba)
+	access_lists["[ACCESS_SECURITY_LVL1]"] = list(/obj/item/wrench, /obj/item/gun/ballistic/revolver/mateba)

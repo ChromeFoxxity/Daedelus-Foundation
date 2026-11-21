@@ -68,10 +68,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = JOB_SITE_DIRECTOR
 	icon_state = JOB_SITE_DIRECTOR
 
-/obj/effect/landmark/start/human_resources_director
-	name = JOB_HUMAN_RESOURCES_DIRECTOR
-	icon_state = JOB_HUMAN_RESOURCES_DIRECTOR
-
 /obj/effect/landmark/start/internal_tribunal_department_officer
 	name = JOB_INTERNAL_TRIBUNAL_DEPARTMENT_OFFICER
 	icon_state = JOB_INTERNAL_TRIBUNAL_DEPARTMENT_OFFICER
@@ -81,8 +77,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = JOB_ETHICS_COMMITTEE_LIAISON
 
 /obj/effect/landmark/start/communications_director
-	name = JOB_COMMUNICATIONS_DIRECTOR
-	icon_state = JOB_COMMUNICATIONS_DIRECTOR
+	name = JOB_COMMUNICATIONS_OFFICER
+	icon_state = JOB_COMMUNICATIONS_OFFICER
 
 /obj/effect/landmark/start/goc_rep
 	name = JOB_GOC_REP
@@ -96,74 +92,51 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = JOB_UIU_REP
 	icon_state = JOB_UIU_REP
 
-
-/obj/effect/landmark/start/mcd_rep
-	name = JOB_MCD_REP
-	icon_state = JOB_MCD_REP
-
 // Security Start Landmarks
 
-/obj/effect/landmark/start/security_director
-	name = JOB_GUARD_COMMANDER
-	icon_state = JOB_GUARD_COMMANDER
+/obj/effect/landmark/start/security_captain
+	name = JOB_SECURITY_CAPTAIN
+	icon_state = JOB_SECURITY_CAPTAIN
 
-/obj/effect/landmark/start/raisa_agent
-	name = JOB_RAISA_AGENT
-	icon_state = JOB_RAISA_AGENT
+/obj/effect/landmark/start/security_lieutenant
+	name = JOB_SECURITY_LIEUTENANT
+	icon_state = JOB_SECURITY_LIEUTENANT
 
-// EZ Security Start Landmarks
+/obj/effect/landmark/start/security_sergeant
+	name = JOB_SECURITY_SERGEANT
+	icon_state = JOB_SECURITY_SERGEANT
 
-/obj/effect/landmark/start/ez_commander
-	name = JOB_EZ_ZONE_SUPERVISOR
-	icon_state = JOB_EZ_ZONE_SUPERVISOR
+/obj/effect/landmark/start/security_medic
+	name = JOB_SECURITY_MEDIC
+	icon_state = JOB_SECURITY_MEDIC
 
-/obj/effect/landmark/start/senior_ez_guard
-	name = JOB_SENIOR_EZ_GUARD
-	icon_state = JOB_SENIOR_EZ_GUARD
+/obj/effect/landmark/start/security_guard
+	name = JOB_SECURITY_GUARD
+	icon_state = JOB_SECURITY_GUARD
 
-/obj/effect/landmark/start/ez_guard
-	name = JOB_EZ_GUARD
-	icon_state = JOB_EZ_GUARD
+/obj/effect/landmark/start/security_cadet
+	name = JOB_SECURITY_CADET
+	icon_state = JOB_SECURITY_CADET
 
-/obj/effect/landmark/start/junior_ez_guard
-	name = JOB_JUNIOR_EZ_GUARD
-	icon_state = JOB_JUNIOR_EZ_GUARD
+// TRT Start Landmarks
 
-// LCZ Security Start Landmarks
+/obj/effect/landmark/start/trt_cmmander
+	name = JOB_TRT_COMMANDER
+	icon_state = JOB_TRT_COMMANDER
 
-/obj/effect/landmark/start/lcz_commander
-	name = JOB_LCZ_ZONE_JUNIOR_LIEUTENANT
-	icon_state = JOB_LCZ_ZONE_JUNIOR_LIEUTENANT
+/obj/effect/landmark/start/trt_sergeant
+	name = JOB_TRT_SERGEANT
+	icon_state = JOB_TRT_SERGEANT
 
-/obj/effect/landmark/start/senior_lcz_guard
-	name = JOB_SENIOR_LCZ_GUARD
-	icon_state = JOB_SENIOR_LCZ_GUARD
+/obj/effect/landmark/start/trt_operator
+	name = JOB_TRT_OPERATOR
+	icon_state = JOB_TRT_OPERATOR
 
-/obj/effect/landmark/start/lcz_guard
-	name = JOB_LCZ_GUARD
-	icon_state = JOB_LCZ_GUARD
+/obj/effect/landmark/start/trt_cadet
+	name = JOB_TRT_CADET
+	icon_state = JOB_TRT_CADET
 
-/obj/effect/landmark/start/junior_lcz_guard
-	name = JOB_JUNIOR_LCZ_GUARD
-	icon_state = JOB_JUNIOR_LCZ_GUARD
-
-// HCZ Security Start Landmarks
-
-/obj/effect/landmark/start/hcz_commander
-	name = JOB_HCZ_ZONE_SENIOR_LIEUTENANT
-	icon_state = JOB_HCZ_ZONE_SENIOR_LIEUTENANT
-
-/obj/effect/landmark/start/senior_hcz_guard
-	name = JOB_SENIOR_HCZ_GUARD
-	icon_state = JOB_SENIOR_HCZ_GUARD
-
-/obj/effect/landmark/start/hcz_guard
-	name = JOB_HCZ_GUARD
-	icon_state = JOB_HCZ_GUARD
-
-/obj/effect/landmark/start/junior_hcz_guard
-	name = JOB_JUNIOR_HCZ_GUARD
-	icon_state = JOB_JUNIOR_HCZ_GUARD
+// D-Class Start Landmark
 
 /obj/effect/landmark/start/dlcass
 	name = JOB_DCLASS
@@ -171,17 +144,25 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 
 // Science Start Landmarks
 
-/obj/effect/landmark/start/research_director
-	name = JOB_RESEARCH_DIRECTOR
-	icon_state = JOB_RESEARCH_DIRECTOR
+/obj/effect/landmark/start/science_director
+	name = JOB_SCIENCE_DIRECTOR
+	icon_state = JOB_SCIENCE_DIRECTOR
 
-/obj/effect/landmark/start/assistant_research_director
-	name = JOB_ASSISTANT_RESEARCH_DIRECTOR
-	icon_state = JOB_ASSISTANT_RESEARCH_DIRECTOR
+/obj/effect/landmark/start/assistant_science_director
+	name = JOB_ASSISTANT_SCIENCE_DIRECTOR
+	icon_state = JOB_ASSISTANT_SCIENCE_DIRECTOR
+
+/obj/effect/landmark/start/senior_roboticist
+	name = JOB_SENIOR_ROBOTICIST
+	icon_state = JOB_SENIOR_ROBOTICIST
 
 /obj/effect/landmark/start/senior_researcher
 	name = JOB_SENIOR_RESEARCHER
 	icon_state = JOB_SENIOR_RESEARCHER
+
+/obj/effect/landmark/start/roboticist
+	name = JOB_ROBOTICIST
+	icon_state = JOB_ROBOTICIST
 
 /obj/effect/landmark/start/researcher
 	name = JOB_RESEARCHER
@@ -201,33 +182,25 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = JOB_ASSISTANT_MEDICAL_DIRECTOR
 	icon_state = JOB_ASSISTANT_MEDICAL_DIRECTOR
 
+/obj/effect/landmark/start/senior_doctor
+	name = JOB_SENIOR_DOCTOR
+	icon_state = JOB_SENIOR_DOCTOR
+
 /obj/effect/landmark/start/medical_doctor
 	name = JOB_MEDICAL_DOCTOR
 	icon_state = JOB_MEDICAL_DOCTOR
 
-/obj/effect/landmark/start/surgeon
-	name = JOB_SURGEON
-	icon_state = JOB_SURGEON
-
-/obj/effect/landmark/start/paramedic
-	name = JOB_PARAMEDIC
-	icon_state = JOB_PARAMEDIC
-
-/obj/effect/landmark/start/chemist
-	name = JOB_CHEMIST
-	icon_state = JOB_CHEMIST
-
-/obj/effect/landmark/start/trainee_doctor
-	name = JOB_TRAINEE_DOCTOR
-	icon_state = JOB_TRAINEE_DOCTOR
-
-/obj/effect/landmark/start/virologist
-	name = JOB_VIROLOGIST
-	icon_state = JOB_VIROLOGIST
+/obj/effect/landmark/start/medical_technician
+	name = JOB_MEDICAL_TECHNICIAN
+	icon_state = JOB_MEDICAL_TECHNICIAN
 
 /obj/effect/landmark/start/psychologist
 	name = JOB_PSYCHOLOGIST
 	icon_state = JOB_PSYCHOLOGIST
+
+/obj/effect/landmark/start/medical_student
+	name = JOB_MEDICAL_STUDENT
+	icon_state = JOB_MEDICAL_STUDENT
 
 // Engineering Start Landmarks
 
@@ -243,25 +216,17 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = JOB_CONTAINMENT_ENGINEER
 	icon_state = JOB_CONTAINMENT_ENGINEER
 
-/obj/effect/landmark/start/it_technician
-	name = JOB_IT_TECHNICIAN
-	icon_state = JOB_IT_TECHNICIAN
+/obj/effect/landmark/start/senior_technician
+	name = JOB_SENIOR_TECHNICIAN
+	icon_state = JOB_SENIOR_TECHNICIAN
 
-/obj/effect/landmark/start/senior_engineer
-	name = JOB_SENIOR_ENGINEER
-	icon_state = JOB_SENIOR_ENGINEER
+/obj/effect/landmark/start/technician
+	name = JOB_TECHNICIAN
+	icon_state = JOB_TECHNICIAN
 
-/obj/effect/landmark/start/engineer
-	name = JOB_ENGINEER
-	icon_state = JOB_ENGINEER
-
-/obj/effect/landmark/start/junior_engineer
-	name = JOB_JUNIOR_ENGINEER
-	icon_state = JOB_JUNIOR_ENGINEER
-
-/obj/effect/landmark/start/atmospheric_technician
-	name = JOB_ATMOSPHERIC_TECHNICIAN
-	icon_state = JOB_ATMOSPHERIC_TECHNICIAN
+/obj/effect/landmark/start/junior_technician
+	name = JOB_JUNIOR_TECHNICIAN
+	icon_state = JOB_JUNIOR_TECHNICIAN
 
 // Logistics Start Landmarks
 
@@ -274,6 +239,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = JOB_LOGISTICS_TECHNICIAN
 
 // Service Start Landmarks
+
+/obj/effect/landmark/start/human_resources_officer
+	name = JOB_HUMAN_RESOURCES_OFFICER
+	icon_state = JOB_HUMAN_RESOURCES_OFFICER
 
 /obj/effect/landmark/start/botanist
 	name = JOB_BOTANIST

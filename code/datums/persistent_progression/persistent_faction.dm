@@ -16,7 +16,7 @@
     faction_color = "#0066CC"
     faction_icon = "faction_foundation"
     experience_multiplier = 1.0
-    faction_classes = list("security", "research", "medical", "engineering", "administrative", "containment")
+    faction_classes = list("general", "logistics", "security", "tactical", "research", "medical", "engineering", "administrative")
 
 /datum/persistent_faction/goc
     faction_id = "goc"

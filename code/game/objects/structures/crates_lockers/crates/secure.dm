@@ -52,7 +52,7 @@
 /obj/structure/closet/crate/secure/freezer/pizza
 	name = "secure pizza crate"
 	desc = "An insulated crate with a lock on it, used to secure pizza."
-	req_access = list(ACCESS_SERVICE)
+	req_access = list(ACCESS_SERVICE_LVL1)
 	tamperproof = 10
 
 /obj/structure/closet/crate/secure/freezer/pizza/PopulateContents()
@@ -103,7 +103,7 @@
 /obj/structure/closet/crate/secure/trashcart/filled/PopulateContents()
 	. = ..()
 	for(var/i in 1 to rand(8,12))
-		new /obj/effect/spawner/random/trash/deluxe_garbage(src)
+		new /obj/effect/spawner/random/trash/garbage(src)
 		if(prob(35))
 			new /obj/effect/spawner/random/trash/garbage(src)
 	for(var/i in 1 to rand(4,6))

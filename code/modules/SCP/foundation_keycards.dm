@@ -10,9 +10,7 @@
 	icon_state = "card_prisoner"
 	worn_icon_state = "card_prisoner"
 	inhand_icon_state = "orange-id"
-	access = list(
-		ACCESS_DCLASS,
-	)
+	access = list()
 
 /obj/item/storage/box/foundation_keycard_kit
 	name = "Foundation keycard kit"

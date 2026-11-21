@@ -8,8 +8,8 @@
 	armor = list(BLUNT = 50, PUNCTURE = 55, SLASH = 0, LASER = 40, ENERGY = 30, BOMB = 30, BIO = 0, FIRE = 100, ACID = 100)
 	max_temperature = 60000
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
-	operation_req_access = list(ACCESS_CENT_SPECOPS)
-	internals_req_access = list(ACCESS_CENT_SPECOPS)
+	operation_req_access = list(ACCESS_MTF)
+	internals_req_access = list(ACCESS_MTF)
 	wreckage = /obj/structure/mecha_wreckage/marauder
 	mecha_flags = CANSTRAFE | IS_ENCLOSED | HAS_LIGHTS | MMI_COMPATIBLE
 	force = 45
@@ -76,8 +76,8 @@
 	name = "\improper Seraph"
 	icon_state = "seraph"
 	base_icon_state = "seraph"
-	operation_req_access = list(ACCESS_CENT_SPECOPS)
-	internals_req_access = list(ACCESS_CENT_SPECOPS)
+	operation_req_access = list(ACCESS_MTF)
+	internals_req_access = list(ACCESS_MTF)
 	movedelay = 3
 	max_integrity = 550
 	wreckage = /obj/structure/mecha_wreckage/seraph
@@ -100,8 +100,8 @@
 	name = "\improper Mauler"
 	icon_state = "mauler"
 	base_icon_state = "mauler"
-	operation_req_access = list(ACCESS_SYNDICATE)
-	internals_req_access = list(ACCESS_SYNDICATE)
+	operation_req_access = list(ACCESS_CHAOS)
+	internals_req_access = list(ACCESS_CHAOS)
 	wreckage = /obj/structure/mecha_wreckage/mauler
 	max_equip_by_category = list(
 		MECHA_UTILITY = 3,

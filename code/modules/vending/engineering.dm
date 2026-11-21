@@ -36,7 +36,7 @@
 	payment_department = ACCOUNT_ENG
 	light_mask = "engi-light-mask"
 
-	discount_access = ACCESS_ENGINEERING
+	discount_access = ACCESS_ENGINEERING_LVL2
 
 /obj/item/vending_refill/engineering
 	machine_name = "Robco Tool Maker"
