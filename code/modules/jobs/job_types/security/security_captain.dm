@@ -4,7 +4,7 @@
 		coordinate emergency responses, manage armory distribution, and maintain order during both routine \
 		operations and containment crises."
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD|DEADMIN_POSITION_SECURITY
-	head_announce = RADIO_CHANNEL_SECURITY
+	head_announce = list(RADIO_CHANNEL_SECURITY)
 	faction = FACTION_STATION
 	total_positions = 1
 	spawn_positions = 1
@@ -46,7 +46,7 @@
 	voice_of_god_power = 1.4 //Command staff has authority
 
 /datum/job/security_captain/get_captaincy_announcement(mob/living/captain)
-	return "Due to staffing shortages, Security Captain [captain.real_name] has been promoted temporarily to acting Site Director!"
+	return "Due to staffing shortages, [title] [captain.real_name] has been promoted temporarily to acting Site Director!"
 
 /datum/outfit/job/security_captain
 	name = JOB_SECURITY_CAPTAIN

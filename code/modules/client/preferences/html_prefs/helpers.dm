@@ -63,7 +63,7 @@
 						JOB_ASSISTANT_ENGINEERING_DIRECTOR,
 						JOB_CONTAINMENT_ENGINEER,
 						JOB_SENIOR_TECHNICIAN,
-						JOB_TECHNICIAN,
+						JOB_FACILITY_TECHNICIAN,
 						JOB_JUNIOR_TECHNICIAN,
 					)
 				if("service")
@@ -179,7 +179,7 @@
 			switch(job_title)
 				if(JOB_JUNIOR_TECHNICIAN)
 					return 0
-				if(JOB_TECHNICIAN)
+				if(JOB_FACILITY_TECHNICIAN)
 					return 1
 				if(JOB_SENIOR_TECHNICIAN)
 					return 2
@@ -195,7 +195,7 @@
 					return 0
 				if(JOB_BOTANIST)
 					return 1
-				if(JOB_CLOWN)
+				if(JOB_MORALE_OFFICER)
 					return 2
 				if(JOB_BARTENDER)
 					return 3

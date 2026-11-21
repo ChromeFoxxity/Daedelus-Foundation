@@ -167,7 +167,7 @@
 	)
 	refill_canister = /obj/item/vending_refill/autodrobe
 	default_price = PAYCHECK_ASSISTANT * 0.8
-	payment_department = ACCOUNT_STATION_MASTER
+	payment_department = ACCOUNT_CMD
 	light_mask = "theater-light-mask"
 
 /obj/machinery/vending/autodrobe/all_access

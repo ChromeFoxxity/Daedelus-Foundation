@@ -1,15 +1,14 @@
-/datum/job/communications_director
+/datum/job/communications_officer
 	title = JOB_COMMUNICATIONS_OFFICER
 	description = "Keep communications systems online. Inform the site of on-going threats. Dispatch security, \
 	medical, and engineering personnel via the Communications Console. Monitor facility threat levels and \
 	coordinate emergency responses. Make site-wide announcements to keep personnel informed."
-	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD|DEADMIN_POSITION_SECURITY
+	department_head = list(JOB_SITE_DIRECTOR)
 	faction = FACTION_STATION
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Site Director"
-	selection_color = "#00007F"
-	req_admin_notify = 1
+	selection_color = "#063ea7"
 	minimal_player_age = 14
 	exp_requirements = 180
 	exp_required_type = EXP_TYPE_CREW
@@ -17,41 +16,47 @@
 	exp_granted_type = EXP_TYPE_CREW
 
 	employers = list(
-		/datum/employer/scp
+		/datum/employer/scp,
 	)
 
 	outfits = list(
 		"Default" = list(
-			SPECIES_HUMAN = /datum/outfit/job/communications_director,
+			SPECIES_HUMAN = /datum/outfit/job/communications_officer,
 		),
 	)
-
-	paycheck = PAYCHECK_COMMAND
-	paycheck_department = ACCOUNT_STATION_MASTER
 
 	departments_list = list(
 		/datum/job_department/command,
 	)
 
+	liver_traits = list(TRAIT_ROYAL_METABOLISM)
 
-	family_heirlooms = list(/obj/item/reagent_containers/food/drinks/flask/gold, /obj/item/toy/captainsaid/collector)
+	paycheck = PAYCHECK_MEDIUM
+	paycheck_department = ACCOUNT_CMD
 
-	mail_goodies = list(
-		/obj/item/radio = 20,
+	family_heirlooms = list(
+		/obj/item/modular_computer/laptop,
+		/obj/item/radio,
+		/obj/item/pai_card,
+		/obj/item/multitool,
 	)
-
+	mail_goodies = list(
+		/obj/item/coffee_cartridge = 20,
+		/obj/item/reagent_containers/cup = 10,
+		/obj/item/stock_parts/subspace = 8,
+		/obj/item/banhammer = 8,
+		/obj/item/disk/computer/maintenance = 1,
+	)
+	rpg_title = "Messenger"
 	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS | JOB_CAN_BE_INTERN
-	rpg_title = "Star Duke"
 
-	voice_of_god_power = 1.4 //Command staff has authority
-
-/datum/outfit/job/communications_director
+/datum/outfit/job/communications_officer
 	name = JOB_COMMUNICATIONS_OFFICER
-	jobtype = /datum/job/communications_director
+	jobtype = /datum/job/communications_officer
 	allow_jumpskirt = FALSE
 
 	id = /obj/item/card/id/advanced/black_blank
-	id_trim = /datum/id_trim/job/communications_director
+	id_trim = /datum/id_trim/job/communications_officer
 	uniform = /obj/item/clothing/under/suit/charcoal
 	backpack_contents = list(
 		/obj/item/assembly/flash/handheld = 1

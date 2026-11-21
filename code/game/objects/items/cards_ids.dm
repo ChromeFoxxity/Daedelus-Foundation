@@ -620,8 +620,8 @@
 	name = "departmental card (ERROR)"
 	desc = "Provides access to the departmental budget."
 	icon_state = "budgetcard"
-	var/department_ID = ACCOUNT_STATION_MASTER
-	var/department_name = ACCOUNT_STATION_MASTER_NAME
+	var/department_ID = ACCOUNT_CMD
+	var/department_name = ACCOUNT_CMD_NAME
 	registered_age = null
 
 /obj/item/card/id/departmental_budget/Initialize(mapload)
@@ -853,41 +853,6 @@
 	trim = /datum/id_trim/centcom
 	wildcard_slots = WILDCARD_LIMIT_CENTCOM
 
-/obj/item/card/id/advanced/centcom/ert
-	name = "\improper CentCom ID"
-	desc = "An ERT ID card."
-	registered_age = null
-	registered_name = "Emergency Response Intern"
-	trim = /datum/id_trim/centcom/ert
-
-/obj/item/card/id/advanced/centcom/ert
-	registered_name = JOB_ERT_COMMANDER
-	trim = /datum/id_trim/centcom/ert/commander
-
-/obj/item/card/id/advanced/centcom/ert/security
-	registered_name = JOB_ERT_OFFICER
-	trim = /datum/id_trim/centcom/ert/security
-
-/obj/item/card/id/advanced/centcom/ert/engineer
-	registered_name = JOB_ERT_ENGINEER
-	trim = /datum/id_trim/centcom/ert/engineer
-
-/obj/item/card/id/advanced/centcom/ert/medical
-	registered_name = JOB_ERT_MEDICAL_DOCTOR
-	trim = /datum/id_trim/centcom/ert/medical
-
-/obj/item/card/id/advanced/centcom/ert/chaplain
-	registered_name = JOB_ERT_CHAPLAIN
-	trim = /datum/id_trim/centcom/ert/chaplain
-
-/obj/item/card/id/advanced/centcom/ert/janitor
-	registered_name = JOB_ERT_JANITOR
-	trim = /datum/id_trim/centcom/ert/janitor
-
-/obj/item/card/id/advanced/centcom/ert/clown
-	registered_name = JOB_ERT_CLOWN
-	trim = /datum/id_trim/centcom/ert/clown
-
 /obj/item/card/id/advanced/black
 	name = "black identification card"
 	desc = "This card is telling you one thing and one thing alone. The person holding this card is an utter badass."
@@ -895,13 +860,6 @@
 	worn_icon_state = "card_black"
 	assigned_icon_state = "assigned_syndicate"
 	wildcard_slots = WILDCARD_LIMIT_GOLD
-
-/obj/item/card/id/advanced/black/deathsquad
-	name = "\improper Death Squad ID"
-	desc = "A Death Squad ID card."
-	registered_name = JOB_ERT_DEATHSQUAD
-	trim = /datum/id_trim/centcom/deathsquad
-	wildcard_slots = WILDCARD_LIMIT_DEATHSQUAD
 
 /obj/item/card/id/advanced/black/syndicate_command
 	name = "syndicate ID card"
@@ -951,17 +909,13 @@
 	. = ..()
 	registered_account = SSeconomy.department_accounts_by_id[ACCOUNT_CAR]
 
-/obj/item/card/id/advanced/prisoner
-	name = "prisoner ID card"
-	desc = "You are a number, you are not a free man."
-	icon_state = "card_prisoner"
-	worn_icon_state = "card_prisoner"
-	inhand_icon_state = "orange-id"
-	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
+/obj/item/card/id/advanced/classe
+	name = "E-Class Card"
+	desc = "You really hit the lowest of low."
+	icon_state = "black_blank"
 	registered_name = "Scum"
 	registered_age = null
-	trim = /datum/id_trim/job/prisoner
+	trim = /datum/id_trim/job/classe
 
 	wildcard_slots = WILDCARD_LIMIT_PRISONER
 
@@ -979,7 +933,7 @@
 /obj/item/card/id/advanced/prisoner/attackby(obj/item/card/id/C, mob/user)
 	..()
 	var/list/id_access = C.GetAccess()
-	if(!(ACCESS_SECURITY in id_access))
+	if(!(ACCESS_SECURITY_LVL2 in id_access))
 		return FALSE
 	if(loc != user)
 		to_chat(user, span_warning("You must be holding the ID to continue!"))
@@ -1021,45 +975,6 @@
 
 /obj/item/card/id/advanced/prisoner/attack_self(mob/user)
 	to_chat(usr, span_notice("You have accumulated [points] out of the [goal] points you need for freedom."))
-
-/obj/item/card/id/advanced/prisoner/one
-	name = "Prisoner #13-001"
-	registered_name = "Prisoner #13-001"
-	trim = /datum/id_trim/job/prisoner/one
-
-/obj/item/card/id/advanced/prisoner/two
-	name = "Prisoner #13-002"
-	registered_name = "Prisoner #13-002"
-	trim = /datum/id_trim/job/prisoner/two
-
-/obj/item/card/id/advanced/prisoner/three
-	name = "Prisoner #13-003"
-	registered_name = "Prisoner #13-003"
-	trim = /datum/id_trim/job/prisoner/three
-
-/obj/item/card/id/advanced/prisoner/four
-	name = "Prisoner #13-004"
-	registered_name = "Prisoner #13-004"
-	trim = /datum/id_trim/job/prisoner/four
-
-/obj/item/card/id/advanced/prisoner/five
-	name = "Prisoner #13-005"
-	registered_name = "Prisoner #13-005"
-	trim = /datum/id_trim/job/prisoner/five
-
-/obj/item/card/id/advanced/prisoner/six
-	name = "Prisoner #13-006"
-	registered_name = "Prisoner #13-006"
-	trim = /datum/id_trim/job/prisoner/six
-
-/obj/item/card/id/advanced/prisoner/seven
-	name = "Prisoner #13-007"
-	registered_name = "Prisoner #13-007"
-	trim = /datum/id_trim/job/prisoner/seven
-
-/obj/item/card/id/advanced/mining
-	name = "mining ID"
-	trim = /datum/id_trim/job/shaft_miner/spare
 
 /obj/item/card/id/advanced/highlander
 	name = "highlander ID"
@@ -1389,12 +1304,6 @@
 	worn_icon_state = "card_black"
 	assigned_icon_state = "assigned_syndicate"
 	wildcard_slots = WILDCARD_LIMIT_GOLD
-
-/obj/item/card/id/advanced/engioutpost
-	registered_name = "George 'Plastic' Miller"
-	desc = "A card used to provide ID and determine access across the station. There's blood dripping from the corner. Ew."
-	trim = /datum/id_trim/engioutpost
-	registered_age = 47
 
 /obj/item/card/id/advanced/simple_bot
 	name = "simple bot ID card"

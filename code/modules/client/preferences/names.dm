@@ -92,7 +92,7 @@
 
 	explanation = "Entertainer Name"
 	group = "fun"
-	relevant_job = /datum/job/clown
+	relevant_job = /datum/job/morale_officer
 
 /datum/preference/name/clown/create_default_value()
 	return pick(GLOB.clown_names)

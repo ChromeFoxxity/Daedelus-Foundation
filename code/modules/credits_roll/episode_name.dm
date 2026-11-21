@@ -223,7 +223,7 @@
 					episode_names += new /datum/episode_name/rare("HAIL TO THE CHEF", "The Chef was the only survivor in the shuttle.", chance)
 					if(p_hotspot.len > 200) // List of turfs on fire length
 						episode_names += new /datum/episode_name/rare("IF YOU CAN'T STAND THE HEAT...", "The Chef was the only survivor in the shuttle and [p_hotspot.len] turfs were on fire.", min(chance, p_hotspot.len/2))
-				if(JOB_CLOWN)
+				if(JOB_MORALE_OFFICER)
 					if(!H.mind.miming)
 						var/chance = 250
 						if(H.is_wearing_item_of_type(/obj/item/clothing/mask/gas/clown_hat))

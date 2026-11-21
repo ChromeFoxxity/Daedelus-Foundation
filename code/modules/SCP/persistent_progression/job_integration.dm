@@ -21,7 +21,7 @@
 		// Science
 		"senior_researcher", "researcher", "research_associate", "lab_technician", "xenobiologist", "roboticist", "chemist_science", "archaeologist", "field_agent",
 		// Engineering
-		"senior_engineer", "engineer", "junior_engineer", "atmospheric_technician", "containment_engineer", "electrical_engineer", "communications_technician", "maintenance_technician",
+		"senior_technician", "engineer", "junior_engineer", "atmospheric_technician", "containment_engineer", "electrical_engineer", "communications_technician", "maintenance_technician",
 		// Supply
 		"quartermaster", "cargo_technician", "shaft_miner", "logistics_officer", "supply_specialist",
 		// Service
@@ -271,7 +271,7 @@
 	player_data.complete_engineering_project(player_data.current_job, project_type, complexity, outcome)
 
 	// Update achievement progress
-	player_data.update_achievement_progress("JOB_TECHNICIANing_master", 1)
+	player_data.update_achievement_progress("JOB_FACILITY_TECHNICIANing_master", 1)
 
 /datum/job_integration/proc/on_security_operation(mob/living/carbon/human/H, operation_type, target, outcome)
 	if(!H.mind || !H.ckey)

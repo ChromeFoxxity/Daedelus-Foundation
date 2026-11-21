@@ -82,7 +82,7 @@
         "apprentice" = "Engineering Apprentice",
         "technician" = "Engineering Technician",
         "engineer" = "Engineer",
-        "senior_engineer" = "Senior Engineer",
+        "senior_technician" = "Senior Engineer",
         "chief_engineer" = "Chief Engineer",
         "engineering_director" = "Engineering Director",
         "head_of_engineering" = "Head of Engineering"

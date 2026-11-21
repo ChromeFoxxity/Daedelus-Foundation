@@ -4,8 +4,9 @@ GLOBAL_LIST_INIT(job_display_order, list(
 	/datum/job/ethics_committee_liaison,
 	/datum/job/internal_tribunal_department_officer,
 	/datum/job/intake_specialist,
-	/datum/job/communications_director,
+	/datum/job/communications_officer,
 	/datum/job/goc_rep,
+	/datum/job/uiu_rep,
 	// Security
 	/datum/job/security_captain,
 	/datum/job/security_lieutenant,
@@ -40,7 +41,7 @@ GLOBAL_LIST_INIT(job_display_order, list(
 	/datum/job/assistant_engineering_director,
 	/datum/job/containment_engineer,
 	/datum/job/senior_technician,
-	/datum/job/technician,
+	/datum/job/facility_technician,
 	/datum/job/junior_technician,
 	// Supply
 	/datum/job/logistics_officer,
@@ -52,7 +53,7 @@ GLOBAL_LIST_INIT(job_display_order, list(
 	/datum/job/botanist,
 	/datum/job/chaplain,
 	/datum/job/janitor,
-	/datum/job/clown,
+	/datum/job/morale_officer,
 	/datum/job/assistant,
 	// Silicon
 	/datum/job/ai,

@@ -59,7 +59,7 @@
 	refill_canister = /obj/item/vending_refill/boozeomat
 	default_price = PAYCHECK_ASSISTANT * 0.9
 	extra_price = PAYCHECK_ASSISTANT * 15 //it's the good shit
-	payment_department = ACCOUNT_STATION_MASTER
+	payment_department = ACCOUNT_CMD
 	light_mask = "boozeomat-light-mask"
 
 	discount_access = ACCESS_SERVICE_LVL3

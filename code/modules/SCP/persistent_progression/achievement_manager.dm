@@ -297,9 +297,9 @@
 	register_achievement(new /datum/achievement("job_research_papers_5", "Published Author", "Publish 5 research papers", "job", "bronze"))
 	register_achievement(new /datum/achievement("job_research_papers_25", "Prolific Researcher", "Publish 25 research papers", "job", "silver"))
 	register_achievement(new /datum/achievement("job_research_papers_50", "Scientific Pioneer", "Publish 50 research papers", "job", "gold"))
-	register_achievement(new /datum/achievement("JOB_TECHNICIANing_builds_50", "Builder", "Build 50 structures or machines", "job", "bronze"))
-	register_achievement(new /datum/achievement("JOB_TECHNICIANing_builds_200", "Architect", "Build 200 structures or machines", "job", "silver"))
-	register_achievement(new /datum/achievement("JOB_TECHNICIANing_builds_500", "Master Builder", "Build 500 structures or machines", "job", "gold"))
+	register_achievement(new /datum/achievement("JOB_FACILITY_TECHNICIANing_builds_50", "Builder", "Build 50 structures or machines", "job", "bronze"))
+	register_achievement(new /datum/achievement("JOB_FACILITY_TECHNICIANing_builds_200", "Architect", "Build 200 structures or machines", "job", "silver"))
+	register_achievement(new /datum/achievement("JOB_FACILITY_TECHNICIANing_builds_500", "Master Builder", "Build 500 structures or machines", "job", "gold"))
 
 /datum/achievement_manager/proc/register_scp_achievements()
 	register_achievement(new /datum/achievement("scp_interactions_10", "SCP Encounters", "Have 10 SCP interactions", "scp", "bronze"))

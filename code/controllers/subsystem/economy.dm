@@ -18,7 +18,8 @@ SUBSYSTEM_DEF(economy)
 		ACCOUNT_CAR = ACCOUNT_CAR_NAME,
 		ACCOUNT_SRV = ACCOUNT_SRV_NAME,
 		ACCOUNT_SEC = ACCOUNT_SEC_NAME,
-		ACCOUNT_STATION_MASTER = ACCOUNT_STATION_MASTER_NAME,
+		ACCOUNT_CMD = ACCOUNT_CMD_NAME,
+		ACCOUNT_CMD = ACCOUNT_CMD_NAME,
 		ACCOUNT_GOV = ACCOUNT_GOV_NAME, // THIS IS FOR THE SPECIAL ORDER CONSOLE, NOT THEIR PAYCHECKS!
 	)
 
@@ -77,7 +78,7 @@ SUBSYSTEM_DEF(economy)
 
 	department_accounts_by_id[ACCOUNT_GOV].account_balance = 1000
 
-	station_master = department_accounts_by_id[ACCOUNT_STATION_MASTER]
+	station_master = department_accounts_by_id[ACCOUNT_CMD]
 	return ..()
 
 /datum/controller/subsystem/economy/Recover()

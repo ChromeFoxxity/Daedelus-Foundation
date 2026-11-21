@@ -59,7 +59,7 @@ DEFINE_INTERACTABLE(/obj/machinery/vending)
 	integrity_failure = 0.33
 	armor = list(BLUNT = 20, PUNCTURE = 0, SLASH = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 50, ACID = 70)
 	circuit = /obj/item/circuitboard/machine/vendor
-	payment_department = ACCOUNT_STATION_MASTER
+	payment_department = ACCOUNT_CMD
 	light_power = 0.5
 	light_outer_range = MINIMUM_USEFUL_LIGHT_RANGE
 	zmm_flags = ZMM_MANGLE_PLANES

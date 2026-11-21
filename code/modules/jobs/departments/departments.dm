@@ -55,6 +55,7 @@
 	display_order = 1
 	label_class = "command"
 	latejoin_color = "#d4a017"
+	budget_id = ACCOUNT_CMD
 
 /datum/job_department/security
 	department_name = DEPARTMENT_SECURITY

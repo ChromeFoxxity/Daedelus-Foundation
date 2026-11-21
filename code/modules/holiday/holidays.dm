@@ -198,7 +198,7 @@
 
 /datum/holiday/april_fools/celebrate()
 	. = ..()
-	SSjob.set_overflow_role(/datum/job/clown)
+	SSjob.set_overflow_role(/datum/job/morale_officer)
 	var/datum/media/clowntrack = new(
 		name = "Clown.ogg",
 		author = "giizismukwa2",

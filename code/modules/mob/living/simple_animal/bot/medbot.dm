@@ -202,7 +202,7 @@
 	. = ..()
 
 	// Doing this hurts my soul, but simplebot access reworks are for another day.
-	var/datum/id_trim/job/para_trim = SSid_access.trim_singletons_by_path[/datum/id_trim/job/paramedic]
+	var/datum/id_trim/job/para_trim = SSid_access.trim_singletons_by_path[/datum/id_trim/job/medical_technician]
 	access_card.add_access(para_trim.access + para_trim.wildcard_access)
 	prev_access = access_card.access.Copy()
 

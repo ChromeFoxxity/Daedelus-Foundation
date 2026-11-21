@@ -119,7 +119,7 @@ SUBSYSTEM_DEF(foundation_politics)
 			JOB_ASSISTANT_ENGINEERING_DIRECTOR,
 			JOB_CONTAINMENT_ENGINEER,
 			JOB_SENIOR_TECHNICIAN,
-			JOB_TECHNICIAN,
+			JOB_FACILITY_TECHNICIAN,
 			JOB_JUNIOR_TECHNICIAN,
 		),
 		"service" = list(
@@ -127,7 +127,7 @@ SUBSYSTEM_DEF(foundation_politics)
 			JOB_COOK,
 			JOB_BARTENDER,
 			JOB_CHAPLAIN,
-			JOB_CLOWN,
+			JOB_MORALE_OFFICER,
 			JOB_BOTANIST,
 			JOB_JANITOR,
 		),
@@ -367,7 +367,7 @@ SUBSYSTEM_DEF(foundation_politics)
 				var/mob/living/carbon/human/H = dept.get_mob_by_ckey(ckey)
 				if(!H || QDELETED(H) || H.stat == DEAD)
 					continue
-				if(H.job && (H.job == JOB_TRT_OPERATOR || H.job == JOB_HCZ_GUARD || H.job == JOB_SECURITY_GUARD))
+				if(H.job && (H.job == JOB_TRT_OPERATOR || H.job == JOB_SECURITY_GUARD))
 					var/obj/item/storage/box/box = new(get_turf(H))
 					new /obj/item/restraints/handcuffs(box)
 					new /obj/item/assembly/flash(box)
@@ -378,7 +378,7 @@ SUBSYSTEM_DEF(foundation_politics)
 				var/mob/living/carbon/human/H = dept.get_mob_by_ckey(ckey)
 				if(!H || QDELETED(H) || H.stat == DEAD)
 					continue
-				if(H.job && (H.job == JOB_MEDICAL_DOCTOR || H.job == JOB_SURGEON || H.job == JOB_MEDICAL_TECHNICIAN))
+				if(H.job && (H.job == JOB_SENIOR_DOCTOR || H.job == JOB_MEDICAL_DOCTOR || H.job == JOB_MEDICAL_TECHNICIAN))
 					new /obj/item/storage/medkit/advanced(get_turf(H))
 					new /obj/item/reagent_containers/hypospray/medipen(get_turf(H))
 					to_chat(H, span_notice("Medical supplies delivered. Budget spent: [actual_cost]"))

@@ -68,7 +68,7 @@
 	refill_canister = /obj/item/vending_refill/hydroseeds
 	default_price = PAYCHECK_ASSISTANT * 0.2
 	extra_price = PAYCHECK_ASSISTANT
-	payment_department = ACCOUNT_STATION_MASTER
+	payment_department = ACCOUNT_CMD
 
 	discount_access = ACCESS_SERVICE_LVL2
 

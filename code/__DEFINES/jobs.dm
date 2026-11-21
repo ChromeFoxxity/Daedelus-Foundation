@@ -31,7 +31,13 @@
 //No department
 
 #define JOB_ASSISTANT "Intern"
-#define JOB_DCLASS "D-Class"
+#define JOB_ECLASS "E-Class Personnel"
+#define JOB_DCLASS "D-Class Personnel"
+#define JOB_DCLASS_MEDICAL "D-Class Medical"
+#define JOB_DCLASS_KITCHEN "D-Class Kitchen"
+#define JOB_DCLASS_JANITORIAL "D-Class Janitorial"
+#define JOB_DCLASS_MINING "D-Class Mining"
+#define JOB_DCLASS_RESEARCH "D-Class Research"
 
 //Administrative Staff
 #define JOB_SITE_DIRECTOR "Site Director"
@@ -43,7 +49,6 @@
 #define JOB_INTAKE_SPECIALIST "Intake Specialist"
 #define JOB_GOC_REP "Global Occult Coalition Representative"
 #define JOB_UIU_REP "Unusual Incidents Unit Representative"
-#define JOB_GOLDBAKER_REP "Goldbaker-Reinz Ltd. Corporate Representative"
 
 //Silicon
 #define JOB_AI "AIC"
@@ -89,7 +94,7 @@
 #define JOB_ASSISTANT_ENGINEERING_DIRECTOR "Assistant Engineering Director"
 #define JOB_CONTAINMENT_ENGINEER "Containment Engineer"
 #define JOB_SENIOR_TECHNICIAN "Senior Technician"
-#define JOB_TECHNICIAN "Facility Technician"
+#define JOB_FACILITY_TECHNICIAN "Facility Technician"
 #define JOB_JUNIOR_TECHNICIAN "Junior Technician"
 
 //Logistics
@@ -102,7 +107,7 @@
 #define JOB_COOK "Cook"
 #define JOB_BARTENDER "Bartender"
 #define JOB_JANITOR "Janitor"
-#define JOB_CLOWN "Morale Officer"
+#define JOB_MORALE_OFFICER "Morale Officer"
 #define JOB_MIME "Morale Agent"
 #define JOB_CHAPLAIN "Chaplain"
 

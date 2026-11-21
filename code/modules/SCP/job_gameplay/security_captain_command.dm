@@ -139,7 +139,7 @@ SUBSYSTEM_DEF(security_captain)
 	return status
 
 /datum/computer_file/program/scp_security_captain
-	filename = "scp_secdir"
+	filename = "scp_seccap"
 	filedesc = "Security Director Console"
 	category = PROGRAM_CATEGORY_MISC
 	program_icon_state = "generic"

@@ -1,15 +1,17 @@
 /datum/job/containment_engineer
 	title = JOB_CONTAINMENT_ENGINEER
-	description = "Start the Supermatter, wire the solars, repair station hull \
-		and wiring damage."
+	description = "Oversee the site's power systems, Supermatter stability, atmospherics, communications, \
+		infrastructure maintenance, and engineering personnel to ensure the facility remains fully operational."
 	department_head = list(JOB_ENGINEERING_DIRECTOR)
 	faction = FACTION_STATION
-	total_positions = 5
-	spawn_positions = 5
-	supervisors = "the Engineering Director"
-	selection_color = "#996300"
-	exp_requirements = 60
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the Site Director, Engineering Director, and Assistant Engineering Director"
+	selection_color = "#9e7e4e"
+	minimal_player_age = 7
+	exp_requirements = 180
 	exp_required_type = EXP_TYPE_CREW
+	exp_required_type_department = EXP_TYPE_ENGINEERING
 	exp_granted_type = EXP_TYPE_CREW
 
 	employers = list(
@@ -19,29 +21,29 @@
 	outfits = list(
 		"Default" = list(
 			SPECIES_HUMAN = /datum/outfit/job/containment_engineer,
-		)
+		),
 	)
-
-	paycheck = PAYCHECK_MEDIUM
-	paycheck_department = ACCOUNT_ENG
-
-	liver_traits = list(TRAIT_ENGINEER_METABOLISM)
 
 	departments_list = list(
 		/datum/job_department/engineering,
-		)
+	)
+
+	liver_traits = list(TRAIT_ENGINEER_METABOLISM)
+
+	paycheck = PAYCHECK_HARD
+	paycheck_department = ACCOUNT_ENG
 
 	family_heirlooms = list(/obj/item/clothing/head/hardhat, /obj/item/screwdriver, /obj/item/wrench, /obj/item/weldingtool, /obj/item/crowbar, /obj/item/wirecutters)
-
 	mail_goodies = list(
 		/obj/item/storage/box/lights/mixed = 20,
 		/obj/item/lightreplacer = 10,
+		/obj/item/spess_knife = 10,
 		/obj/item/holosign_creator/engineering = 8,
-		/obj/item/clothing/head/hardhat/red/upgraded = 1
+		/obj/item/wrench/bolter = 8,
+		/obj/item/clothing/head/hardhat/red = 1
 	)
-	rpg_title = "Crystallomancer"
+	rpg_title = "Jail Maintainer"
 	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS | JOB_CAN_BE_INTERN
-
 
 /datum/outfit/job/containment_engineer
 	name = "Containment Engineer"

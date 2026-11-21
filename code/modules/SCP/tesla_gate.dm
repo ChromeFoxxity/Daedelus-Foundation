@@ -55,7 +55,7 @@
 			if(istype(L, /mob/living/carbon/human))
 				var/mob/living/carbon/human/H = L
 				var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-				if(id_card && (ACCESS_SECURITY in id_card.access))
+				if(id_card && (ACCESS_SECURITY_LVL1 in id_card.access))
 					continue
 				if(id_card && (ACCESS_MTF in id_card.access))
 					continue
@@ -104,7 +104,7 @@
 		if(istype(L, /mob/living/carbon/human))
 			var/mob/living/carbon/human/H = L
 			var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-			if(id_card && (ACCESS_SECURITY in id_card.access))
+			if(id_card && (ACCESS_SECURITY_LVL1 in id_card.access))
 				continue
 		tesla_shock(L)
 	addtimer(CALLBACK(src, .proc/deactivate), 30 SECONDS)
@@ -142,7 +142,7 @@
 		return
 	var/mob/living/carbon/human/H = user
 	var/obj/item/card/id/id_card = H.get_idcard(TRUE)
-	if(!id_card || !(ACCESS_SECURITY in id_card.access))
+	if(!id_card || !(ACCESS_SECURITY_LVL1 in id_card.access))
 		to_chat(H, span_warning("Requires Security access."))
 		return
 

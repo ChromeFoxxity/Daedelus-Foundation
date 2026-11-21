@@ -5,7 +5,6 @@
 		Containment Zone or Entrance Zone."
 	auto_deadmin_role_flags = DEADMIN_POSITION_SECURITY
 	department_head = list(JOB_SECURITY_CAPTAIN)
-	head_announce = RADIO_CHANNEL_SECURITY
 	faction = FACTION_STATION
 	total_positions = 2
 	spawn_positions = 2

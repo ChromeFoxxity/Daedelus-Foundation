@@ -78,7 +78,7 @@
 
 // Trainee Doctor
 
-/datum/job/trainee_doctor
+/datum/job/medical_student
 	title = JOB_MEDICAL_STUDENT
 	description = "Save lives, run around the station looking for victims, \
 		scan everyone in sight"
@@ -123,11 +123,11 @@
 	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS | JOB_CAN_BE_INTERN
 
 
-/datum/outfit/job/trainee_doctor
+/datum/outfit/job/medical_student
 	name = JOB_MEDICAL_DOCTOR
-	jobtype = /datum/job/trainee_doctor
+	jobtype = /datum/job/medical_student
 
-	id_trim = /datum/id_trim/job/trainee_doctor
+	id_trim = /datum/id_trim/job/medical_student
 	uniform = /obj/item/clothing/under/rank/medical/scrubs/blue
 	suit = /obj/item/clothing/suit/toggle/labcoat
 	suit_store = /obj/item/flashlight/pen

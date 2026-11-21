@@ -1,13 +1,15 @@
 /datum/job/site_director
 	title = JOB_SITE_DIRECTOR
-	description = "Ensure the containment and ongoing study of SCPs, safety of all staff, and \
-	Foundation protocols be followed at all times. "
+	description = "Oversee all site operations, command every department, authorize major containment \
+		and emergency decisions, manage high-level Foundation assets and information, and serve as the \
+		final authority during site-wide crises and nuclear self-destruct scenarios."
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD|DEADMIN_POSITION_SECURITY
+	head_announce = list(RADIO_CHANNEL_COMMAND)
 	faction = FACTION_STATION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the 0-5 Council"
-	selection_color = "#0000E5"
+	supervisors = "the O5 Council, and Ethics Committee"
+	selection_color = "#1760e9"
 	req_admin_notify = 1
 	minimal_player_age = 14
 	exp_requirements = 180
@@ -16,8 +18,7 @@
 	exp_granted_type = EXP_TYPE_CREW
 
 	employers = list(
-		/datum/employer/scp
-
+		/datum/employer/scp,
 	)
 
 	outfits = list(
@@ -26,31 +27,29 @@
 		),
 	)
 
-	paycheck = PAYCHECK_COMMAND
-	paycheck_department = ACCOUNT_STATION_MASTER
+	departments_list = list(
+		/datum/job_department/captain,
+		/datum/job_department/command,
+	)
 
 	liver_traits = list(TRAIT_ROYAL_METABOLISM)
 
-	departments_list = list(
-		/datum/job_department/command,
-		/datum/job_department/company_leader
-	)
+	paycheck = PAYCHECK_COMMAND
+	paycheck_department = ACCOUNT_CMD
 
-
-	family_heirlooms = list(/obj/item/reagent_containers/food/drinks/flask/gold, /obj/item/toy/captainsaid/collector)
-
+	family_heirlooms = list(/obj/item/reagent_containers/cup/glass/flask/gold, /obj/item/toy/captainsaid/collector)
 	mail_goodies = list(
-		/obj/item/clothing/mask/cigarette/cigar/havana = 20,
+		/obj/item/cigarette/cigar/havana = 20,
 		/obj/item/storage/fancy/cigarettes/cigars/havana = 15,
-		/obj/item/reagent_containers/food/drinks/bottle/champagne = 10,
-		/obj/item/toy/captainsaid/collector = 20
+		/obj/item/reagent_containers/cup/glass/bottle/champagne = 5,
+		/obj/item/reagent_containers/cup/glass/bottle/champagne/cursed = 5,
+		/obj/item/toy/captainsaid/collector = 20,
+		/obj/item/skillchip/sabrage = 5,
 	)
-
+	rpg_title = "Duke"
 	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS | JOB_CAN_BE_INTERN
-	rpg_title = "Star Duke"
 
 	voice_of_god_power = 1.4 //Command staff has authority
-
 
 /datum/job/site_director/get_captaincy_announcement(mob/living/captain)
 	return "[title] [captain.real_name] will be overseeing operations today."

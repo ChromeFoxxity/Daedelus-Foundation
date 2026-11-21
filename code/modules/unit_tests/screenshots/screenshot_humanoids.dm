@@ -18,7 +18,7 @@
 	lizard.dna.features["legs"] = "Normal Legs"
 	lizard.dna.features["spines"] = "None"
 	lizard.set_species(/datum/species/lizard)
-	lizard.equipOutfit(/datum/outfit/job/engineer)
+	lizard.equipOutfit(/datum/outfit/job/facility_technician)
 	test_screenshot("[/datum/species/lizard]", get_flat_icon_for_all_directions(lizard))
 
 

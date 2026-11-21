@@ -210,7 +210,7 @@
 	refill_canister = /obj/item/vending_refill/clothing
 	default_price = PAYCHECK_ASSISTANT * 0.7
 	extra_price = PAYCHECK_ASSISTANT * 3
-	payment_department = ACCOUNT_STATION_MASTER
+	payment_department = ACCOUNT_CMD
 	light_mask = "wardrobe-light-mask"
 	light_color = LIGHT_COLOR_ELECTRIC_GREEN
 

@@ -11,14 +11,7 @@
 
 // Heads
 /datum/job/security_captain
-	alt_titles = list(JOB_SECURITY_CAPTAIN, "Security Director")
-
-/datum/job/goi_rep
-	alt_titles = list(
-		JOB_GOC_REP,
-		JOB_GOLDBAKER_REP,
-		JOB_UIU_REP,
-	)
+	alt_titles = list(JOB_SECURITY_CAPTAIN, "Security Major")
 
 // Research
 
@@ -62,36 +55,6 @@
 		)
 
 // Medical
-
-/datum/job/doctor
-	alt_titles = list(JOB_MEDICAL_DOCTOR, "Physician")
-
-/datum/job/paramedic
-	alt_titles = list(JOB_MEDICAL_TECHNICIAN, "Emergency Medical Technician")
-
-/datum/job/chemist
-	alt_titles = list(JOB_CHEMIST, "Pharmacist")
-
-/datum/job/virologist
-	alt_titles = list(JOB_VIROLOGIST, "Pathologist")
-
-/datum/job/psychologist
-	alt_titles = list(JOB_PSYCHOLOGIST, "Therapist")
-
-// Engineering
-
-/datum/job/senior_engineer
-	alt_titles = list(JOB_SENIOR_TECHNICIAN, "Senior Maintenance Technician", "Senior Electrician", "Senior Engine Technician")
-
-/datum/job/engineer
-	alt_titles = list(JOB_TECHNICIAN, "Maintenance Technician", "Electrician", "Engine Technician")
-
-/datum/job/junior_engineer
-	alt_titles = list(JOB_JUNIOR_TECHNICIAN, "Junior Maintenance Technician", "Junior Electrician", "Junior Engine Technician")
-
-// Cargo
-/datum/job/logistics_officer
-	alt_titles = list(JOB_LOGISTICS_OFFICER, "Quartermaster")
 
 // Service
 

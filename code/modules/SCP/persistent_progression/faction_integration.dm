@@ -47,7 +47,7 @@
 		"senior_researcher", "researcher", "research_associate", "lab_technician",
 		"xenobiologist", "roboticist", "chemist_science", "archaeologist", "field_agent",
 		// Engineering
-		"senior_engineer", "engineer", "junior_engineer", "atmospheric_technician",
+		"senior_technician", "engineer", "junior_engineer", "atmospheric_technician",
 		"containment_engineer", "electrical_engineer", "communications_technician", "maintenance_technician",
 		// Supply
 		"quartermaster", "cargo_technician", "shaft_miner", "logistics_officer", "supply_specialist",

@@ -519,20 +519,6 @@ GLOBAL_VAR_INIT(hhMysteryRoomNumber, rand(1, 999999))
 	name = "secure airlock"
 	puzzle_id = "hilbert_office"
 
-/datum/outfit/doctorhilbert
-	id = /obj/item/card/id/advanced/silver
-	uniform = /obj/item/clothing/under/rank/rnd/research_director/doctor_hilbert
-	shoes = /obj/item/clothing/shoes/sneakers/brown
-	back = /obj/item/storage/backpack/satchel/leather
-	suit = /obj/item/clothing/suit/toggle/labcoat
-	id_trim = /datum/id_trim/away/hilbert
-
-/datum/outfit/doctorhilbert/pre_equip(mob/living/carbon/human/hilbert, visualsOnly)
-	. = ..()
-	if(!visualsOnly)
-		hilbert.gender = MALE
-		hilbert.update_body()
-
 /obj/item/paper/crumpled/ruins/note_institute
 	name = "note to the institute"
 

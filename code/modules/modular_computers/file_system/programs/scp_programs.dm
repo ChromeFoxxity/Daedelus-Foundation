@@ -1105,9 +1105,9 @@
 			var/is_priority = params["priority"] == "1"
 			SSfoundation_comms.total_announcements++
 			if(is_priority)
-				priority_announce(message, "Communications Director", null, ANNOUNCER_ALERT)
+				priority_announce(message, "Communications Officer", null, ANNOUNCER_ALERT)
 			else
-				priority_announce(message, "Communications Director", null, ANNOUNCER_DEFAULT)
+				priority_announce(message, "Communications Officer", null, ANNOUNCER_DEFAULT)
 			if(SSraisa && ishuman(H))
 				var/datum/intel_report/R = new(H, "facility_announcement", "Facility", H.job, is_priority ? "PRIORITY" : "ROUTINE", "Facility announcement: [message]", "Broadcast from Communications Console")
 				SSraisa.file_report(R)

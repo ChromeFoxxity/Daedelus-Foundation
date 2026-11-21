@@ -50,7 +50,7 @@
 	var/list/job_containment_breaches = list()
 	var/list/job_scp_interactions = list()
 	var/list/job_medical_procedures = list()
-	var/list/JOB_TECHNICIANing_projects = list()
+	var/list/JOB_FACILITY_TECHNICIANing_projects = list()
 	var/list/job_security_operations = list()
 	var/list/job_supply_management = list()
 	var/list/job_service_contributions = list()
@@ -605,8 +605,8 @@
 	add_job_experience(job_title, exp_reward, "Medical Procedure")
 
 /datum/persistent_player_data/proc/complete_engineering_project(job_title, project_type, complexity, outcome)
-	if(!JOB_TECHNICIANing_projects[job_title])
-		JOB_TECHNICIANing_projects[job_title] = list()
+	if(!JOB_FACILITY_TECHNICIANing_projects[job_title])
+		JOB_FACILITY_TECHNICIANing_projects[job_title] = list()
 
 	var/list/project_data = list(
 		"project_type" = project_type,
@@ -614,7 +614,7 @@
 		"outcome" = outcome,
 		"timestamp" = world.time
 	)
-	JOB_TECHNICIANing_projects[job_title] += project_data
+	JOB_FACILITY_TECHNICIANing_projects[job_title] += project_data
 
 	var/exp_reward = 0
 	switch(complexity)

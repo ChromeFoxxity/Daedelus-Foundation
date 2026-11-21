@@ -76,17 +76,13 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = JOB_ETHICS_COMMITTEE_LIAISON
 	icon_state = JOB_ETHICS_COMMITTEE_LIAISON
 
-/obj/effect/landmark/start/communications_director
+/obj/effect/landmark/start/communications_officer
 	name = JOB_COMMUNICATIONS_OFFICER
 	icon_state = JOB_COMMUNICATIONS_OFFICER
 
 /obj/effect/landmark/start/goc_rep
 	name = JOB_GOC_REP
 	icon_state = JOB_GOC_REP
-
-/obj/effect/landmark/start/goldbaker_rep
-	name = JOB_GOLDBAKER_REP
-	icon_state = JOB_GOLDBAKER_REP
 
 /obj/effect/landmark/start/uiu_rep
 	name = JOB_UIU_REP
@@ -221,8 +217,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = JOB_SENIOR_TECHNICIAN
 
 /obj/effect/landmark/start/technician
-	name = JOB_TECHNICIAN
-	icon_state = JOB_TECHNICIAN
+	name = JOB_FACILITY_TECHNICIAN
+	icon_state = JOB_FACILITY_TECHNICIAN
 
 /obj/effect/landmark/start/junior_technician
 	name = JOB_JUNIOR_TECHNICIAN
@@ -257,8 +253,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = JOB_JANITOR
 
 /obj/effect/landmark/start/clown
-	name = JOB_CLOWN
-	icon_state = JOB_CLOWN
+	name = JOB_MORALE_OFFICER
+	icon_state = JOB_MORALE_OFFICER
 
 /obj/effect/landmark/start/mime
 	name = JOB_MIME

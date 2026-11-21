@@ -5,7 +5,6 @@
 		security incidents across the facility."
 	auto_deadmin_role_flags = DEADMIN_POSITION_SECURITY
 	department_head = list(JOB_SECURITY_CAPTAIN)
-	head_announce = RADIO_CHANNEL_SECURITY
 	faction = FACTION_STATION
 	total_positions = 16
 	spawn_positions = 16
@@ -34,7 +33,7 @@
 	mind_traits = list(TRAIT_DONUT_LOVER)
 	liver_traits = list(TRAIT_LAW_ENFORCEMENT_METABOLISM)
 
-	paycheck = PAYCHECK_HARD
+	paycheck = PAYCHECK_MEDIUM
 	paycheck_department = ACCOUNT_SEC
 
 	family_heirlooms = list(/obj/item/book/manual/wiki/security_space_law, /obj/item/clothing/head/beret/sec)

@@ -31,7 +31,7 @@
 	desc = "Inject yourself with this to become as clumsy as a clown... or inject someone ELSE with it to make THEM as clumsy as a clown. Useful for clowns who wish to reconnect with their former clownish nature or for clowns who wish to torment and play with their prey before killing them."
 	item = /obj/item/dnainjector/clumsymut
 	cost = 1
-	restricted_roles = list(JOB_CLOWN)
+	restricted_roles = list(JOB_MORALE_OFFICER)
 	illegal_tech = FALSE
 
 /datum/uplink_item/role_restricted/ancient_jumpsuit
@@ -69,7 +69,7 @@
 	item = /obj/item/hot_potato/syndicate
 	cost = 4
 	surplus = 0
-	restricted_roles = list(JOB_COOK, JOB_BOTANIST, JOB_CLOWN)
+	restricted_roles = list(JOB_COOK, JOB_BOTANIST, JOB_MORALE_OFFICER)
 
 /datum/uplink_item/role_restricted/ez_clean_bundle
 	name = "EZ Clean Grenade Bundle"
@@ -89,7 +89,7 @@
 	progression_minimum = 10 MINUTES
 	cost = 5
 	item = /obj/item/reverse_bear_trap
-	restricted_roles = list(JOB_CLOWN)
+	restricted_roles = list(JOB_MORALE_OFFICER)
 
 /datum/uplink_item/role_restricted/modified_syringe_gun
 	name = "Modified Syringe Gun"
@@ -113,7 +113,7 @@
 	progression_minimum = 15 MINUTES
 	item = /obj/item/storage/toolbox/emergency/turret
 	cost = 11
-	restricted_roles = list(JOB_TECHNICIAN)
+	restricted_roles = list(JOB_FACILITY_TECHNICIAN)
 
 /datum/uplink_item/role_restricted/gorillacubes
 	name = "Box of Gorilla Cubes"
@@ -132,7 +132,7 @@
 	progression_minimum = 30 MINUTES
 	cost = 14
 	item = /obj/item/storage/box/hug/reverse_revolver
-	restricted_roles = list(JOB_CLOWN)
+	restricted_roles = list(JOB_MORALE_OFFICER)
 
 /datum/uplink_item/role_restricted/laser_arm
 	name = "Laser Arm Implant"
@@ -148,7 +148,7 @@
 	progression_minimum = 30 MINUTES
 	item = /obj/item/gun/chem
 	cost = 12
-	restricted_roles = list(JOB_CHEMIST, JOB_MEDICAL_DIRECTOR, JOB_BOTANIST)
+	restricted_roles = list(JOB_MEDICAL_DIRECTOR, JOB_ASSISTANT_MEDICAL_DIRECTOR, JOB_SENIOR_DOCTOR)
 
 /datum/uplink_item/role_restricted/pie_cannon
 	name = "Banana Cream Pie Cannon"
@@ -156,7 +156,7 @@
 	progression_minimum = 30 MINUTES
 	cost = 10
 	item = /obj/item/pneumatic_cannon/pie/selfcharge
-	restricted_roles = list(JOB_CLOWN)
+	restricted_roles = list(JOB_MORALE_OFFICER)
 	surplus = 0 //No fun unless you're the clown!
 
 /datum/uplink_item/role_restricted/clown_bomb
@@ -169,7 +169,7 @@
 	progression_minimum = 30 MINUTES
 	item = /obj/item/sbeacondrop/clownbomb
 	cost = 15
-	restricted_roles = list(JOB_CLOWN)
+	restricted_roles = list(JOB_MORALE_OFFICER)
 
 /datum/uplink_item/role_restricted/clowncar
 	name = "Clown Car"
@@ -182,7 +182,7 @@
 	progression_minimum = 30 MINUTES
 	item = /obj/vehicle/sealed/car/clowncar
 	cost = 20
-	restricted_roles = list(JOB_CLOWN)
+	restricted_roles = list(JOB_MORALE_OFFICER)
 
 /datum/uplink_item/role_restricted/his_grace
 	name = "His Grace"

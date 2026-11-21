@@ -16,17 +16,14 @@
 	outfit = /datum/outfit/job/medical_doctor
 	icon_state = "corpsedoctor"
 
-/obj/effect/mob_spawn/corpse/human/engineer
-	name = "Engineer"
-	outfit = /datum/outfit/job/engineer
+/obj/effect/mob_spawn/corpse/human/facility_technician
+	name = JOB_FACILITY_TECHNICIAN
+	outfit = /datum/outfit/job/facility_technician
 	icon_state = "corpseengineer"
 
-/obj/effect/mob_spawn/corpse/human/engineer/mod
-	outfit = /datum/outfit/job/engineer/mod
-
 /obj/effect/mob_spawn/corpse/human/clown
-	name = JOB_CLOWN
-	outfit = /datum/outfit/job/clown
+	name = JOB_MORALE_OFFICER
+	outfit = /datum/outfit/job/morale_officer
 	icon_state = "corpseclown"
 
 /obj/effect/mob_spawn/corpse/human/miner

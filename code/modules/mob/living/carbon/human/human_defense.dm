@@ -615,9 +615,9 @@
 /mob/living/carbon/human/singularity_act()
 	. = 20
 	switch(mind?.assigned_role.title)
-		if(JOB_ENGINEERING_DIRECTOR, JOB_SENIOR_TECHNICIAN, JOB_TECHNICIAN, JOB_JUNIOR_TECHNICIAN)
+		if(JOB_ENGINEERING_DIRECTOR, JOB_SENIOR_TECHNICIAN, JOB_FACILITY_TECHNICIAN, JOB_JUNIOR_TECHNICIAN)
 			. = 100
-		if(JOB_CLOWN)
+		if(JOB_MORALE_OFFICER)
 			if(!mind.miming)
 				. = rand(-1000, 1000)
 	..() //Called afterwards because getting the mind after getting gibbed is sketchy

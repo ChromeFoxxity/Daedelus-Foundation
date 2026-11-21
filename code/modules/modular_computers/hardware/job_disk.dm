@@ -122,7 +122,7 @@
 	if(disk_flags & DISK_SCP_INTERCOM)
 		progs_to_store += new /datum/computer_file/program/scp_intercom(src)
 
-	if(disk_flags & DISK_SCP_SECDIR)
+	if(disk_flags & DISK_SCP_SECCAP)
 		progs_to_store += new /datum/computer_file/program/scp_security_captain(src)
 
 	if(disk_flags & DISK_SCP_O5)
@@ -333,7 +333,7 @@
 /obj/item/computer_hardware/hard_drive/role/foundation_security
 	name = "\improper Foundation Security disk"
 	icon_state = "datadisk6"
-	disk_flags = DISK_SEC | DISK_SCP_SECURITY | DISK_SCP_INVESTIGATIONS | DISK_SCP_SECDIR | DISK_MANIFEST
+	disk_flags = DISK_SEC | DISK_SCP_SECURITY | DISK_SCP_INVESTIGATIONS | DISK_SCP_SECCAP | DISK_MANIFEST
 
 /obj/item/computer_hardware/hard_drive/role/foundation_science
 	name = "\improper Foundation Science disk"

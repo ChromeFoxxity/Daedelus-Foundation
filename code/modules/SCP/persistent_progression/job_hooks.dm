@@ -79,10 +79,10 @@
 	track_job_performance(H, "construction", "Robot created: [robot_type]")
 
 // Engineering job hooks
-/datum/job/engineer/proc/on_maintenance_completed(mob/living/carbon/human/H, system_type)
+/datum/job/facility_technician/proc/on_maintenance_completed(mob/living/carbon/human/H, system_type)
 	track_job_performance(H, "maintenance", "Maintenance completed: [system_type]")
 
-/datum/job/senior_engineer/proc/on_project_led(mob/living/carbon/human/H, project_type)
+/datum/job/senior_technician/proc/on_project_led(mob/living/carbon/human/H, project_type)
 	track_job_performance(H, "construction", "Project led: [project_type]")
 
 /datum/job/containment_engineer/proc/on_containment_system(mob/living/carbon/human/H, system_type)

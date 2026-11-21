@@ -87,7 +87,7 @@
 	data["job_containment_breaches"] = player_data.job_containment_breaches || list()
 	data["job_scp_interactions"] = player_data.job_scp_interactions || list()
 	data["job_medical_procedures"] = player_data.job_medical_procedures || list()
-	data["JOB_TECHNICIANing_projects"] = player_data.JOB_TECHNICIANing_projects || list()
+	data["JOB_FACILITY_TECHNICIANing_projects"] = player_data.JOB_FACILITY_TECHNICIANing_projects || list()
 	data["job_security_operations"] = player_data.job_security_operations || list()
 	data["job_supply_management"] = player_data.job_supply_management || list()
 	data["job_service_contributions"] = player_data.job_service_contributions || list()

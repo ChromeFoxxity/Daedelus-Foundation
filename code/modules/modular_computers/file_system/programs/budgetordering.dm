@@ -232,7 +232,7 @@
 							department_id = "supply"
 						if(ACCOUNT_SRV)
 							department_id = "service"
-						if(ACCOUNT_STATION_MASTER)
+						if(ACCOUNT_CMD)
 							department_id = "command"
 
 				var/datum/budget_data/dept_budget = SSbudget_system.manager.department_budgets[department_id]

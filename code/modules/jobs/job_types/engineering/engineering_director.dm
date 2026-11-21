@@ -1,13 +1,14 @@
 /datum/job/engineering_director
 	title = JOB_ENGINEERING_DIRECTOR
-	description = "Coordinate engineering, ensure equipment doesn't get stolen, \
-		make sure the Supermatter doesn't blow up, maintain telecommunications."
+	description = "Oversee the site's power systems, Supermatter stability, atmospherics, communications, \
+		infrastructure maintenance, and engineering personnel to ensure the facility remains fully operational."
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD
 	head_announce = list(RADIO_CHANNEL_ENGINEERING)
 	faction = FACTION_STATION
 	total_positions = 1
 	spawn_positions = 1
-	selection_color = "#FFA500"
+	supervisors = "the Site Director"
+	selection_color = "#d89e48"
 	req_admin_notify = 1
 	minimal_player_age = 7
 	exp_requirements = 180
@@ -17,7 +18,6 @@
 
 	employers = list(
 		/datum/employer/scp,
-
 	)
 
 	outfits = list(
@@ -28,16 +28,15 @@
 
 	departments_list = list(
 		/datum/job_department/engineering,
-		/datum/job_department/company_leader,
+		/datum/job_department/command,
 	)
+
+	liver_traits = list(TRAIT_ENGINEER_METABOLISM, TRAIT_ROYAL_METABOLISM)
 
 	paycheck = PAYCHECK_COMMAND
 	paycheck_department = ACCOUNT_ENG
 
-	liver_traits = list(TRAIT_ENGINEER_METABOLISM, TRAIT_ROYAL_METABOLISM)
-
 	family_heirlooms = list(/obj/item/clothing/head/hardhat/white, /obj/item/screwdriver, /obj/item/wrench, /obj/item/weldingtool, /obj/item/crowbar, /obj/item/wirecutters)
-
 	mail_goodies = list(
 		/obj/item/food/cracker = 25, //you know. for poly
 		/obj/item/stack/sheet/mineral/diamond = 15,
@@ -51,10 +50,8 @@
 
 	voice_of_god_power = 1.4 //Command staff has authority
 
-
 /datum/job/engineering_director/get_captaincy_announcement(mob/living/captain)
-	return "Due to staffing shortages, newly promoted Acting Captain [captain.real_name] on deck!"
-
+	return "Due to staffing shortages, [title] [captain.real_name] has been promoted temporarily to acting Site Director!"
 
 /datum/outfit/job/engineering_director
 	name = "Engineering Director"
@@ -82,17 +79,3 @@
 	chameleon_extras = /obj/item/stamp/ed
 	skillchips = list(/obj/item/skillchip/job/engineer)
 	pda_slot = ITEM_SLOT_LPOCKET
-
-/datum/outfit/job/engineering_director/mod
-	name = "Engineering Director (MODsuit)"
-
-	suit_store = /obj/item/tank/internals/oxygen
-	back = /obj/item/mod/control/pre_equipped/advanced
-	glasses = /obj/item/clothing/glasses/meson/engine
-	gloves = /obj/item/clothing/gloves/color/yellow
-	head = null
-	mask = /obj/item/clothing/mask/breath
-	shoes = /obj/item/clothing/shoes/magboots/advance
-	internals_slot = ITEM_SLOT_SUITSTORE
-	backpack_contents = null
-	box = null

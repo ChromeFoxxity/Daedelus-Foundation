@@ -4,7 +4,6 @@
 		Department, oversee D-Class control, and coordinate frontline security operations within your assigned zone."
 	auto_deadmin_role_flags = DEADMIN_POSITION_SECURITY
 	department_head = list(JOB_SECURITY_CAPTAIN)
-	head_announce = RADIO_CHANNEL_SECURITY
 	faction = FACTION_STATION
 	total_positions = 4
 	spawn_positions = 4

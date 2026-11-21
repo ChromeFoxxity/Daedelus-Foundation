@@ -340,11 +340,11 @@ SUBSYSTEM_DEF(storytelling)
 			continue
 		if(!H.job)
 			continue
-		if(H.job == "MTF Commander" || H.job == "MTF Operative" || H.job == "MTF Medic" || H.job == "MTF Heavy")
+		if(H.job == JOB_E11_CAPTAIN || H.job == JOB_E11_SERGEANT || H.job == JOB_E11_SPECIALIST || H.job == JOB_E11_PRIVATE || H.job == JOB_E11_MEDIC)
 			var/turf/scp_turf = found_scp ? get_turf(found_scp) : null
 			if(!found_scp || (scp_turf && get_dist(get_turf(H), scp_turf) < 30))
 				return TRUE
-		if(H.job == JOB_TRT_OPERATOR || H.job == JOB_HCZ_GUARD || H.job == JOB_SECURITY_GUARD || H.job == JOB_TRT_COMMANDER || H.job == JOB_SECURITY_MEDIC || H.job == JOB_SECURITY_LIEUTENANT || H.job == JOB_SECURITY_CAPTAIN)
+		if(H.job == JOB_TRT_COMMANDER || H.job == JOB_TRT_SERGEANT || H.job == JOB_TRT_OPERATOR || H.job == JOB_TRT_CADET || H.job == JOB_SECURITY_CAPTAIN || H.job == JOB_SECURITY_LIEUTENANT || H.job == JOB_SECURITY_SERGEANT || H.job == JOB_SECURITY_MEDIC || H.job == JOB_SECURITY_GUARD || H.job == JOB_SECURITY_CADET)
 			var/turf/scp_turf2 = found_scp ? get_turf(found_scp) : null
 			if(!found_scp || (scp_turf2 && get_dist(get_turf(H), scp_turf2) < 30))
 				return TRUE
@@ -358,7 +358,7 @@ SUBSYSTEM_DEF(storytelling)
 			continue
 		if(!H.job)
 			continue
-		if(H.job == "MTF Commander" || H.job == "MTF Operative" || H.job == JOB_TRT_OPERATOR || H.job == JOB_HCZ_GUARD || H.job == JOB_SECURITY_GUARD)
+		if(H.job == JOB_E11_CAPTAIN || H.job == JOB_E11_PRIVATE || H.job == JOB_TRT_COMMANDER || H.job == JOB_TRT_SERGEANT || H.job == JOB_TRT_OPERATOR || H.job == JOB_TRT_CADET)
 			if(H.combat_mode)
 				return TRUE
 	return FALSE
@@ -371,7 +371,7 @@ SUBSYSTEM_DEF(storytelling)
 			continue
 		if(!H.job)
 			continue
-		if(H.job == "MTF Commander" || H.job == "MTF Operative" || H.job == "MTF Medic" || H.job == "MTF Heavy")
+		if(H.job == JOB_E11_CAPTAIN || H.job == JOB_E11_SERGEANT || H.job == JOB_E11_SPECIALIST || H.job == JOB_E11_PRIVATE || H.job == JOB_E11_MEDIC)
 			response_total++
 			if(H.stat != DEAD)
 				response_alive++

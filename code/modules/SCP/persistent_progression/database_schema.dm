@@ -186,7 +186,7 @@
 		if(!isnull(data[key]))
 			players[ckey][key] = data[key]
 
-	var/list/list_keys = list("class_data", "rank_data", "faction_data", "unlocked_items", "unlocked_titles", "unlocked_cosmetics", "achievements", "achievement_progress", "experience_sources", "performance_metrics", "currency", "settings", "job_rounds_played", "job_experience", "job_achievements", "job_performance", "job_specializations", "job_promotions", "job_incidents", "job_commendations", "job_disciplinary_actions", "job_training_completed", "job_certifications", "job_mentoring_sessions", "job_research_papers", "job_containment_breaches", "job_scp_interactions", "job_medical_procedures", "JOB_TECHNICIANing_projects", "job_security_operations", "job_supply_management", "job_service_contributions", "job_dclass_testing")
+	var/list/list_keys = list("class_data", "rank_data", "faction_data", "unlocked_items", "unlocked_titles", "unlocked_cosmetics", "achievements", "achievement_progress", "experience_sources", "performance_metrics", "currency", "settings", "job_rounds_played", "job_experience", "job_achievements", "job_performance", "job_specializations", "job_promotions", "job_incidents", "job_commendations", "job_disciplinary_actions", "job_training_completed", "job_certifications", "job_mentoring_sessions", "job_research_papers", "job_containment_breaches", "job_scp_interactions", "job_medical_procedures", "JOB_FACILITY_TECHNICIANing_projects", "job_security_operations", "job_supply_management", "job_service_contributions", "job_dclass_testing")
 	for(var/key in list_keys)
 		if(!isnull(data[key]))
 			players[ckey][key] = data[key]

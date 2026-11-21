@@ -5,6 +5,12 @@
 	trim_state = "trim_centcom"
 	sechud_icon_state = SECHUD_CENTCOM
 
+/datum/id_trim/centcom/corpse
+	access = list(ACCESS_CENTRAL)
+	assignment = JOB_CENTCOM
+	trim_state = "trim_centcom"
+	sechud_icon_state = SECHUD_CENTCOM
+
 /// Trim for Centcom VIPs
 /datum/id_trim/centcom/vip
 	access = list(ACCESS_CENT_GENERAL)

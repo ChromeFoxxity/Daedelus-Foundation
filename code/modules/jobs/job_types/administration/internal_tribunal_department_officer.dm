@@ -4,12 +4,12 @@
 	and advise on the site regulations and standard operating procedure and ensure that they are not ignored. \
 	Use the Tribunal Console to file cases, conduct hearings, and render verdicts with appropriate sanctions."
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD|DEADMIN_POSITION_SECURITY
+	department_head = list(JOB_SITE_DIRECTOR)
 	faction = FACTION_STATION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the 0-5 Council"
-	selection_color = "#00007F"
-	req_admin_notify = 1
+	supervisors = "the Site Director, Internal Security Department, and Internal Tribunal Department"
+	selection_color = "#063ea7"
 	minimal_player_age = 14
 	exp_requirements = 180
 	exp_required_type = EXP_TYPE_CREW
@@ -17,7 +17,7 @@
 	exp_granted_type = EXP_TYPE_CREW
 
 	employers = list(
-		/datum/employer/scp
+		/datum/employer/scp,
 	)
 
 	outfits = list(
@@ -26,27 +26,18 @@
 		),
 	)
 
-	paycheck = PAYCHECK_COMMAND
-	paycheck_department = ACCOUNT_STATION_MASTER
-
-	liver_traits = list(TRAIT_ROYAL_METABOLISM)
-
 	departments_list = list(
 		/datum/job_department/command,
 	)
 
+	liver_traits = list(TRAIT_ROYAL_METABOLISM)
 
-	family_heirlooms = list(/obj/item/reagent_containers/food/drinks/flask/gold, /obj/item/toy/captainsaid/collector)
+	paycheck = PAYCHECK_HARD
+	paycheck_department = ACCOUNT_CMD
 
-	mail_goodies = list(
-		/obj/item/clothing/mask/cigarette/cigar/havana = 20,
-		/obj/item/storage/fancy/cigarettes/cigars/havana = 15,
-		/obj/item/reagent_containers/food/drinks/bottle/champagne = 10,
-		/obj/item/toy/captainsaid/collector = 20
-	)
-
+	family_heirlooms = list(/obj/item/gavelhammer, /obj/item/book/manual/wiki/security_space_law)
+	rpg_title = "Judge"
 	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS | JOB_CAN_BE_INTERN
-	rpg_title = "Star Duke"
 
 	voice_of_god_power = 1.4 //Command staff has authority
 

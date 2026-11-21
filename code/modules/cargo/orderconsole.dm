@@ -272,19 +272,19 @@
 					var/mob/living/carbon/human/H = usr
 					var/job_title = H.get_assignment(hand_first = TRUE)
 					switch(job_title)
-						if("Security Officer", "Head of Security", "Warden")
+						if("Security Captain", "Security Lieutenant", "Security Sergeant", "Security Combat Medic", "Security Guard", "Security Cadet", "TRT Commander", "Response Sergeant", "Response Operator", "Response Cadet")
 							department_id = "security"
-						if("Medical Doctor", "Chief Medical Officer", "Chemist", "Virologist")
+						if("Medical Director", "Assistant Medical Director", "Senior Doctor", "Doctor", "Medical Technician", "Psychologist", "Medical Student")
 							department_id = "medical"
-						if("Scientist", "Research Director")
+						if("Science Director", "Assistant Science Director", "Senior Researcher", "Senior Robotics Technician", "Researcher", "Robotics Technician", "Junior Researcher")
 							department_id = "research"
-						if("Station Engineer", "Chief Engineer")
+						if("Engineering Director", "Assistant Engineering Director", "Containment Engineer", "Senior Technician", "Facility Technician", "Junior Technician")
 							department_id = "engineering"
-						if("Cargo Technician", "Quartermaster")
+						if("Logistics Officer", "Logistics Technician")
 							department_id = "supply"
-						if("Assistant", "Bartender", "Chef", "Janitor")
+						if("Human Resources Officer", "Morale Officer", "Bartender", "Cook", "Chef", "Chaplain", "Botanist", "Janitor", "Office Worker")
 							department_id = "service"
-						if("Captain", "Head of Personnel")
+						if("Site Director", "Head of Personnel")
 							department_id = "command"
 
 				var/datum/budget_data/dept_budget = SSbudget_system.manager.department_budgets[department_id]

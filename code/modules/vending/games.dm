@@ -60,7 +60,7 @@
 	refill_canister = /obj/item/vending_refill/games
 	default_price = PAYCHECK_ASSISTANT * 0.3
 	extra_price = PAYCHECK_HARD * 1.25
-	payment_department = ACCOUNT_STATION_MASTER
+	payment_department = ACCOUNT_CMD
 	light_mask = "games-light-mask"
 
 /obj/item/vending_refill/games

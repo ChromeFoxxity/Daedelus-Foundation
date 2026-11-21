@@ -64,9 +64,6 @@ DEFINE_BITFIELD(request_flags, list(
 #define TRANSPORT_TYPE_DEBUG "icts_debug"
 
 // Crossing signals
-#define XING_STATE_GREEN 0
-#define XING_STATE_AMBER 1
-#define XING_STATE_RED 2
 #define XING_STATE_MALF 3
 
 // #define XING_THRESHOLD_AMBER 45

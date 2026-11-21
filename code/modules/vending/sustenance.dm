@@ -24,7 +24,7 @@
 	refill_canister = /obj/item/vending_refill/sustenance
 	default_price = PAYCHECK_ASSISTANT * 0.4
 	extra_price = PAYCHECK_ASSISTANT
-	payment_department = ACCOUNT_STATION_MASTER
+	payment_department = ACCOUNT_CMD
 
 /obj/item/vending_refill/sustenance
 	machine_name = "Sustenance Vendor"

@@ -72,7 +72,7 @@
 		JOB_SECURITY_CAPTAIN,
 		JOB_CONTAINMENT_ENGINEER,
 		JOB_SENIOR_TECHNICIAN,
-		JOB_TECHNICIAN,
+		JOB_FACILITY_TECHNICIAN,
 		JOB_JUNIOR_TECHNICIAN,
 	)
 	exists_on_map = TRUE
@@ -98,7 +98,7 @@
 		JOB_ASSISTANT_ENGINEERING_DIRECTOR,
 		JOB_CONTAINMENT_ENGINEER,
 		JOB_SENIOR_TECHNICIAN,
-		JOB_TECHNICIAN,
+		JOB_FACILITY_TECHNICIAN,
 		JOB_JUNIOR_TECHNICIAN,
 	)
 	exists_on_map = TRUE
@@ -118,13 +118,13 @@
 /datum/objective_item/steal/low_risk/clown_shoes
 	name = "the clown's shoes"
 	targetitem = /obj/item/clothing/shoes/clown_shoes
-	excludefromjob = list(JOB_CLOWN, JOB_LOGISTICS_TECHNICIAN, JOB_LOGISTICS_OFFICER)
+	excludefromjob = list(JOB_MORALE_OFFICER, JOB_LOGISTICS_TECHNICIAN, JOB_LOGISTICS_OFFICER)
 
 /datum/objective_item/steal/low_risk/clown_shoes/TargetExists()
 	for(var/mob/player as anything in GLOB.player_list)
 		if(player.stat == DEAD)
 			continue
-		if(player.job != JOB_CLOWN)
+		if(player.job != JOB_MORALE_OFFICER)
 			continue
 		if(is_centcom_level(player.z))
 			continue
@@ -287,7 +287,7 @@
 		JOB_ASSISTANT_ENGINEERING_DIRECTOR,
 		JOB_CONTAINMENT_ENGINEER,
 		JOB_SENIOR_TECHNICIAN,
-		JOB_TECHNICIAN,
+		JOB_FACILITY_TECHNICIAN,
 		JOB_JUNIOR_TECHNICIAN,
 	)
 
@@ -338,7 +338,7 @@
 		JOB_ENGINEERING_DIRECTOR,
 		JOB_CONTAINMENT_ENGINEER,
 		JOB_SENIOR_TECHNICIAN,
-		JOB_TECHNICIAN,
+		JOB_FACILITY_TECHNICIAN,
 		JOB_JUNIOR_TECHNICIAN,
 	)
 	exists_on_map = TRUE

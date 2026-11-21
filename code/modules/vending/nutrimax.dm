@@ -25,7 +25,7 @@
 	refill_canister = /obj/item/vending_refill/hydronutrients
 	default_price = PAYCHECK_ASSISTANT * 0.8
 	extra_price = PAYCHECK_HARD * 0.8
-	payment_department = ACCOUNT_STATION_MASTER
+	payment_department = ACCOUNT_CMD
 
 	discount_access = ACCESS_SERVICE_LVL2
 
