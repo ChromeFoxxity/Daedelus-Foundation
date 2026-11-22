@@ -919,7 +919,7 @@ SUBSYSTEM_DEF(research_laboratory)
 		if(!H.mind || !H.job)
 			continue
 		var/job_title = H.job
-		if(job_title in list("Research Director", "Scientist", "Senior Researcher", "Research Assistant", "Junior Researcher", "Assistant Research Director"))
+		if(job_title in list("Science Director", "Scientist", "Senior Researcher", "Research Assistant", "Junior Researcher", "Assistant Science Director"))
 			var/skill_level = 0
 			if(H.mind)
 				skill_level = H.mind.get_skill_level(/datum/skill/research) || 0
@@ -1030,7 +1030,7 @@ SUBSYSTEM_DEF(research_laboratory)
 	for(var/mob/living/carbon/human/H in GLOB.human_list)
 		if(QDELETED(H))
 			continue
-		if(H.job && (H.job in list("Research Director", "Scientist", "Senior Researcher", "Site Director")))
+		if(H.job && (H.job in list("Science Director", "Scientist", "Senior Researcher", "Site Director")))
 			to_chat(H, span_boldnotice("RESEARCH BREAKTHROUGH: [node.name] unlocked!"))
 
 /datum/research_laboratory_manager/proc/apply_containment_bonus(bonus)

@@ -1,3 +1,4 @@
+/*
 /datum/outfit/centcom/spec_ops
 	name = "Special Ops Officer"
 
@@ -28,6 +29,7 @@
 	R.set_frequency(FREQ_CENTCOM)
 	R.freqlock = TRUE
 	..()
+*/
 
 /datum/outfit/space
 	name = "Standard Space Gear"
@@ -265,7 +267,7 @@
 	W.registered_name = H.real_name
 	W.update_label()
 	W.update_icon()
-
+/*
 /datum/outfit/centcom/commander
 	name = "CentCom Commander"
 
@@ -303,6 +305,7 @@
 	mask = /obj/item/clothing/mask/gas/sechailer
 	back = /obj/item/mod/control/pre_equipped/corporate
 	internals_slot = ITEM_SLOT_SUITSTORE
+*/
 
 /datum/outfit/ghost_cultist
 	name = "Cultist Ghost"
@@ -356,32 +359,6 @@
 	suit = /obj/item/clothing/suit/wizrobe/marisa
 	head = /obj/item/clothing/head/wizard/marisa
 	shoes = /obj/item/clothing/shoes/sneakers/marisa
-
-/datum/outfit/centcom/soviet
-	name = "Soviet Admiral"
-
-	id = /obj/item/card/id/advanced/centcom
-	id_trim = /datum/id_trim/centcom/admiral
-	uniform = /obj/item/clothing/under/costume/soviet
-	suit = /obj/item/clothing/suit/pirate/captain
-	back = /obj/item/storage/backpack/satchel/leather
-	belt = /obj/item/gun/ballistic/revolver/mateba
-	ears = /obj/item/radio/headset/headset_cent
-	glasses = /obj/item/clothing/glasses/thermal/eyepatch
-	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
-	head = /obj/item/clothing/head/pirate/captain
-	shoes = /obj/item/clothing/shoes/combat
-
-/datum/outfit/centcom/soviet/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	if(visualsOnly)
-		return
-
-	var/obj/item/card/id/W = H.wear_id.GetID(TRUE)
-
-	W.registered_name = H.real_name
-	W.update_label()
-	W.update_icon()
-	..()
 
 /datum/outfit/mobster
 	name = "Mobster"

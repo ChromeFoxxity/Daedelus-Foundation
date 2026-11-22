@@ -737,12 +737,6 @@
 /obj/item/melee/baseball_bat/scp2398
 	name = "Scp2398"
 
-/obj/item/melee/baton/loaded
-	name = "Loaded"
-
-/obj/item/melee/telebaton
-	name = "Telebaton"
-
 /obj/item/modular_computer/console/preset
 	name = "Console Preset"
 

@@ -46,7 +46,7 @@
 	name = JOB_TRT_COMMANDER
 	jobtype = /datum/job/trt_commander
 
-	id = /obj/item/card/id/advanced/black_blank
+	id = /obj/item/card/id/advanced/black_card
 	id_trim = /datum/id_trim/job/trt_commander
 	uniform = /obj/item/clothing/under/scp/hos/guardcom
 	suit = /obj/item/clothing/suit/armor/vest/security/lieutenant

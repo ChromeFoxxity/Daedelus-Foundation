@@ -56,7 +56,7 @@
 				playsound(src, 'sound/machines/chime.ogg', 50, FALSE)
 				COOLDOWN_START(src, spam_cooldown_time, SPAM_CD)
 			return TRUE
-	for(var/obj/item/card/id/advanced/prisoner/prison_id in the_toucher.get_all_contents())
+	for(var/obj/item/card/id/advanced/classe/prison_id in the_toucher.get_all_contents())
 		if(!prison_id.timed)
 			continue
 		if(prison_id.time_to_assign)

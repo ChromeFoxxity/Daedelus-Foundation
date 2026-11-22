@@ -2,8 +2,8 @@
 	icon = 'icons/obj/clothing/under/rnd.dmi'
 	worn_icon = 'icons/mob/clothing/under/rnd.dmi'
 
-/obj/item/clothing/under/rank/rnd/research_director
-	desc = "It's a suit worn by those with the know-how to achieve the position of \"Research Director\". Its fabric provides minor protection from biological contaminants."
+/obj/item/clothing/under/rank/rnd/science_director
+	desc = "It's a suit worn by those with the know-how to achieve the position of \"Science Director\". Its fabric provides minor protection from biological contaminants."
 	name = "research director's vest suit"
 	icon_state = "director"
 	inhand_icon_state = "lb_suit"
@@ -11,14 +11,14 @@
 	can_adjust = FALSE
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION | CLOTHING_TESHARI_VARIATION | CLOTHING_VOX_VARIATION
 
-/obj/item/clothing/under/rank/rnd/research_director/doctor_hilbert
-	desc = "A Research Director jumpsuit belonging to the late and great Doctor Hilbert. The suit sensors have long since fizzled out from the stress of the Hilbert's Hotel."
+/obj/item/clothing/under/rank/rnd/science_director/doctor_hilbert
+	desc = "A Science Director jumpsuit belonging to the late and great Doctor Hilbert. The suit sensors have long since fizzled out from the stress of the Hilbert's Hotel."
 	has_sensor = NO_SENSORS
 	random_sensor = FALSE
 
-/obj/item/clothing/under/rank/rnd/research_director/skirt
+/obj/item/clothing/under/rank/rnd/science_director/skirt
 	name = "research director's vest suitskirt"
-	desc = "It's a suitskirt worn by those with the know-how to achieve the position of \"Research Director\". Its fabric provides minor protection from biological contaminants."
+	desc = "It's a suitskirt worn by those with the know-how to achieve the position of \"Science Director\". Its fabric provides minor protection from biological contaminants."
 	icon_state = "director_skirt"
 	inhand_icon_state = "lb_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
@@ -26,7 +26,7 @@
 	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON | CLOTHING_TESHARI_VARIATION | CLOTHING_VOX_VARIATION
 
-/obj/item/clothing/under/rank/rnd/research_director/alt
+/obj/item/clothing/under/rank/rnd/science_director/alt
 	desc = "Maybe you'll engineer your own half-man, half-pig creature some day. Its fabric provides minor protection from biological contaminants."
 	name = "research director's tan suit"
 	icon_state = "rdwhimsy"
@@ -35,7 +35,7 @@
 	alt_covers_chest = TRUE
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION | CLOTHING_TESHARI_VARIATION | CLOTHING_VOX_VARIATION
 
-/obj/item/clothing/under/rank/rnd/research_director/alt/skirt
+/obj/item/clothing/under/rank/rnd/science_director/alt/skirt
 	name = "research director's tan suitskirt"
 	desc = "Maybe you'll engineer your own half-man, half-pig creature some day. Its fabric provides minor protection from biological contaminants."
 	icon_state = "rdwhimsy_skirt"
@@ -45,7 +45,7 @@
 	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON | CLOTHING_TESHARI_VARIATION | CLOTHING_VOX_VARIATION
 
-/obj/item/clothing/under/rank/rnd/research_director/turtleneck
+/obj/item/clothing/under/rank/rnd/science_director/turtleneck
 	desc = "A dark purple turtleneck and tan khakis, for a director with a superior sense of style."
 	name = "research director's turtleneck"
 	icon_state = "rdturtle"
@@ -53,7 +53,7 @@
 	can_adjust = TRUE
 	alt_covers_chest = TRUE
 
-/obj/item/clothing/under/rank/rnd/research_director/turtleneck/skirt
+/obj/item/clothing/under/rank/rnd/science_director/turtleneck/skirt
 	name = "research director's turtleneck skirt"
 	desc = "A dark purple turtleneck and tan khaki skirt, for a director with a superior sense of style."
 	icon_state = "rdturtle_skirt"

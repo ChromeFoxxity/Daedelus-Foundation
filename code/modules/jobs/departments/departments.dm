@@ -96,7 +96,7 @@
 /datum/job_department/science
 	department_name = DEPARTMENT_SCIENCE
 	department_bitflags = DEPARTMENT_BITFLAG_SCIENCE
-	department_head = /datum/job/research_director
+	department_head = /datum/job/science_director
 	department_experience_type = EXP_TYPE_SCIENCE
 	display_order = 3
 	label_class = "medical"

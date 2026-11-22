@@ -35,7 +35,7 @@
 	// Foundation jobs (default station jobs)
 	job_faction_assignments["foundation"] = list(
 		// Command
-		"site_director", "o5_representative", "guard_commander", "research_director",
+		"site_director", "o5_representative", "guard_commander", "science_director",
 		"chief_medical_officer", "chief_engineer",
 		// Security
 		"lcz_zone_commander", "hcz_zone_commander", "ez_zone_commander", "lcz_guard",

@@ -196,7 +196,7 @@ const RANK_COLORS = {
   'Researcher': '#44ff44',
   'Senior Researcher': '#d4a017',
   'Lead Researcher': '#ff8800',
-  'Research Director': '#ff4444',
+  'Science Director': '#ff4444',
 };
 
 const REWARD_TYPE_COLORS = {

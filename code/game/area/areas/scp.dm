@@ -37,52 +37,56 @@
 	holomap_color = "#ce8245"
 
 /area/station/ez/hub
-	name = "EZ Hub"
-	icon_state = "centralhall"
+	name = "\improper EZ Hub"
+	icon_state = "ez_hub"
+
+/area/station/ez/restroom
+	name = "\improper EZ Restroom"
+	icon_state = "ez_restroom"
 
 /area/station/service/ez/bar
-	name = "EZ Bar"
+	name = "\improper EZ Bar"
 	icon_state = "bar"
 	airlock_wires = /datum/wires/airlock/service
 	sound_environment = SOUND_AREA_WOODFLOOR
 
 /area/station/service/ez/bar/backroom
-	name = "EZ Bar Backroom"
+	name = "\improper EZ Bar Backroom"
 	icon_state = "bar"
 
 /area/station/service/ez/kitchen
-	name = "EZ Kitchen"
+	name = "\improper EZ Kitchen"
 	icon_state = "kitchen"
 
 /area/station/service/ez/chapel
-	name = "EZ Chapel"
+	name = "\improper EZ Chapel"
 	icon_state = "chapel"
 	ambience_index = AMBIENCE_HOLY
 	flags_1 = NONE
 	sound_environment = SOUND_AREA_LARGE_ENCLOSED
 
 /area/station/service/ez/library
-	name = "EZ Public Library"
+	name = "\improper EZ Public Library"
 	icon_state = "library"
 	area_flags = parent_type::area_flags &~ VALID_TERRITORY
 	sound_environment = SOUND_AREA_LARGE_SOFTFLOOR
 
 /area/station/service/ez/janitor
-	name = "EZ Custodial Closet"
+	name = "\improper EZ Custodial Closet"
 	icon_state = "janitor"
 	area_flags = parent_type::area_flags &~ VALID_TERRITORY
 	sound_environment = SOUND_AREA_SMALL_ENCLOSED
 
 /area/station/service/ez/chapel/office
-	name = "EZ Chapel Office"
+	name = "\improper EZ Chapel Office"
 	icon_state = "chapeloffice"
 
 /area/station/commons/ez/lounge
-	name = "EZ Lounge"
+	name = "\improper EZ Lounge"
 	icon_state = "lounge"
 
 /area/station/commons/ez/cryo
-	name = "EZ Cryogenics"
+	name = "\improper EZ Cryogenics"
 	icon_state = "cryo"
 
 /area/station/maintenance/ez

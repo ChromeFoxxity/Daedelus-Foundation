@@ -1,12 +1,18 @@
-/datum/job/assistant_research_director
+/datum/job/assistant_science_director
 	title = JOB_ASSISTANT_SCIENCE_DIRECTOR
-	description = "Research new technology, create explosives, experiment with strange objects, or synthesize dangerous chemicals."
-	department_head = list(JOB_MEDICAL_DIRECTOR)
+	description = "Assist in managing the Scientific Department, oversee SCP testing and research operations, \
+		supervise scientific personnel, coordinate specialized divisions, and act in place of the Science \
+		Director when required."
+	department_head = list(JOB_SCIENCE_DIRECTOR)
 	faction = FACTION_STATION
-	total_positions = 2
-	spawn_positions = 2
-	supervisors = "the Research Director"
-	selection_color = "#281E2D"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the Site Director, and Science Director"
+	selection_color = "#0f4aa3"
+	minimal_player_age = 14
+	exp_requirements = 180
+	exp_required_type = EXP_TYPE_CREW
+	exp_required_type_department = EXP_TYPE_SCIENCE
 	exp_granted_type = EXP_TYPE_CREW
 
 	employers = list(
@@ -15,32 +21,32 @@
 
 	outfits = list(
 		"Default" = list(
-			SPECIES_HUMAN = /datum/outfit/job/assistant_research_director,
+			SPECIES_HUMAN = /datum/outfit/job/assistant_science_director,
 		),
 	)
 
-	paycheck = PAYCHECK_MEDIUM
-	paycheck_department = ACCOUNT_MED
-
-	liver_traits = list(TRAIT_MEDICAL_METABOLISM)
-
 	departments_list = list(
 		/datum/job_department/science,
-		)
+	)
 
-	family_heirlooms = list(/obj/item/storage/medkit/ancient/heirloom)
+	paycheck = PAYCHECK_HARD
+	paycheck_department = ACCOUNT_SCI
 
-	mail_goodies = list()
-	rpg_title = "Corpse Runner"
+	family_heirlooms = list(/obj/item/toy/plush/slimeplushie)
+	mail_goodies = list(
+		/obj/item/storage/box/monkeycubes = 30,
+		/obj/item/circuitboard/machine/sleeper/party = 3,
+		/obj/item/borg/upgrade/ai = 2
+	)
+	rpg_title = "Acting Elder Thamuaturgist"
 	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS | JOB_CAN_BE_INTERN
 
+/datum/outfit/job/assistant_science_director
+	name = "Assistant Science Director"
+	jobtype = /datum/job/assistant_science_director
 
-/datum/outfit/job/assistant_research_director
-	name = "Assistant Research Director"
-	jobtype = /datum/job/assistant_research_director
-
-	id = /obj/item/card/id/advanced/black_blank
-	id_trim = /datum/id_trim/job/assistant_research_director
+	id = /obj/item/card/id/advanced/black_card
+	id_trim = /datum/id_trim/job/assistant_science_director
 	uniform = /obj/item/clothing/under/rank/rnd/scientist
 	suit = /obj/item/clothing/suit/toggle/labcoat
 	suit_store = /obj/item/flashlight/pen

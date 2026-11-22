@@ -380,7 +380,7 @@
   coiax:
   - tweak: Psychologist immunity to supermatter hallucinations, and the ability to
       make it "calmer", is now provided by a skillchip, rather than innate.
-  - tweak: The Research Director's knowledge of suplexing immovable rods is now in
+  - tweak: The Science Director's knowledge of suplexing immovable rods is now in
       a skillchip.
   interestingusernam3:
   - bugfix: ID cards that start with syndicate access don't loose syndicate access

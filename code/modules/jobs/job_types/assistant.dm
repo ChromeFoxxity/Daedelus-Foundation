@@ -49,7 +49,7 @@ Assistant
 		[id_trim] selects the overlay for the ID card.
 		The ID card itself is selected in [\code\modules\jobs\job_types\_job.dm]
 		or you could re-define it here-- for instance, if you wanted to give them a black ID you could put
-		put id = [/obj/item/card/id/advanced/black_blank] in this outfit.
+		put id = [/obj/item/card/id/advanced/black_card] in this outfit.
 
 		[id_trim] also has its own defines in [\code\datums\id_trim\jobs.dm] where you can assign access,
 		icons for the overlay, sechud overlays, and modification requirement access.

@@ -172,7 +172,7 @@
 	if(istype(H))
 		var/job = H.get_assignment()
 		data["user_job"] = job
-		if(job in list("Research Associate", "Junior Researcher", "Scientist", "Senior Researcher", "Research Director", "Xenobiologist", "Field Agent"))
+		if(job in list("Research Associate", "Junior Researcher", "Scientist", "Senior Researcher", "Science Director", "Xenobiologist", "Field Agent"))
 			data["is_researcher"] = TRUE
 		if(job in list("Archaeologist"))
 			data["is_archaeologist"] = TRUE

@@ -18,7 +18,7 @@
 	name = "head of personnel's garment bag"
 	desc = "A bag for storing extra clothes and shoes. This one belongs to the head of personnel."
 
-/obj/item/storage/bag/garment/research_director
+/obj/item/storage/bag/garment/science_director
 	name = "research director's garment bag"
 	desc = "A bag for storing extra clothes and shoes. This one belongs to the research director."
 
@@ -86,13 +86,13 @@
 	new /obj/item/clothing/suit/hooded/wintercoat/security/hos(src)
 */
 
-/obj/item/storage/bag/garment/research_director/PopulateContents()
-	new /obj/item/clothing/under/rank/rnd/research_director(src)
-	new /obj/item/clothing/under/rank/rnd/research_director/skirt(src)
-	new /obj/item/clothing/under/rank/rnd/research_director/alt(src)
-	new /obj/item/clothing/under/rank/rnd/research_director/alt/skirt(src)
-	new /obj/item/clothing/under/rank/rnd/research_director/turtleneck(src)
-	new /obj/item/clothing/under/rank/rnd/research_director/turtleneck/skirt(src)
+/obj/item/storage/bag/garment/science_director/PopulateContents()
+	new /obj/item/clothing/under/rank/rnd/science_director(src)
+	new /obj/item/clothing/under/rank/rnd/science_director/skirt(src)
+	new /obj/item/clothing/under/rank/rnd/science_director/alt(src)
+	new /obj/item/clothing/under/rank/rnd/science_director/alt/skirt(src)
+	new /obj/item/clothing/under/rank/rnd/science_director/turtleneck(src)
+	new /obj/item/clothing/under/rank/rnd/science_director/turtleneck/skirt(src)
 	new /obj/item/clothing/suit/toggle/labcoat(src)
 	new /obj/item/clothing/head/beret/science(src)
 	new /obj/item/clothing/neck/cloak/rd(src)

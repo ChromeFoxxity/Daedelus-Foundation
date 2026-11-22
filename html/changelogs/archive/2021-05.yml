@@ -634,8 +634,8 @@
   InsaneRed:
   - qol: Converts most of the equipment on mechs into ballons
   JohnFulpWillard:
-  - spellcheck: The Research Director's plasmaman envirosuit is now labelled as belonging
-      to the Research Director rather than the Chief Engineer.
+  - spellcheck: The Science Director's plasmaman envirosuit is now labelled as belonging
+      to the Science Director rather than the Chief Engineer.
   Melbert:
   - bugfix: Fixes being unable to feed chickens for eggs
   Mothblocks:

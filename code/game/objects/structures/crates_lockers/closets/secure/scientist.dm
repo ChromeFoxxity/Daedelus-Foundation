@@ -1,14 +1,14 @@
-/obj/structure/closet/secure_closet/research_director
+/obj/structure/closet/secure_closet/science_director
 	name = "\proper research director's locker"
 	req_access = list(ACCESS_SCIENCE_LVL5)
 	icon_state = "rd"
 
-/obj/structure/closet/secure_closet/research_director/PopulateContents()
+/obj/structure/closet/secure_closet/science_director/PopulateContents()
 	..()
 
 	new /obj/item/clothing/suit/bio_suit/scientist(src)
 	new /obj/item/clothing/head/bio_hood/scientist(src)
-	new /obj/item/storage/bag/garment/research_director(src)
+	new /obj/item/storage/bag/garment/science_director(src)
 	new /obj/item/computer_hardware/hard_drive/role/rd(src)
 	new /obj/item/megaphone/command(src)
 	new /obj/item/storage/lockbox/medal/sci(src)

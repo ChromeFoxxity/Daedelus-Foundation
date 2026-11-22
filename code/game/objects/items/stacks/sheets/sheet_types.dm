@@ -511,7 +511,7 @@ GLOBAL_LIST_INIT(cardboard_recipes, list ( \
 		new /datum/stack_recipe("flashbang box", /obj/item/storage/box/flashbangs), \
 		new /datum/stack_recipe("flashes box", /obj/item/storage/box/flashes), \
 		new /datum/stack_recipe("handcuffs box", /obj/item/storage/box/handcuffs), \
-		new /datum/stack_recipe("ID card box", /obj/item/storage/box/ids), \
+		new /datum/stack_recipe("blank cards box", /obj/item/storage/box/white_cards), \
 		new /datum/stack_recipe("PDA box", /obj/item/storage/box/pdas), \
 		null, \
 

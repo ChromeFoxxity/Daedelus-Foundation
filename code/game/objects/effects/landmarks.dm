@@ -110,6 +110,28 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = JOB_SECURITY_GUARD
 	icon_state = JOB_SECURITY_GUARD
 
+/obj/effect/landmark/start/zonesec
+	name = "department_sec"
+	icon_state = JOB_SECURITY_GUARD
+	/// What department this spawner is for
+	var/department
+
+/obj/effect/landmark/start/zonesec/Initialize(mapload)
+	. = ..()
+	LAZYADDASSOCLIST(GLOB.department_security_spawns, department, src)
+
+/obj/effect/landmark/start/zonesec/Destroy()
+	LAZYREMOVEASSOC(GLOB.department_security_spawns, department, src)
+	return ..()
+
+/obj/effect/landmark/start/zonesec/light
+	name = "zone_sec"
+	department = SEC_DEPT_LIGHT
+
+/obj/effect/landmark/start/zonesec/entrance
+	name = "entrance_sec"
+	department = SEC_DEPT_ENTRANCE
+
 /obj/effect/landmark/start/security_cadet
 	name = JOB_SECURITY_CADET
 	icon_state = JOB_SECURITY_CADET

@@ -531,15 +531,6 @@
 	for(var/i in 1 to 3)
 		new /obj/item/food/monkeycube/gorilla(src)
 
-/obj/item/storage/box/ids
-	name = "box of spare IDs"
-	desc = "Has so many empty IDs."
-	illustration = "id"
-
-/obj/item/storage/box/ids/PopulateContents()
-	for(var/i in 1 to 7)
-		new /obj/item/card/id/advanced(src)
-
 //Some spare PDAs in a box
 /obj/item/storage/box/pdas
 	name = "spare PDAs"
@@ -558,52 +549,37 @@
 						/obj/item/computer_hardware/hard_drive/role/quartermaster)
 	new new_disk(src)
 
-/obj/item/storage/box/silver_ids
-	name = "box of spare silver IDs"
-	desc = "Shiny IDs for important people."
-	illustration = "id"
-
-/obj/item/storage/box/silver_ids/PopulateContents()
-	for(var/i in 1 to 7)
-		new /obj/item/card/id/advanced/silver(src)
-
 // ============== SCP ID Boxes Begin ==============
 
-/obj/item/storage/box/white_foundation_ids
-	name = "box of spare IDs"
-	desc = "Has so many empty IDs."
+/obj/item/storage/box/white_cards
+	name = "box of spare access cards"
+	desc = "Foundation-issued blank white access cards for adding a trim and access to."
 	illustration = "id"
 
-/obj/item/storage/box/white_foundation_ids/PopulateContents()
+/obj/item/storage/box/white_cards/PopulateContents()
 	for(var/i in 1 to 7)
-		new /obj/item/card/id/advanced/white_blank(src)
+		new /obj/item/card/id/advanced/white_card(src)
 
-/obj/item/storage/box/black_foundation_ids
-	name = "box of spare fancy IDs"
-	desc = "Shiny IDs for important people."
+/obj/item/storage/box/black_cards
+	name = "box of spare administrative access cards"
+	desc = "Foundation-issued blank black access cards for adding a normally silver or gold trim and access to."
 	illustration = "id"
 
-/obj/item/storage/box/white_foundation_ids/PopulateContents()
+/obj/item/storage/box/black_cards/PopulateContents()
 	for(var/i in 1 to 7)
-		new /obj/item/card/id/advanced/black_blank(src)
+		new /obj/item/card/id/advanced/black_card(src)
 
 // ============== SCP ID Boxes End ==============
 
-/obj/item/storage/box/prisoner
-	name = "box of prisoner IDs"
-	desc = "Take away their last shred of dignity, their name."
+/obj/item/storage/box/classe_cards
+	name = "box of Class-E access cards"
+	desc = "Foundation-issued Class-E Personnel cards, they don't really have much meaning aside from just being there."
 	icon_state = "secbox"
 	illustration = "id"
 
-/obj/item/storage/box/prisoner/PopulateContents()
-	..()
-	new /obj/item/card/id/advanced/prisoner/one(src)
-	new /obj/item/card/id/advanced/prisoner/two(src)
-	new /obj/item/card/id/advanced/prisoner/three(src)
-	new /obj/item/card/id/advanced/prisoner/four(src)
-	new /obj/item/card/id/advanced/prisoner/five(src)
-	new /obj/item/card/id/advanced/prisoner/six(src)
-	new /obj/item/card/id/advanced/prisoner/seven(src)
+/obj/item/storage/box/classe_cards/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/card/id/advanced/classe(src)
 
 /obj/item/storage/box/seccarts
 	name = "box of PDA security cartridges"

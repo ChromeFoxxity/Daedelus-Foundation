@@ -8416,9 +8416,9 @@
 /obj/effect/turf_decal/bot,
 /obj/machinery/requests_console/directional/east{
 	announcementConsole = 1;
-	department = "Research Director's Desk";
+	department = "Science Director's Desk";
 	departmentType = 5;
-	name = "Research Director's Requests Console"
+	name = "Science Director's Requests Console"
 	},
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 8
@@ -28792,7 +28792,7 @@
 /obj/effect/turf_decal/tile/yellow{
 	dir = 4
 	},
-/obj/item/storage/secure/safe/caps_spare/directional/east,
+/obj/item/storage/secure/safe/sid_spare/directional/east,
 /turf/open/floor/iron/dark,
 /area/station/command/bridge)
 "foE" = (
@@ -34299,7 +34299,7 @@
 	},
 /obj/effect/turf_decal/tile/purple,
 /obj/structure/chair/office/light,
-/obj/effect/landmark/start/research_director,
+/obj/effect/landmark/start/science_director,
 /turf/open/floor/iron/showroomfloor,
 /area/station/command/heads_quarters/rd)
 "hiW" = (
@@ -63918,7 +63918,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/door/airlock/command{
-	name = "Research Director's Office";
+	name = "Science Director's Office";
 	req_access_txt = "30"
 	},
 /turf/open/floor/iron/dark,
@@ -73123,12 +73123,12 @@
 /turf/open/floor/iron/dark,
 /area/station/engineering/storage/tech)
 "tUF" = (
-/obj/structure/closet/secure_closet/research_director,
+/obj/structure/closet/secure_closet/science_director,
 /obj/effect/turf_decal/delivery,
 /obj/item/gun/energy/e_gun/mini,
 /obj/structure/extinguisher_cabinet/directional/north,
 /obj/machinery/camera/directional/north{
-	c_tag = "Research Director's Office";
+	c_tag = "Science Director's Office";
 	name = "science camera";
 	network = list("ss13","rd")
 	},
@@ -80515,7 +80515,7 @@
 "wtC" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/command{
-	name = "Research Director's Office";
+	name = "Science Director's Office";
 	req_access_txt = "30"
 	},
 /obj/structure/disposalpipe/segment,
@@ -85037,7 +85037,7 @@
 /obj/structure/chair/office/light{
 	dir = 4
 	},
-/obj/effect/landmark/start/research_director,
+/obj/effect/landmark/start/science_director,
 /turf/open/floor/iron/showroomfloor,
 /area/station/command/heads_quarters/rd)
 "xTo" = (

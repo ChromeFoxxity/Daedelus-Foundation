@@ -238,7 +238,7 @@ SUBSYSTEM_DEF(dclass_experiments)
 /obj/machinery/dclass_experiment_terminal/proc/is_researcher(mob/living/carbon/human/H)
 	if(!H.job)
 		return FALSE
-	return (H.job in list("Scientist", "Research Director", "Senior Researcher", "Research Assistant", "Medical Doctor"))
+	return (H.job in list("Scientist", "Science Director", "Senior Researcher", "Research Assistant", "Medical Doctor"))
 
 /obj/machinery/dclass_experiment_terminal/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -451,7 +451,7 @@ SUBSYSTEM_DEF(dclass_experiments)
 
 	var/mob/living/carbon/human/H = src
 
-	if(!(H.job in list("Scientist", "Research Director", "Senior Researcher", "Medical Doctor")))
+	if(!(H.job in list("Scientist", "Science Director", "Senior Researcher", "Medical Doctor")))
 		to_chat(H, span_warning("Only research personnel can manage D-Class testing."))
 		return
 

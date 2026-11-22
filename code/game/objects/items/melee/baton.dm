@@ -688,3 +688,12 @@
 
 /obj/item/melee/baton/security/debug
 	preload_cell_type = /obj/item/stock_parts/cell/bluespace
+
+/obj/item/melee/baton/foundation
+	name = "PR-24 Baton"
+	desc = "A black, reinforced side-handle baton issued to Foundation Security personnel. Its perpendicular \
+		grip provides additional leverage and control during close-quarters engagements. Left click to stun, right click to harm."
+	icon_state = "security_baton"
+	inhand_icon_state = "security_baton"
+	worn_icon_state = "security_baton"
+	knockdown_time = (8 SECONDS)

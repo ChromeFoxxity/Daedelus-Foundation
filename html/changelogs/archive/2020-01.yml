@@ -108,7 +108,7 @@
   - tweak: Border firelocks no longer crush mobs.
   TheVekter:
   - tweak: Geneticists are now purely under the purview of the Science department.
-      They will report directly to the Research Director.
+      They will report directly to the Science Director.
   - tweak: Moved the Genetics lab to the Science wing, replacing the Experimentor
       and associated lab. This is a change on Metastation, Boxstation, Pubbystation,
       Deltastation, and Kilostation.

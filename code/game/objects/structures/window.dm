@@ -492,14 +492,7 @@
 	bloodied = TRUE
 	return TRUE
 
-/obj/structure/window/spawner/east
-	dir = EAST
-
-/obj/structure/window/spawner/west
-	dir = WEST
-
-/obj/structure/window/spawner/north
-	dir = NORTH
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/window/spawner, 0)
 
 /obj/structure/window/unanchored
 	anchored = FALSE
@@ -520,14 +513,7 @@
 	receive_ricochet_chance_mod = 1.1
 	melting_point = T0C + 4000
 
-/obj/structure/window/reinforced/spawner/east
-	dir = EAST
-
-/obj/structure/window/reinforced/spawner/west
-	dir = WEST
-
-/obj/structure/window/reinforced/spawner/north
-	dir = NORTH
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/window/reinforced/spawner, 0)
 
 /obj/structure/window/reinforced/unanchored
 	anchored = FALSE
@@ -558,17 +544,7 @@
 	if (fulltile)
 		. += new /obj/item/shard/plasma(location)
 
-/obj/structure/window/plasma/spawner/east
-	dir = EAST
-
-/obj/structure/window/plasma/spawner/west
-	dir = WEST
-
-/obj/structure/window/plasma/spawner/north
-	dir = NORTH
-
-/obj/structure/window/plasma/unanchored
-	anchored = FALSE
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/window/plasma/spawner, 0)
 
 /obj/structure/window/reinforced/plasma
 	name = "reinforced plasma window"
@@ -586,14 +562,7 @@
 /obj/structure/window/reinforced/plasma/block_superconductivity()
 	return TRUE
 
-/obj/structure/window/reinforced/plasma/spawner/east
-	dir = EAST
-
-/obj/structure/window/reinforced/plasma/spawner/west
-	dir = WEST
-
-/obj/structure/window/reinforced/plasma/spawner/north
-	dir = NORTH
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/window/reinforced/plasma/spawner, 0)
 
 /obj/structure/window/reinforced/plasma/unanchored
 	anchored = FALSE

@@ -180,27 +180,31 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/storage/secure/safe, 32)
  * The safe is also weak to explosions, so spending some early TC could allow an antag to blow it upen if they can
  * get access to it.
  */
-/obj/item/storage/secure/safe/caps_spare
-	name = "captain's spare ID safe"
-	desc = "In case of emergency, do not break glass. All Captains and Acting Captains are provided with codes to access this safe. \
-It is made out of the same material as the station's Black Box and is designed to resist all conventional weaponry. \
-There appears to be a small amount of surface corrosion. It doesn't look like it could withstand much of an explosion."
+/obj/item/storage/secure/safe/sid_spare
+	name = "site director's emergency access card safe"
+	desc = "In case of emergency, do not break glass. All Site Directors and Acting Site Directors are provided with codes to access this safe. \
+		It is made out of a extremely expensive, yet extremely durable unknown metal and is designed to resist all conventional weaponry. There \
+		appears to be a small amount of surface corrosion. It doesn't look like it could withstand much of an explosion."
+	icon_state = "spare_safe"
+	icon_opened = "spare_safe0"
+	icon_locking = "spare_safeb"
+	icon_sparking = "spare_safespark"
 	can_hack_open = FALSE
-	armor = list(BLUNT = 100, PUNCTURE = 100, SLASH = 0, LASER = 100, ENERGY = 100, BOMB = 70, BIO = 100, FIRE = 80, ACID = 70)
+	armor = list(BLUNT = 100, PUNCTURE = 100, SLASH = 100, LASER = 100, ENERGY = 100, BOMB = 70, BIO = 100, FIRE = 80, ACID = 70)
 	max_integrity = 300
-	color = "#ffdd33"
+	damage_deflection = 30
 
-MAPPING_DIRECTIONAL_HELPERS(/obj/item/storage/secure/safe/caps_spare, 32)
+MAPPING_DIRECTIONAL_HELPERS(/obj/item/storage/secure/safe/sid_spare, 32)
 
-/obj/item/storage/secure/safe/caps_spare/Initialize(mapload)
+/obj/item/storage/secure/safe/sid_spare/Initialize(mapload)
 	. = ..()
 
 	lock_code = SSid_access.spare_id_safe_code
 	lock_set = TRUE
 	atom_storage.locked = TRUE
 
-/obj/item/storage/secure/safe/caps_spare/PopulateContents()
+/obj/item/storage/secure/safe/sid_spare/PopulateContents()
 	new /obj/item/card/id/advanced/gold/captains_spare(src)
 
-/obj/item/storage/secure/safe/caps_spare/rust_heretic_act()
+/obj/item/storage/secure/safe/sid_spare/rust_heretic_act()
 	take_damage(damage_amount = 100, damage_type = BRUTE, damage_flag = BLUNT, armor_penetration = 100)

@@ -37,14 +37,12 @@
 	paycheck = PAYCHECK_COMMAND
 	paycheck_department = ACCOUNT_CMD
 
-	family_heirlooms = list(/obj/item/reagent_containers/cup/glass/flask/gold, /obj/item/toy/captainsaid/collector)
+	family_heirlooms = list(/obj/item/reagent_containers/food/drinks/flask/gold, /obj/item/toy/captainsaid/collector)
 	mail_goodies = list(
-		/obj/item/cigarette/cigar/havana = 20,
+		/obj/item/clothing/mask/cigarette/cigar/havana = 20,
 		/obj/item/storage/fancy/cigarettes/cigars/havana = 15,
-		/obj/item/reagent_containers/cup/glass/bottle/champagne = 5,
-		/obj/item/reagent_containers/cup/glass/bottle/champagne/cursed = 5,
+		/obj/item/reagent_containers/food/drinks/bottle/champagne = 5,
 		/obj/item/toy/captainsaid/collector = 20,
-		/obj/item/skillchip/sabrage = 5,
 	)
 	rpg_title = "Duke"
 	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS | JOB_CAN_BE_INTERN

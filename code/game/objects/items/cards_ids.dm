@@ -777,124 +777,59 @@
 /obj/item/card/id/advanced/get_trim_sechud_icon_state()
 	return sechud_icon_state_override || ..()
 
-// ============== SCP IDs Begin ==============
-
-/obj/item/card/id/advanced/white_blank
-	name = "basic identification card"
-	desc = "A basic, plastic identification card with some electronics sandwiched inside."
+/obj/item/card/id/advanced/white_card
+	name = "foundation access card"
+	desc = "A white, smooth plastic identification card with some electronics sandwiched inside."
 	icon_state = "white_blank"
-	assigned_icon_state = "assigned_base"
+	worn_icon_state = "card_grey"
+	assigned_icon_state = "assigned_white"
 	wildcard_slots = WILDCARD_LIMIT_GREY
 
-/obj/item/card/id/advanced/black_blank
-	name = "fancy identification card"
-	desc = "A fancy, plastic identification card with some electronics sandwiched inside."
+/obj/item/card/id/advanced/black_card
+	name = "foundation administrative access card"
+	desc = "A black, smooth, silky plastic identification card with some electronics sandwiched inside."
 	icon_state = "black_blank"
-	assigned_icon_state = "assigned_admin"
+	worn_icon_state = "card_black"
+	assigned_icon_state = "assigned_black"
 	wildcard_slots = WILDCARD_LIMIT_SILVER
 
-/obj/item/card/id/advanced/director_blank
-	name = "thick identification card"
-	desc = "A thick, plastic identification card. This baby is sure to hold a lot of access codes."
+/obj/item/card/id/advanced/director_card
+	name = "foundation directorate access card"
+	desc = "A black, smooth, silky, yet thick plastic identification card with a white stripe and some electronics sandwiched inside."
 	icon_state = "director_blank"
-	assigned_icon_state = "assigned_admin"
+	worn_icon_state = "card_black"
+	assigned_icon_state = "assigned_gold"
 	wildcard_slots = WILDCARD_LIMIT_GOLD
 
-// ============== SCP IDs End ==============
-
-/obj/item/card/id/advanced/silver
-	name = "silver identification card"
-	desc = "A silver card which shows honour and dedication."
-	icon_state = "card_silver"
-	worn_icon_state = "card_silver"
-	inhand_icon_state = "silver_id"
-	wildcard_slots = WILDCARD_LIMIT_SILVER
-
-/datum/id_trim/maint_reaper
-	access = list(ACCESS_ENGINEERING_LVL1)
-	trim_state = "trim_janitor"
-	assignment = "Reaper"
-
-/obj/item/card/id/advanced/silver/reaper
-	name = "Thirteen's ID Card (Reaper)"
-	trim = /datum/id_trim/maint_reaper
-	registered_name = "Thirteen"
-
-/obj/item/card/id/advanced/gold
-	name = "gold identification card"
-	desc = "A golden card which shows power and might."
-	icon_state = "card_gold"
-	worn_icon_state = "card_gold"
-	inhand_icon_state = "gold_id"
-	wildcard_slots = WILDCARD_LIMIT_GOLD
-
-/obj/item/card/id/advanced/gold/captains_spare
-	name = "superintendent's spare ID"
-	desc = "The spare ID of the High Lord himself."
+/obj/item/card/id/advanced/director_card/spare
+	name = "Site Director's spare ID"
+	desc = "A black, smooth, silky, yet thick plastic identification card with a white stripe and some electronics sandwiched inside, this one is the emergency replacement."
 	registered_name = JOB_SITE_DIRECTOR
 	trim = /datum/id_trim/job/site_director
 	registered_age = null
 
-/obj/item/card/id/advanced/gold/captains_spare/update_label() //so it doesn't change to Captain's ID card (Captain) on a sneeze
+/obj/item/card/id/advanced/director_card/spare/update_label()
 	if(registered_name == JOB_SITE_DIRECTOR)
 		name = "[initial(name)][(!assignment || assignment == JOB_SITE_DIRECTOR) ? "" : " ([assignment])"]"
 		update_appearance(UPDATE_ICON)
 	else
 		..()
 
-/obj/item/card/id/advanced/centcom
-	name = "\improper CentCom ID"
-	desc = "An ID straight from Central Command."
-	icon_state = "card_centcom"
-	worn_icon_state = "card_centcom"
-	assigned_icon_state = "assigned_centcom"
-	registered_name = JOB_CENTCOM
-	registered_age = null
-	trim = /datum/id_trim/centcom
+/obj/item/card/id/advanced/central_card
+	name = "foundation command access card"
+	desc = "A black, smooth, silky, yet thick plastic identification card with a green stripe and some electronics sandwiched inside."
+	icon_state = "central_blank"
+	worn_icon_state = "card_black"
+	assigned_icon_state = "assigned_gold"
 	wildcard_slots = WILDCARD_LIMIT_CENTCOM
 
-/obj/item/card/id/advanced/black
-	name = "black identification card"
-	desc = "This card is telling you one thing and one thing alone. The person holding this card is an utter badass."
-	icon_state = "card_black"
+/obj/item/card/id/advanced/chaos_card
+	name = "tampered foundation black access card"
+	desc = "A black, slightly cracked plastic identification card with some electronics sandwiched inside, or they used to be, as wires stick out, mended together."
+	icon_state = "black_blank"
 	worn_icon_state = "card_black"
-	assigned_icon_state = "assigned_syndicate"
-	wildcard_slots = WILDCARD_LIMIT_GOLD
-
-/obj/item/card/id/advanced/black/syndicate_command
-	name = "syndicate ID card"
-	desc = "An ID straight from the Syndicate."
-	registered_name = "Chaos Insurgency"
-	registered_age = null
-	trim = /datum/id_trim/syndicom
+	assigned_icon_state = "assigned_black"
 	wildcard_slots = WILDCARD_LIMIT_SYNDICATE
-
-/obj/item/card/id/advanced/black/syndicate_command/crew_id
-	name = "syndicate ID card"
-	desc = "An ID straight from the Syndicate."
-	registered_name = "Chaos Insurgency"
-	trim = /datum/id_trim/syndicom/crew
-
-/obj/item/card/id/advanced/black/syndicate_command/captain_id
-	name = "syndicate captain ID card"
-	desc = "An ID straight from the Syndicate."
-	registered_name = "Chaos Insurgency"
-	trim = /datum/id_trim/syndicom/captain
-
-
-/obj/item/card/id/advanced/black/syndicate_command/captain_id/syndie_spare
-	name = "syndicate captain's spare ID"
-	desc = "The spare ID of the Dark Lord himself."
-	registered_name = "Captain"
-	registered_age = null
-
-/obj/item/card/id/advanced/black/syndicate_command/captain_id/syndie_spare/update_label()
-	if(registered_name == "Captain")
-		name = "[initial(name)][(!assignment || assignment == "Captain") ? "" : " ([assignment])"]"
-		update_appearance(UPDATE_ICON)
-		return
-
-	return ..()
 
 /obj/item/card/id/advanced/debug
 	name = "\improper Debug ID"
@@ -930,7 +865,7 @@
 	/// Time left on a card till they can leave.
 	var/time_left = 0
 
-/obj/item/card/id/advanced/prisoner/attackby(obj/item/card/id/C, mob/user)
+/obj/item/card/id/advanced/classe/attackby(obj/item/card/id/C, mob/user)
 	..()
 	var/list/id_access = C.GetAccess()
 	if(!(ACCESS_SECURITY_LVL2 in id_access))
@@ -952,11 +887,11 @@
 	to_chat(user, "You set the sentence time to [time_to_assign] seconds.")
 	timed = TRUE
 
-/obj/item/card/id/advanced/prisoner/proc/start_timer()
+/obj/item/card/id/advanced/classe/proc/start_timer()
 	say("Sentence started, welcome to the corporate rehabilitation center!")
 	START_PROCESSING(SSobj, src)
 
-/obj/item/card/id/advanced/prisoner/examine(mob/user)
+/obj/item/card/id/advanced/classe/examine(mob/user)
 	. = ..()
 	if(timed)
 		if(time_left <= 0)
@@ -964,7 +899,7 @@
 		else
 			. += span_notice("The digital timer on the card has [time_left] seconds remaining. Don't do the crime if you can't do the time.")
 
-/obj/item/card/id/advanced/prisoner/process(delta_time)
+/obj/item/card/id/advanced/classe/process(delta_time)
 	if(!timed)
 		return
 
@@ -973,7 +908,7 @@
 		say("Sentence time has been served. Thank you for your cooperation in our corporate rehabilitation program!")
 		return PROCESS_KILL
 
-/obj/item/card/id/advanced/prisoner/attack_self(mob/user)
+/obj/item/card/id/advanced/classe/attack_self(mob/user)
 	to_chat(usr, span_notice("You have accumulated [points] out of the [goal] points you need for freedom."))
 
 /obj/item/card/id/advanced/highlander
@@ -987,6 +922,9 @@
 	wildcard_slots = WILDCARD_LIMIT_ADMIN
 
 /obj/item/card/id/advanced/chameleon
+	icon_state = "white_blank"
+	worn_icon_state = "card_grey"
+	assigned_icon_state = "assigned_white"
 	trim = /datum/id_trim/chameleon
 	wildcard_slots = WILDCARD_LIMIT_CHAMELEON
 
@@ -1300,9 +1238,9 @@
 
 /// A special variant of the classic chameleon ID card which accepts all access.
 /obj/item/card/id/advanced/chameleon/black
-	icon_state = "card_black"
+	icon_state = "black_blank"
 	worn_icon_state = "card_black"
-	assigned_icon_state = "assigned_syndicate"
+	assigned_icon_state = "assigned_black"
 	wildcard_slots = WILDCARD_LIMIT_GOLD
 
 /obj/item/card/id/advanced/simple_bot

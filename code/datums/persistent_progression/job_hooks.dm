@@ -131,7 +131,7 @@
 /datum/job/guard_commander/proc/on_security_operation_commanded(mob/living/carbon/human/H, operation_type)
 	track_job_performance(H, "command", "Security operation commanded: [operation_type]")
 
-/datum/job/research_director/proc/on_research_approved(mob/living/carbon/human/H, research_type)
+/datum/job/science_director/proc/on_research_approved(mob/living/carbon/human/H, research_type)
 	track_job_performance(H, "command", "Research approved: [research_type]")
 
 // Global job performance tracking

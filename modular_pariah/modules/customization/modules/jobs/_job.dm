@@ -59,7 +59,7 @@
 /datum/job/engineering_director
 	banned_quirks = list(HEAD_RESTRICTED_QUIRKS, "Paraplegic" = TRUE)
 
-/datum/job/research_director
+/datum/job/science_director
 	banned_quirks = list(HEAD_RESTRICTED_QUIRKS)
 
 /datum/job/head_of_personnel

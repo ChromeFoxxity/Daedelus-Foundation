@@ -46,7 +46,7 @@
 	name = JOB_TRT_OPERATOR
 	jobtype = /datum/job/trt_operator
 
-	id = /obj/item/card/id/advanced/white_blank
+	id = /obj/item/card/id/advanced/white_card
 	id_trim = /datum/id_trim/job/security_guard
 	uniform = /obj/item/clothing/under/scp/hos/guardcom
 	suit = /obj/item/clothing/suit/armor/vest/security

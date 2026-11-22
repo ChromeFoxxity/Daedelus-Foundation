@@ -7874,7 +7874,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
 	dir = 4
 	},
-/obj/item/storage/secure/safe/caps_spare{
+/obj/item/storage/secure/safe/sid_spare{
 	pixel_x = 6;
 	pixel_y = -28
 	},
@@ -21874,7 +21874,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/command{
-	name = "Research Director's Office";
+	name = "Science Director's Office";
 	req_access_txt = "30"
 	},
 /obj/structure/cable/smart_cable/color/yellow,
@@ -22046,7 +22046,7 @@
 /turf/closed/wall/r_wall,
 /area/command/heads_quarters/rd)
 "bBq" = (
-/obj/structure/closet/secure_closet/research_director,
+/obj/structure/closet/secure_closet/science_director,
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
 	},
@@ -22055,9 +22055,9 @@
 	},
 /obj/machinery/requests_console/directional/west{
 	announcementConsole = 1;
-	department = "Research Director's Desk";
+	department = "Science Director's Desk";
 	departmentType = 5;
-	name = "Research Director's Requests Console"
+	name = "Science Director's Requests Console"
 	},
 /turf/open/floor/iron/dark,
 /area/command/heads_quarters/rd)
@@ -22724,7 +22724,7 @@
 /area/command/heads_quarters/rd)
 "bDE" = (
 /obj/structure/chair/office/light,
-/obj/effect/landmark/start/research_director,
+/obj/effect/landmark/start/science_director,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
@@ -22994,7 +22994,7 @@
 /area/command/heads_quarters/rd)
 "bET" = (
 /obj/machinery/camera/directional/south{
-	c_tag = "Research Director's Office";
+	c_tag = "Science Director's Office";
 	network = list("ss13","rd")
 	},
 /obj/effect/turf_decal/tile/purple,

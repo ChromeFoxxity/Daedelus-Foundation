@@ -1,4 +1,4 @@
-/datum/job/human_resources_director
+/datum/job/human_resources_officer
 	title = JOB_HUMAN_RESOURCES_OFFICER
 	description = "In charge of the site's human resources by modifying IDs and terminating them."
 	department_head = list(JOB_SITE_DIRECTOR)
@@ -18,7 +18,7 @@
 
 	outfits = list(
 		"Default" = list(
-			SPECIES_HUMAN = /datum/outfit/job/human_resources_director,
+			SPECIES_HUMAN = /datum/outfit/job/human_resources_officer,
 		),
 	)
 
@@ -33,7 +33,7 @@
 	liver_traits = list(TRAIT_ROYAL_METABOLISM)
 
 	mail_goodies = list(
-		/obj/item/storage/box/black_foundation_ids = 10,
+		/obj/item/storage/box/black_cards = 10,
 		/obj/item/stack/sheet/bone = 5
 	)
 
@@ -44,16 +44,16 @@
 	voice_of_god_power = 1.4 //Command staff has authority
 
 
-/datum/job/human_resources_director/get_captaincy_announcement(mob/living/captain)
+/datum/job/human_resources_officer/get_captaincy_announcement(mob/living/captain)
 	return "Due to staffing shortages, newly promoted Acting Captain [captain.real_name] on deck!"
 
 
-/datum/outfit/job/human_resources_director
+/datum/outfit/job/human_resources_officer
 	name = JOB_HUMAN_RESOURCES_OFFICER
-	jobtype = /datum/job/human_resources_director
+	jobtype = /datum/job/human_resources_officer
 
-	id = /obj/item/card/id/advanced/black_blank
-	id_trim = /datum/id_trim/job/human_resources_director
+	id = /obj/item/card/id/advanced/black_card
+	id_trim = /datum/id_trim/job/human_resources_officer
 	uniform = /obj/item/clothing/under/suit/navy
 	suit = /obj/item/clothing/suit/toggle/lawyer
 	gloves = /obj/item/clothing/gloves/color/black
@@ -67,13 +67,13 @@
 		/obj/item/stamp/sm,
 	)
 
-/datum/outfit/job/human_resources_director/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/human_resources_officer/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(locate(/datum/holiday/ianbirthday) in SSevents.holidays)
 		undershirt = /datum/sprite_accessory/undershirt/ian
 
 //only pet worth reviving
-/datum/job/human_resources_director/get_mail_goodies(mob/recipient)
+/datum/job/human_resources_officer/get_mail_goodies(mob/recipient)
 	. = ..()
 	// Strange Reagent if the pet is dead.
 	for(var/mob/living/simple_animal/pet/dog/corgi/ian/staff_pet in GLOB.dead_mob_list)

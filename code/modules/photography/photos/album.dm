@@ -61,7 +61,7 @@
 	persistence_id = "HoS"
 
 /obj/item/storage/photo_album/rd
-	name = "photo album (Research Director)"
+	name = "photo album (Science Director)"
 	icon_state = "album_blue"
 	persistence_id = "RD"
 

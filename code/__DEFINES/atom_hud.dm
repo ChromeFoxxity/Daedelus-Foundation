@@ -151,6 +151,7 @@
 #define SECHUD_MTF_PRIVATE "hudmtfprivate"
 #define SECHUD_MTF_MEDIC "hudmtfmedic"
 #define SECHUD_MTF_RESH1 "hudmtfresh1"
+#define SECHUD_MTF_ALPHA1 "hudmtfalpha1"
 #define SECHUD_MTF_OMEGA1 "hudmtfomega1"
 #define SECHUD_MTF_EPSILON9 "hudmtfepsilon9"
 #define SECHUD_MTF_BETA7 "hudmtfbeta7"

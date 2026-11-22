@@ -56314,7 +56314,7 @@
 	},
 /obj/machinery/light/directional/west,
 /obj/structure/table/glass,
-/obj/item/storage/secure/safe/caps_spare/directional/west,
+/obj/item/storage/secure/safe/sid_spare/directional/west,
 /obj/effect/turf_decal/tile/green/half/contrasted{
 	dir = 8
 	},

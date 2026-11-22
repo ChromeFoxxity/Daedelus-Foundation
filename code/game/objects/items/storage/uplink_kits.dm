@@ -122,7 +122,6 @@
 			new /obj/item/clothing/head/helmet/space/syndicate/black/red(src)
 			new /obj/item/card/emag(src)
 			new /obj/item/storage/toolbox/syndicate(src)
-			new /obj/item/card/id/advanced/mining(src)
 			new /obj/item/stack/spacecash/c1000/ten(src)
 			new /obj/item/toy/spinningtoy(src) //lol
 

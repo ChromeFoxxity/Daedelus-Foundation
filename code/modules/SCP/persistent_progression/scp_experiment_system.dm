@@ -20,12 +20,12 @@ SUBSYSTEM_DEF(scp_experiments)
 	var/list/completed_experiments = list()
 	var/list/researcher_certifications = list()
 	var/list/experiment_cooldowns = list()
-	
+
 	var/global_experiment_count = 0
 	var/global_success_count = 0
 	var/global_failure_count = 0
 	var/global_catastrophe_count = 0
-	
+
 	var/experiment_xp_multiplier = 1.0
 	var/experiment_reward_multiplier = 1.0
 
@@ -39,14 +39,14 @@ SUBSYSTEM_DEF(scp_experiments)
 	log_game("SCP Experiment Manager: Template loading initialized")
 
 /datum/scp_experiment_manager/proc/initialize_certifications()
-	for(var/job in list("Scientist", "Research Director", "Senior Researcher", "Research Assistant", 
+	for(var/job in list("Scientist", "Science Director", "Senior Researcher", "Research Assistant",
 						"Medical Doctor", "Chief Medical Officer", "Security Officer", "Site Director",
 						"Engineer", "Containment Specialist"))
 		researcher_certifications[job] = get_default_certification(job)
 
 /datum/scp_experiment_manager/proc/get_default_certification(job)
 	switch(job)
-		if("Research Director")
+		if("Science Director")
 			return EXPERIMENT_ACCESS_FULL
 		if("Scientist")
 			return EXPERIMENT_ACCESS_FULL
@@ -76,32 +76,32 @@ SUBSYSTEM_DEF(scp_experiments)
 /datum/scp_experiment_manager/proc/can_conduct_experiment(mob/living/carbon/human/user, experiment_type, scp_class, risk_level)
 	if(!user || !user.mind)
 		return EXPERIMENT_ACCESS_NONE
-	
+
 	var/job = user.job
 	var/certification = researcher_certifications[job] || EXPERIMENT_ACCESS_NONE
-	
+
 	if(certification == EXPERIMENT_ACCESS_NONE)
 		return EXPERIMENT_ACCESS_NONE
-	
+
 	if(risk_level >= EXPERIMENT_RISK_CRITICAL && certification < EXPERIMENT_ACCESS_FULL)
 		return EXPERIMENT_ACCESS_OBSERVE
-	
+
 	if(risk_level >= EXPERIMENT_RISK_HIGH && certification < EXPERIMENT_ACCESS_ADVANCED)
 		return EXPERIMENT_ACCESS_ASSIST
-	
+
 	if(experiment_type == EXPERIMENT_TYPE_MEDICAL)
-		if(!(job in list("Medical Doctor", "Chief Medical Officer", "Scientist", "Research Director")))
+		if(!(job in list("Medical Doctor", "Chief Medical Officer", "Scientist", "Science Director")))
 			return EXPERIMENT_ACCESS_OBSERVE
-	
+
 	if(experiment_type == EXPERIMENT_TYPE_TECHNICAL)
-		if(!(job in list("Engineer", "Scientist", "Research Director")))
+		if(!(job in list("Engineer", "Scientist", "Science Director")))
 			return EXPERIMENT_ACCESS_ASSIST
-	
+
 	return certification
 
 /datum/scp_experiment_manager/proc/get_xp_modifier(mob/living/carbon/human/user, access_level)
 	var/modifier = 1.0
-	
+
 	switch(access_level)
 		if(EXPERIMENT_ACCESS_FULL)
 			modifier = 1.0
@@ -115,40 +115,40 @@ SUBSYSTEM_DEF(scp_experiments)
 			modifier = 0.25
 		else
 			modifier = 0.0
-	
+
 	return modifier * experiment_xp_multiplier
 
 /datum/scp_experiment_manager/proc/start_experiment(scp_id, experiment_type, mob/living/carbon/human/researcher)
 	if(!researcher || !researcher.ckey)
 		return null
-	
+
 	var/datum/scp_experiment_template/template = get_experiment_template(scp_id, experiment_type)
 	if(!template)
 		return null
-	
+
 	var/access = can_conduct_experiment(researcher, experiment_type, template.scp_class, template.risk_level)
 	if(access < EXPERIMENT_ACCESS_STANDARD)
 		to_chat(researcher, span_warning("You are not certified to conduct this experiment."))
 		return null
-	
+
 	var/cooldown_key = "[researcher.ckey]_[scp_id]_[experiment_type]"
 	if(experiment_cooldowns[cooldown_key] && world.time < experiment_cooldowns[cooldown_key])
 		var/remaining = (experiment_cooldowns[cooldown_key] - world.time) / 600
 		to_chat(researcher, span_warning("This experiment is on cooldown for [round(remaining, 0.1)] more minutes."))
 		return null
-	
+
 	var/exp_id = "exp_[scp_id]_[experiment_type]_[global_experiment_count]"
 	var/datum/scp_experiment/experiment = new(exp_id, template, researcher)
 	experiment.access_level = access
-	
+
 	active_experiments[exp_id] = experiment
 	global_experiment_count++
 	hook_scp_experiment(researcher, scp_id, experiment_type)
-	
+
 	SSscp_persistence.manager?.scp_instances?[scp_id]?.add_interaction_record(researcher, "experiment_started:[experiment_type]")
-	
+
 	to_chat(researcher, span_notice("Experiment [experiment.name] has begun. Phase: Preparation."))
-	
+
 	return experiment
 
 /datum/scp_experiment_manager/proc/get_experiment_template(scp_id, experiment_type)
@@ -162,23 +162,23 @@ SUBSYSTEM_DEF(scp_experiments)
 	var/datum/scp_experiment/exp = active_experiments[exp_id]
 	if(!exp)
 		return FALSE
-	
+
 	var/xp_modifier = get_xp_modifier(researcher, exp.access_level)
 	var/xp_change = calculate_xp_change(outcome, xp_modifier)
 	var/reward_modifier = calculate_reward_modifier(outcome)
-	
+
 	apply_experiment_results(exp, researcher, outcome, xp_change, reward_modifier)
-	
+
 	exp.status = "completed"
 	exp.outcome = outcome
 	exp.completion_time = world.time
-	
+
 	completed_experiments[exp_id] = exp
 	active_experiments -= exp_id
-	
+
 	var/cooldown_key = "[researcher.ckey]_[exp.scp_id]_[exp.experiment_type]"
 	experiment_cooldowns[cooldown_key] = world.time + exp.cooldown_time
-	
+
 	switch(outcome)
 		if(EXPERIMENT_OUTCOME_SUCCESS_MAJOR, EXPERIMENT_OUTCOME_SUCCESS, EXPERIMENT_OUTCOME_SUCCESS_MINOR)
 			global_success_count++
@@ -187,7 +187,7 @@ SUBSYSTEM_DEF(scp_experiments)
 		if(EXPERIMENT_OUTCOME_CATASTROPHIC)
 			global_catastrophe_count++
 			trigger_catastrophe(exp, researcher)
-	
+
 	SSscp_persistence.manager?.scp_instances?[exp.scp_id]?.add_interaction_record(researcher, "experiment_completed:[outcome]")
 	adjust_global_research_points(max(0, xp_change), "experiment_completion:[exp.scp_id]")
 	track_scp_interaction(researcher, exp.scp_id, "experiment", outcome)
@@ -213,7 +213,7 @@ SUBSYSTEM_DEF(scp_experiments)
 			base_xp = -100
 		if(EXPERIMENT_OUTCOME_CATASTROPHIC)
 			base_xp = -200
-	
+
 	return round(base_xp * modifier)
 
 /datum/scp_experiment_manager/proc/calculate_reward_modifier(outcome)
@@ -239,31 +239,31 @@ SUBSYSTEM_DEF(scp_experiments)
 /datum/scp_experiment_manager/proc/apply_experiment_results(datum/scp_experiment/exp, mob/living/carbon/human/researcher, outcome, xp_change, reward_modifier)
 	if(!researcher || !researcher.ckey)
 		return
-	
+
 	if(SSpersistent_progression)
 		SSpersistent_progression.award_experience(researcher.ckey, "research_experiment", xp_change, "scp_experiment")
-	
+
 	var/datum/researcher_data/rd
 	if(SSscp_research && SSscp_research.manager)
 		rd = SSscp_research?.manager?.get_researcher_profile(researcher.ckey)
 		if(rd)
 			rd.research_points += max(0, xp_change)
 			rd.completed_projects++
-			
+
 			if(outcome == EXPERIMENT_OUTCOME_SUCCESS_MAJOR)
 				rd.achievements += "Major Breakthrough: [exp.scp_id]"
-	
+
 	if(reward_modifier > 1.0 && SSbudget_system && SSbudget_system.manager)
 		var/budget_reward = round(100 * reward_modifier * experiment_reward_multiplier)
-		SSbudget_system?.manager?.add_transaction("research", "REVENUE", budget_reward, "experiment_reward", 
+		SSbudget_system?.manager?.add_transaction("research", "REVENUE", budget_reward, "experiment_reward",
 			"Experiment completion: [exp.name]", researcher.ckey)
-	
+
 	notify_experiment_result(researcher, exp, outcome, xp_change)
 
 /datum/scp_experiment_manager/proc/notify_experiment_result(mob/researcher, datum/scp_experiment/exp, outcome, xp_change)
 	var/outcome_text = ""
 	var/class = "notice"
-	
+
 	switch(outcome)
 		if(EXPERIMENT_OUTCOME_SUCCESS_MAJOR)
 			outcome_text = "MAJOR SUCCESS"
@@ -289,22 +289,22 @@ SUBSYSTEM_DEF(scp_experiments)
 		if(EXPERIMENT_OUTCOME_CATASTROPHIC)
 			outcome_text = "CATASTROPHIC FAILURE"
 			class = "boldannounce"
-	
+
 	var/xp_text = xp_change >= 0 ? "+[xp_change]" : "[xp_change]"
 	to_chat(researcher, "<span class='[class]'>Experiment '[exp.name]' completed: [outcome_text]! XP: [xp_text]</span>")
 
 /datum/scp_experiment_manager/proc/trigger_catastrophe(datum/scp_experiment/exp, mob/living/carbon/human/researcher)
 	if(!exp || !researcher)
 		return
-	
+
 	var/datum/scp_instance/instance = SSscp_persistence?.manager?.scp_instances?[exp.scp_id]
 	if(instance)
 		instance.containment_status = "breached"
 		instance.add_breach_record()
 		SSscp_persistence?.manager?.active_breaches++
-	
+
 	message_admins("CATASTROPHIC EXPERIMENT FAILURE on [exp.scp_id] by [researcher.key]!")
-	
+
 	for(var/mob/living/carbon/human/H in range(10, researcher))
 		if(H != researcher)
 			to_chat(H, span_danger("ALERT: Catastrophic experiment failure in [get_area(researcher)]!"))
@@ -422,7 +422,7 @@ SUBSYSTEM_DEF(scp_experiments)
 
 /datum/scp_experiment_manager/proc/get_available_experiments(mob/living/carbon/human/user, scp_id)
 	var/list/available = list()
-	
+
 	for(var/template_id in experiment_templates)
 		var/datum/scp_experiment_template/T = experiment_templates[template_id]
 		if(T.scp_id == scp_id)
@@ -436,7 +436,7 @@ SUBSYSTEM_DEF(scp_experiments)
 					"access" = access,
 					"cooldown" = get_cooldown_remaining(user, T)
 				))
-	
+
 	return available
 
 /datum/scp_experiment_manager/proc/get_cooldown_remaining(mob/living/carbon/human/user, datum/scp_experiment_template/template)
@@ -453,17 +453,17 @@ SUBSYSTEM_DEF(scp_experiments)
 	var/experiment_type
 	var/scp_class
 	var/risk_level = EXPERIMENT_RISK_LOW
-	
+
 	var/list/requirements = list()
 	var/list/equipment_needed = list()
 	var/list/personnel_required = list()
-	
+
 	var/base_duration = 300
 	var/cooldown_time = 6000
-	
+
 	var/list/phase_data = list()
 	var/list/possible_outcomes = list()
-	
+
 	var/requires_dcond_approval = FALSE
 	var/minimum_clearance = 1
 
@@ -480,24 +480,24 @@ SUBSYSTEM_DEF(scp_experiments)
 	var/experiment_type
 	var/scp_class
 	var/risk_level
-	
+
 	var/mob/living/carbon/human/primary_researcher
 	var/list/assistants = list()
 	var/atom/scp_parent
-	
+
 	var/current_phase = EXPERIMENT_PHASE_PREPARATION
 	var/status = "pending"
 	var/outcome = null
-	
+
 	var/phase_progress = 0
 	var/phase_duration = 300
 	var/total_duration = 0
 	var/start_time = 0
 	var/completion_time = 0
-	
+
 	var/cooldown_time = 6000
 	var/access_level = EXPERIMENT_ACCESS_STANDARD
-	
+
 	var/list/phase_results = list()
 	var/list/data_collected = list()
 
@@ -511,11 +511,11 @@ SUBSYSTEM_DEF(scp_experiments)
 	risk_level = template.risk_level
 	phase_duration = template.base_duration
 	cooldown_time = template.cooldown_time
-	
+
 	primary_researcher = researcher
 	start_time = world.time
 	status = "active"
-	
+
 	find_scp_parent()
 
 /datum/scp_experiment/proc/find_scp_parent()
@@ -542,23 +542,23 @@ SUBSYSTEM_DEF(scp_experiments)
 /datum/scp_experiment/proc/process_experiment()
 	if(status != "active")
 		return
-	
+
 	phase_progress += 10
-	
+
 	if(phase_progress >= phase_duration)
 		advance_phase()
 
 /datum/scp_experiment/proc/advance_phase()
 	phase_progress = 0
-	
+
 	current_phase++
-	
+
 	if(current_phase > EXPERIMENT_PHASE_CONCLUSION)
 		conclude_experiment()
 		return
-	
+
 	notify_phase_change()
-	
+
 	if(scp_parent && istype(scp_parent, /mob/living/scp/scp173))
 		var/mob/living/scp/scp173/scp = scp_parent
 		scp.SCP?.log_interaction(primary_researcher, "experiment_phase:[current_phase]")
@@ -574,22 +574,22 @@ SUBSYSTEM_DEF(scp_experiments)
 			phase_name = "Observation"
 		if(EXPERIMENT_PHASE_CONCLUSION)
 			phase_name = "Conclusion"
-	
+
 	if(primary_researcher)
 		to_chat(primary_researcher, span_notice("Experiment [name] has advanced to: [phase_name] phase."))
-	
+
 	for(var/mob/assistant in assistants)
 		to_chat(assistant, span_notice("Experiment [name] has advanced to: [phase_name] phase."))
 
 /datum/scp_experiment/proc/conclude_experiment()
 	var/outcome = determine_outcome()
-	
+
 	if(SSscp_experiments && SSscp_experiments.manager)
 		SSscp_experiments?.manager?.complete_experiment(experiment_id, outcome, primary_researcher)
 
 /datum/scp_experiment/proc/determine_outcome()
 	var/base_success_chance = 50
-	
+
 	switch(risk_level)
 		if(EXPERIMENT_RISK_MINIMAL)
 			base_success_chance += 30
@@ -601,9 +601,9 @@ SUBSYSTEM_DEF(scp_experiments)
 			base_success_chance -= 20
 		if(EXPERIMENT_RISK_CRITICAL)
 			base_success_chance -= 40
-	
+
 	var/roll = rand(1, 100)
-	
+
 	if(roll <= base_success_chance - 30)
 		return EXPERIMENT_OUTCOME_SUCCESS_MAJOR
 	else if(roll <= base_success_chance - 15)
@@ -624,7 +624,7 @@ SUBSYSTEM_DEF(scp_experiments)
 /datum/scp_experiment/proc/add_assistant(mob/living/carbon/human/assistant)
 	if(!assistant || (assistant in assistants))
 		return FALSE
-	
+
 	assistants += assistant
 	to_chat(primary_researcher, span_notice("[assistant.name] has joined the experiment as an assistant."))
 	to_chat(assistant, span_notice("You have joined experiment [name] as an assistant."))
@@ -633,7 +633,7 @@ SUBSYSTEM_DEF(scp_experiments)
 /datum/scp_experiment/proc/remove_assistant(mob/living/carbon/human/assistant)
 	if(!assistant || !(assistant in assistants))
 		return FALSE
-	
+
 	assistants -= assistant
 	to_chat(primary_researcher, span_notice("[assistant.name] has left the experiment."))
 	to_chat(assistant, span_notice("You have left experiment [name]."))
@@ -653,21 +653,21 @@ SUBSYSTEM_DEF(scp_experiments)
 	set name = "View Available Experiments"
 	set category = "Research"
 	set desc = "View experiments available for your clearance level."
-	
+
 	if(!ishuman(src))
 		return
-	
+
 	var/mob/living/carbon/human/H = src
-	
+
 	if(!SSscp_experiments || !SSscp_experiments.manager)
 		to_chat(H, span_warning("Experiment system not available."))
 		return
-	
+
 	var/datum/scp_experiment_manager/manager = SSscp_experiments.manager
-	
+
 	var/message = "<h2>Available Experiments</h2>"
 	message += "<b>Your Clearance:</b> [manager.get_default_certification(H.job)]<br><br>"
-	
+
 	for(var/scp_id in SSscp_persistence?.manager?.scp_instances)
 		var/list/experiments = manager.get_available_experiments(H, scp_id)
 		if(length(experiments) > 0)
@@ -685,67 +685,67 @@ SUBSYSTEM_DEF(scp_experiments)
 						access_text = "Assist Only"
 					if(EXPERIMENT_ACCESS_OBSERVE)
 						access_text = "Observe Only"
-				
+
 				var/cooldown_text = ""
 				if(exp["cooldown"] > 0)
 					cooldown_text = " (On cooldown: [round(exp["cooldown"]/600, 0.1)] min)"
-				
+
 				message += "- [exp["name"]] (Risk: [exp["risk"]], Access: [access_text])[cooldown_text]<br>"
-	
+
 	to_chat(H, span_notice("[message]"))
 
 /mob/proc/conduct_scp_experiment()
 	set name = "Conduct SCP Experiment"
 	set category = "Research"
 	set desc = "Conduct an experiment on an SCP."
-	
+
 	if(!ishuman(src))
 		return
-	
+
 	var/mob/living/carbon/human/H = src
-	
+
 	if(!SSscp_experiments || !SSscp_experiments.manager)
 		to_chat(H, span_warning("Experiment system not available."))
 		return
-	
+
 	var/datum/scp_experiment_manager/manager = SSscp_experiments.manager
-	
+
 	var/list/scp_options = list()
 	for(var/scp_id in SSscp_persistence?.manager?.scp_instances)
 		scp_options += scp_id
-	
+
 	if(!length(scp_options))
 		to_chat(H, span_warning("No SCPs available for experimentation."))
 		return
-	
+
 	var/selected_scp = input(H, "Select an SCP to experiment on:", "SCP Experiment") as null|anything in scp_options
 	if(!selected_scp)
 		return
-	
+
 	var/list/available_experiments = manager.get_available_experiments(H, selected_scp)
 	if(!length(available_experiments))
 		to_chat(H, span_warning("No experiments available for [selected_scp] at your clearance level."))
 		return
-	
+
 	var/list/experiment_names = list()
 	for(var/list/exp in available_experiments)
 		experiment_names[exp["name"]] = exp
-	
+
 	var/selected_name = input(H, "Select an experiment:", "SCP Experiment") as null|anything in experiment_names
 	if(!selected_name)
 		return
-	
+
 	var/list/selected_exp = experiment_names[selected_name]
-	
+
 	var/datum/scp_experiment_template/template = manager.experiment_templates[selected_exp["id"]]
 	if(!template)
 		to_chat(H, span_warning("Experiment template not found."))
 		return
-	
+
 	var/confirm = alert(H, "Start experiment '[template.name]' on [selected_scp]?\nRisk Level: [template.risk_level]\nDuration: [template.base_duration/10] seconds", "Confirm Experiment", "Yes", "No")
 	if(confirm != "Yes")
 		return
-	
+
 	var/datum/scp_experiment/exp = manager.start_experiment(selected_scp, template.experiment_type, H)
 	if(exp)
 		to_chat(H, span_notice("Experiment started successfully. Check 'View Active Experiments' for progress."))
@@ -756,15 +756,15 @@ SUBSYSTEM_DEF(scp_experiments)
 	set name = "View Active Experiments"
 	set category = "Research"
 	set desc = "View currently active experiments."
-	
+
 	if(!SSscp_experiments || !SSscp_experiments.manager)
 		to_chat(src, span_warning("Experiment system not available."))
 		return
-	
+
 	var/datum/scp_experiment_manager/manager = SSscp_experiments.manager
-	
+
 	var/message = "<h2>Active Experiments</h2>"
-	
+
 	if(!length(manager.active_experiments))
 		message += "<i>No active experiments.</i>"
 	else
@@ -780,13 +780,13 @@ SUBSYSTEM_DEF(scp_experiments)
 					phase_name = "Observation"
 				if(EXPERIMENT_PHASE_CONCLUSION)
 					phase_name = "Conclusion"
-			
+
 			var/progress = round((exp.phase_progress / exp.phase_duration) * 100)
 			message += "<b>[exp.name]</b> ([exp.scp_id])<br>"
 			message += "- Phase: [phase_name] ([progress]%)<br>"
 			message += "- Researcher: [exp.primary_researcher?.name || "Unknown"]<br>"
 			message += "- Assistants: [length(exp.assistants)]<br><br>"
-	
+
 	to_chat(src, span_notice("[message]"))
 
 /proc/get_experiment_type_name(type)

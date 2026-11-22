@@ -13,7 +13,6 @@
 	new /obj/item/pet_carrier(src)
 	new /obj/item/storage/bag/garment/captain(src)
 	new /obj/item/computer_hardware/hard_drive/role/captain(src)
-	new /obj/item/storage/box/silver_ids(src)
 	new /obj/item/radio/headset/heads/captain/alt(src)
 	new /obj/item/radio/headset/heads/captain(src)
 	new /obj/item/storage/belt/sabre(src)
@@ -31,8 +30,6 @@
 	new /obj/item/storage/lockbox/medal/service(src)
 	new /obj/item/computer_hardware/hard_drive/role/hop(src)
 	new /obj/item/radio/headset/heads/hop(src)
-	new /obj/item/storage/box/ids(src)
-	new /obj/item/storage/box/ids(src)
 	new /obj/item/megaphone/command(src)
 	new /obj/item/assembly/flash/handheld(src)
 	new /obj/item/gun/energy/e_gun(src)
@@ -185,9 +182,9 @@
 	. = ..()
 	. += span_notice("<b>Right-click</b> with a Security-level ID to reset [src]'s registered ID.")
 
-/obj/structure/closet/secure_closet/brig/genpop/attackby(obj/item/card/id/advanced/prisoner/used_id, mob/user, params)
+/obj/structure/closet/secure_closet/brig/genpop/attackby(obj/item/card/id/advanced/classe/used_id, mob/user, params)
 	. = ..()
-	if(!istype(used_id, /obj/item/card/id/advanced/prisoner))
+	if(!istype(used_id, /obj/item/card/id/advanced/classe))
 		return
 
 	if(!assigned_id_ref)
@@ -195,7 +192,7 @@
 		assigned_id_ref = WEAKREF(used_id)
 		name = "genpop storage locker - [used_id.registered_name]"
 		return
-	var/obj/item/card/id/advanced/prisoner/registered_id = assigned_id_ref.resolve()
+	var/obj/item/card/id/advanced/classe/registered_id = assigned_id_ref.resolve()
 	if(used_id == registered_id)
 		say("Authorized ID detected. Unlocking locker and resetting ID.")
 		locked = FALSE

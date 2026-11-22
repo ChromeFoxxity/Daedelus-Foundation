@@ -7,7 +7,7 @@
 	faction = FACTION_STATION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Research Director and Senior Researchers"
+	supervisors = "the Science Director and Senior Researchers"
 	selection_color = "#281E2D"
 	exp_requirements = 60
 	exp_required_type = EXP_TYPE_CREW
@@ -70,7 +70,7 @@
 	faction = FACTION_STATION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Research Director"
+	supervisors = "the Science Director"
 	selection_color = "#281E2D"
 	exp_requirements = 60
 	exp_required_type = EXP_TYPE_CREW
@@ -133,7 +133,7 @@
 	faction = FACTION_STATION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Research Director"
+	supervisors = "the Science Director"
 	selection_color = "#281E2D"
 	exp_requirements = 120
 	exp_required_type = EXP_TYPE_CREW
@@ -199,7 +199,7 @@
 	faction = FACTION_STATION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Research Director"
+	supervisors = "the Science Director"
 	selection_color = "#281E2D"
 	exp_requirements = 120
 	exp_required_type = EXP_TYPE_CREW
@@ -263,7 +263,7 @@
 	faction = FACTION_STATION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Research Director"
+	supervisors = "the Science Director"
 	selection_color = "#281E2D"
 	exp_requirements = 120
 	exp_required_type = EXP_TYPE_CREW
@@ -326,7 +326,7 @@
 	faction = FACTION_STATION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Research Director"
+	supervisors = "the Science Director"
 	selection_color = "#281E2D"
 	exp_requirements = 120
 	exp_required_type = EXP_TYPE_CREW
@@ -390,7 +390,7 @@
 	faction = FACTION_STATION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Research Director"
+	supervisors = "the Science Director"
 	selection_color = "#281E2D"
 	exp_requirements = 180
 	exp_required_type = EXP_TYPE_CREW

@@ -40,10 +40,10 @@
 
 /datum/outfit/job/goc_rep
 	name = JOB_GOC_REP
-	jobtype = /datum/job/goi_rep
+	jobtype = /datum/job/goc_rep
 	allow_jumpskirt = FALSE
 
-	id = /obj/item/card/id/advanced/black_blank
+	id = /obj/item/card/id/advanced/black_card
 	id_trim = /datum/id_trim/job/goc_rep
 	uniform = /obj/item/clothing/under/suit/charcoal
 	backpack_contents = list(

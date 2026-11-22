@@ -10,7 +10,7 @@
 	supervisors = "the Site Director"
 	selection_color = "#d89e48"
 	req_admin_notify = 1
-	minimal_player_age = 7
+	minimal_player_age = 14
 	exp_requirements = 180
 	exp_required_type = EXP_TYPE_CREW
 	exp_required_type_department = EXP_TYPE_ENGINEERING
@@ -57,7 +57,7 @@
 	name = "Engineering Director"
 	jobtype = /datum/job/engineering_director
 
-	id = /obj/item/card/id/advanced/black_blank
+	id = /obj/item/card/id/advanced/black_card
 	id_trim = /datum/id_trim/job/engineering_director
 	uniform = /obj/item/clothing/under/rank/engineering/chief_engineer
 	backpack_contents = list(

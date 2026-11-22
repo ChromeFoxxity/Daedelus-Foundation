@@ -12,7 +12,7 @@
 
 	outfits = list(
 		"Default" = list(
-			SPECIES_HUMAN = /datum/outfit/job/prisoner,
+			SPECIES_HUMAN = /datum/outfit/job/dclass,
 		),
 	)
 
@@ -28,12 +28,12 @@
 	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_ASSIGN_QUIRKS
 
 
-/datum/outfit/job/prisoner
+/datum/outfit/job/dclass
 	name = "D-Class Personnel"
 	jobtype = /datum/job/dclass
 
 	id = /obj/item/card/id/advanced
-	id_trim = /datum/id_trim/job/prisoner
+	id_trim = /datum/id_trim/job/dclass
 	uniform = /obj/item/clothing/under/scp/dclass
 	shoes = /obj/item/clothing/shoes/workboots
 	l_pocket = /obj/item/modular_computer/tablet/pda/dclass

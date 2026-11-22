@@ -40,7 +40,7 @@
 
 /datum/outfit/job/uiu_rep
 	name = JOB_UIU_REP
-	jobtype = /datum/job/goi_rep
+	jobtype = /datum/job/uiu_rep
 	allow_jumpskirt = FALSE
 
 	id_trim = /datum/id_trim/job/uiu_rep

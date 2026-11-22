@@ -139,8 +139,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/noticeboard, 32)
 	req_access = list(ACCESS_MEDICAL_LVL5)
 
 /obj/structure/noticeboard/rd
-	name = "Research Director's Notice Board"
-	desc = "Important notices from the Research Director."
+	name = "Science Director's Notice Board"
+	desc = "Important notices from the Science Director."
 	req_access = list(ACCESS_SCIENCE_LVL5)
 
 /obj/structure/noticeboard/qm

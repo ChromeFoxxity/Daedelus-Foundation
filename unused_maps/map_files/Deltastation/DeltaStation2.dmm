@@ -13625,7 +13625,7 @@
 	},
 /turf/open/floor/plating)
 "dDQ" = (
-/obj/structure/closet/secure_closet/research_director,
+/obj/structure/closet/secure_closet/science_director,
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
 	},
@@ -17266,7 +17266,7 @@
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
 	id = "rdoffice";
-	name = "Research Director's Shutters"
+	name = "Science Director's Shutters"
 	},
 /obj/structure/cable/smart_cable/color/yellow,
 /turf/open/floor/plating)
@@ -18794,7 +18794,7 @@
 /turf/open/floor/wood)
 "eZl" = (
 /obj/machinery/camera/directional/south{
-	c_tag = "Science - Research Director's Quarters";
+	c_tag = "Science - Science Director's Quarters";
 	name = "science camera";
 	network = list("ss13","rd")
 	},
@@ -35289,7 +35289,7 @@
 "leC" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/command{
-	name = "Research Director's Quarters";
+	name = "Science Director's Quarters";
 	req_access_txt = "30"
 	},
 /obj/structure/cable/smart_cable/color/yellow,
@@ -41032,7 +41032,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
 	},
-/obj/item/storage/secure/safe/caps_spare/directional/west,
+/obj/item/storage/secure/safe/sid_spare/directional/west,
 /turf/open/floor/iron/dark)
 "nnb" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -47316,9 +47316,9 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
 /obj/machinery/requests_console/directional/west{
 	announcementConsole = 1;
-	department = "Research Director's Desk";
+	department = "Science Director's Desk";
 	departmentType = 5;
-	name = "Research Director's Requests Console";
+	name = "Science Director's Requests Console";
 	receive_ore_updates = 1
 	},
 /turf/open/floor/iron)
@@ -56252,7 +56252,7 @@
 /obj/item/computer_hardware/hard_drive/role/signal/ordnance,
 /obj/item/computer_hardware/hard_drive/role/signal/ordnance,
 /obj/machinery/camera/directional/east{
-	c_tag = "Science - Research Director's Office";
+	c_tag = "Science - Science Director's Office";
 	name = "science camera";
 	network = list("ss13","rd")
 	},
@@ -57181,7 +57181,7 @@
 /obj/structure/chair/office/light{
 	dir = 1
 	},
-/obj/effect/landmark/start/research_director,
+/obj/effect/landmark/start/science_director,
 /obj/structure/cable/smart_cable/color/yellow,
 /obj/effect/turf_decal/tile/purple,
 /turf/open/floor/iron/white)
@@ -62857,7 +62857,7 @@
 "vsa" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/command{
-	name = "Research Director's Office";
+	name = "Science Director's Office";
 	req_access_txt = "30"
 	},
 /obj/structure/disposalpipe/segment{
@@ -69398,7 +69398,7 @@
 /turf/open/space/basic,
 /area/space)
 "xZX" = (
-/obj/effect/landmark/start/research_director,
+/obj/effect/landmark/start/science_director,
 /obj/structure/cable/smart_cable/color/yellow,
 /obj/effect/turf_decal/tile/purple/fourcorners,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,

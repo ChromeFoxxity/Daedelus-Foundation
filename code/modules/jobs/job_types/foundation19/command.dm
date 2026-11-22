@@ -37,8 +37,8 @@
 	paycheck = PAYCHECK_COMMAND
 	paycheck_department = ACCOUNT_GOV
 
-/datum/job/research_director
-	title = "Research Director"
+/datum/job/science_director
+	title = "Science Director"
 	description = "Oversee all research operations. Ensure proper containment protocols for SCPs. Coordinate with other departments for research projects. Manage research staff and resources."
 	department_head = list()
 	head_announce = list("Science")

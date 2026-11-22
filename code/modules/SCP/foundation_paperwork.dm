@@ -225,8 +225,8 @@ ___________________________________________________________________________<br><
 	icon_state = "stamp-hos"
 
 /obj/item/stamp/foundation/research
-	name = "Research Director Stamp"
-	desc = "A rubber stamp marked 'Research Director'."
+	name = "Science Director Stamp"
+	desc = "A rubber stamp marked 'Science Director'."
 	icon_state = "stamp-rd"
 
 /obj/item/stamp/foundation/medical

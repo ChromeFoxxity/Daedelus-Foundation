@@ -327,7 +327,7 @@
   - tweak: Glass airlocks cost 20 matter.
   - tweak: RCDs are faster at building grilles and plain glass windows.
   Steelpoint:
-  - tweak: Slightly reshuffles the Head of Security's, and Research Directors, locker
+  - tweak: Slightly reshuffles the Head of Security's, and Science Directors, locker
       to place fluff items below essential items.
   Tacolizard:
   - rscdel: Flashes no longer have a tech requirement

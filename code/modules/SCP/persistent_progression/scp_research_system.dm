@@ -249,7 +249,7 @@ SUBSYSTEM_DEF(scp_research)
 /datum/scp_research_manager/proc/update_researcher_rank(datum/researcher_data/researcher)
 	var/points = researcher.research_points
 	if(points >= 50000)
-		researcher.research_rank = "Research Director"
+		researcher.research_rank = "Science Director"
 	else if(points >= 25000)
 		researcher.research_rank = "Lead Researcher"
 	else if(points >= 10000)
@@ -430,7 +430,7 @@ SUBSYSTEM_DEF(scp_research)
 			var/mob/living/carbon/human/researcher = get_researcher_by_ckey(project.researcher_ckey)
 			if(!researcher)
 				continue
-			var/progress_rate = 1.0 + observation_yield_bonus + (researcher.job == "Scientist" ? 0.5 : 0) + (researcher.job == "Research Director" ? 1.0 : 0)
+			var/progress_rate = 1.0 + observation_yield_bonus + (researcher.job == "Scientist" ? 0.5 : 0) + (researcher.job == "Science Director" ? 1.0 : 0)
 			project.research_points += progress_rate
 			project.research_time = world.time - project.timestamp
 			var/old_level = project.research_level

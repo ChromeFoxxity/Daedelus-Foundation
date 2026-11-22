@@ -140,11 +140,12 @@
 //Central
 #define JOB_CENTRAL "Central Office"
 #define JOB_CENTRAL_INSPECTOR "Central Office Inspector"
-#define JOB_CENTRAL_ADMIN "Administrative Official"
 #define JOB_CENTRAL_ETHICS "Ethics Committee Official"
 #define JOB_CENTRAL_TRIBUNAL "Internal Tribunal Official"
 #define JOB_CENTRAL_SECURITY "Internal Security Field Agent"
 #define JOB_CENTRAL_SECURITY_LEADER "Internal Security Officer"
+#define JOB_CENTRAL_O5 "Executive Board"
+#define JOB_CENTRAL_O5_REP "Executive Board Representative"
 
 #define DEPARTMENT_UNASSIGNED "No department assigned"
 

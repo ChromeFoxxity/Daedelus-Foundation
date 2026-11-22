@@ -1,190 +1,245 @@
-/// Trim for basic Centcom cards.
-/datum/id_trim/centcom
+/// Trim for basic Central Office cards.
+/datum/id_trim/central
+	access = list(ACCESS_CENTRAL, ACCESS_CENTRAL_HR)
+	assignment = JOB_CENTRAL
+	trim_state = "gold_level3"
+	sechud_icon_state = SECHUD_CENTRAL
+
+/// So corpses stop complaining.
+/datum/id_trim/central/corpse
 	access = list(ACCESS_CENTRAL)
-	assignment = JOB_CENTCOM
-	trim_state = "trim_centcom"
-	sechud_icon_state = SECHUD_CENTCOM
+	assignment = JOB_CENTRAL
+	trim_state = "gold_level3"
+	sechud_icon_state = SECHUD_CENTRAL
 
-/datum/id_trim/centcom/corpse
+/// Trim for Central Office Inspectors.
+/datum/id_trim/central/inspector
 	access = list(ACCESS_CENTRAL)
-	assignment = JOB_CENTCOM
-	trim_state = "trim_centcom"
-	sechud_icon_state = SECHUD_CENTCOM
+	assignment = JOB_CENTRAL_INSPECTOR
+	trim_state = "gold_level2"
 
-/// Trim for Centcom VIPs
-/datum/id_trim/centcom/vip
-	access = list(ACCESS_CENT_GENERAL)
-	assignment = JOB_CENTCOM_VIP
+/// Trim for Central Office O5 Command.
+/datum/id_trim/centcom/o5
+	assignment = JOB_CENTRAL_O5
+	trim_state = "gold_level5"
 
-/// Trim for Centcom Custodians.
-/datum/id_trim/centcom/custodian
-	access = list(ACCESS_CENT_GENERAL, ACCESS_CENT_LIVING, ACCESS_CENT_STORAGE)
-	assignment = JOB_CENTCOM_CUSTODIAN
-
-/// Trim for Centcom Thunderdome Overseers.
-/datum/id_trim/centcom/thunderdome_overseer
-	access = list(ACCESS_CENT_GENERAL, ACCESS_CENT_THUNDER)
-	assignment = JOB_CENTCOM_THUNDERDOME_OVERSEER
-
-/// Trim for Centcom Officials.
-/datum/id_trim/centcom/official
-	access = list(ACCESS_CENT_GENERAL, ACCESS_CENT_LIVING, ACCESS_SECURITY)
-	assignment = JOB_CENTCOM_OFFICIAL
-
-/// Trim for Centcom Interns.
-/datum/id_trim/centcom/intern
-	access = list(ACCESS_CENT_GENERAL, ACCESS_CENT_LIVING, ACCESS_SECURITY)
-	assignment = "CentCom Intern"
-
-/// Trim for Centcom Head Interns. Different assignment, common station access added on.
-/datum/id_trim/centcom/intern/head
-	assignment = "CentCom Head Intern"
-
-/datum/id_trim/centcom/intern/head/New()
-	. = ..()
-
-	access |= SSid_access.get_flag_access_list(ACCESS_FLAG_COMMON)
-
-/// Trim for Bounty Hunters hired by centcom.
-/datum/id_trim/centcom/bounty_hunter
-	access = list(ACCESS_CENT_GENERAL)
-	assignment = "Bounty Hunter"
-
-/// Trim for Centcom Bartenders.
-/datum/id_trim/centcom/bartender
-	access = list(ACCESS_CENT_GENERAL, ACCESS_CENT_LIVING, ACCESS_CENT_BAR)
-	assignment = JOB_CENTCOM_BARTENDER
-
-/// Trim for Centcom Medical Officers.
-/datum/id_trim/centcom/medical_officer
-	access = list(ACCESS_CENT_GENERAL, ACCESS_CENT_LIVING, ACCESS_CENT_MEDICAL)
-	assignment = JOB_CENTCOM_MEDICAL_DOCTOR
-
-/// Trim for Centcom Research Officers.
-/datum/id_trim/centcom/research_officer
-	access = list(ACCESS_CENT_GENERAL, ACCESS_CENT_SPECOPS, ACCESS_CENT_MEDICAL, ACCESS_CENT_TELEPORTER, ACCESS_CENT_STORAGE)
-	assignment = JOB_CENTCOM_RESEARCH_OFFICER
-
-/// Trim for Centcom Specops Officers. All Centcom and Station Access.
-/datum/id_trim/centcom/specops_officer
-	assignment = JOB_CENTCOM_SPECIAL_OFFICER
-
-/datum/id_trim/centcom/specops_officer/New()
+/datum/id_trim/central/o5/New()
 	. = ..()
 
 	access = SSid_access.get_region_access_list(list(REGION_CENTCOM, REGION_ALL_STATION))
 
-/// Trim for Centcom (Soviet) Admirals. All Centcom and Station Access.
-/datum/id_trim/centcom/admiral
-	assignment = JOB_CENTCOM_ADMIRAL
+/// Trim for Central Office O5 Command Representatives.
+/datum/id_trim/centcom/o5/representative
+	assignment = JOB_CENTRAL_O5_REP
+	trim_state = "gold_level4"
 
-/datum/id_trim/centcom/admiral/New()
+/datum/id_trim/centcom/o5/representative/New()
+	. = ..()
+
+	access = list(ACCESS_CENTRAL, ACCESS_CENTRAL_HR, ACCESS_O5) | (SSid_access.get_region_access_list(list(REGION_ALL_STATION)) - ACCESS_ADMIN_LVL5)
+
+/// Trim for Central Office Ethics Committee Officials.
+/datum/id_trim/central/ethics_committee
+	assignment = JOB_CENTRAL_ETHICS
+	trim_state = "gold_level4"
+
+/datum/id_trim/central/ethics_committee/New()
+	. = ..()
+
+	access = list(ACCESS_CENTRAL, ACCESS_CENTRAL_HR) | (SSid_access.get_region_access_list(list(REGION_ALL_STATION)) - ACCESS_ADMIN_LVL5)
+
+/// Trim for Central Office Internal Tribunal Officials.
+/datum/id_trim/central/internal_tribunal
+	assignment = JOB_CENTRAL_TRIBUNAL
+	trim_state = "gold_level3"
+
+/datum/id_trim/central/internal_tribunal/New()
+	. = ..()
+
+	access = list(ACCESS_CENTRAL, ACCESS_CENTRAL_HR) | (SSid_access.get_region_access_list(list(REGION_ALL_STATION)) - ACCESS_ADMIN_LVL5)
+
+/// Trim for Central Office Internal Security Department.
+/datum/id_trim/central/internal_security_agent
+	assignment = JOB_CENTRAL_SECURITY
+	trim_state = "gold_level2"
+
+/datum/id_trim/central/internal_security_agent/New()
+	. = ..()
+
+	access = list(ACCESS_CENTRAL, ACCESS_ISD) | (SSid_access.get_region_access_list(list(REGION_ALL_STATION)) - ACCESS_ADMIN_LVL5)
+
+/// Trim for Central Office Internal Security Department.
+/datum/id_trim/central/internal_security_officer
+	assignment = JOB_CENTRAL_SECURITY_LEADER
+	trim_state = "gold_level3"
+
+/datum/id_trim/central/internal_security_officer/New()
+	. = ..()
+
+	access = list(ACCESS_CENTRAL, ACCESS_CENTRAL_HR, ACCESS_ISD) | (SSid_access.get_region_access_list(list(REGION_ALL_STATION)) - ACCESS_ADMIN_LVL5)
+
+/// Trim for the Mobile Task Force.
+/datum/id_trim/central/mtf
+	assignment = JOB_E11_PRIVATE
+	trim_state = "gold_level1"
+	sechud_icon_state = SECHUD_MTF_PRIVATE
+
+/datum/id_trim/central/mtf/New()
+	. = ..()
+
+	access = list(ACCESS_CENTRAL, ACCESS_MTF) | (SSid_access.get_region_access_list(list(REGION_ALL_STATION)) - ACCESS_ADMIN_LVL5)
+
+/datum/id_trim/central/mtf/specialist
+	assignment = JOB_E11_SPECIALIST
+	trim_state = "gold_level2"
+	sechud_icon_state = SECHUD_MTF_SPECIALIST
+
+/datum/id_trim/central/mtf/specialist/New()
+	. = ..()
+
+	access = list(ACCESS_CENTRAL, ACCESS_MTF) | (SSid_access.get_region_access_list(list(REGION_ALL_STATION)) - ACCESS_ADMIN_LVL5)
+
+/datum/id_trim/central/mtf/medic
+	assignment = JOB_E11_MEDIC
+	trim_state = "gold_level2"
+	sechud_icon_state = SECHUD_MTF_MEDIC
+
+/datum/id_trim/central/mtf/medic/New()
+	. = ..()
+
+	access = list(ACCESS_CENTRAL, ACCESS_MTF) | (SSid_access.get_region_access_list(list(REGION_ALL_STATION)) - ACCESS_ADMIN_LVL5)
+
+/datum/id_trim/central/mtf/sergeant
+	assignment = JOB_E11_SERGEANT
+	trim_state = "gold_level3"
+	sechud_icon_state = SECHUD_MTF_SERGEANT
+
+/datum/id_trim/central/mtf/sergeant/New()
+	. = ..()
+
+	access = list(ACCESS_CENTRAL, ACCESS_MTF) | (SSid_access.get_region_access_list(list(REGION_ALL_STATION)) - ACCESS_ADMIN_LVL5)
+
+/datum/id_trim/central/mtf/captain
+	assignment = JOB_E11_CAPTAIN
+	trim_state = "gold_level4"
+	sechud_icon_state = SECHUD_MTF_CAPTAIN
+
+/datum/id_trim/central/mtf/captain/New()
+	. = ..()
+
+	access = list(ACCESS_CENTRAL, ACCESS_MTF, ACCESS_MTF_LEADER) | (SSid_access.get_region_access_list(list(REGION_ALL_STATION)))
+
+/datum/id_trim/central/mtf/resh1
+	assignment = JOB_R1_OPERATIVE
+	trim_state = "gold_level5"
+	sechud_icon_state = SECHUD_MTF_RESH1
+
+/datum/id_trim/central/mtf/resh1/New()
 	. = ..()
 
 	access = SSid_access.get_region_access_list(list(REGION_CENTCOM, REGION_ALL_STATION))
 
-/// Trim for Centcom Commanders. All Centcom and Station Access.
-/datum/id_trim/centcom/commander
-	assignment = JOB_CENTCOM_COMMANDER
+/datum/id_trim/central/mtf/alpha1
+	assignment = JOB_A1_OPERATIVE
+	trim_state = "gold_level3"
+	sechud_icon_state = SECHUD_MTF_ALPHA1
 
-/datum/id_trim/centcom/commander/New()
+/datum/id_trim/central/mtf/alpha1/New()
 	. = ..()
 
-	access = SSid_access.get_region_access_list(list(REGION_CENTCOM, REGION_ALL_STATION))
+	access = list(ACCESS_CENTRAL, ACCESS_CENTRAL_HR, ACCESS_MTF) | (SSid_access.get_region_access_list(list(REGION_ALL_STATION)) - ACCESS_ADMIN_LVL5)
 
-/// Trim for Deathsquad officers. All Centcom and Station Access.
-/datum/id_trim/centcom/deathsquad
-	assignment = JOB_ERT_DEATHSQUAD
-	trim_state = "trim_ert_commander"
-	sechud_icon_state = SECHUD_DEATH_COMMANDO
+/datum/id_trim/central/mtf/alpha1/commander
+	assignment = JOB_A1_COMMANDER
+	trim_state = "gold_level4"
 
-/datum/id_trim/centcom/deathsquad/New()
+/datum/id_trim/central/mtf/alpha1/commander/New()
 	. = ..()
 
-	access = SSid_access.get_region_access_list(list(REGION_CENTCOM, REGION_ALL_STATION))
+	access = list(ACCESS_CENTRAL, ACCESS_CENTRAL_HR, ACCESS_MTF, ACCESS_MTF_LEADER) | (SSid_access.get_region_access_list(list(REGION_ALL_STATION)))
 
-/// Trim for generic ERT interns. No universal ID card changing access.
-/datum/id_trim/centcom/ert
-	assignment = "Emergency Response Team Intern"
+/datum/id_trim/central/mtf/omega1
+	assignment = JOB_O1_COMMANDER
+	trim_state = "gold_level3"
+	sechud_icon_state = SECHUD_MTF_OMEGA1
 
-/datum/id_trim/centcom/ert/New()
+/datum/id_trim/central/mtf/omega1/New()
 	. = ..()
 
-	access = list(ACCESS_CENT_GENERAL) | (SSid_access.get_region_access_list(list(REGION_ALL_STATION)) - ACCESS_ADMIN_LVL5)
+	access = list(ACCESS_CENTRAL, ACCESS_MTF) | (SSid_access.get_region_access_list(list(REGION_ALL_STATION)) - ACCESS_ADMIN_LVL5)
 
-/// Trim for ERT Commanders. All station and centcom access.
-/datum/id_trim/centcom/ert/commander
-	assignment = JOB_ERT_COMMANDER
-	trim_state = "trim_ert_commander"
-	sechud_icon_state = SECHUD_EMERGENCY_RESPONSE_TEAM_COMMANDER
+/datum/id_trim/central/mtf/omega1/commander
+	assignment = JOB_O1_COMMANDER
+	trim_state = "gold_level4"
 
-/datum/id_trim/centcom/ert/commander/New()
+/datum/id_trim/central/mtf/omega1/commander/New()
 	. = ..()
 
-	access = SSid_access.get_region_access_list(list(REGION_CENTCOM, REGION_ALL_STATION))
+	access = list(ACCESS_CENTRAL, ACCESS_MTF, ACCESS_MTF_LEADER) | (SSid_access.get_region_access_list(list(REGION_ALL_STATION)))
 
-/// Trim for generic ERT seccies. No universal ID card changing access.
-/datum/id_trim/centcom/ert/security
-	assignment = JOB_ERT_OFFICER
-	trim_state = "trim_ert_security"
-	sechud_icon_state = SECHUD_SECURITY_RESPONSE_OFFICER
+/datum/id_trim/central/mtf/nu7
+	assignment = JOB_N7_OPERATIVE
+	trim_state = "gold_level2"
+	sechud_icon_state = SECHUD_MTF_NU7
 
-/datum/id_trim/centcom/ert/security/New()
+/datum/id_trim/central/mtf/nu7/New()
 	. = ..()
 
-	access = list(ACCESS_CENT_GENERAL, ACCESS_CENT_SPECOPS, ACCESS_CENT_LIVING) | (SSid_access.get_region_access_list(list(REGION_ALL_STATION)) - ACCESS_ADMIN_LVL5)
+	access = list(ACCESS_CENTRAL, ACCESS_MTF) | (SSid_access.get_region_access_list(list(REGION_ALL_STATION)) - ACCESS_ADMIN_LVL5)
 
-/// Trim for generic ERT engineers. No universal ID card changing access.
-/datum/id_trim/centcom/ert/engineer
-	assignment = JOB_ERT_ENGINEER
-	trim_state = "trim_ert_engineering"
-	sechud_icon_state = SECHUD_ENGINEERING_RESPONSE_OFFICER
+/datum/id_trim/central/mtf/nu7/commander
+	assignment = JOB_N7_COMMANDER
+	trim_state = "gold_level3"
 
-/datum/id_trim/centcom/ert/engineer/New()
+/datum/id_trim/central/mtf/nu7/commander/New()
 	. = ..()
 
-	access = list(ACCESS_CENT_GENERAL, ACCESS_CENT_SPECOPS, ACCESS_CENT_LIVING, ACCESS_CENT_STORAGE) | (SSid_access.get_region_access_list(list(REGION_ALL_STATION)) - ACCESS_ADMIN_LVL5)
+	access = list(ACCESS_CENTRAL, ACCESS_MTF, ACCESS_MTF_LEADER) | (SSid_access.get_region_access_list(list(REGION_ALL_STATION)))
 
-/// Trim for generic ERT medics. No universal ID card changing access.
-/datum/id_trim/centcom/ert/medical
-	assignment = JOB_ERT_MEDICAL_DOCTOR
-	trim_state = "trim_ert_medical"
-	sechud_icon_state = SECHUD_MEDICAL_RESPONSE_OFFICER
+/datum/id_trim/central/mtf/epsilon9
+	assignment = JOB_E9_OPERATIVE
+	trim_state = "gold_level2"
+	sechud_icon_state = SECHUD_MTF_EPSILON9
 
-/datum/id_trim/centcom/ert/medical/New()
+/datum/id_trim/central/mtf/epsilon9/New()
 	. = ..()
 
-	access = list(ACCESS_CENT_GENERAL, ACCESS_CENT_SPECOPS, ACCESS_CENT_MEDICAL, ACCESS_CENT_LIVING) | (SSid_access.get_region_access_list(list(REGION_ALL_STATION)) - ACCESS_ADMIN_LVL5)
+	access = list(ACCESS_CENTRAL, ACCESS_MTF) | (SSid_access.get_region_access_list(list(REGION_ALL_STATION)) - ACCESS_ADMIN_LVL5)
 
-/// Trim for generic ERT chaplains. No universal ID card changing access.
-/datum/id_trim/centcom/ert/chaplain
-	assignment = JOB_ERT_CHAPLAIN
-	trim_state = "trim_ert_religious"
-	sechud_icon_state = SECHUD_RELIGIOUS_RESPONSE_OFFICER
+/datum/id_trim/central/mtf/epsilon9/commander
+	assignment = JOB_E9_COMMANDER
+	trim_state = "gold_level3"
 
-/datum/id_trim/centcom/ert/chaplain/New()
+/datum/id_trim/central/mtf/epsilon9/commander/New()
 	. = ..()
 
-	access = list(ACCESS_CENT_GENERAL, ACCESS_CENT_SPECOPS, ACCESS_CENT_LIVING) | (SSid_access.get_region_access_list(list(REGION_ALL_STATION)) - ACCESS_ADMIN_LVL5)
+	access = list(ACCESS_CENTRAL, ACCESS_MTF, ACCESS_MTF_LEADER) | (SSid_access.get_region_access_list(list(REGION_ALL_STATION)))
 
-/// Trim for generic ERT janitors. No universal ID card changing access.
-/datum/id_trim/centcom/ert/janitor
-	assignment = JOB_ERT_JANITOR
-	trim_state = "trim_ert_janitor"
-	sechud_icon_state = SECHUD_JANITORIAL_RESPONSE_OFFICER
+/datum/id_trim/central/mtf/beta7
+	assignment = JOB_B7_OPERATIVE
+	trim_state = "gold_level2"
+	sechud_icon_state = SECHUD_MTF_BETA7
 
-/datum/id_trim/centcom/ert/janitor/New()
+/datum/id_trim/central/mtf/beta7/New()
 	. = ..()
 
-	access = list(ACCESS_CENT_GENERAL, ACCESS_CENT_LIVING) | (SSid_access.get_region_access_list(list(REGION_ALL_STATION)) - ACCESS_ADMIN_LVL5)
+	access = list(ACCESS_CENTRAL, ACCESS_MTF) | (SSid_access.get_region_access_list(list(REGION_ALL_STATION)) - ACCESS_ADMIN_LVL5)
 
-/// Trim for generic ERT clowns. No universal ID card changing access.
-/datum/id_trim/centcom/ert/clown
-	assignment = JOB_ERT_CLOWN
-	trim_state = "trim_ert_entertainment"
-	sechud_icon_state = SECHUD_ENTERTAINMENT_RESPONSE_OFFICER
+/datum/id_trim/central/mtf/beta7/commander
+	assignment = JOB_B7_COMMANDER
+	trim_state = "gold_level3"
 
-/datum/id_trim/centcom/ert/clown/New()
+/datum/id_trim/central/mtf/beta7/commander/New()
 	. = ..()
 
-	access = list(ACCESS_CENT_GENERAL, ACCESS_CENT_LIVING) | (SSid_access.get_region_access_list(list(REGION_ALL_STATION)) - ACCESS_ADMIN_LVL5)
+	access = list(ACCESS_CENTRAL, ACCESS_MTF, ACCESS_MTF_LEADER) | (SSid_access.get_region_access_list(list(REGION_ALL_STATION)))
+
+/datum/id_trim/central/mtf/alpha45
+	assignment = JOB_A45_AGENT
+	trim_state = "gold_level2"
+	sechud_icon_state = SECHUD_MTF_ALPHA45
+
+/datum/id_trim/central/mtf/alpha45/New()
+	. = ..()
+
+	access = list(ACCESS_CENTRAL, ACCESS_MTF) | (SSid_access.get_region_access_list(list(REGION_ALL_STATION)) - ACCESS_ADMIN_LVL5)

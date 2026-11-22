@@ -1,4 +1,4 @@
-/obj/effect/landmark/start/research_director : @DELETE
+/obj/effect/landmark/start/science_director : @DELETE
 /obj/effect/landmark/start/geneticist : @DELETE
 /obj/effect/landmark/start/roboticist : @DELETE
 /obj/effect/landmark/start/scientist : @DELETE

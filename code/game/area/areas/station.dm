@@ -413,7 +413,7 @@
 	holomap_color = HOLOMAP_AREACOLOR_SECURITY
 
 /area/station/command/heads_quarters/rd
-	name = "\improper Research Director's Office"
+	name = "\improper Science Director's Office"
 	icon_state = "rd_office"
 	holomap_color = HOLOMAP_AREACOLOR_SCIENCE
 

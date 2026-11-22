@@ -8,7 +8,7 @@ const commandJobs = [
   'Head of Personnel',
   'Head of Security',
   'Chief Engineer',
-  'Research Director',
+  'Science Director',
   'Medical Director',
   'Quartermaster',
 ];

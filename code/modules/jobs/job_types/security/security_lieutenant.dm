@@ -45,7 +45,7 @@
 	name = JOB_SECURITY_LIEUTENANT
 	jobtype = /datum/job/security_lieutenant
 
-	id = /obj/item/card/id/advanced/black_blank
+	id = /obj/item/card/id/advanced/black_card
 	id_trim = /datum/id_trim/job/security_lieutenant
 	uniform = /obj/item/clothing/under/scp/hos/guardcom
 	suit = /obj/item/clothing/suit/armor/vest/security/lieutenant

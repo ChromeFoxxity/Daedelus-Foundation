@@ -47,11 +47,11 @@
 	job_flags = JOB_ANNOUNCE_ARRIVAL | JOB_CREW_MANIFEST | JOB_EQUIP_RANK | JOB_CREW_MEMBER | JOB_NEW_PLAYER_JOINABLE | JOB_REOPEN_ON_ROUNDSTART_LOSS | JOB_ASSIGN_QUIRKS | JOB_CAN_BE_INTERN
 
 
-/datum/outfit/job/paramedic
+/datum/outfit/job/medical_technician
 	name = "Paramedic"
-	jobtype = /datum/job/paramedic
+	jobtype = /datum/job/medical_technician
 
-	id_trim = /datum/id_trim/job/paramedic
+	id_trim = /datum/id_trim/job/medical_technician
 	uniform = /obj/item/clothing/under/rank/medical/paramedic
 	suit = /obj/item/clothing/suit/toggle/labcoat/paramedic
 	backpack_contents = list(

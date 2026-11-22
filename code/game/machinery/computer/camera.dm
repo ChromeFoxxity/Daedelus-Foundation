@@ -282,7 +282,8 @@
 	name = "entertainment monitor"
 	desc = "Damn, they better have the /tg/ channel on these things."
 	icon = 'icons/obj/status_display.dmi'
-	icon_state = "entertainment_blank"
+	icon_state = "entertainment_frame"
+	icon_screen = "entertainment_blank"
 	network = list("thunder")
 	density = FALSE
 	circuit = null
@@ -319,7 +320,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/security/telescreen/entertai
 		icon_state = icon_state_off
 
 /obj/machinery/computer/security/telescreen/rd
-	name = "\improper Research Director's telescreen"
+	name = "\improper Science Director's telescreen"
 	desc = "Used for watching the AI and the RD's goons from the safety of his office."
 	network = list("rd", "aicore", "aiupload", "minisat", "xeno", "test", "toxins")
 

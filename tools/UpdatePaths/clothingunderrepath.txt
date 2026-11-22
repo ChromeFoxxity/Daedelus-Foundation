@@ -131,12 +131,12 @@
 /obj/item/clothing/under/rank/miner : /obj/item/clothing/under/rank/cargo/miner
 /obj/item/clothing/under/rank/miner/lavaland : /obj/item/clothing/under/rank/cargo/miner/lavaland
 
-/obj/item/clothing/under/rank/research_director : /obj/item/clothing/under/rank/rnd/research_director
-/obj/item/clothing/under/rank/research_director/skirt : /obj/item/clothing/under/rank/rnd/research_director/skirt
-/obj/item/clothing/under/rank/research_director/alt : /obj/item/clothing/under/rank/rnd/research_director/alt
-/obj/item/clothing/under/rank/research_director/alt/skirt : /obj/item/clothing/under/rank/rnd/research_director/alt/skirt
-/obj/item/clothing/under/rank/research_director/turtleneck : /obj/item/clothing/under/rank/rnd/research_director/turtleneck
-/obj/item/clothing/under/rank/research_director/turtleneck/skirt : /obj/item/clothing/under/rank/rnd/research_director/turtleneck/skirt
+/obj/item/clothing/under/rank/science_director : /obj/item/clothing/under/rank/rnd/science_director
+/obj/item/clothing/under/rank/science_director/skirt : /obj/item/clothing/under/rank/rnd/science_director/skirt
+/obj/item/clothing/under/rank/science_director/alt : /obj/item/clothing/under/rank/rnd/science_director/alt
+/obj/item/clothing/under/rank/science_director/alt/skirt : /obj/item/clothing/under/rank/rnd/science_director/alt/skirt
+/obj/item/clothing/under/rank/science_director/turtleneck : /obj/item/clothing/under/rank/rnd/science_director/turtleneck
+/obj/item/clothing/under/rank/science_director/turtleneck/skirt : /obj/item/clothing/under/rank/rnd/science_director/turtleneck/skirt
 /obj/item/clothing/under/rank/scientist : /obj/item/clothing/under/rank/rnd/scientist
 /obj/item/clothing/under/rank/scientist/skirt : /obj/item/clothing/under/rank/rnd/scientist/skirt
 /obj/item/clothing/under/rank/roboticist : /obj/item/clothing/under/rank/rnd/roboticist

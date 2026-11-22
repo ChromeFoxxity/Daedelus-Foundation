@@ -39,7 +39,7 @@
 	var/list/minimal_wildcard_access = list()
 	/// Static list. Cache of any mapping config job changes.
 	var/static/list/job_changes
-	/// What config entry relates to this job. Should be a lowercase job name with underscores for spaces, eg "prisoner" "research_director" "head_of_security"
+	/// What config entry relates to this job. Should be a lowercase job name with underscores for spaces, eg "prisoner" "science_director" "head_of_security"
 	var/config_job
 	/// An ID card with an access in this list can apply this trim to IDs or use it as a job template when adding access to a card. If the list is null, cannot be used as a template. Should be Head of Staff or ID Console accesses or it may do nothing.
 	var/list/template_access
@@ -487,7 +487,7 @@
 	job = /datum/job/science_director
 	config_job = "science_director"
 
-/datum/id_trim/job/assistant_research_director
+/datum/id_trim/job/assistant_science_director
 	assignment = JOB_ASSISTANT_SCIENCE_DIRECTOR
 	intern_alt_name = "Junior Assistant Science Director"
 	trim_state = "level4"
@@ -969,7 +969,7 @@
 
 // SERVICE JOBS
 
-/datum/id_trim/job/human_resources_director
+/datum/id_trim/job/human_resources_officer
 	assignment = JOB_HUMAN_RESOURCES_OFFICER
 	intern_alt_name = "Junior Human Resources Officer"
 	trim_state = "silver_level5"
@@ -995,8 +995,8 @@
 		ACCESS_ADMIN_LVL5,
 		ACCESS_SERVICE_LVL5,
 	)
-	config_job = "human_resources_director"
-	job = /datum/job/human_resources_director
+	config_job = "human_resources_officer"
+	job = /datum/job/human_resources_officer
 
 /datum/id_trim/job/bartender
 	assignment = JOB_BARTENDER

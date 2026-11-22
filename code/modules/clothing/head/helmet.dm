@@ -503,11 +503,12 @@
 		protection against blunt trauma, thrown objects, and close-quarters assaults. Designed for riot suppression, crowd control, and \
 		intervention during violent site disturbances."
 	icon = 'icons/obj/clothing/head/helmet.dmi'
+	worn_icon = 'icons/obj/clothing/head/helmet.dmi'
 	icon_state = "guard_helmet"
 	toggle_message = "You pull the visor down"
 	alt_toggle_message = "You push the visor up"
 	can_toggle = 1
-	armor = list(BLUNT = 40, PUNCTURE = 25, SLASH = 40, LASER = 20, ENERGY = 15, BOMB = 10, BIO = 5, FIRE = 50, ACID = 50)
+	armor = list(BLUNT = 30, PUNCTURE = 25, SLASH = 30, LASER = 20, ENERGY = 15, BOMB = 10, BIO = 5, FIRE = 50, ACID = 50)
 	flags_inv = HIDEEARS|HIDEFACE|HIDESNOUT
 	strip_delay = 60
 	equip_delay_other = 40
@@ -525,7 +526,7 @@
 		protection against blunt trauma, thrown objects, and close-quarters assaults. Designed for riot suppression, crowd control, and \
 		intervention during violent site disturbances."
 	icon_state = "med_guard_helmet"
-	armor = list(BLUNT = 40, PUNCTURE = 25, SLASH = 40, LASER = 30, ENERGY = 25, BOMB = 10, BIO = 20, FIRE = 55, ACID = 55)
+	armor = list(BLUNT = 30, PUNCTURE = 25, SLASH = 30, LASER = 30, ENERGY = 25, BOMB = 10, BIO = 20, FIRE = 55, ACID = 55)
 
 /obj/item/clothing/head/helmet/security/lieutenant
 	name = "\improper medium-plated security helmet"
@@ -533,7 +534,7 @@
 		protection against blunt trauma, thrown objects, and close-quarters assaults. Designed for riot suppression, crowd control, and \
 		intervention during violent site disturbances, this one has an added silver stripe down the middle denoting the rank of Lieutenant."
 	icon_state = "lt_guard_helmet"
-	armor = list(BLUNT = 45, PUNCTURE = 30, SLASH = 45, LASER = 30, ENERGY = 35, BOMB = 10, BIO = 20, FIRE = 55, ACID = 55)
+	armor = list(BLUNT = 40, PUNCTURE = 30, SLASH = 40, LASER = 30, ENERGY = 35, BOMB = 10, BIO = 20, FIRE = 55, ACID = 55)
 	strip_delay = 70
 	equip_delay_other = 50
 
@@ -543,6 +544,16 @@
 		protection against blunt trauma, thrown objects, and close-quarters assaults. Designed for riot suppression, crowd control, and \
 		intervention during violent site disturbances, this one has an added golden emblem on the front denoting the rank of Captain."
 	icon_state = "cpt_guard_helmet"
-	armor = list(BLUNT = 55, PUNCTURE = 35, SLASH = 50, LASER = 40, ENERGY = 40, BOMB = 15, BIO = 30, FIRE = 60, ACID = 60)
+	armor = list(BLUNT = 50, PUNCTURE = 35, SLASH = 50, LASER = 40, ENERGY = 40, BOMB = 15, BIO = 30, FIRE = 60, ACID = 60)
 	strip_delay = 80
 	equip_delay_other = 60
+
+/obj/item/clothing/head/helmet/security/riot
+	name = "\improper riot security helmet"
+	desc = "A reinforced security helmet featuring a unique white polycarbonate visor. Its heavy composite plating provides \
+		protection against blunt trauma, thrown objects, and close-quarters assaults. Designed PURELY for riot suppression, and crowd control, \
+		this one has extra padding for close-quarters combat."
+	icon_state = "riot_guard_helmet"
+	armor = list(BLUNT = 60, PUNCTURE = 10, SLASH = 60, LASER = 10, ENERGY = 10, BOMB = 5, BIO = 10, FIRE = 80, ACID = 80)
+	strip_delay = 70
+	equip_delay_other = 50

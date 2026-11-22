@@ -30,7 +30,7 @@ SUBSYSTEM_DEF(scp_specializations)
 	var/list/specialization_tracks = list()
 	var/list/track_requirements = list()
 	var/list/unlockable_bonuses = list()
-	
+
 	var/global_xp_multiplier = 1.0
 
 /datum/specialization_manager/proc/initialize_specializations()
@@ -43,23 +43,23 @@ SUBSYSTEM_DEF(scp_specializations)
 		SPEC_TRACK_RESEARCH,
 		"Research",
 		"Scientific study and experimentation with SCPs",
-		list("Scientist", "Research Director", "Senior Researcher", "Research Assistant")
+		list("Scientist", "Science Director", "Senior Researcher", "Research Assistant")
 	)
-	
+
 	specialization_tracks[SPEC_TRACK_CONTAINMENT] = new /datum/specialization_track(
 		SPEC_TRACK_CONTAINMENT,
 		"Containment",
 		"Breach response and SCP containment procedures",
 		list("Security Officer", "Containment Specialist", "Mobile Task Force")
 	)
-	
+
 	specialization_tracks[SPEC_TRACK_FIELD] = new /datum/specialization_track(
 		SPEC_TRACK_FIELD,
 		"Field Operations",
 		"SCP interaction, survival, and reconnaissance",
 		list("Field Agent", "Mobile Task Force", "Security Officer")
 	)
-	
+
 	specialization_tracks[SPEC_TRACK_MEDICAL] = new /datum/specialization_track(
 		SPEC_TRACK_MEDICAL,
 		"Medical",
@@ -132,62 +132,62 @@ SUBSYSTEM_DEF(scp_specializations)
 	var/datum/player_specialization/ps = get_player_specialization(ckey)
 	if(!ps)
 		return FALSE
-	
+
 	ps.add_xp(track_type, amount)
 	check_tier_advancement(ckey, ps)
-	
+
 	return TRUE
 
 /datum/specialization_manager/proc/check_tier_advancement(ckey, datum/player_specialization/ps)
 	if(!ps)
 		return
-	
+
 	for(var/track_type in ps.track_xp)
 		var/current_tier = ps.track_tiers[track_type]
 		var/xp = ps.track_xp[track_type]
-		
+
 		for(var/tier in list(SPEC_TIER_SPECIALIST, SPEC_TIER_SENIOR, SPEC_TIER_AGENT, SPEC_TIER_JUNIOR))
 			if(current_tier >= tier)
 				continue
-			
+
 			var/datum/tier_requirement/req = track_requirements[tier]
 			if(!req)
 				continue
-			
+
 			if(xp >= req.xp_required && check_requirement_conditions(ckey, track_type, req))
 				advance_tier(ckey, ps, track_type, tier)
 
 /datum/specialization_manager/proc/check_requirement_conditions(ckey, track_type, datum/tier_requirement/req)
 	if(!req.conditions || !length(req.conditions))
 		return TRUE
-	
+
 	var/datum/scp_interaction_log/log = SSscp_interactions?.manager?.get_player_log(ckey)
 	var/datum/player_containment_stats/cstats = SScontainment_evaluation?.manager?.get_player_stats(ckey)
 	var/datum/researcher_data/rdata = SSscp_research?.manager?.get_researcher_profile(ckey)
-	
+
 	if("interactions" in req.conditions)
 		if(!log || length(log.scps_interacted) < req.conditions["interactions"])
 			return FALSE
-	
+
 	if("experiments" in req.conditions)
 		if(!rdata || rdata.completed_projects < req.conditions["experiments"])
 			return FALSE
-	
+
 	if("ratings_s" in req.conditions)
 		if(!cstats || cstats.rating_s_count < req.conditions["ratings_s"])
 			return FALSE
-	
+
 	return TRUE
 
 /datum/specialization_manager/proc/advance_tier(ckey, datum/player_specialization/ps, track_type, new_tier)
 	var/old_tier = ps.track_tiers[track_type]
 	ps.track_tiers[track_type] = new_tier
-	
+
 	var/track_name = get_track_name(track_type)
 	var/tier_name = get_tier_name(new_tier)
-	
+
 	notify_tier_advancement(ckey, track_name, tier_name)
-	
+
 	apply_tier_bonuses(ckey, track_type, new_tier, old_tier)
 
 /datum/specialization_manager/proc/notify_tier_advancement(ckey, track_name, tier_name)
@@ -207,7 +207,7 @@ SUBSYSTEM_DEF(scp_specializations)
 	var/datum/player_specialization/ps = get_player_specialization(ckey)
 	if(!ps)
 		return
-	
+
 	switch(bonus_data["type"])
 		if("xp_multiplier")
 			ps.xp_multipliers[bonus_data["track"]] = 1.0 + bonus_data["bonus"]
@@ -322,10 +322,10 @@ SUBSYSTEM_DEF(scp_specializations)
 /datum/player_specialization/proc/add_xp(track_type, amount)
 	if(!(track_type in track_xp))
 		return
-	
+
 	var/multiplier = xp_multipliers[track_type] || 1.0
 	track_xp[track_type] += round(amount * multiplier)
-	
+
 	if(!primary_track || track_xp[track_type] > track_xp[primary_track])
 		primary_track = track_type
 
@@ -361,50 +361,50 @@ SUBSYSTEM_DEF(scp_specializations)
 	set name = "View Specializations"
 	set category = "Progression"
 	set desc = "View your specialization progress."
-	
+
 	if(!SSscp_specializations || !SSscp_specializations.manager)
 		to_chat(src, span_warning("Specialization system not available."))
 		return
-	
+
 	var/datum/specialization_manager/manager = SSscp_specializations.manager
 	var/datum/player_specialization/ps = manager.get_player_specialization(ckey)
-	
+
 	if(!ps)
 		to_chat(src, span_warning("Could not retrieve specialization data."))
 		return
-	
+
 	var/list/summary = ps.get_summary()
-	
+
 	var/message = "<h2>Specialization Progress</h2>"
-	
+
 	if(ps.primary_track)
 		message += "<b>Primary Focus:</b> [manager.get_track_name(ps.primary_track)]<br>"
 		message += "<b>Title:</b> [manager.get_full_title(ckey, ps.primary_track)]<br><br>"
-	
+
 	message += "<h3>Track Progress</h3>"
-	
+
 	for(var/track_type in list(SPEC_TRACK_RESEARCH, SPEC_TRACK_CONTAINMENT, SPEC_TRACK_FIELD, SPEC_TRACK_MEDICAL))
 		var/track_name = manager.get_track_name(track_type)
 		var/tier = summary["tracks"][lowertext(track_name)]["tier"]
 		var/tier_name = manager.get_tier_name(tier)
 		var/xp = summary["tracks"][lowertext(track_name)]["xp"]
-		
+
 		var/next_tier = tier + 1
 		var/next_xp = 0
 		if(next_tier <= SPEC_TIER_SPECIALIST)
 			var/datum/tier_requirement/req = manager.track_requirements[next_tier]
 			next_xp = req?.xp_required || 0
-		
+
 		message += "<b>[track_name]:</b> [tier_name] ([xp] XP)"
 		if(next_xp > 0 && xp < next_xp)
 			message += " - Next tier: [next_xp] XP"
 		message += "<br>"
-	
+
 	if(summary["bonuses"]["rating_modifier"] > 0)
 		message += "<br><b>Bonuses Active:</b><br>"
 		message += "- Rating Modifier: +[round(summary["bonuses"]["rating_modifier"] * 100)]%<br>"
 		message += "- Detection Range: +[summary["bonuses"]["detection_range"]]<br>"
-	
+
 	to_chat(src, span_notice("[message]"))
 
 /proc/award_specialization_xp(ckey, track_type, amount)

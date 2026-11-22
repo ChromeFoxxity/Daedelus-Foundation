@@ -485,7 +485,7 @@
 		if("Security Officer", "Head of Security", "Warden")
 			abilities += "Combat Training"
 			abilities += "Security Clearance"
-		if("Scientist", "Research Director")
+		if("Scientist", "Science Director")
 			abilities += "Research Skills"
 			abilities += "Analysis Abilities"
 		if("Engineer", "Chief Engineer")
@@ -515,7 +515,7 @@
 	if(host.job in list("Medical Doctor", "Chief Medical Officer", "Paramedic"))
 		personality["compassionate"] = 1
 		personality["analytical"] = 1
-	if(host.job in list("Scientist", "Research Director"))
+	if(host.job in list("Scientist", "Science Director"))
 		personality["curious"] = 1
 		personality["logical"] = 1
 
@@ -728,7 +728,7 @@
 	switch(target.job)
 		if("Security Officer", "Head of Security", "Warden")
 			resistance += 0.5 // Disciplined minds
-		if("Scientist", "Research Director")
+		if("Scientist", "Science Director")
 			resistance += 0.3 // Analytical minds
 		if("Medical Doctor", "Chief Medical Officer")
 			resistance += 0.2 // Compassionate but focused

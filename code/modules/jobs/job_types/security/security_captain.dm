@@ -52,7 +52,7 @@
 	name = JOB_SECURITY_CAPTAIN
 	jobtype = /datum/job/security_captain
 
-	id = /obj/item/card/id/advanced/black_blank
+	id = /obj/item/card/id/advanced/black_card
 	id_trim = /datum/id_trim/job/security_captain
 	uniform = /obj/item/clothing/under/scp/hos/guardcom
 	suit = /obj/item/clothing/suit/armor/vest/security/captain

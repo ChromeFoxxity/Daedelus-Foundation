@@ -45,7 +45,7 @@
         "scientist" = "Research Scientist",
         "senior_scientist" = "Senior Research Scientist",
         "lead_researcher" = "Lead Researcher",
-        "research_director" = "Research Director",
+        "science_director" = "Science Director",
         "chief_scientist" = "Chief Scientist",
         "head_of_research" = "Head of Research"
     )

@@ -246,7 +246,7 @@ SUBSYSTEM_DEF(personnel_persistence)
 			base_performance = 80
 		if("Medical Doctor", "Chief Medical Officer")
 			base_performance = 85
-		if("Scientist", "Research Director")
+		if("Scientist", "Science Director")
 			base_performance = 80
 		if("Engineer", "Chief Engineer")
 			base_performance = 80
@@ -277,7 +277,7 @@ SUBSYSTEM_DEF(personnel_persistence)
 			base_salary = 85000
 		if("Scientist")
 			base_salary = 60000
-		if("Research Director")
+		if("Science Director")
 			base_salary = 90000
 		if("Engineer")
 			base_salary = 58000
@@ -306,7 +306,7 @@ SUBSYSTEM_DEF(personnel_persistence)
 			base_clearance = 3
 		if("Scientist")
 			base_clearance = 3
-		if("Research Director")
+		if("Science Director")
 			base_clearance = 4
 		if("Engineer")
 			base_clearance = 2
@@ -987,7 +987,7 @@ SUBSYSTEM_DEF(personnel_persistence)
 	var/list/position_hierarchy = list(
 		"Junior Researcher" = "Senior Researcher",
 		"Senior Researcher" = "Lead Researcher",
-		"Lead Researcher" = "Research Director",
+		"Lead Researcher" = "Science Director",
 		"Security Guard" = "Security Officer",
 		"Security Officer" = "Security Sergeant",
 		"Security Sergeant" = "Security Lieutenant",

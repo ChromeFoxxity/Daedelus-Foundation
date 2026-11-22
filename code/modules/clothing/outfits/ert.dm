@@ -1,12 +1,12 @@
-/datum/outfit/centcom/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/central/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
 		return
 
 	var/obj/item/implant/mindshield/L = new/obj/item/implant/mindshield(H)//hmm lets have centcom officials become revs
 	L.implant(H, null, BODY_ZONE_CHEST, TRUE)
 
-/datum/outfit/centcom/ert
-	name = "ERT Common"
+/datum/outfit/central/mtf
+	name = "Epsilon-11 - Private"
 
 	uniform = /obj/item/clothing/under/rank/centcom/officer
 	ears = /obj/item/radio/headset/headset_cent/alt
@@ -14,7 +14,7 @@
 	mask = /obj/item/clothing/mask/gas/sechailer
 	shoes = /obj/item/clothing/shoes/combat/swat
 
-/datum/outfit/centcom/ert/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/central/mtf/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
 		return
 

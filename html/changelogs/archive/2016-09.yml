@@ -259,7 +259,7 @@
   - tweak: fully_heal no longer removes nonharmful viruses. This affects legion souls,
       staffs of healing, and changeling's revive.
   - rscadd: Canisters of any type of gas are now orderable in cargo. Dangerous experimental
-      gases will require Research Director approval.
+      gases will require Science Director approval.
   Yackemflam:
   - rscadd: The syndicate has learned on how to give their agents a true syndicate
       ninja experience.

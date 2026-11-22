@@ -203,7 +203,7 @@
 	if(!ishuman(user))
 		return
 	var/mob/living/carbon/human/H = user
-	var/list/authorized = list("Scientist", "Research Director", "Senior Researcher", "Research Assistant")
+	var/list/authorized = list("Scientist", "Science Director", "Senior Researcher", "Research Assistant")
 	if(!(H.job in authorized))
 		to_chat(H, span_warning("Only research staff can announce."))
 		return

@@ -6,8 +6,8 @@
 	auto_deadmin_role_flags = DEADMIN_POSITION_SECURITY
 	department_head = list(JOB_SECURITY_CAPTAIN)
 	faction = FACTION_STATION
-	total_positions = 16
-	spawn_positions = 16
+	total_positions = 12
+	spawn_positions = 12
 	supervisors = "the Security Captain, Security Lieutenant, and Security Sergeant"
 	selection_color = "#7e7e7e"
 	minimal_player_age = 14
@@ -45,7 +45,7 @@
 	name = JOB_SECURITY_GUARD
 	jobtype = /datum/job/security_guard
 
-	id = /obj/item/card/id/advanced/white_blank
+	id = /obj/item/card/id/advanced/white_card
 	id_trim = /datum/id_trim/job/security_guard
 	uniform = /obj/item/clothing/under/scp/hos/guardcom
 	suit = /obj/item/clothing/suit/armor/vest/security
@@ -74,38 +74,84 @@
 		/obj/item/stamp/sc,
 		)
 
-/datum/outfit/job/security/mod
-	name = "Security Officer (MODsuit)"
+GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENTRANCE, SEC_DEPT_LIGHT))
 
-	suit_store = /obj/item/tank/internals/oxygen
-	back = /obj/item/mod/control/pre_equipped/security
-	suit = null
-	head = null
-	mask = /obj/item/clothing/mask/gas/sechailer
-	internals_slot = ITEM_SLOT_SUITSTORE
-	backpack_contents = null
-	box = null
+/**
+ * The department distribution of the security officers.
+ *
+ * Keys are refs of the security officer mobs. This is to preserve the list's structure even if the
+ * mob gets deleted. This is also safe, as mobs are guaranteed to have a unique ref, as per /mob/GenerateTag().
+ */
+GLOBAL_LIST_EMPTY(security_officer_distribution)
 
-/obj/item/radio/headset/headset_sec/alt/department/Initialize(mapload)
+/datum/job/security_officer/after_roundstart_spawn(mob/living/spawning, client/player_client)
 	. = ..()
-	wires = new/datum/wires/radio(src)
-	secure_radio_connections = list()
-	recalculateChannels()
+	if(ishuman(spawning))
+		setup_department(spawning, player_client, move_to = TRUE)
 
-/obj/item/radio/headset/headset_sec/alt/department/engi
-	keyslot = new /obj/item/encryptionkey/headset_sec
-	keyslot2 = new /obj/item/encryptionkey/headset_eng
+/datum/job/security_officer/after_latejoin_spawn(mob/living/spawning)
+	. = ..()
+	if(ishuman(spawning))
+		var/department = setup_department(spawning, spawning.client)
 
-/obj/item/radio/headset/headset_sec/alt/department/supply
-	keyslot = new /obj/item/encryptionkey/headset_sec
-	keyslot2 = new /obj/item/encryptionkey/headset_cargo
+/// Returns the department this mob was assigned to, if any.
+/datum/job/security_officer/proc/setup_department(mob/living/carbon/human/spawning, client/player_client, move_to = FALSE)
+	var/department = player_client?.prefs?.read_preference(/datum/preference/choiced/security_department)
+	if (!isnull(department))
+		department = get_my_department(spawning, department)
 
-/obj/item/radio/headset/headset_sec/alt/department/med
-	keyslot = new /obj/item/encryptionkey/headset_sec
-	keyslot2 = new /obj/item/encryptionkey/headset_med
+		// This should theoretically still run if a player isn't in the distributions, but isn't a late join.
+		GLOB.security_officer_distribution[REF(spawning)] = department
 
-/obj/item/radio/headset/headset_sec/alt/department/sci
-	keyslot = new /obj/item/encryptionkey/headset_sec
+	var/accessory = null
+	var/destination = null
+
+	switch(department)
+		if(SEC_DEPT_ENTRANCE)
+			destination = /area/station/security/ez
+			accessory = /obj/item/clothing/accessory/armband/cargo
+		if(SEC_DEPT_LIGHT)
+			destination = /area/station/security/lcz
+			accessory = /obj/item/clothing/accessory/armband/engine
+
+	if(accessory)
+		var/obj/item/clothing/under/worn_under = spawning.w_uniform
+		worn_under.attach_accessory(new accessory)
+
+	var/spawn_point = pick(LAZYACCESS(GLOB.department_security_spawns, department))
+
+	if(!CONFIG_GET(flag/sec_start_brig) && move_to && (destination || spawn_point))
+		if(spawn_point)
+			spawning.forceMove(get_turf(spawn_point))
+		else
+			var/list/possible_turfs = get_area_turfs(destination)
+			while (length(possible_turfs))
+				var/random_index = rand(1, length(possible_turfs))
+				var/turf/target = possible_turfs[random_index]
+				if (isopenturf(target) && spawning.forceMove(target))
+					break
+				possible_turfs.Cut(random_index, random_index + 1)
+
+	if(player_client)
+		if(department)
+			to_chat(player_client, "<b>You have been assigned to [department]!</b>")
+		else
+			to_chat(player_client, "<b>You have not been assigned to any department. Patrol the halls and help where needed.</b>")
+
+	return department
+
+/datum/job/security_officer/proc/get_my_department(mob/character, preferred_department)
+	var/department = GLOB.security_officer_distribution[REF(character)]
+
+	// This passes when they are a round start security officer.
+	if (department)
+		return department
+
+	return get_new_officer_distribution_from_late_join(
+		preferred_department,
+		shuffle(GLOB.available_depts),
+		GLOB.security_officer_distribution,
+	)
 
 /// Returns the distribution of splitting the given security officers into departments.
 /// Return value is an assoc list of candidate => SEC_DEPT_*.
@@ -119,7 +165,7 @@
 	 * This is the function that is responsible for taking the list of preferences,
 	 * and spitting out what to put them in.
 	 *
-	 * However, it should, wherever possible, prevent solo departments.
+	 * However, it should, wherever possible, prevent solo departments. // BUBBER EDIT: This was patched out, allowing solo departments
 	 * That means that if there's one medical officer, and one engineering officer,
 	 * that they should be put onto the same department (either medical or engineering).
 	 *
@@ -262,6 +308,7 @@
 	return selection
 
 /proc/get_distribution(candidates, departments)
+	/*
 	var/number_of_twos = min(departments, round(candidates / 2))
 	var/redistribute = candidates - (2 * number_of_twos)
 
@@ -269,6 +316,13 @@
 
 	for (var/index in 1 to number_of_twos)
 		distribution[index] = 2
+
+	*/
+	var/distribution_size = min(departments, candidates)
+	var/redistribute = candidates - distribution_size
+	var/distribution[max(1, distribution_size)]
+	for (var/index in 1 to distribution_size)
+		distribution[index] = 1
 
 	for (var/index in 0 to redistribute - 1)
 		distribution[(index % departments) + 1] += 1
@@ -315,9 +369,11 @@
 	for (var/department in amount_in_departments)
 		var/amount = amount_in_departments[department]
 
+		/*
 		if (amount == 1)
 			return department
-		else if (lowest_amount > amount)
+		else*/
+		if (lowest_amount > amount)
 			lowest_departments = list(department)
 			lowest_amount = amount
 		else if (lowest_amount == amount)

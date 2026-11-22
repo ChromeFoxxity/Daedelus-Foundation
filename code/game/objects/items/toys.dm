@@ -1099,7 +1099,7 @@
 	toysound = 'sound/magic/disintegrate.ogg'
 
 /obj/item/toy/figure/rd
-	name = "\improper Research Director action figure"
+	name = "\improper Science Director action figure"
 	icon_state = "rd"
 	toysay = "Blowing all of the borgs!"
 

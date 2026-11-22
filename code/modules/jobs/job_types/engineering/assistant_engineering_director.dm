@@ -8,7 +8,7 @@
 	spawn_positions = 1
 	supervisors = "the Site Director, and Engineering Director"
 	selection_color = "#9e7e4e"
-	minimal_player_age = 7
+	minimal_player_age = 14
 	exp_requirements = 180
 	exp_required_type = EXP_TYPE_CREW
 	exp_required_type_department = EXP_TYPE_ENGINEERING

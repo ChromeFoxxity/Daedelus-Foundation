@@ -68,7 +68,7 @@
 /datum/outfit/job/dclass_test
 	name = "D-Class Test Subject"
 	jobtype = /datum/job/dclass
-	id = /obj/item/card/id/advanced/prisoner
+	id = /obj/item/card/id/advanced/classe
 	uniform = /obj/item/clothing/under/rank/classd
 	shoes = /obj/item/clothing/shoes/sneakers/orange
 	box = /obj/item/storage/box/survival/dclass

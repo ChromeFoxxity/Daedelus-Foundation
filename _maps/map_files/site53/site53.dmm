@@ -16792,10 +16792,10 @@
 /area/site53/lowertrams/janitoroffice)
 "dzJ" = (
 /obj/machinery/requests_console{
-	department = "Research Director";
+	department = "Science Director";
 	departmentType = 5;
 	pixel_x = -32;
-	name = "Research Director Requests Console"
+	name = "Science Director Requests Console"
 	},
 /turf/open/floor/carpet/purple,
 /area/site53/uez/hallway)
@@ -19785,7 +19785,7 @@
 /area/site53/uez/hallway)
 "efi" = (
 /obj/machinery/door/window/brigdoor{
-	name = "Research Director's Office"
+	name = "Science Director's Office"
 	},
 /turf/open/floor/carpet/purple,
 /area/site53/uez/commandpanicbunker)
@@ -29139,7 +29139,7 @@
 	dir = 1
 	},
 /obj/effect/landmark/start{
-	name = "Research Director";
+	name = "Science Director";
 	icon_state = "scirdspawn";
 	icon = 'icons/effects/landmarks.dmi'
 	},
@@ -60749,7 +60749,7 @@
 "mGD" = (
 /obj/structure/table/reinforced,
 /obj/machinery/photocopier/faxmachine{
-	department = "Research Director's Office"
+	department = "Science Director's Office"
 	},
 /turf/open/floor/wood,
 /area/site53/uez/hallway)

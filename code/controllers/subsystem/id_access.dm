@@ -213,7 +213,7 @@ SUBSYSTEM_DEF(id_access)
 			var/list/templates = manager["templates"]
 			templates[trim_path] = trim.assignment
 
-	var/list/centcom_job_trims = typesof(/datum/id_trim/centcom) - typesof(/datum/id_trim/centcom/corpse)
+	var/list/centcom_job_trims = typesof(/datum/id_trim/centcom) - typesof(/datum/id_trim/central/corpse)
 	for(var/trim_path in centcom_job_trims)
 		var/datum/id_trim/trim = trim_singletons_by_path[trim_path]
 		centcom_job_templates[trim_path] = trim.assignment

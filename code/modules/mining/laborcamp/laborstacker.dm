@@ -66,8 +66,8 @@ GLOBAL_LIST(labor_sheet_values)
 	if(isliving(usr))
 		var/mob/living/L = usr
 		I = L.get_idcard(TRUE)
-	if(istype(I, /obj/item/card/id/advanced/prisoner))
-		var/obj/item/card/id/advanced/prisoner/P = I
+	if(istype(I, /obj/item/card/id/advanced/classe))
+		var/obj/item/card/id/advanced/classe/P = I
 		data["id_points"] = P.points
 		if(P.points >= P.goal)
 			can_go_home = TRUE
@@ -96,8 +96,8 @@ GLOBAL_LIST(labor_sheet_values)
 			if(isliving(M))
 				var/mob/living/L = M
 				I = L.get_idcard(TRUE)
-			if(istype(I, /obj/item/card/id/advanced/prisoner))
-				var/obj/item/card/id/advanced/prisoner/P = I
+			if(istype(I, /obj/item/card/id/advanced/classe))
+				var/obj/item/card/id/advanced/classe/P = I
 				P.points += stacking_machine.points
 				stacking_machine.points = 0
 				to_chat(M, span_notice("Points transferred."))
@@ -173,8 +173,8 @@ GLOBAL_LIST(labor_sheet_values)
 
 /obj/machinery/mineral/labor_points_checker/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/card/id))
-		if(istype(I, /obj/item/card/id/advanced/prisoner))
-			var/obj/item/card/id/advanced/prisoner/prisoner_id = I
+		if(istype(I, /obj/item/card/id/advanced/classe))
+			var/obj/item/card/id/advanced/classe/prisoner_id = I
 			to_chat(user, span_notice("<B>ID: [prisoner_id.registered_name]</B>"))
 			to_chat(user, span_notice("Points Collected:[prisoner_id.points]"))
 			to_chat(user, span_notice("Point Quota: [prisoner_id.goal]"))

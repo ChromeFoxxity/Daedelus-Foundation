@@ -13,7 +13,7 @@
 	// Initialize tracking for all Foundation-19 jobs
 	var/list/foundation19_jobs = list(
 		// Command
-		"site_director", "o5_representative", "guard_commander", "research_director", "chief_medical_officer", "chief_engineer",
+		"site_director", "o5_representative", "guard_commander", "science_director", "chief_medical_officer", "chief_engineer",
 		// Security
 		"lcz_zone_commander", "hcz_zone_commander", "ez_zone_commander", "lcz_guard", "hcz_guard", "ez_guard", "warden", "detective", "mtf_commander", "mtf_operative",
 		// Medical

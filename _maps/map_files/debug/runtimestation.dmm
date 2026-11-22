@@ -2225,7 +2225,7 @@
 /turf/open/floor/plating,
 /area/station/science/misc_lab)
 "Iy" = (
-/obj/structure/closet/secure_closet/research_director{
+/obj/structure/closet/secure_closet/science_director{
 	locked = 0
 	},
 /obj/effect/turf_decal/tile/blue,
