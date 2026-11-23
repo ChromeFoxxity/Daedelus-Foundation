@@ -20,7 +20,7 @@
 	initialize_directions = NONE
 	custom_reconcilation = TRUE
 
-	smoothing_flags = SMOOTH_CORNERS | SMOOTH_OBJ
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_OBJ
 	smoothing_groups = SMOOTH_GROUP_GAS_TANK
 	canSmoothWith = SMOOTH_GROUP_GAS_TANK
 	appearance_flags = KEEP_TOGETHER|LONG_GLIDE

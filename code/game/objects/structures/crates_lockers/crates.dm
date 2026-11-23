@@ -118,16 +118,16 @@
 	icon_state = "trashcart"
 	can_install_electronics = FALSE
 
+/obj/structure/closet/crate/trashcart/Moved(atom/old_loc, movement_dir, forced, list/old_locs, momentum_change = TRUE)
+	. = ..()
+	if(!forced && !CHECK_MOVE_LOOP_FLAGS(src, MOVEMENT_LOOP_OUTSIDE_CONTROL) && has_gravity())
+		playsound(src, 'sound/effects/roll.ogg', 100, TRUE)
+
 /obj/structure/closet/crate/trashcart/laundry
 	name = "laundry cart"
 	desc = "A large cart for hauling around large amounts of laundry."
 	icon_state = "laundry"
 	can_weld_shut = FALSE
-
-/obj/structure/closet/crate/trashcart/Initialize(mapload)
-	. = ..()
-	AddElement(/datum/element/swabable, CELL_LINE_TABLE_SLUDGE, CELL_VIRUS_TABLE_GENERIC, rand(2,3), 15)
-	AddElement(/datum/element/noisy_movement)
 
 /obj/structure/closet/crate/trashcart/filled
 
@@ -304,9 +304,6 @@
 /obj/structure/closet/crate/goldcrate/PopulateContents()
 	..()
 	new /obj/item/storage/belt/champion(src)
-
-/obj/structure/closet/crate/goldcrate/populate_contents_immediate()
-	. = ..()
 
 	for(var/i in 1 to 3)
 		new /obj/item/stack/sheet/mineral/gold(src, 1, FALSE)

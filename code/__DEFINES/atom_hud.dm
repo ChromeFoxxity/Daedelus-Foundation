@@ -95,7 +95,7 @@
 #define SECHUD_ECLASS "hudeclass"
 
 #define SECHUD_SITE_DIRECTOR "hudsitedirector"
-#define SECHUD_HUMAN_RESOURCES_DIRECTOR "hudhumanresources"
+#define SECHUD_HUMAN_RESOURCES_OFFICER "hudhumanresources"
 #define SECHUD_ETHICS_COMMITTEE_LIAISON "hudecl"
 #define SECHUD_INTERNAL_TRIBUNAL_DEPARTMENT_OFFICER "huditdo"
 #define SECHUD_INTAKE_SPECIALIST "hudintakespecialist"

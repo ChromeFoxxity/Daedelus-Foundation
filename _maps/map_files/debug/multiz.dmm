@@ -384,7 +384,7 @@
 /area/station/command/bridge)
 "bJ" = (
 /obj/structure/table,
-/obj/item/card/id/advanced/gold/captains_spare,
+/obj/item/card/id/advanced/director_card/captains_spare,
 /turf/open/floor/iron,
 /area/station/command/bridge)
 "bK" = (

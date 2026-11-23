@@ -275,14 +275,18 @@
 
 /obj/structure/girder/displaced
 	name = "displaced girder"
+	icon_state = "displaced"
 	anchored = FALSE
 	girderpasschance = GIRDER_PASSCHANCE_UNANCHORED
+	max_integrity = 120
 
 /obj/structure/girder/reinforced
 	name = "reinforced girder"
+	icon_state = "reinforced"
 	state = GIRDER_REINF
 	reinforced_material = /datum/material/iron
 	girderpasschance = GIRDER_PASSCHANCE_REINFORCED
+	max_integrity = 350
 
 /obj/structure/girder/tram
 	name = "tram girder"

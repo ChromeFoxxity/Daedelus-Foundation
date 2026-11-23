@@ -658,7 +658,7 @@
 /area/shuttle/caravan/freighter1)
 "Fx" = (
 /obj/structure/lattice,
-/obj/structure/fluff/broken_flooring{
+/obj/structure/broken_flooring{
 	icon_state = "singular"
 	},
 /turf/template_noop,

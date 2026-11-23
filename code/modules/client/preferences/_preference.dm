@@ -138,6 +138,10 @@ GLOBAL_LIST_INIT(all_pref_groups, init_all_pref_groups())
 	/// Is this type a sub preference?
 	var/is_sub_preference = FALSE
 
+	/// If this is a character preference, should we update the character preview
+	/// when this preference is updated?
+	var/should_update_preview = TRUE
+
 /// Called on the saved input when retrieving.
 /// Also called by the value sent from the user through UI. Do not trust it.
 /// Input is the value inside the savefile, output is to tell other code
@@ -306,24 +310,19 @@ GLOBAL_LIST_INIT(all_pref_groups, init_all_pref_groups())
 	if (!preference.is_accessible(src))
 		return FALSE
 
-	var/old_value = read_preference(preference.type)
 	var/new_value = preference.deserialize(preference_value, src)
-	var/success = preference.write(null, new_value)
+	var/success = preference.write(null, new_value, src)
 
 	if (!success)
 		return FALSE
-
-	if(old_value != new_value)
-		preference.value_changed(src, new_value, old_value)
 
 	recently_updated_keys |= preference.type
 	value_cache[preference.type] = new_value
 
 	if (preference.savefile_identifier == PREFERENCE_PLAYER)
 		preference.apply_to_client_updated(parent, read_preference(preference.type))
-	else
-		spawn(-1)
-			character_preview_view?.update_body()
+	else if (preference.should_update_preview)
+		character_preview_view?.update_body()
 
 	return TRUE
 

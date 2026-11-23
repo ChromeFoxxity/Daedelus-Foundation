@@ -128,9 +128,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/noticeboard, 32)
 	desc = "Important notices from the Chief Engineer."
 	req_access = list(ACCESS_ENGINEERING_LVL5)
 
-/obj/structure/noticeboard/hos
-	name = "Security Marshal's Notice Board"
-	desc = "Important notices from the Security Marshal."
+/obj/structure/noticeboard/seccap
+	name = "Security Captain's Notice Board"
+	desc = "Important notices from the Security Captain."
 	req_access = list(ACCESS_SECURITY_LVL5)
 
 /obj/structure/noticeboard/cmo

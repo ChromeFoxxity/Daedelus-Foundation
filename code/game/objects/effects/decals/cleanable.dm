@@ -1,13 +1,13 @@
 /obj/effect/decal/cleanable
 	gender = PLURAL
-	layer = ABOVE_NORMAL_TURF_LAYER
-
+	layer = CLEANABLE_FLOOR_OBJECT_LAYER
+	abstract_type = /obj/effect/decal/cleanable
+	flags_1 = UNPAINTABLE_1
 	var/list/random_icon_states = null
-	/// If TRUE, this decal will attempt to merge with other of it's type.
+	/// When two of these are on a same tile or do we need to merge them into just one?
 	var/mergeable_decal = TRUE
-
 	var/beauty = 0
-	///The type of cleaning required to clean the decal. See __DEFINES/cleaning.dm for the options
+	/// The type of cleaning required to clean the decal. See __DEFINES/cleaning.dm for the options
 	var/clean_type = CLEAN_TYPE_LIGHT_DECAL
 	///The reagent this decal holds. Leave blank for none.
 	var/datum/reagent/decal_reagent

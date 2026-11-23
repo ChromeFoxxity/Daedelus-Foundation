@@ -106,7 +106,6 @@ GLOBAL_LIST_EMPTY(station_turfs)
  */
 /turf/Initialize(mapload)
 	SHOULD_CALL_PARENT(FALSE)
-
 	if(initialized)
 		stack_trace("Warning: [src]([type]) initialized multiple times!")
 
@@ -115,26 +114,22 @@ GLOBAL_LIST_EMPTY(station_turfs)
 	if(permit_ao && mapload)
 		queue_ao()
 
-	// by default, vis_contents is inherited from the turf that was here before
-	if(length(vis_contents))
-		cut_viscontents()
+	// by default, vis_contents is inherited from the turf that was here before.
+	// Checking length(vis_contents) in a proc this hot has huge wins for performance.
+	if (length(vis_contents))
+		vis_contents.Cut()
+
 	assemble_baseturfs()
 
-	if(length(contents))
-		levelupdate()
-
-	#ifdef UNIT_TESTS
-	ASSERT_SORTED_SMOOTHING_GROUPS(smoothing_groups)
-	ASSERT_SORTED_SMOOTHING_GROUPS(canSmoothWith)
-	#endif
+	levelupdate()
 
 	SETUP_SMOOTHING()
 
-	QUEUE_SMOOTH(src)
+	if (smoothing_flags & USES_SMOOTHING)
+		QUEUE_SMOOTH(src)
 
-	if (!mapload && length(contents))
-		for(var/atom/movable/AM as anything in src)
-			Entered(AM, null)
+	for(var/atom/movable/content as anything in src)
+		Entered(content, null)
 
 	var/area/our_area = loc
 	if(!our_area.luminosity && always_lit) //Only provide your own lighting if the area doesn't for you
@@ -153,8 +148,6 @@ GLOBAL_LIST_EMPTY(station_turfs)
 	if (length(custom_materials))
 		set_custom_materials(custom_materials)
 
-	if((istype(src, /turf/open/floor) || istype(src, /turf/closed/wall)) && is_station_level(z))
-		GLOB.station_turfs |= src
 	return INITIALIZE_HINT_NORMAL
 
 /turf/Destroy(force)
@@ -707,7 +700,7 @@ GLOBAL_LIST_EMPTY(station_turfs)
 	if(underfloor_accessibility == UNDERFLOOR_HIDDEN)
 		return
 
-	if(locate(/obj/structure/overfloor_catwalk) in src)
+	if(locate(/turf/open/floor/catwalk_floor) in src)
 		underfloor_accessibility = UNDERFLOOR_INTERACTABLE
 
 /turf/proc/is_below_sound_pressure()

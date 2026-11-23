@@ -17,7 +17,7 @@
 	. = ..()
 
 	current_underlay = mutable_appearance(LIGHTING_ICON, (source.lighting_uses_jen ? "wall-jen-[source.smoothing_junction]" : "light"), source.z, LIGHTING_PLANE, 255, RESET_COLOR | RESET_ALPHA | RESET_TRANSFORM)
-	additive_underlay = mutable_appearance(LIGHTING_ICON, (source.lighting_uses_jen ? "wall-jen-[source.smoothing_junction]" : "light"), source.z, LIGHTING_PLANE_ADDITIVE, 255, RESET_COLOR | RESET_ALPHA | RESET_TRANSFORM)
+	additive_underlay = mutable_appearance(LIGHTING_ICON, (source.lighting_uses_jen ? "wall-jen-[source.smoothing_junction]" : "light"), source.z, O_LIGHTING_VISUAL_PLANE, 255, RESET_COLOR | RESET_ALPHA | RESET_TRANSFORM)
 	additive_underlay.blend_mode = BLEND_ADD
 
 	affected_turf = source

@@ -407,8 +407,8 @@
 	name = "\improper Head of Personnel's Office"
 	icon_state = "hop_office"
 
-/area/station/command/heads_quarters/hos
-	name = "\improper Security Marshal's Office"
+/area/station/command/heads_quarters/seccap
+	name = "\improper Security Captain's Office"
 	icon_state = "hos_office"
 	holomap_color = HOLOMAP_AREACOLOR_SECURITY
 

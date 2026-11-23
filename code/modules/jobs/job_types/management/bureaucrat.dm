@@ -36,7 +36,7 @@
 	liver_traits = list(TRAIT_ROYAL_METABOLISM)
 
 	mail_goodies = list(
-		/obj/item/card/id/advanced/silver = 10,
+		/obj/item/card/id/advanced/black_card = 10,
 		/obj/item/stack/sheet/bone = 5
 	)
 

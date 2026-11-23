@@ -204,7 +204,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/storage/secure/safe/sid_spare, 32)
 	atom_storage.locked = TRUE
 
 /obj/item/storage/secure/safe/sid_spare/PopulateContents()
-	new /obj/item/card/id/advanced/gold/captains_spare(src)
+	new /obj/item/card/id/advanced/director_card/spare(src)
 
 /obj/item/storage/secure/safe/sid_spare/rust_heretic_act()
 	take_damage(damage_amount = 100, damage_type = BRUTE, damage_flag = BLUNT, armor_penetration = 100)

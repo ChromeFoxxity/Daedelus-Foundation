@@ -151,17 +151,14 @@
 /obj/effect/decal/cleanable/blood/splatter/over_window // special layer/plane set to appear on windows
 	layer = ABOVE_WINDOW_LAYER
 	plane = GAME_PLANE
-	turf_loc_check = FALSE
+	vis_flags = VIS_INHERIT_PLANE
 	alpha = 180
 
 	blood_merge_into_other = null
 	blood_merge_into_us = null
 
-/obj/effect/decal/cleanable/blood/splatter/over_window/can_merge_into(obj/effect/decal/cleanable/blood/other)
-	if(istype(other, /obj/effect/decal/cleanable/blood/splatter/over_window))
-		return TRUE
-
-	return ..()
+/obj/effect/decal/cleanable/blood/splatter/over_window/NeverShouldHaveComeHere(turf/here_turf)
+	return isgroundlessturf(here_turf)
 
 /obj/effect/decal/cleanable/blood/tracks
 	icon_state = "tracks"
@@ -190,11 +187,10 @@
 	desc = "They look bloody and gruesome."
 	icon = 'icons/effects/blood.dmi'
 	icon_state = "gib1"
-
-	layer = LOW_OBJ_LAYER
+	layer = GIB_LAYER
 	plane = GAME_PLANE
 	random_icon_states = list("gib1", "gib2", "gib3", "gib4", "gib5", "gib6")
-	turf_loc_check = FALSE
+	mergeable_decal = FALSE
 
 	dryname = "rotting gibs"
 	drydesc = "They look bloody and gruesome while some terrible smell fills the air."

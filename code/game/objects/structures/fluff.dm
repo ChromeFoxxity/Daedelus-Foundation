@@ -54,27 +54,93 @@
 	icon = 'icons/obj/lavaland/spawners.dmi'
 	icon_state = "cryostasis_sleeper_open"
 
-/obj/structure/fluff/broken_flooring
+/obj/structure/broken_flooring
 	name = "broken tiling"
 	desc = "A segment of broken flooring."
 	icon = 'icons/obj/brokentiling.dmi'
 	icon_state = "corner"
-	layer = 2.492
+	anchored = TRUE
+	density = FALSE
+	opacity = FALSE
+	plane = FLOOR_PLANE
+	layer = CATWALK_LAYER
 
-/obj/structure/fluff/broken_flooring/corner
+/obj/structure/broken_flooring/Initialize(mapload)
+	. = ..()
+	return INITIALIZE_HINT_LATELOAD
+
+/obj/structure/broken_flooring/crowbar_act(mob/living/user, obj/item/I)
+	I.play_tool_sound(src, 80)
+	balloon_alert(user, "tile reclaimed")
+	new /obj/item/stack/tile/iron(get_turf(src))
+	qdel(src)
+	return ITEM_INTERACT_SUCCESS
+
+/obj/structure/broken_flooring/corner
 	icon_state = "corner"
 
-/obj/structure/fluff/broken_flooring/pile
+/obj/structure/broken_flooring/side
+	icon_state = "side"
+
+/obj/structure/broken_flooring/pile
 	icon_state = "pile"
 
-/obj/structure/fluff/broken_flooring/singular
+/obj/structure/broken_flooring/singular
 	icon_state = "singular"
 
-MAPPING_DIRECTIONAL_HELPERS(/obj/structure/fluff/broken_flooring/corner, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/broken_flooring/corner, 0)
 
-MAPPING_DIRECTIONAL_HELPERS(/obj/structure/fluff/broken_flooring/pile, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/broken_flooring/side, 0)
 
-MAPPING_DIRECTIONAL_HELPERS(/obj/structure/fluff/broken_flooring/singular, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/broken_flooring/pile, 0)
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/broken_flooring/singular, 0)
+
+/obj/structure/broken_flooring/dark
+	icon_state = "dark_corner"
+
+/obj/structure/broken_flooring/dark/corner
+	icon_state = "dark_corner"
+
+/obj/structure/broken_flooring/dark/side
+	icon_state = "dark_side"
+
+/obj/structure/broken_flooring/dark/pile
+	icon_state = "dark_pile"
+
+/obj/structure/broken_flooring/dark/singular
+	icon_state = "dark_singular"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/broken_flooring/dark/corner, 0)
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/broken_flooring/dark/side, 0)
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/broken_flooring/dark/pile, 0)
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/broken_flooring/dark/singular, 0)
+
+/obj/structure/broken_flooring/white
+	icon_state = "white_corner"
+
+/obj/structure/broken_flooring/white/corner
+	icon_state = "white_corner"
+
+/obj/structure/broken_flooring/white/side
+	icon_state = "white_side"
+
+/obj/structure/broken_flooring/white/pile
+	icon_state = "white_pile"
+
+/obj/structure/broken_flooring/white/singular
+	icon_state = "white_singular"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/broken_flooring/white/corner, 0)
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/broken_flooring/white/side, 0)
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/broken_flooring/white/pile, 0)
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/broken_flooring/white/singular, 0)
 
 /obj/structure/fluff/bus
 	name = "bus"

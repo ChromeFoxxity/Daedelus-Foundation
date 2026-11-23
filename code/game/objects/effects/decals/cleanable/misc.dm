@@ -10,6 +10,8 @@
 	desc = "Ashes to ashes, dust to dust, and into space."
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "ash"
+	plane = GAME_PLANE
+	layer = CLEANABLE_OBJECT_LAYER
 	mergeable_decal = FALSE
 	beauty = -50
 	decal_reagent = /datum/reagent/ash
@@ -20,9 +22,8 @@
 	pixel_x = base_pixel_x + rand(-5, 5)
 	pixel_y = base_pixel_y + rand(-5, 5)
 
-/obj/effect/decal/cleanable/ash/crematorium
-//crematoriums need their own ash cause default ash deletes itself if created in an obj
-	turf_loc_check = FALSE
+/obj/effect/decal/cleanable/ash/NeverShouldHaveComeHere(turf/here_turf)
+	return !istype(here_turf, /obj/structure/bodycontainer/crematorium) && ..()
 
 /obj/effect/decal/cleanable/ash/large
 	name = "large pile of ashes"
@@ -62,31 +63,49 @@
 /obj/effect/decal/cleanable/dirt
 	name = "dirt"
 	desc = "Someone should clean that up."
-	icon = 'icons/effects/dirt.dmi'
-	icon_state = "dirt"
+	icon = 'icons/effects/dirt_misc.dmi'
+	icon_state = "dirt-flat-0"
 	base_icon_state = "dirt"
 	smoothing_flags = NONE
 	smoothing_groups = SMOOTH_GROUP_CLEANABLE_DIRT
 	canSmoothWith = SMOOTH_GROUP_CLEANABLE_DIRT + SMOOTH_GROUP_WALLS
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	beauty = -75
+	/// Set to FALSE if your dirt has no smoothing sprites
+	var/is_tileable = TRUE
 
 /obj/effect/decal/cleanable/dirt/Initialize(mapload)
 	. = ..()
-	SETUP_SMOOTHING()
+	if(. == INITIALIZE_HINT_QDEL)
+		return
+	icon_state = pick("dirt-flat-0","dirt-flat-1","dirt-flat-2","dirt-flat-3")
+	var/obj/structure/broken_flooring/broken_flooring = locate(/obj/structure/broken_flooring) in loc
+	if(!isnull(broken_flooring))
+		return
 	var/turf/T = get_turf(src)
-	if(T.tiled_dirt)
+	if(T.tiled_dirt && is_tileable)
+		icon = 'icons/effects/dirt.dmi'
+		icon_state = "dirt-0"
 		smoothing_flags = SMOOTH_BITMASK
 		QUEUE_SMOOTH(src)
+	if(smoothing_flags & USES_SMOOTHING)
 		QUEUE_SMOOTH_NEIGHBORS(src)
 
 /obj/effect/decal/cleanable/dirt/Destroy()
-	QUEUE_SMOOTH_NEIGHBORS(src)
+	if(smoothing_flags & USES_SMOOTHING)
+		QUEUE_SMOOTH_NEIGHBORS(src)
 	return ..()
 
 /obj/effect/decal/cleanable/dirt/dust
 	name = "dust"
 	desc = "A thin layer of dust coating the floor."
+	icon_state = "dust"
+	base_icon_state = "dust"
+	is_tileable = FALSE
+
+/obj/effect/decal/cleanable/dirt/dust/Initialize(mapload)
+	. = ..()
+	icon_state = base_icon_state
 
 /obj/effect/decal/cleanable/greenglow
 	name = "glowing goo"
@@ -268,7 +287,7 @@
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "garbage"
 	plane = GAME_PLANE
-	layer = FLOOR_CLEAN_LAYER //To display the decal over wires.
+	layer = CLEANABLE_OBJECT_LAYER
 	beauty = -150
 	clean_type = CLEAN_TYPE_HARD_DECAL
 

@@ -4,7 +4,7 @@
 	icon_state = "engivend"
 	icon_deny = "engivend-deny"
 	panel_type = "panel10"
-	req_access = list(ACCESS_ENGINEERING_LVL1)
+	req_access = list(ACCESS_ENGINEERING_LVL2)
 	products = list(
 		/obj/item/clothing/glasses/meson/engine = 2,
 		/obj/item/clothing/glasses/welding = 3,

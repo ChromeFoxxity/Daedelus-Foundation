@@ -410,6 +410,12 @@
 	access_list += ACCESS_SECURITY_LVL5
 	return access_list
 
+/obj/effect/mapping_helpers/airlock/access/all/security/security_medic/get_access()
+	var/list/access_list = ..()
+	access_list += ACCESS_SECURITY_LVL2
+	access_list += ACCESS_MEDICAL_LVL1
+	return access_list
+
 // -------------------- Administration Access Helpers
 
 /obj/effect/mapping_helpers/airlock/access/all/admin

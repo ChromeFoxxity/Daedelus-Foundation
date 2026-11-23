@@ -112,7 +112,7 @@
 
 /obj/structure/cable/proc/update_layer()
 	if(is_knotted())
-		layer = WIRE_KNOT_LAYER
+		layer = WIRE_LAYER
 	else
 		layer = WIRE_LAYER
 

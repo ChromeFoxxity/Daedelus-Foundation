@@ -89,6 +89,52 @@
 	name = "\improper EZ Cryogenics"
 	icon_state = "cryo"
 
+/area/station/security/ez
+	name = "\improper EZ Security Department"
+	icon_state = "security"
+
+/area/station/security/ez/lobby
+	name = "\improper EZ Security Lobby"
+
+/area/station/security/ez/office
+	name = "\improper EZ Security Office"
+
+/area/station/security/ez/lockerroom
+	name = "\improper EZ Security Locker Room"
+	icon_state = "securitylockerroom"
+
+/area/station/security/ez/lockerroom/cadet
+	name = "\improper EZ Security Cadet Locker Room"
+
+/area/station/security/ez/medical
+	name = "\improper EZ Security Infirmary"
+	icon_state = "security_medical"
+	ambience_index = AMBIENCE_MEDICAL
+	min_ambience_cooldown = 90 SECONDS
+	max_ambience_cooldown = 180 SECONDS
+
+/area/station/security/ez/sergeant
+	name = "\improper EZ Security Sergeant's Office #1"
+	sound_environment = SOUND_AREA_SMALL_ENCLOSED
+
+/area/station/security/ez/sergeant/two
+	name = "\improper EZ Security Sergeant's Office #2"
+
+/area/station/security/ez/lieutenant
+	name = "\improper EZ Security Lieutenant's Office"
+	icon_state = "warden"
+	sound_environment = SOUND_AREA_SMALL_SOFTFLOOR
+
+/area/station/security/ez/armory
+	name = "\improper EZ Armory"
+	icon_state = "armory"
+
+/area/station/ai_monitored/security/ez_secure_armory
+	name = "\improper EZ Secure Armory"
+	icon_state = "armory"
+	ambience_index = AMBIENCE_DANGER
+	airlock_wires = /datum/wires/airlock/security
+
 /area/station/maintenance/ez
 	name = "Lower EZ Maintenance"
 	icon_state = "lowerezmaint"
@@ -132,12 +178,26 @@
 	icon_state = "lcz_medpost"
 
 /area/station/security/lcz
-	name = "\improper LCZ Security Post"
+	name = "\improper LCZ Security Office"
 	icon_state = "security"
 
 /area/station/security/lcz/checkpoint
 	name = "\improper LCZ Security Checkpoint"
 	icon_state = "checkpoint"
+
+/area/station/security/lcz/medical
+	name = "\improper LCZ Security Infirmary"
+	icon_state = "security_medical"
+	ambience_index = AMBIENCE_MEDICAL
+	min_ambience_cooldown = 90 SECONDS
+	max_ambience_cooldown = 180 SECONDS
+
+/area/station/security/lcz/sergeant
+	name = "\improper LCZ Security Sergeant's Office #1"
+	sound_environment = SOUND_AREA_SMALL_ENCLOSED
+
+/area/station/security/lcz/sergeant/two
+	name = "\improper LCZ Security Sergeant's Office #2"
 
 /area/station/security/lcz/lieutenant
 	name = "\improper LCZ Security Lieutenant's Office"
@@ -321,6 +381,10 @@
 /area/station/maintenance/cdcz/upper
 	name = "CDCZ Upper Maintenance"
 	icon_state = "uppercdczmaint"
+
+/area/station/maintenance/cdcz/upper/security
+	name = "Abandoned CDCZ Security Office"
+	icon_state = "maint_sec"
 
 /area/station/maintenance/cdcz/mining
 	name = "CDCZ Mining Maintenance"

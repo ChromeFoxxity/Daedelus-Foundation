@@ -224,7 +224,7 @@
 	belt = /obj/item/storage/belt/security/full
 	l_pocket = /obj/item/flashlight/seclite
 	r_pocket = /obj/item/knife/combat
-	id = /obj/item/card/id/advanced/gold
+	id = /obj/item/card/id/advanced/black_card
 
 /datum/antagonist/scp_mtf
 	name = "MTF Operative"

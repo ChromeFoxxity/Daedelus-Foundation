@@ -1,7 +1,3 @@
-/obj/effect/turf_decal/stripes
-	layer = TURF_DECAL_HIGH_LAYER
-	decal_layer = TURF_DECAL_HIGH_LAYER
-
 /obj/effect/turf_decal/stripes/line
 	icon_state = "warningline"
 

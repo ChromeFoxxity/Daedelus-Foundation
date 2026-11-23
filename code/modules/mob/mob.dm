@@ -1334,7 +1334,7 @@
 		var/atom/movable/screen/plane_master/lighting/L = hud_used.plane_masters["[LIGHTING_PLANE]"]
 		if (L)
 			L.alpha = lighting_alpha
-		var/atom/movable/screen/plane_master/additive_lighting/LA = hud_used.plane_masters["[LIGHTING_PLANE_ADDITIVE]"]
+		var/atom/movable/screen/plane_master/additive_lighting/LA = hud_used.plane_masters["[O_LIGHTING_VISUAL_PLANE]"]
 		if(LA)
 			//If this ever doesn't work for some reason add update_sight() to /mob/living/Login()
 			if(client && !client.prefs.read_preference(/datum/preference/toggle/bloom))

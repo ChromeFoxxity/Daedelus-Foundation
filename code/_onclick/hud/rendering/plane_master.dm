@@ -103,11 +103,11 @@
 /atom/movable/screen/plane_master/lighting/Initialize(mapload)
 	. = ..()
 	add_filter("emissives", 1, alpha_mask_filter(render_source = EMISSIVE_RENDER_TARGET, flags = MASK_INVERSE))
-	add_filter("object_lighting", 2, alpha_mask_filter(render_source = O_LIGHTING_VISUAL_RENDER_TARGET, flags = MASK_INVERSE))
+	add_filter("object_lighting", 2, alpha_mask_filter(render_source = ABOVE_LIGHTING_PLANE, flags = MASK_INVERSE))
 
 /atom/movable/screen/plane_master/additive_lighting
 	name = "additive lighting plane master"
-	plane = LIGHTING_PLANE_ADDITIVE
+	plane = LIGHTING_PLANE
 	blend_mode_override = BLEND_ADD
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
@@ -162,7 +162,7 @@
 /atom/movable/screen/plane_master/o_light_visual
 	name = "overlight light visual plane master"
 	plane = O_LIGHTING_VISUAL_PLANE
-	render_target = O_LIGHTING_VISUAL_RENDER_TARGET
+	render_target = "O_LIGHT_VISUAL_PLANE"
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	blend_mode = BLEND_MULTIPLY
 	blend_mode_override = BLEND_MULTIPLY

@@ -44,7 +44,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/holomap, 32)
 
 	var/image/floor_image = image(icon, "station_map_floor")
 	floor_image.plane = FLOOR_PLANE
-	floor_image.layer = TURF_DECAL_HIGH_LAYER
+	floor_image.layer = CULT_OVERLAY_LAYER
 	switch(dir)
 		if(NORTH)
 			floor_image.pixel_y = -32

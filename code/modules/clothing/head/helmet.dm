@@ -484,7 +484,7 @@
 	playsound(src, SFX_SPARKS, 100, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 	visible_message(span_warning("[src] fizzles and breaks apart!"))
 	magnification = null
-	new /obj/effect/decal/cleanable/ash/crematorium(drop_location()) //just in case they're in a locker or other containers it needs to use crematorium ash, see the path itself for an explanation
+	new /obj/effect/decal/cleanable/ash(drop_location()) //just in case they're in a locker or other containers it needs to use crematorium ash, see the path itself for an explanation
 
 /obj/item/clothing/head/helmet/monkey_sentience/unequipped(mob/user)
 	. = ..()
@@ -519,6 +519,16 @@
 	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
 	dog_fashion = null
 	supports_variations_flags = CLOTHING_TESHARI_VARIATION | CLOTHING_VOX_VARIATION
+
+/obj/item/clothing/head/helmet/security/old
+	name = "degrading security helmet"
+	desc = "A reinforced security helmet featuring a distinctive yellow polycarbonate visor. Its heavy composite plating provides \
+		protection against blunt trauma, thrown objects, and close-quarters assaults. Designed for riot suppression, crowd control, and \
+		intervention during violent site disturbances. Due to degradation the helmet's visor obstructs the users ability to see long distances. \
+		You can no longer raise the visor either, as rust makes it impossible without possibly breaking it, the visor itself is cracked."
+	icon_state = "guard_old_helmet"
+	tint = 2
+	actions_types = list()
 
 /obj/item/clothing/head/helmet/security/medic
 	name = "\improper security medic helmet"

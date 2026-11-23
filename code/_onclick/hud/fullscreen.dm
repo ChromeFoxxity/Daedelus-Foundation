@@ -225,7 +225,7 @@
 /atom/movable/screen/fullscreen/dither
 	icon = 'goon/icons/hud/dither.dmi'
 	icon_state = "dither"
-	layer = DITHER_LAYER
+	plane = HUD_PLANE
 	show_when_dead = TRUE
 	screen_loc = "WEST,SOUTH to EAST,NORTH"
 

@@ -58047,7 +58047,7 @@
 /turf/open/floor/iron/showroomfloor,
 /area/station/science/storage)
 "paf" = (
-/obj/structure/fluff/broken_flooring{
+/obj/structure/broken_flooring{
 	icon_state = "plating"
 	},
 /turf/closed/mineral/random/labormineral,

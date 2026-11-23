@@ -411,7 +411,7 @@
 	if(QDELETED(src) || !fulltile)
 		return
 
-	if((updates & UPDATE_SMOOTHING) && (smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK)))
+	if((updates & UPDATE_SMOOTHING) && (smoothing_flags & USES_SMOOTHING))
 		QUEUE_SMOOTH(src)
 
 	var/ratio = atom_integrity / max_integrity
@@ -545,6 +545,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/window/reinforced/spawner, 0)
 		. += new /obj/item/shard/plasma(location)
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/structure/window/plasma/spawner, 0)
+
+/obj/structure/window/plasma/unanchored
+	anchored = FALSE
 
 /obj/structure/window/reinforced/plasma
 	name = "reinforced plasma window"

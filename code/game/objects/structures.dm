@@ -1,7 +1,7 @@
 /// Inert structures, such as girders, machine frames, and crates/lockers.
 /obj/structure
 	icon = 'icons/obj/structures.dmi'
-	//pressure_resistance = 8
+	abstract_type = /obj/structure
 	max_integrity = 300
 	interaction_flags_atom = INTERACT_ATOM_ATTACK_HAND | INTERACT_ATOM_UI_INTERACT
 	layer = BELOW_OBJ_LAYER
@@ -9,28 +9,18 @@
 	receive_ricochet_chance_mod = 0.6
 	pass_flags_self = PASSSTRUCTURE
 	blocks_emissive = EMISSIVE_BLOCK_GENERIC
+	armor = list(BLUNT = 0, PUNCTURE = 0, SLASH = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 50, ACID = 50)
 	var/broken = FALSE
 
 /obj/structure/Initialize(mapload)
 	. = ..()
-
-	#ifdef UNIT_TESTS
-	ASSERT_SORTED_SMOOTHING_GROUPS(smoothing_groups)
-	ASSERT_SORTED_SMOOTHING_GROUPS(canSmoothWith)
-	#endif
-
-	SETUP_SMOOTHING()
-	if(!isnull(smoothing_flags))
+	if(smoothing_flags & USES_SMOOTHING)
 		QUEUE_SMOOTH(src)
 		QUEUE_SMOOTH_NEIGHBORS(src)
-		if(smoothing_flags & SMOOTH_CORNERS)
-			icon_state = ""
 
-	GLOB.cameranet.updateVisibility(src)
-
-/obj/structure/Destroy()
-	GLOB.cameranet.updateVisibility(src)
-	QUEUE_SMOOTH_NEIGHBORS(src)
+/obj/structure/Destroy(force)
+	if(smoothing_flags & USES_SMOOTHING)
+		QUEUE_SMOOTH_NEIGHBORS(src)
 	return ..()
 
 /obj/structure/ui_act(action, params)

@@ -19,9 +19,6 @@
 		"Default" = list(
 			SPECIES_HUMAN = /datum/outfit/job/logistics_technician,
 		),
-		"Shaft Miner" = list(
-			SPECIES_HUMAN = /datum/outfit/job/miner,
-		),
 	)
 
 	paycheck = PAYCHECK_EASY

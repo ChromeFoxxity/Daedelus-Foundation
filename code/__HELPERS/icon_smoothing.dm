@@ -100,18 +100,17 @@
 
 ///do not use, use QUEUE_SMOOTH(atom)
 /atom/proc/smooth_icon()
+	if(QDELETED(src))
+		return
 	smoothing_flags &= ~SMOOTH_QUEUED
 	flags_1 |= HTML_USE_INITAL_ICON_1
-	if (z == 0) //If something's loc is not a turf, it's Z value is 0. Skip!
-		return
-	if(smoothing_flags & SMOOTH_CORNERS)
-		corners_cardinal_smooth(calculate_adjacencies())
-	else if(smoothing_flags & SMOOTH_BITMASK)
+	if (!z)
+		CRASH("[type] called smooth_icon() without being on a z-level")
+	if(smoothing_flags & (SMOOTH_BITMASK|SMOOTH_BITMASK_CARDINALS))
 		bitmask_smooth()
 	else
 		CRASH("smooth_icon called for [src] with smoothing_flags == [smoothing_flags]")
 	SEND_SIGNAL(src, COMSIG_ATOM_SMOOTHED_ICON)
-	update_appearance(~UPDATE_SMOOTHING)
 
 /atom/proc/corners_cardinal_smooth(adjacencies)
 	var/mutable_appearance/temp_ma
@@ -416,7 +415,7 @@
 	name = "smooth wall"
 	icon = 'icons/turf/smooth_wall.dmi'
 	icon_state = "smooth"
-	smoothing_flags = SMOOTH_CORNERS|SMOOTH_BORDER
+	smoothing_flags = SMOOTH_BITMASK|SMOOTH_DIAGONAL_CORNERS|SMOOTH_BORDER
 	smoothing_groups = null
 	canSmoothWith = null
 

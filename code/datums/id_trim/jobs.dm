@@ -973,7 +973,7 @@
 	assignment = JOB_HUMAN_RESOURCES_OFFICER
 	intern_alt_name = "Junior Human Resources Officer"
 	trim_state = "silver_level5"
-	sechud_icon_state = SECHUD_HUMAN_RESOURCES_DIRECTOR
+	sechud_icon_state = SECHUD_HUMAN_RESOURCES_OFFICER
 	minimal_access = list(
 		ACCESS_ADMIN_LVL1,
 		ACCESS_ADMIN_LVL2,

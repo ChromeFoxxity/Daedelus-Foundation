@@ -163,7 +163,7 @@
 /datum/outfit/pirate/silverscale
 	name = "Silver Scale Member"
 
-	id = /obj/item/card/id/advanced/silver
+	id = /obj/item/card/id/advanced/black_card
 	id_trim = /datum/id_trim/pirate/silverscale
 	uniform = /obj/item/clothing/under/syndicate/sniper
 	suit = /obj/item/clothing/suit/armor/vest
@@ -183,7 +183,7 @@
 /datum/outfit/tunnel_clown
 	name = "Tunnel Clown"
 
-	id = /obj/item/card/id/advanced/gold
+	id = /obj/item/card/id/advanced/director_card
 	id_trim = /datum/id_trim/tunnel_clown
 	uniform = /obj/item/clothing/under/rank/civilian/clown
 	suit = /obj/item/clothing/suit/hooded/chaplain_hoodie

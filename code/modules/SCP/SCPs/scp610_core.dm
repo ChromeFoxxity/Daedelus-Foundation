@@ -684,7 +684,7 @@ SUBSYSTEM_DEF(scp610)
 	desc = "A creeping mass of flesh and sinew. It pulses with unnatural life."
 	icon = 'icons/scp/newscp610/flesh_tile.dmi'
 	icon_state = "flesh_tile-0"
-	layer = TURF_LAYER
+	layer = ABOVE_NORMAL_TURF_LAYER
 	plane = GAME_PLANE
 	density = FALSE
 	anchored = TRUE

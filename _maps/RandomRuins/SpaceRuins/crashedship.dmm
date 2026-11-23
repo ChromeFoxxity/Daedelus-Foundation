@@ -125,7 +125,7 @@
 /obj/machinery/porta_turret{
 	dir = 8;
 	installation = /obj/item/gun/energy/lasercannon;
-	
+
 	},
 /obj/effect/mapping_helpers/atom_injector/obj_flag{
 	inject_flags = 1;
@@ -284,7 +284,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible/layer2,
 /obj/item/gps/spaceruin,
-/obj/structure/overfloor_catwalk,
+/turf/open/floor/catwalk_floor,
 /turf/open/floor/plating,
 /area/awaymission/bmpship/aft)
 "mP" = (
@@ -680,7 +680,7 @@
 "zA" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible/layer2,
-/obj/structure/overfloor_catwalk,
+/turf/open/floor/catwalk_floor,
 /turf/open/floor/plating,
 /area/awaymission/bmpship/aft)
 "zC" = (
@@ -1370,7 +1370,7 @@
 /obj/machinery/porta_turret{
 	dir = 8;
 	installation = /obj/item/gun/energy/lasercannon;
-	
+
 	},
 /obj/effect/mapping_helpers/atom_injector/obj_flag{
 	inject_flags = 1;

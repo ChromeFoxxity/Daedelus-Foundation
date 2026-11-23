@@ -422,6 +422,14 @@
 	equip_delay_other = 40
 	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION | CLOTHING_TESHARI_VARIATION | CLOTHING_VOX_VARIATION
 
+/obj/item/clothing/suit/armor/vest/security/old
+	name = "degrading security armored vest"
+	desc = "A heavy Foundation-issued security vest fitted with reinforced trauma plating and thick ballistic padding, designed primarily to \
+		absorb blunt-force impacts during containment breaches. A bold \"SECURITY DEPARTMENT\" identifier is stitched across the front carrier, \
+		marking the wearer as on-site security personnel. Due to degredation over time, the vest's material lost it's manueverability, making it \
+		really uncomfortable and hard to move in, it's extremely unreliable, and looks pretty worn."
+	slowdown = 1.15
+
 /obj/item/clothing/suit/armor/vest/security/medical
 	name = "\improper security medic armored vest"
 	desc = "A heavy Foundation-issued medic's security vest fitted with reinforced trauma plating and thick ballistic padding with added energy resistance, \

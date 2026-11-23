@@ -1,29 +1,44 @@
 /* smoothing_flags */
-/// Smoothing system in where adjacencies are calculated and used to build an image by mounting each corner at runtime.
-#define SMOOTH_CORNERS (1<<0)
 /// Smoothing system in where adjacencies are calculated and used to select a pre-baked icon_state, encoded by bitmasking.
-#define SMOOTH_BITMASK (1<<1)
+#define SMOOTH_BITMASK (1<<0)
+/// Limits SMOOTH_BITMASK to only cardinal directions, for use with cardinal smoothing
+#define SMOOTH_BITMASK_CARDINALS (1<<1)
+/// Atom has diagonal corners, with underlays under them.
+#define SMOOTH_DIAGONAL_CORNERS (1<<2)
 /// Atom will smooth with the borders of the map.
-#define SMOOTH_BORDER (1<<2)
+#define SMOOTH_BORDER (1<<3)
 /// Atom is currently queued to smooth.
-#define SMOOTH_QUEUED (1<<3)
+#define SMOOTH_QUEUED (1<<4)
 /// Smooths with objects, and will thus need to scan turfs for contents.
-#define SMOOTH_OBJ (1<<4)
+#define SMOOTH_OBJ (1<<5)
+/// Uses directional object smoothing, so we care not only about something being on the right turf, but also its direction
+/// Changes the meaning of smoothing_junction, instead of representing the directions we are smoothing in
+/// it represents the sides of our directional border object that have a neighbor
+/// Is incompatible with SMOOTH_DIAGONAL_CORNERS because border objects don't have corners
+#define SMOOTH_BORDER_OBJECT (1<<6)
+/// Atom overrides smoothing_allowed() to on a more granular level filter out connections
+#define SMOOTH_PROC_FILTER (1<<7)
+
+#define USES_SMOOTHING (SMOOTH_BITMASK|SMOOTH_BITMASK_CARDINALS)
 
 DEFINE_BITFIELD(smoothing_flags, list(
-	"SMOOTH_CORNERS" = SMOOTH_CORNERS,
 	"SMOOTH_BITMASK" = SMOOTH_BITMASK,
+	"SMOOTH_BITMASK_CARDINALS" = SMOOTH_BITMASK_CARDINALS,
+	"SMOOTH_DIAGONAL_CORNERS" = SMOOTH_DIAGONAL_CORNERS,
 	"SMOOTH_BORDER" = SMOOTH_BORDER,
 	"SMOOTH_QUEUED" = SMOOTH_QUEUED,
 	"SMOOTH_OBJ" = SMOOTH_OBJ,
+	"SMOOTH_BORDER_OBJECT" = SMOOTH_BORDER_OBJECT,
 ))
 
+#define CARDINAL_SMOOTHING_JUNCTIONS (NORTH_JUNCTION|SOUTH_JUNCTION|EAST_JUNCTION|WEST_JUNCTION)
+#define ALL_SMOOTHING_JUNCTIONS (NORTH_JUNCTION|SOUTH_JUNCTION|EAST_JUNCTION|WEST_JUNCTION|NORTHEAST_JUNCTION|SOUTHEAST_JUNCTION|SOUTHWEST_JUNCTION|NORTHWEST_JUNCTION)
 
 /*smoothing macros*/
 
-#define QUEUE_SMOOTH(thing_to_queue) if(thing_to_queue.smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK)) {SSicon_smooth.add_to_queue(thing_to_queue)}
+#define QUEUE_SMOOTH(thing_to_queue) if(thing_to_queue.smoothing_flags & USES_SMOOTHING) {SSicon_smooth.add_to_queue(thing_to_queue)}
 
-#define QUEUE_SMOOTH_NEIGHBORS(thing_to_queue) for(var/atom/neighbor as anything in orange(1, thing_to_queue)) {QUEUE_SMOOTH(neighbor)}
+#define QUEUE_SMOOTH_NEIGHBORS(thing_to_queue) for(var/atom/atom_neighbor as anything in orange(1, thing_to_queue)) {QUEUE_SMOOTH(atom_neighbor)}
 
 
 /**SMOOTHING GROUPS
@@ -153,17 +168,28 @@ DEFINE_BITFIELD(smoothing_flags, list(
 /// Performs the work to set smoothing_groups and canSmoothWith.
 /// An inlined function used in both turf/Initialize and atom/Initialize.
 #define SETUP_SMOOTHING(...) \
-	if (istext(smoothing_groups)) { \
-		SET_SMOOTHING_GROUPS(smoothing_groups); \
+	if (smoothing_groups) { \
+		PARSE_SMOOTHING_GROUPS(smoothing_groups, smoothing_groups); \
 	} \
-\
-	if (istext(canSmoothWith)) { \
-		/* S_OBJ is always negative, and we are guaranteed to be sorted. */ \
-		if (canSmoothWith[1] == "-") { \
-			smoothing_flags |= SMOOTH_OBJ; \
-		} \
-		SET_SMOOTHING_GROUPS(canSmoothWith); \
+	if (canSmoothWith) { \
+		PARSE_CAN_SMOOTH_WITH(canSmoothWith, canSmoothWith, smoothing_flags); \
 	}
+
+#define PARSE_SMOOTHING_GROUPS(parse_from, set_into) \
+	if (PERFORM_ALL_TESTS(focus_only/sorted_smoothing_groups)) { \
+		ASSERT_SORTED_SMOOTHING_GROUPS(smoothing_groups); \
+	} \
+	SET_SMOOTHING_GROUPS(parse_from, set_into);
+
+#define PARSE_CAN_SMOOTH_WITH(parse_from, set_into, set_flags_into) \
+	if (PERFORM_ALL_TESTS(focus_only/sorted_smoothing_groups)) { \
+		ASSERT_SORTED_SMOOTHING_GROUPS(canSmoothWith); \
+	} \
+	/* S_OBJ is always negative, and we are guaranteed to be sorted. */ \
+	if (canSmoothWith[1] == "-") { \
+		set_flags_into |= SMOOTH_OBJ; \
+	} \
+	SET_SMOOTHING_GROUPS(parse_from, set_into);
 
 /// Given a smoothing groups variable, will set out to the actual numbers inside it
 #define UNWRAP_SMOOTHING_GROUPS(smoothing_groups, out) \

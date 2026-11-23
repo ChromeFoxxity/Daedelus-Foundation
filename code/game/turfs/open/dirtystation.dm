@@ -98,7 +98,7 @@
 	var/static/list/gib_covered_areas = typecacheof(list(
 		/area/station/ai_monitored/turret_protected,
 		/area/station/security,
-		/area/station/command/heads_quarters/hos,
+		/area/station/command/heads_quarters/seccap,
 	))
 	if(is_type_in_typecache(A, gib_covered_areas))
 		if(prob(20))

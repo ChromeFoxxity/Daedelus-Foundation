@@ -86,13 +86,13 @@
 			else
 				balloon_alert(user, "too damaged, use a welding or plating repair tool!")
 
-	else if(istype(C, /obj/item/stack/overfloor_catwalk))
+	else if(istype(C, /obj/item/stack/tile/catwalk_tile))
 		if(!broken && !burnt)
 			for(var/obj/O in src)
 				for(var/M in O.buckled_mobs)
 					to_chat(user, span_warning("Someone is buckled to \the [O]! Unbuckle [M] to move \him out of the way."))
 					return
-			var/obj/item/stack/overfloor_catwalk/tile = C
+			var/obj/item/stack/tile/catwalk_tile/tile = C
 			tile.place_tile(src, user)
 		else
 			if(!iscyborg(user))

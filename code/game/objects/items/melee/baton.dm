@@ -697,3 +697,32 @@
 	inhand_icon_state = "security_baton"
 	worn_icon_state = "security_baton"
 	knockdown_time = (8 SECONDS)
+
+/obj/item/melee/baton/foundation/old
+	name = "heavily worn PR-24 Baton"
+	desc = "A black, reinforced side-handle baton issued to Foundation Security personnel. Its perpendicular \
+		grip provides additional leverage and control during close-quarters engagements. This one looks really old, \
+		and the paint job is scratched and worn. It looks extremely fragile. Left click to stun, right click to harm."
+	knockdown_time = (4 SECONDS)
+	var/break_chance = 10 //Likely hood of breaking the baton.
+
+/obj/item/melee/baton/foundation/old/proc/smash(mob/living/user)
+	var/stack_type = /obj/item/stack/sheet/iron
+	if(!stack_type)
+		return
+	var/remaining_mats = 100
+	remaining_mats--
+	if(remaining_mats)
+		for(var/M=1 to remaining_mats)
+			new stack_type(get_turf(loc))
+	else if(custom_materials[GET_MATERIAL_REF(/datum/material/iron)])
+		new /obj/item/stack/rods(get_turf(loc), 2)
+	qdel(src)
+
+/obj/item/melee/baton/foundation/old/afterattack(atom/target, mob/living/carbon/user, proximity)
+	. = ..()
+	if(!proximity)
+		return
+	if(prob(break_chance))
+		user.visible_message(span_danger("[user] smashes \the [src] to pieces against \the [target]"))
+		smash(user)

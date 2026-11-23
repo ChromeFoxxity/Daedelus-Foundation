@@ -417,27 +417,17 @@
 	desc = "A standard paper cup, it looks oddly durable.."
 	icon = 'icons/scp/scp294.dmi'
 	icon_state = "294_cup_e"
+	fill_icon_state = "294_cup"
+	fill_icon_thresholds = list(0)
 	possible_transfer_amounts = list(30)
 	volume = 30
 	spillable = TRUE
 	isGlass = FALSE
 	armor = list(BLUNT = 0, PUNCTURE = 0, SLASH = 0, LASER = 00, ENERGY = 5, BOMB = 80, BIO = 100, FIRE = 100, ACID = 100)
 
-/obj/item/reagent_containers/food/drinks/sillycup/scp294/update_icon_state()
+/obj/item/reagent_containers/food/drinks/sillycup/scp294/Initialize(mapload)
 	. = ..()
-
-	if(reagents?.total_volume)
-		icon_state = "294_cup"
-	else
-		icon_state = "294_cup_e"
-
-/obj/item/reagent_containers/food/drinks/sillycup/scp294/update_overlays()
-	. = ..()
-
-	if(reagents?.total_volume)
-		var/mutable_appearance/reagent_overlay = mutable_appearance(icon, "294_reagent")
-		reagent_overlay.color = reagents.get_color()
-		. += reagent_overlay
+	update_appearance()
 
 /obj/item/reagent_containers/food/drinks/sillycup/scp294/on_reagent_change(changetype)
 	. = ..()

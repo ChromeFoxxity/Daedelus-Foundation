@@ -149,6 +149,13 @@
 	collar_type = "bullterrier"
 	held_state = "bullterrier"
 
+/mob/living/simple_animal/pet/dog/bullterrier/breach
+	name = "Breach"
+	desc = "A stocky, energetic bull terrier with a stubborn streak and an unmistakable fondness for the Security Captain. \
+		Despite his intimidating appearance, he's a loyal and surprisingly affectionate companion."
+	gold_core_spawnable = NO_SPAWN
+	unique_pet = TRUE
+
 /mob/living/simple_animal/pet/dog/corgi/exoticcorgi
 	name = "Exotic Corgi"
 	desc = "As cute as they are colorful!"

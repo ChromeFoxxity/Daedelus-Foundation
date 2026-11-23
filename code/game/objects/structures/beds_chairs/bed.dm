@@ -210,6 +210,10 @@
 	desc = "McGriff's bed, because even crimefighters sometimes need a nap."
 	name = "McGriff's bed"
 
+/obj/structure/bed/dogbed/breach
+	name = "Breach's bed"
+	desc = "Breach's bed, it looks slightly torn, and gnawed on."
+
 /obj/structure/bed/dogbed/runtime
 	desc = "A comfy-looking cat bed. You can even strap your pet in, in case the gravity turns off."
 	name = "Runtime's bed"

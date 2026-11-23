@@ -1764,45 +1764,6 @@
 /obj/machinery/door/unpowered/simple/wood
 	name = "Simple Wood"
 
-/obj/machinery/door/window/brigdoor/eastleft
-	name = "Eastleft"
-
-/obj/machinery/door/window/brigdoor/eastright
-	name = "Eastright"
-
-/obj/machinery/door/window/brigdoor/northleft
-	name = "Northleft"
-
-/obj/machinery/door/window/brigdoor/northright
-	name = "Northright"
-
-/obj/machinery/door/window/brigdoor/southleft
-	name = "Southleft"
-
-/obj/machinery/door/window/brigdoor/southright
-	name = "Southright"
-
-/obj/machinery/door/window/brigdoor/westleft
-	name = "Westleft"
-
-/obj/machinery/door/window/northleft
-	name = "Northleft"
-
-/obj/machinery/door/window/northright
-	name = "Northright"
-
-/obj/machinery/door/window/southleft
-	name = "Southleft"
-
-/obj/machinery/door/window/southright
-	name = "Southright"
-
-/obj/machinery/door/window/westleft
-	name = "Westleft"
-
-/obj/machinery/door/window/westright
-	name = "Westright"
-
 /obj/machinery/light/small/emergency
 	name = "Emergency"
 

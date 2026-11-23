@@ -359,7 +359,7 @@ GLOBAL_LIST_INIT(hallucination_list_water_related, list(
 		return INITIALIZE_HINT_QDEL
 	feedback_details += "Source: [wall.x],[wall.y],[wall.z]"
 
-	fakebroken = image('icons/turf/floors.dmi', wall, "plating", layer = TURF_LAYER)
+	fakebroken = image('icons/turf/floors.dmi', wall, "plating", layer = LOW_FLOOR_LAYER)
 	landing = get_turf(target)
 	var/turf/landing_image_turf = get_step(landing, SOUTHWEST) //the icon is 3x3
 	fakerune = image('icons/effects/96x96.dmi', landing_image_turf, "landing", layer = ABOVE_OPEN_TURF_LAYER)
@@ -1362,7 +1362,7 @@ GLOBAL_LIST_INIT(hallucination_list_water_related, list(
 
 /obj/effect/hallucination/danger/lava/show_icon()
 	var/turf/danger_turf = get_turf(src)
-	image = image('icons/turf/floors/lava.dmi', src, "lava-[danger_turf.smoothing_junction || 0]", TURF_LAYER)
+	image = image('icons/turf/floors/lava.dmi', src, "lava-[danger_turf.smoothing_junction || 0]", LOW_FLOOR_LAYER)
 	if(target.client)
 		target.client.images += image
 
@@ -1386,7 +1386,7 @@ GLOBAL_LIST_INIT(hallucination_list_water_related, list(
 
 /obj/effect/hallucination/danger/chasm/show_icon()
 	var/turf/danger_turf = get_turf(src)
-	image = image('icons/turf/floors/chasms.dmi', src, "chasms-[danger_turf.smoothing_junction || 0]", TURF_LAYER)
+	image = image('icons/turf/floors/chasms.dmi', src, "chasms-[danger_turf.smoothing_junction || 0]", LOW_FLOOR_LAYER)
 	if(target.client)
 		target.client.images += image
 
@@ -1604,15 +1604,15 @@ GLOBAL_LIST_INIT(hallucination_list_water_related, list(
 		var/turf/open/floor/husk_point = pick(possible_points)
 		switch(rand(1,4))
 			if(1)
-				var/image/body = image('icons/mob/human.dmi',husk_point,"husk",TURF_LAYER)
+				var/image/body = image('icons/mob/human.dmi',husk_point,"husk",LOW_FLOOR_LAYER)
 				var/matrix/M = matrix()
 				M.Turn(90)
 				body.transform = M
 				halbody = body
 			if(2,3)
-				halbody = image('icons/mob/human.dmi',husk_point,"husk",TURF_LAYER)
+				halbody = image('icons/mob/human.dmi',husk_point,"husk",LOW_FLOOR_LAYER)
 			if(4)
-				halbody = image('icons/mob/alien.dmi',husk_point,"alienother",TURF_LAYER)
+				halbody = image('icons/mob/alien.dmi',husk_point,"alienother",LOW_FLOOR_LAYER)
 
 		if(target.client)
 			target.client.images += halbody

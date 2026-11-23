@@ -192,19 +192,19 @@
 	update_armrest()
 
 /obj/structure/chair/comfy/brown
-	color = "#4d3118"
+	color = "#462f1c"
 
 /obj/structure/chair/comfy/beige
-	color = "#b1945f"
+	color = "#f0eec6"
 
 /obj/structure/chair/comfy/teal
-	color = "#3cbebe"
+	color = "#75d6d6"
 
 /obj/structure/chair/comfy/black
-	color = "#38383a"
+	color = "#3d3c38"
 
 /obj/structure/chair/comfy/lime
-	color = "#49ca4f"
+	color = "#c1f868"
 
 /obj/structure/chair/comfy/shuttle
 	name = "shuttle seat"
@@ -227,11 +227,12 @@
 	buildstacktype = /obj/item/stack/sheet/animalhide/carp
 
 /obj/structure/chair/office
+	name = "swivel chair"
+	desc = "The most joyful type of chair, always best paired with a fire extinguisher when your boss isn't looking! Wheee!"
 	anchored = FALSE
 	buildstackamount = 5
 	item_chair = null
 	icon_state = "officechair_dark"
-
 
 /obj/structure/chair/office/Moved(atom/old_loc, movement_dir, forced, list/old_locs, momentum_change = TRUE)
 	. = ..()
@@ -248,6 +249,55 @@
 
 /obj/structure/chair/office/light
 	icon_state = "officechair_white"
+
+/obj/structure/chair/office/comfy
+	name = "comfy swivel chair"
+	desc = "The most joyful type of chair, always best paired with a fire extinguisher when your boss isn't looking! Wheee! This one is extra comfy!"
+	icon_state = "comfy_officechair_dark"
+	resistance_flags = FLAMMABLE
+	buildstackamount = 6
+	// The mutable appearance used for the overlay over buckled mobs.
+	var/mutable_appearance/armrest
+
+/obj/structure/chair/office/comfy/Initialize(mapload)
+	armrest = GetArmrest()
+	armrest.layer = ABOVE_MOB_LAYER
+	armrest.plane = GAME_PLANE
+	return ..()
+
+/obj/structure/chair/office/comfy/proc/GetArmrest()
+	return mutable_appearance(icon, "[icon_state]_armrest")
+
+/obj/structure/chair/office/comfy/Destroy()
+	QDEL_NULL(armrest)
+	return ..()
+
+/obj/structure/chair/office/comfy/post_buckle_mob(mob/living/M)
+	. = ..()
+	update_armrest()
+
+/obj/structure/chair/office/comfy/proc/update_armrest()
+	if(has_buckled_mobs())
+		add_overlay(armrest)
+	else
+		cut_overlay(armrest)
+
+/obj/structure/chair/office/comfy/post_unbuckle_mob()
+	. = ..()
+	update_armrest()
+
+/obj/structure/chair/office/comfy/stationary
+	desc = "The most joyful type of chair, nerfed down to only the spinning, as it's bolted down to the floor.."
+	anchored = TRUE
+	icon_state = "comfy_stationary_officechair_dark"
+
+/obj/structure/chair/office/comfy/light
+	icon_state = "comfy_officechair"
+
+/obj/structure/chair/office/comfy/light/stationary
+	desc = "The most joyful type of chair, nerfed down to only the spinning, as it's bolted down to the floor.."
+	anchored = TRUE
+	icon_state = "comfy_stationary_officechair"
 
 //Stool
 

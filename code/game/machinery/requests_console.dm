@@ -467,20 +467,54 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/requests_console, 30)
 		return
 	return ..()
 
-/obj/machinery/requests_console/departmental
+	// assistance = 1
+		// supplies = 2
+		// info = 4
+		// assistance + supplies = 3
+		// assistance + info = 5
+		// supplies + info = 6
+		// assistance + supplies + info = 7
+
+/obj/machinery/requests_console/preset/assistance
+	departmentType = 1
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/requests_console/preset/assistance, 30)
+
+/obj/machinery/requests_console/preset/supplies
+	departmentType = 2
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/requests_console/preset/supplies, 30)
+
+/obj/machinery/requests_console/preset/info
+	departmentType = 4
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/requests_console/preset/info, 30)
+
+/obj/machinery/requests_console/preset/assistance_supplies
+	departmentType = 3
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/requests_console/preset/assistance_supplies, 30)
+
+/obj/machinery/requests_console/preset/assistance_info
 	departmentType = 5
 
-MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/requests_console/departmental, 30)
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/requests_console/preset/assistance_info, 30)
 
-/obj/machinery/requests_console/announce
-	announcementConsole = TRUE
-
-MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/requests_console/announce, 30)
-
-/obj/machinery/requests_console/announce/head_of_staff
+/obj/machinery/requests_console/preset/supplies_info
 	departmentType = 6
 
-MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/requests_console/announce/head_of_staff, 30)
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/requests_console/preset/supplies_info, 30)
+
+/obj/machinery/requests_console/preset/all
+	departmentType = 7
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/requests_console/preset/all, 30)
+
+/obj/machinery/requests_console/preset/head_of_staff
+	announcementConsole = TRUE
+	departmentType = 5
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/requests_console/preset/head_of_staff, 30)
 
 #undef REQ_EMERGENCY_SECURITY
 #undef REQ_EMERGENCY_ENGINEERING
