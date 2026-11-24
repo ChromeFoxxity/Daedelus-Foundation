@@ -19,7 +19,7 @@
 	for (var/datum/design/design as anything in SStech.designs)
 		if (!(design.build_type & COMPONENT_PRINTER) || !ispath(design.build_path, /obj/item/circuit_component))
 			continue
-			designs += design
+		designs += design
 
 	internal_disk.set_data(DATA_IDX_DESIGNS, designs)
 

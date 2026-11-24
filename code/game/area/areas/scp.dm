@@ -338,6 +338,14 @@
 	name = "\improper CDCZ Control Room"
 	icon_state = "security"
 
+/area/station/security/cdcz/solitary
+	name = "\improper CDCZ Solitary Confinement"
+	icon_state = "holding_cell"
+
+/area/station/security/cdcz/reeducation
+	name = "\improper CDCZ Re-education"
+	icon_state = "execution_room"
+
 /area/station/security/cdcz/control/armory
 	name = "\improper CDCZ Armory"
 	icon_state = "armory"
@@ -385,6 +393,14 @@
 /area/station/maintenance/cdcz/upper/security
 	name = "Abandoned CDCZ Security Office"
 	icon_state = "maint_sec"
+
+/area/station/maintenance/cdcz/upper/lounge
+	name = "Abandoned CDCZ Lounge"
+	icon_state = "cdcz_cafeteria"
+
+/area/station/maintenance/cdcz/upper/garden
+	name = "Abandoned CDCZ Garden"
+	icon_state = "cdcz_hydro"
 
 /area/station/maintenance/cdcz/mining
 	name = "CDCZ Mining Maintenance"

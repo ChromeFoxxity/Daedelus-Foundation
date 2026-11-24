@@ -102,35 +102,6 @@
 	machine_name = "Foundation Engineering Vendor"
 	icon_state = "refill_engi"
 
-/obj/machinery/vending/foundation_security
-	name = "Foundation Security Vendor"
-	desc = "A Foundation-branded security equipment vendor. Requires Security access."
-	icon_state = "sec"
-	icon_deny = "sec-deny"
-	req_access = list(ACCESS_SECURITY_LVL1)
-	products = list(
-		/obj/item/restraints/handcuffs = 8,
-		/obj/item/restraints/legcuffs = 4,
-		/obj/item/food/donut/plain = 12,
-		/obj/item/storage/belt/security = 4,
-		/obj/item/clothing/gloves/color/black = 4,
-		/obj/item/flashlight/seclite = 4,
-		/obj/item/melee/baton/loaded = 4,
-		/obj/item/grenade/flashbang = 4,
-		/obj/item/grenade/chem_grenade/teargas = 4,
-		/obj/item/ammo_box/magazine/scp/ierichon = 6,
-		/obj/item/ammo_box/magazine/scp/ierichon/rubber = 6,
-	)
-	contraband = list(
-		/obj/item/gun/ballistic/automatic/scp/ierichon = 2,
-		/obj/item/ammo_box/magazine/scp/mk9/ap = 4,
-	)
-	refill_canister = /obj/item/vending_refill/foundation_security
-
-/obj/item/vending_refill/foundation_security
-	machine_name = "Foundation Security Vendor"
-	icon_state = "refill_sec"
-
 /obj/machinery/vending/foundation_science
 	name = "Foundation Research Vendor"
 	desc = "A Foundation-branded research supply vendor. Requires Science access."

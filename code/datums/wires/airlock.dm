@@ -61,7 +61,8 @@
 		WIRE_BACKUP1, WIRE_BACKUP2,
 		WIRE_OPEN, WIRE_BOLTS, WIRE_IDSCAN, WIRE_AI,
 		WIRE_SHOCK, WIRE_SAFETY, WIRE_TIMING, WIRE_LIGHT,
-		WIRE_ZAP1, WIRE_ZAP2
+		WIRE_UNRESTRICTED_EXIT,
+		WIRE_ZAP1, WIRE_ZAP2,
 	)
 	add_duds(2)
 	..()
@@ -96,6 +97,12 @@
 	status += "The timer is powered [A.autoclose ? "on" : "off"]."
 	status += "The speed light is [!A.superspeed ? "on" : "off"]."
 	status += "The emergency light is [A.emergency ? "on" : "off"]."
+
+	if(A.unres_latch)
+		status += "The unrestricted exit display is [A.unres_sides ? "indicating that it is letting people pass from the [dir2text(REVERSE_DIR(A.unres_sides))]" : "faintly flickering"]."
+	else
+		status += "The unrestricted exit display is completely inactive."
+
 	return status
 
 /datum/wires/airlock/on_pulse(wire)
@@ -146,6 +153,11 @@
 		if(WIRE_LIGHT)
 			A.lights = !A.lights
 			A.update_appearance()
+		if(WIRE_UNRESTRICTED_EXIT) // Pulse to switch the direction around by 180 degrees (North goes to South, East goes to West, vice-versa)
+			if(!A.unres_latch) //only works if the "latch" is installed (a variable that we assign to the door either upon creation of a door with unrestricted directions or if an unrestricted helper is added to a door in mapping)
+				return
+			A.unres_sides = REVERSE_DIR(A.unres_sides)
+			A.update_appearance()
 
 /obj/machinery/door/airlock/proc/reset_ai_wire()
 	if(aiControlDisabled == AI_WIRE_DISABLED)
@@ -153,7 +165,7 @@
 	else if(aiControlDisabled == AI_WIRE_HACKED)
 		aiControlDisabled = AI_WIRE_DISABLED_HACKED
 
-/datum/wires/airlock/on_cut(wire, mend)
+/datum/wires/airlock/on_cut(wire, mend, source)
 	var/obj/machinery/door/airlock/A = holder
 	switch(wire)
 		if(WIRE_POWER1, WIRE_POWER2) // Cut to loose power, repair all to gain power.
@@ -161,15 +173,13 @@
 				A.regainMainPower()
 			else
 				A.loseMainPower()
-			if(isliving(usr))
-				A.shock(usr, 50)
+			A.shock(usr, 50)
 		if(WIRE_BACKUP1, WIRE_BACKUP2) // Cut to loose backup power, repair all to gain backup power.
 			if(mend && !is_cut(WIRE_BACKUP1) && !is_cut(WIRE_BACKUP2))
 				A.regainBackupPower()
 			else
 				A.loseBackupPower()
-			if(isliving(usr))
-				A.shock(usr, 50)
+			A.shock(usr, 50)
 		if(WIRE_BOLTS) // Cut to drop bolts, mend does nothing.
 			if(!mend)
 				A.bolt()
@@ -185,6 +195,8 @@
 				else if(A.aiControlDisabled == AI_WIRE_DISABLED_HACKED)
 					A.aiControlDisabled = AI_WIRE_HACKED
 		if(WIRE_SHOCK) // Cut to shock the door, mend to unshock.
+			if (!isnull(source))
+				log_combat(source, A, "[mend ? "disabled" : "enabled"] shocking for")
 			if(mend)
 				if(A.secondsElectrified)
 					A.set_electrified(MACHINE_NOT_ELECTRIFIED, usr)
@@ -194,6 +206,8 @@
 				A.shock(usr, 100)
 		if(WIRE_SAFETY) // Cut to disable safeties, mend to re-enable.
 			A.dont_close_on_dense_objects = mend
+			if (!isnull(source))
+				log_combat(source, A, "[mend ? "enabled" : "disabled"] door safeties for")
 		if(WIRE_TIMING) // Cut to disable auto-close, mend to re-enable.
 			A.autoclose = mend
 			if(A.autoclose && !A.density)
@@ -202,8 +216,17 @@
 			A.lights = mend
 			A.update_appearance()
 		if(WIRE_ZAP1, WIRE_ZAP2) // Ouch.
-			if(isliving(usr))
-				A.shock(usr, 50)
+			A.shock(usr, 50)
+		if(WIRE_UNRESTRICTED_EXIT) // If this wire is cut, the unrestricted helper goes away. If you mend it, it'll go "haywire" and pick a new direction at random. Might have to cut/mend a time or two to get the direction you want.
+			if(!A.unres_latch) //only works if the "latch" is installed (a variable that we assign to the door either upon creation of a door with unrestricted directions, or if an unrestricted helper is added to a door in mapping)
+				return
+			if(mend)
+				A.unres_sides = pick(NORTH, SOUTH, EAST, WEST)
+				A.update_appearance()
+			else
+				A.unres_sides = NONE
+				A.update_appearance()
+
 
 /datum/wires/airlock/can_reveal_wires(mob/user)
 	if(HAS_TRAIT(user, TRAIT_KNOW_ENGI_WIRES))

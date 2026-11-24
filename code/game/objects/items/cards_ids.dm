@@ -844,13 +844,11 @@
 	. = ..()
 	registered_account = SSeconomy.department_accounts_by_id[ACCOUNT_CAR]
 
-/obj/item/card/id/advanced/classe
-	name = "E-Class Card"
-	desc = "You really hit the lowest of low."
+/obj/item/card/id/advanced/class
+	name = "Class Access Card"
+	desc = "You really hit the lowest of low, you shouldn't have this."
 	icon_state = "black_blank"
 	registered_name = "Scum"
-	registered_age = null
-	trim = /datum/id_trim/job/classe
 
 	wildcard_slots = WILDCARD_LIMIT_PRISONER
 
@@ -865,7 +863,7 @@
 	/// Time left on a card till they can leave.
 	var/time_left = 0
 
-/obj/item/card/id/advanced/classe/attackby(obj/item/card/id/C, mob/user)
+/obj/item/card/id/advanced/class/attackby(obj/item/card/id/C, mob/user)
 	..()
 	var/list/id_access = C.GetAccess()
 	if(!(ACCESS_SECURITY_LVL2 in id_access))
@@ -887,11 +885,11 @@
 	to_chat(user, "You set the sentence time to [time_to_assign] seconds.")
 	timed = TRUE
 
-/obj/item/card/id/advanced/classe/proc/start_timer()
+/obj/item/card/id/advanced/class/proc/start_timer()
 	say("Sentence started, welcome to the corporate rehabilitation center!")
 	START_PROCESSING(SSobj, src)
 
-/obj/item/card/id/advanced/classe/examine(mob/user)
+/obj/item/card/id/advanced/class/examine(mob/user)
 	. = ..()
 	if(timed)
 		if(time_left <= 0)
@@ -899,7 +897,7 @@
 		else
 			. += span_notice("The digital timer on the card has [time_left] seconds remaining. Don't do the crime if you can't do the time.")
 
-/obj/item/card/id/advanced/classe/process(delta_time)
+/obj/item/card/id/advanced/class/process(delta_time)
 	if(!timed)
 		return
 
@@ -908,8 +906,28 @@
 		say("Sentence time has been served. Thank you for your cooperation in our corporate rehabilitation program!")
 		return PROCESS_KILL
 
-/obj/item/card/id/advanced/classe/attack_self(mob/user)
+/obj/item/card/id/advanced/class/attack_self(mob/user)
 	to_chat(usr, span_notice("You have accumulated [points] out of the [goal] points you need for freedom."))
+
+/obj/item/card/id/advanced/class/e
+	name = "E-Class Access Card"
+	desc = "A white, smooth plastic identification card with some electronics sandwiched inside, this one makes you feel like you've stooped real low..."
+	icon_state = "white_blank"
+	worn_icon_state = "card_grey"
+	assigned_icon_state = "assigned_white"
+	registered_age = null
+	registered_name = "E-Class"
+	trim = /datum/id_trim/job/classe
+
+/obj/item/card/id/advanced/class/d
+	name = "D-Class Access Card"
+	desc = "A white, smooth plastic identification card with some electronics sandwiched inside, this one is meant for the test subjects."
+	icon_state = "white_blank"
+	worn_icon_state = "card_grey"
+	assigned_icon_state = "assigned_white"
+	registered_age = null
+	registered_name = "D-Class"
+	trim = /datum/id_trim/job/classd
 
 /obj/item/card/id/advanced/highlander
 	name = "highlander ID"

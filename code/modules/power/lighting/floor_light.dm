@@ -1,23 +1,18 @@
 //THIS TYPE IS WEIRD. THE BASE TYPE IS ACTUALLY AN EMPTY SHELL. USE /obj/machinery/light/floor/has_bulb FOR A PREBUILT
 /obj/machinery/light/floor
 	name = "floor light"
+	desc = "A lightbulb you can walk on without breaking it, amazing."
 	icon = 'icons/obj/lighting.dmi'
 	base_state = "floor" // base description and icon_state
 	icon_state = "floor"
-	layer = 2.1
-	plane = -6
+	layer = BELOW_CATWALK_LAYER
+	plane = FLOOR_PLANE
 	light_type = /obj/item/light/bulb
-	fitting = "bulb"
+	fitting = "floor bulb"
 	overlay_icon = null
 	align_with_wall = FALSE
-	status = LIGHT_EMPTY
-	start_with_cell = FALSE
 	bulb_inner_range = 0.5
 	bulb_outer_range = 5
-
-/obj/machinery/light/floor/has_bulb
-	status = LIGHT_OK
-	start_with_cell = TRUE
 
 /obj/machinery/light/floor/update_icon_state()
 	. = ..()

@@ -145,5 +145,3 @@ SUBSYSTEM_DEF(foundation_comms)
 		facility_threat_level = highest
 		last_threat_change = world.time
 		check_threat_escalation()
-
-

@@ -1,13 +1,13 @@
 /obj/structure/sign/clock
 	name = "wall clock"
-	desc = "It's your run-of-the-mill wall clock showing both the local Standard Time. Perfect for staring at instead of working."
+	desc = "It's your run-of-the-mill wall clock showing the Alaska Standard Time. Perfect for staring at instead of working."
 	icon_state = "clock"
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/clock, 32)
 
 /obj/structure/sign/clock/examine(mob/user)
 	. = ..()
-	. += span_info("The current NST (local) time is: [time_stamp(ic_time = TRUE, twelve_hour_clock = user.client?.prefs.read_preference(/datum/preference/toggle/twelve_hour))].")
+	. += span_info("The current time is: [station_time()].")
 	if(user.is_literate())
 		. += span_info("That means it is currently [stationtime2text()] into the shift.")
 
@@ -20,4 +20,4 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/calendar, 32)
 
 /obj/structure/sign/calendar/examine(mob/user)
 	. = ..()
-	. += span_info("The current date is: [time2text(world.realtime, "DDD, MMM DD", world.timezone)], [CURRENT_STATION_YEAR].")
+	. += span_info("The current date is: [stationdate2text(world.realtime, "DDD, MMM DD", world.timezone)], [CURRENT_STATION_YEAR].")

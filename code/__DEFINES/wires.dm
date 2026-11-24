@@ -78,6 +78,7 @@
 #define WIRE_ZAP2 "High Voltage Circuit 2"
 #define WIRE_PRIZEVEND "Emergency Prize Vend"
 #define WIRE_RESETOWNER "Reset Owner"
+#define WIRE_UNRESTRICTED_EXIT "Unrestricted Exit"
 #define WIRE_AGELIMIT "Age Limit"
 #define WIRE_ACCEPT "Scan Success"
 #define WIRE_DENY "Scan Fail"
